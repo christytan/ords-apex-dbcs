@@ -1,10 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">[![](images/obe_tag.png)](README.md)
-
-Last Updated:<br>April 08, 2020
-</td>
-<td class="td-banner">
-# Working with Exadata Cloud Service On OCI
-</td></tr><table>
 
 An Exadata Cloud Service DB system consists of a quarter rack, half rack, or full rack of compute nodes and
 storage servers, tied together by a high-speed, low-latency InfiniBand network and intelligent
