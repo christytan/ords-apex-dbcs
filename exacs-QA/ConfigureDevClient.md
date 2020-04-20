@@ -130,7 +130,7 @@ On your local laptop,
 
 - Open a terminal window and create an ssh tunnel using the following command,
 
-````
+```
 <copy>
 $ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devClient>
 </copy>

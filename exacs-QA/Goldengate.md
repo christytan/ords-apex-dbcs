@@ -10,8 +10,6 @@ Why Golden Gate?
 
 [Learn More](http://www.oracle.com/us/products/middleware/data-integration/oracle-goldengate-realtime-access-2031152.pdf)
 
-To **log issues**, click [here](https://github.com/cloudsolutionhubs/ExaCS-transaction-processing/issues/new) to go to the github oracle repository issue submission form.
-
 ## Objectives
 
 - Setup real time data replication from on-premise database to ExaCS database instance.

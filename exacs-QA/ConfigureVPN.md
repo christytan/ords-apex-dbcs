@@ -4,8 +4,6 @@ Oracle's Exadata Cloud Service (ExaCS) is deployed in a private VCN in the Oracl
 
 This lab walks you through the steps to deploy a VPN server in OCI and create an SSL VPN connection between a client machine (your desktop) and the ExaCS infrastructure. Once configured, a single VPN server can be shared among multiple users.
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github Oracle repository issue submission form.
-
 ## Objectives
 As a network admin,
 
@@ -84,9 +82,10 @@ The following illustration shows a network topology that can be used to provide 
 
 ```
 <copy>
-    $ ssh opc@O<public_ipAddress_of_your_centOS_VM>
+ssh opc@O<public_ipAddress_of_your_centOS_VM>
 </copy>
 ```
+
 ```
 <copy>
 $ wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
@@ -99,7 +98,7 @@ $ wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
 
 ```
 <copy>
-$ sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
+sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
 </copy>
 ```
 
@@ -109,7 +108,7 @@ $ sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
 
 ```
 <copy>
-$ sudo passwd openvpn
+sudo passwd openvpn
 </copy>
 ```
 
