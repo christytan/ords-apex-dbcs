@@ -70,8 +70,7 @@ Select workload type:
     - On-Line Transaction Processing (Choose this)
     - Decision Support System (DSS)
 Configure database backups : do not check this
- <copy>```
-
+</copy>```
 ![](./images/Infra/provision_db/oci_create_db_1.png)
 ![](./images/Infra/provision_db/oci_create_db_2.png)
 
@@ -81,7 +80,7 @@ Configure database backups : do not check this
 
 ```<copy>
 WE#lcome_1234
-<copy>```
+</copy>```
 
 - After filling all the required details, click on **Create Database**  
 ![](./images/Infra/provision_db/oci_create_db.png)
