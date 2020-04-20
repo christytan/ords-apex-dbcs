@@ -58,8 +58,8 @@ More information about Compartments and Policies is provided in the OCI Identity
 
 - Upon clicking a pop-up will appear that will enable you to create a database. Fill in the required details as shown below 
 
-```<copy>
-Database name : usrXX
+```
+<copy>Database name : usrXX
 Database version : 19c
 PDB Name : usr_XX
 Database Home : Select an existing Database Home
@@ -69,8 +69,8 @@ Create administrator credentials
 Select workload type:
     - On-Line Transaction Processing (Choose this)
     - Decision Support System (DSS)
-Configure database backups : do not check this
-</copy>```
+Configure database backups : do not check this</copy>
+```
 ![](./images/Infra/provision_db/oci_create_db_1.png)
 ![](./images/Infra/provision_db/oci_create_db_2.png)
 
