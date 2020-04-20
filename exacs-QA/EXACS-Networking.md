@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](./images/obe_tag.png)
-
-March 26, 2019
-</td>
-<td class="td-banner">
-# Lab 1: Preparing your private network in the Oracle Cloud Infrastructure
-</td></tr><table>
-
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Introduction
@@ -213,12 +205,4 @@ Next, provision the application subnet with CIDR 10.0.1.0/24. Note that we assoc
 
 Your network setup is now complete.
 
-
-
-<table>
-<tr><td class="td-logo">[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### Fantastic! You have now setup your OCI network and users and are ready to deploy EXACS infrastructure, databases and applications.
-</td>
-</tr>
-<table>

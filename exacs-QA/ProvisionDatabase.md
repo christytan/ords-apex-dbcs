@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-June 13, 2019
-</td>
-<td class="td-banner">
-# Lab 3: Provisioning databases on your dedicated Exadata Cloud Service Infrastructure
-</td></tr><table>
-
 ## Introduction
 
 This lab walks you through the steps to get started using the Oracle Exadata Cloud Service Database on Oracle Exadata Cloud Service Infrastructure. In this lab, you will provision a new database.
@@ -99,11 +91,4 @@ WE#lcome_1234
 ![](./images/Infra/provision_db/oci_db_provisioning.png)
 
 
-
-<table>
-<tr><td class="td-logo">[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done! You have successfully deployed your first Exadata cloud service database instance and it should be ready for use in a few minutes.
-</td>
-</tr>
-<table>
