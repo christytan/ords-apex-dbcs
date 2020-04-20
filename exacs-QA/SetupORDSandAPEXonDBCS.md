@@ -172,7 +172,7 @@ http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
 
 ### **STEP 1: Connect to DB instance**
 
-- Refer [Lab 4](ConfigureDevClient.md) to know how to connect to the database.
+- Refer **Lab 4** to know how to connect to the database.
 
 
 ### STEP 3: Creating Users and Tables for the users in database
@@ -201,4 +201,5 @@ Now, since we have provisioned the database instance and connected to it. We wil
 
 - Now, you have setup the schema and the tables.
 
--   You are now ready to move to the next part of this lab.
+- You are now ready to move to the next part of this lab.
+- **Click on Lab 17-2 from the menu on the right.**
