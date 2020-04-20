@@ -1,15 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](./images/obe_tag.png)
-<br>
-Apr 19, 2020
-</td>
-<td class="td-banner">
-
-# Lab 8: Migrating to Exadata Cloud Service using Data Pump
-
-</td></tr><table>
-
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Introduction
@@ -42,24 +30,42 @@ As a database admin or user,
 - Log into your bastion server
 
 ```
-ssh -i <private_key> opc@<public_IP_address>
+<copy>
+$ ssh -i <private_key> opc@<public_IP_address>
+</copy>
+```
+
+```
 ```
 ![bastion_login](./images/HOL-DataPump/bastion_login.png)
 - Create a folder on your bastion server as your user_number 
 
 ```
+<copy>
 cd dump_file
-mkdir user_XX
-cd user_XX
+</copy>
 ```
+```
+<copy>
+mkdir user_XX
+</copy>
+```
+```
+<copy>
+cd user_XX
+</copy>
+```
+
 ![cd_dump_file](./images/HOL-DataPump/cd_dump_file.png)
 
 ![mkdir_user_dump](./images/HOL-DataPump/mkdir_user_dump.png)
 
 - Use the following command in your folder on bastion server and download a sample schema dump from OLL
 
-```    
+```
+<copy>
 wget -O user_01.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20TfCaQGHwH_fhi8xPRLZldM-QasPN2pjquak8/n/orasenatdpltintegration02/b/ExaCSScripts/o/data_pump_nodeapp.dmp
+</copy>
 ```
 
 ![wget_dump](./images/HOL-DataPump/wget_dump.png)
@@ -70,18 +76,30 @@ wget -O user_01.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 - Log into your database from your bastion server and execute following command
 
 ```
+<copy>
 ssh -i </path/to/identity/file> oracle@<exadata_node>
+</copy>
+```
+```
+<copy>
 source userXX
+</copy>
+```
+```
+<copy>
 sqlplus system/<system_password>@usr_xx
+</copy>
 ```
 
 ```
+<copy>
 set lines 500
 column directory_name format a45
 column directory_path format a95
 
 select directory_name, directory_path from all_directories order by 1
 /
+</copy>
 ```
 
 ![all_db_dir](./images/HOL-DataPump/all_db_dir.png)
@@ -90,25 +108,41 @@ select directory_name, directory_path from all_directories order by 1
 - Secure copy the dump file to the oracle exadata cloud service server to the data pump directory that you have noted down before
 
 ```
+<copy>
 scp -i </path/to/identity/file> user_xx.dmp oracle@<Exadata_private_ip>:</path/to/DATA_PUMP_DIR>
+</copy>
 ```
 
 ### STEP 3: Perform Data Import
 - Log into the exadata cloud service DB server 
 
 ```
+<copy>
 ssh -i </path/to/identity/file> oracle@<exadata_node>
+</copy>
+```
+
+```
+<copy>
 source userXX
+</copy>
 ```
 
 ***NOTE:*** Login to Node of Exadata and make a TNS entry on your tnsnames.ora file such that your import data pump process only uses this particular node as we are placing the dump file on only one node and not on a shared file system.
 
 ```
+<copy>
 cd $ORACLE_HOME/network/admin/user_xx/
+</copy>
+```
+```
+<copy>
 vi tnsnames.ora
+</copy>
 ```
 
 ```
+<copy>
 usrxx_1 =
   (DESCRIPTION =
     (ADDRESS = (PROTOCOL = TCP)(HOST = <exa_node_1>.<subnet>.<vcn>.oraclevcn.com)(PORT = 1521))
@@ -121,14 +155,17 @@ usrxx_1 =
       )
     )
   )
-
+</copy>
 ```
 
 - Finally, the stage is set to run the import command from your dev client bash prompt
 
 ```
-$ IMPDP SYSTEM/<DB_PWD>@usrXX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUSTER=NO; 
+<copy>
+IMPDP SYSTEM/<DB_PWD>@usrXX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUSTER=NO; 
+</copy>
 ```
+
 - In the above command, replace
   * __password__ - Admin password for your database system user
   * __usr_XX__ - The pluggable database that you created 
@@ -143,10 +180,4 @@ All Done! Your application schema was successfully imported.
 
 You may now connect to your exadata cloud service database using a SQL client and validate import.
 
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](./images/obe_tag.png)
-</td>
-<td class="td-banner">
-### Congratulations! You have successfully completed migration of an Oracle database to the Exadata Cloud Service Database using Data Pump
-</td></tr><table>
+Congratulations! You have successfully completed migration of an Oracle database to the Exadata Cloud Service Database using Data Pump
