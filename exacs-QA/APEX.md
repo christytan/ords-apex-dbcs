@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](./images/obe_tag.png)
-
-April 15, 2020
-</td>
-<td class="td-banner">
-# Lab 17 : Working with ORDS, APEX, JSON on Exadata Cloud Service On OCI
-</td></tr><table>
-
 ## Introduction
 
 
@@ -74,17 +66,3 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 
 **[Click here to run Lab 3](Creating_an_Apex_Application.md)**
-
-<table>
-<tr><td class="td-logo">
-
-[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-### Congratulations! You successfully learnt to use ORDS, APEX with your Exadata Cloud Service Database
-
-
-
-
-</td>
-</tr>
-<table>

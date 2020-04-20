@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-March 31, 2020
-</td>
-<td class="td-banner">
-# Lab 16: Building and deploying Python application stacks on EXACS infrastructure
-</td></tr><table>
-
 ## Introduction
 
 The Oracle Cloud Infrastructure marketplace provides a pre-built image with necessary client tools and drivers to build applications on EXACS databases. As an application developer you can now provision a developer image within minutes and connect it to your database deployment.
@@ -40,13 +32,13 @@ As an application developer,
 
 - Login to your Oracle Cloud Infrastructure account and select **Compute** —> **Instances** from top left menu
 
-![](./images/pythonApp/Compute1.png)
+![](./images/pythonApp/Compute1.png " ")
 
 - Select the right Oracle Developer Cloud image you created in [Lab4](ConfigureDevClient.md) 
 
 - Copy the public IP address of the instance in a note pad. 
 
-![](./images/pythonApp/Compute2.png)
+![](./images/pythonApp/Compute2.png " ")
 
 
 **Mac / Linux users**
@@ -54,10 +46,10 @@ As an application developer,
 - Open Terminal and SSH into linux host machine
 
 ```
-sudo ssh -i /path_to/sshkeys/id_rsa opc@publicIP
+<copy>sudo ssh -i /path_to/sshkeys/id_rsa opc@publicIP</copy>
 ```
 
-![](./images/pythonApp/SSH1.png)
+![](./images/pythonApp/SSH1.png " ")
 
 **Windows users**
 
@@ -70,19 +62,19 @@ sudo ssh -i /path_to/sshkeys/id_rsa opc@publicIP
 In your developer client ssh session,
 
 ```
-cd /home/opc/
+<copy>cd /home/opc/</copy>
 ```
 
 Lets download a sample python application for the purpose of this lab,
 
 ```
-wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/k6hamruBC0UBdOdD081hxf7-qQSnQdOWnLp7PCrmt0o/n/orasenatdpltintegration02/b/ExaCSScripts/o/EXACSPython.zip
+<copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/k6hamruBC0UBdOdD081hxf7-qQSnQdOWnLp7PCrmt0o/n/orasenatdpltintegration02/b/ExaCSScripts/o/EXACSPython.zip</copy>
 ```
 
 - Unzip the application 
 
 ```
-unzip EXACSPython.zip
+<copy>unzip EXACSPython.zip</copy>
 ```
 
 
@@ -92,22 +84,22 @@ unzip EXACSPython.zip
 - Open terminal on your laptop and SSH into linux host machine. Windows users follows instructions provided above to ssh using Putty.
 
 ```
-ssh -i /path/to/your/private_ssh_key opc@PublicIP
+<copy>ssh -i /path/to/your/private_ssh_key opc@PublicIP</copy>
 ```
 
 - Navigate to EXACSPython folder
 
 ```
-cd /home/opc/EXACSPython
+<copy>cd /home/opc/EXACSPython</copy>
 ```
 
 - Edit the dns_tns connection in the sample python application.
 
 ```
-vi pythonapp.py
+<copy>vi pythonapp.py</copy>
 ```
 
-![](./images/pythonApp/editpythonapp.png)
+![](./images/pythonApp/editpythonapp.png " ")
 
 - Change the following parameters
 
@@ -131,16 +123,7 @@ dns: dsn_tns
 - In connection execute this application displayes all the users in the database.
 
 ```
- python pythonapp.py
+<copy>python pythonapp.py</copy>
 ```
 
-![](./images/pythonApp/pythonSuccess.png)
-
-
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-### Congratulations! You successfully deployed and connected a python app to your EXACS database.
-</td>
-</tr>
-<table>
+![](./images/pythonApp/pythonSuccess.png " ")

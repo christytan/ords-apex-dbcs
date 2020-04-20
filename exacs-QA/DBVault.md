@@ -1,15 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](./images/obe_tag.png)
-
-Sept 1, 2019
-</td>
-<td class="td-banner">
-# Lab 11: Protect your data with Database Vault
-</td></tr><table>
-
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
 ## Introduction
 
 
@@ -44,7 +32,7 @@ Oracle Database vault comes pre-installed with your Autonomous database on dedic
 
 Our implementation scenario looks as follow,
 
-![](./images/Infra/db_vault/DVarchitecture.png)
+![](./images/Infra/db_vault/DVarchitecture.png " ")
 
 The HR schema contains multiple tables. The employees table contains sensitive information such as employee names, SSN, pay-scales etc. and needs to be protected from priviledged users such as the schema owner (user HR) and sys (DBA).
 
@@ -54,195 +42,227 @@ The table should however be available to the application user (appuser). Note th
 
 
 - Connect to your ExaCS database pdb as user `sys`. Open terminal in the dev client instance and ssh into one of the database nodes.
-  ````
-  $ ssh -i <private-key> opc@<private-ip-of-db-node>
-  $ sudo su - oracle
-  $ ls
-  ````
+````
+<copy>ssh -i <private-key> opc@<private-ip-of-db-node>
+sudo su - oracle
+ls</copy>
+````
   You should see `<your-database-name>.env` file after executing `ls`.
 - Enter `$ source <your-database-name>.env` to configure all the required environment variables into the current session.
-  ````
-  $ source <your-database-name>.env
-  ````
+````
+<copy>source <your-database-name>.env</copy>
+````
 - Find your pdb name with the following command.
-  ```
-  $ cd $ORACLE_HOME/network/admin
-  $ ls
-  $ cd <your-database-folder>
-  $ cat tnsnames.ora
-  ```
-  ![](./images/Infra/db_vault/find-pdb.png)
+```
+<copy>cd $ORACLE_HOME/network/admin
+ls
+cd <your-database-folder>
+cat tnsnames.ora</copy>
+```
+  ![](./images/Infra/db_vault/find-pdb.png " ")
 
-- Login to your pdb as `SYS` with `SYSDBA` privileges `$ sqlplus sys@<your-pdb-name> as sysdba;` and enter password for the `SYS` user.
+- Login to your pdb as `SYS` with `SYSDBA` privileges and enter password for the `SYS` user.
 
-  ![](./images/Infra/db_vault/sys-pdb.png)
+```
+<copy>sqlplus sys@<your-pdb-name> as sysdba;</copy>
+````
+
+
+  ![](./images/Infra/db_vault/sys-pdb.png " ")
 
 - Now, create the schema `hr` and table `employees`:
 
-  ````
-  SQL> create user hr identified by WElcome_123#;
-  SQL> grant create session, create table to hr;
-  SQL> grant unlimited tablespace to hr;
-  SQL> create table hr.employees (id number, name varchar2 (20), salary number);
-  SQL> insert into hr.employees values (10,'Larry',20000);
-  SQL> commit;
-  ````
-  ![](./images/Infra/db_vault/create-hr.png)
+````
+<copy>create user hr identified by WElcome_123#;
+grant create session, create table to hr;
+grant unlimited tablespace to hr;
+create table hr.employees (id number, name varchar2 (20), salary number);
+insert into hr.employees values (10,'Larry',20000);
+commit;</copy>
+````
+  ![](./images/Infra/db_vault/create-hr.png " ")
 
 - Next, create the application user `appuser`.
 
-  ````
-  SQL> create user appuser identified by WElcome_123#;
-  SQL> grant create session, read any table to appuser;
-  SQL> exit;
-  ````
-  ![](./images/Infra/db_vault/create-appuser.png)
+````
+<copy>create user appuser identified by WElcome_123#;
+grant create session, read any table to appuser;
+exit;</copy>
+````
+  ![](./images/Infra/db_vault/create-appuser.png " ")
 
 ### **STEP 2: Configure and enable Database Vault**
 
 We start with creating the two DV user accounts - DV Owner and DV Account Manager. The dv_owner account is mandatory as an owner of DV objects. DV account manager is an optional but recommended role. Once DV is enabled, the user 'SYS' loses its ability to create/drop DB user accounts and that privilege is then with the DV Account Manager role. While DV Owner can also become DV account manager, it is recommended to maintain separation of duties via two different accounts.
 
 - Login to the database CDB as `SYS` with sysdba privileges.
-  ````
-  $ sqlplus sys as sysdba;
-  SQL> show con_name;
-  ````
-  ![](./images/Infra/db_vault/sys-cdb.png)
+````
+<copy>sqlplus sys as sysdba;
+show con_name;</copy>
+````
+  ![](./images/Infra/db_vault/sys-cdb.png " ")
 - Create the common user accounts `c##dv_owner1` and `c##dv_acctmgr1` and assign `dv_owner` and `dv_acctmgr` roles respectively.
+  
+````
+<copy>create user c##dv_owner1 identified by WElcome_123#;
+
+grant dv_owner, create session, set container, audit_admin to c##dv_owner1 container=all;
+
+create user c##dv_acctmgr1 identified by WElcome_123#;
+
+grant dv_acctmgr, create session, set container to c##dv_acctmgr1 container=all;
+
+commit;</copy>
   ````
-  SQL> create user c##dv_owner1 identified by WElcome_123#;
-
-  SQL> grant dv_owner, create session, set container, audit_admin to c##dv_owner1 container=all;
-
-  SQL> create user c##dv_acctmgr1 identified by WElcome_123#;
-
-  SQL> grant dv_acctmgr, create session, set container to c##dv_acctmgr1 container=all;
-
-  SQL> commit;
-  ````
-  ![](./images/Infra/db_vault/create-dvusers.png)
+  ![](./images/Infra/db_vault/create-dvusers.png " ")
 - Open a new terminal tab/window and ssh into the database node.
+  
+````
+<copy>ssh -i <private-key> opc@<private-ip-of-db-node>
+sudo su - oracle
+source <your-database-name>.env
+cd $ORACLE_HOME
+vi configure_dv.sql</copy>
   ````
-    $ ssh -i <private-key> opc@<private-ip-of-db-node>
-    $ sudo su - oracle
-    $ source <your-database-name>.env
-    $ cd $ORACLE_HOME
-    $ vi configure_dv.sql
-  ````
-  Copy and paste the following into the vi editor. Press `Esc` and `:wq!` to save and quit.
-  ````
-    BEGIN
+
+Copy and paste the following into the vi editor. Press `Esc` and `:wq!` to save and quit.
+  
+````
+    <copy>BEGIN
       CONFIGURE_DV (
         dvowner_uname         => 'c##dv_owner1',
         dvacctmgr_uname       => 'c##dv_acctmgr1');
     END;
-    /
-  ````
+    /</copy>
+````
 
 - Come back to the first terminal where you have SQL prompt still connected to the CDB of your database and execute the following.
-  ````
-  SQL> @?/configure_dv.sql
-  SQL> @?/rdbms/admin/utlrp.sql
-  ````
-  ![](./images/Infra/db_vault/configuredv-cdb.png)
+
+````
+<copy>@?/configure_dv.sql
+@?/rdbms/admin/utlrp.sql</copy>
+````
+
+  ![](./images/Infra/db_vault/configuredv-cdb.png " ")
 
 - Now, connect as `c##dv_owner1` and check if the database vault is enabled with the following statement. It should return `False`.
-  ````
-  SQL> conn c##dv_owner1;
-  SQL> SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
-  ````
-  ![](./images/Infra/db_vault/cdb-dv-false.png)
+
+````
+<copy>conn c##dv_owner1;
+SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';</copy>
+````
+  ![](./images/Infra/db_vault/cdb-dv-false.png " ")
 
 
 - Enable the database vault. Then, connect as `SYS` and restart the CDB.
-  ````
-  SQL> exec dbms_macadm.enable_dv;
-  SQL> conn sys as sysdba;
-  SQL> shutdown immediate;
-  SQL> startup
-  ````
-  ![](./images/Infra/db_vault/dv-enable-cdb.png)
+
+````
+<copy>exec dbms_macadm.enable_dv;
+conn sys as sysdba;
+shutdown immediate;
+startup</copy>
+````
+
+![](./images/Infra/db_vault/dv-enable-cdb.png " ")
 
 - Now, check if the database vault is enabled in CDB.
-  ````
-  SQL> SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
-  SQL> SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Label Security';
-  SQL> SELECT * FROM DVSYS.DBA_DV_STATUS;
-  SQL> exit
-  ````
-  ![](./images/Infra/db_vault/cdb-dv-true.png)
+
+````
+<copy>SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
+SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Label Security';
+SELECT * FROM DVSYS.DBA_DV_STATUS;
+exit</copy>
+````
+
+![](./images/Infra/db_vault/cdb-dv-true.png " ")
 
 
 
 - Now, we need to enable the database vault in the pdb. In this example, my pdb name is `vltpdb2`. Log in as `SYS` with sysdba privileges to your pdb.
-  ````
-  $ sqlplus sys@<your-pdb-name> as sysdba;
-  ````
-  ![](./images/Infra/db_vault/sys-pdb.png)
+````
+<copy>sqlplus sys@<your-pdb-name> as sysdba;</copy>
+````
+
+![](./images/Infra/db_vault/sys-pdb.png " ")
 
 - Grant necessary privileges to the common user accounts.
-  ````
-  SQL> GRANT CREATE SESSION, SET CONTAINER TO c##dv_owner1 CONTAINER = CURRENT;
+````
+<copy>GRANT CREATE SESSION, SET CONTAINER TO c##dv_owner1 CONTAINER = CURRENT;
  
-  SQL> GRANT CREATE SESSION, SET CONTAINER TO c##dv_acctmgr1 CONTAINER = CURRENT;
+GRANT CREATE SESSION, SET CONTAINER TO c##dv_acctmgr1 CONTAINER = CURRENT;
  
-  SQL> grant select any dictionary to c##dv_owner1;
+grant select any dictionary to c##dv_owner1;
 
-  SQL> grant select any dictionary to C##DV_ACCTMGR1;
-  ````
-  ![](./images/Infra/db_vault/grant-pdb.png)
+grant select any dictionary to C##DV_ACCTMGR1;</copy>
+````
+
+![](./images/Infra/db_vault/grant-pdb.png " ")
+
 - Configure and enable database vault in the pdb.
-  ````
-  SQL> @?/configure_dv.sql
-  SQL> @?/rdbms/admin/utlrp.sql
-  ````
-  ![](./images/Infra/db_vault/configuredv-pdb.png)
+
+````
+<copy>@?/configure_dv.sql
+@?/rdbms/admin/utlrp.sql</copy>
+````
+
+![](./images/Infra/db_vault/configuredv-pdb.png " ")
 
 - Now, connect as `c##dv_owner1` and check if the database vault is enabled with the following statement. It should return `False`.
-  ````
-  SQL> conn c##dv_owner1@<your-pdb-name>;
-  SQL> SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
-  SQL> exit
-  ````
-  ![](./images/Infra/db_vault/pdb-dv-false.png)
+
+````
+<copy>conn c##dv_owner1@<your-pdb-name>;
+SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
+exit</copy>
+````
+
+![](./images/Infra/db_vault/pdb-dv-false.png " ")
 
 ***********
 - Open a new terminal window and ssh into the database node.
-  ````
-    $ ssh -i <private-key> opc@<private-ip-of-db-node>
-    $ sudo su - oracle
-    $ source <your-database-name>.env
-    $ cd $ORACLE_HOME/rdbms/lib
-    $ make –f ins_rdbms.mk dv_on lbac_on ipc_rds ioracle
-  ````
+
+````
+<copy>ssh -i <private-key> opc@<private-ip-of-db-node>
+sudo su - oracle
+source <your-database-name>.env
+cd $ORACLE_HOME/rdbms/lib
+make –f ins_rdbms.mk dv_on lbac_on ipc_rds ioracle</copy>
+````
+
 - Come back to the previous terminal and connect as `SYS` to your pdb and enable Oracle Label Security. to your pdb. 
-  ```
-  $ sqlplus sys@<your-pdb-name> as sysdba;
-  SQL> EXEC LBACSYS.CONFIGURE_OLS;
-  SQL> EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS;
-  ```
-  ![](./images/Infra/db_vault/enable-ols.png)
+
+````
+<copy>sqlplus sys@<your-pdb-name> as sysdba;
+EXEC LBACSYS.CONFIGURE_OLS;
+EXEC LBACSYS.OLS_ENFORCEMENT.ENABLE_OLS;</copy>
+````
+
+  ![](./images/Infra/db_vault/enable-ols.png " ")
 
 - Login as `SYS` with `SYSOPER` privilege and restart the database.
-  ```
-  $ sqlplus sys@<your-pdb-name> as sysoper;
-  SQL> shutdown immediate
-  SQL> startup
-  SQL> SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Label Security';
-  SQL> conn c##dv_owner1
-  SQL> exec dbms_macadm.enable_dv;
-  ```
-  ![](./images/Infra/db_vault/restart-enable-dv.png)
+
+````
+<copy>sqlplus sys@<your-pdb-name> as sysoper;
+shutdown immediate
+startup
+SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Label Security';
+conn c##dv_owner1
+exec dbms_macadm.enable_dv;</copy>
+````
+
+  ![](./images/Infra/db_vault/restart-enable-dv.png " ")
 
 - Now, check if the database vault is enabled in PDB.
-  ````
-  SQL> SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
 
-  SQL> SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Label Security';
+````
+<copy>SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Database Vault';
 
-  SQL> SELECT * FROM DVSYS.DBA_DV_STATUS;
-  ````
-  ![](./images/Infra/db_vault/cdb-dv-true.png)
+SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Oracle Label Security';
+
+SELECT * FROM DVSYS.DBA_DV_STATUS;</copy>
+````
+
+![](./images/Infra/db_vault/cdb-dv-true.png " ")
+
 - Now that the database vault is successfully configured and enabled in both CDB and PDB, let us go ahead and create security realms and policies.
 
 ### **STEP 3: Create security Realms and add schema objects**
@@ -252,16 +272,18 @@ Next we create a 'Realm', add objects to it and define access rules for the real
 Let's create a realm to secure HR.EMPLOYEES table from SYS and HR (table owner) and grant access to APPUSER only.
 
 - Open a new terminal window and ssh into the database node.
-  ````
-    $ ssh -i <private-key> opc@<private-ip-of-db-node>
-    $ sudo su - oracle
-    $ source <your-database-name>.env
-    $ cd $ORACLE_HOME
-    $ vi create_realm.sql
-  ````
+````
+<copy>ssh -i <private-key> opc@<private-ip-of-db-node>
+sudo su - oracle
+source <your-database-name>.env
+cd $ORACLE_HOME
+vi create_realm.sql</copy>
+````
+
 - Copy and paste the following into the vi editor. Press `Esc` and `:wq!` to save and quit.
-  ````
-  BEGIN
+  
+````
+  <copy>BEGIN
   DBMS_MACADM.CREATE_REALM(
     realm_name    => 'HR App', 
     description   => 'Realm to protect HR tables', 
@@ -283,14 +305,16 @@ Let's create a realm to secure HR.EMPLOYEES table from SYS and HR (table owner) 
     realm_name   => 'HR App', 
     grantee      => 'APPUSER');
   END;
-  / 
-  ````
+  /</copy>
+````
 - Come back to the first terminal where you have SQL prompt still connected to the PDB of your database, connect as `c##dv_owner1` and execute the script.
-  ````
-  SQL> conn c##dv_owner1@<your-pdb-name>;
-  SQL> @?/create_realm.sql
-  ````
-  ![](./images/Infra/db_vault/create-realm.png)
+
+````
+<copy>conn c##dv_owner1@<your-pdb-name>;
+  @?/create_realm.sql</copy>
+````
+
+  ![](./images/Infra/db_vault/create-realm.png " ")
 
 
 ### **STEP 4: Create Audit Policy to Capture Realm Violations**
@@ -299,36 +323,37 @@ You may also want to capture an audit trail of unauthorized access attempts to y
 
 - Create an audit policy to capture realm violations.
 
-  ````
-  SQL> create audit policy dv_realm_hr actions select, update, delete actions component=DV Realm Violation ON "HR App";
-  SQL> audit policy dv_realm_hr;
-  SQL> exit;
-  ````
+````
+<copy>create audit policy dv_realm_hr actions select, update, delete actions component=DV Realm Violation ON "HR App";
+audit policy dv_realm_hr;</copy>
+exit;
+````
 
-  ![](./images/Infra/db_vault/create-audit-policy.png)
+  ![](./images/Infra/db_vault/create-audit-policy.png " ")
 
 
 - Finally, let's test how this all works. To test the realm, try to access the EMPLOYEES table as HR, SYS and then APPUSER, you can test with a combination of SELECT and DML statements.
 - Connect as `SYS` to your pdb and test the access.
-  ````
-  $ sqlplus sys@vltpdb2 as sysdba;
-  SQL> select * from hr.employees;
-  SQL> exit
 
-  SQL> sqlplus hr/WElcome_123#@<your-pdb-name>;
-  SQL> select user from dual;
-  SQL> select * from hr.employees;
-  SQL> exit
+````
+<copy>sys@vltpdb2 as sysdba;
+select * from hr.employees;
+exit
 
-  SQL> sqlplus appuser/WElcome_123#@<your-pdb-name>;
-  SQL> select user from dual;
-  SQL> select * from hr.employees;
-  ````
-  ![](./images/Infra/db_vault/sys-access-fail.png)
+sqlplus hr/WElcome_123#@<your-pdb-name>;
+select user from dual;
+select * from hr.employees;
+exit
 
-  ![](./images/Infra/db_vault/hr-access-fail.png)
+sqlplus appuser/WElcome_123#@<your-pdb-name>;
+select user from dual;
+select * from hr.employees;</copy>
+````
+  ![](./images/Infra/db_vault/sys-access-fail.png " ")
 
-  ![](./images/Infra/db_vault/appuser-access-success.png)
+  ![](./images/Infra/db_vault/hr-access-fail.png " ")
+
+  ![](./images/Infra/db_vault/appuser-access-success.png " ")
 
 
 
@@ -340,12 +365,13 @@ We can query the audit trail to generate a basic report of realm access violatio
 
 - Connect as Audit Administrator, in this lab this is the Database Vault owner, and execute the following:
 
-  ````
-  $ sqlplus c##dv_owner1/WElcome_123#@<your-pdb-name>;
-  SQL> set head off
-  SQL> select os_username, dbusername, event_timestamp, action_name, sql_text from UNIFIED_AUDIT_TRAIL where DV_ACTION_NAME='Realm Violation Audit';
-  ````
-  ![](./images/Infra/db_vault/access-violations.png)
+````
+<copy>sqlplus c##dv_owner1/WElcome_123#@<your-pdb-name>;
+set head off
+select os_username, dbusername, event_timestamp, action_name, sql_text from UNIFIED_AUDIT_TRAIL where DV_ACTION_NAME='Realm Violation Audit';</copy>
+````
+
+  ![](./images/Infra/db_vault/access-violations.png " ")
 
   You can see the access attempts from `HR` and `SYS`.
 
@@ -357,34 +383,21 @@ To remove the components created for this lab and reset the database back to the
 As Database Vault owner, execute:
 
 ````
-SQL> noaudit policy dv_realm_hr;
-SQL> drop audit policy dv_realm_hr;
-SQL> EXEC DBMS_MACADM.DELETE_REALM('HR App');
-SQL> EXEC DBMS_MACADM.DISABLE_DV;
-SQL> exit;
+<copy>noaudit policy dv_realm_hr;
+drop audit policy dv_realm_hr;
+EXEC DBMS_MACADM.DELETE_REALM('HR App');
+EXEC DBMS_MACADM.DISABLE_DV;
+exit;</copy>
 ````
 
 Restart the CDB and PDB as `SYS`.
-````
-$ sqlplus sys/WElcome_123# as sysdba;
-SQL> shutdown immediate;
-SQL> startup;
-SQL> alter pluggable database <your-pdb-name> close immediate;
-SQL> alter pluggable database <your-pdb-name> open;
 
 ````
-![](./images/Infra/db_vault/restart.png)
+<copy>sqlplus sys/WElcome_123# as sysdba;
+shutdown immediate;
+startup;
+alter pluggable database <your-pdb-name> close immediate;
+alter pluggable database <your-pdb-name> open;</copy>
+````
 
-<table>
-<tr><td class="td-logo">
-
-[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-### Congratulations! You successfully learnt to use database vault in your Exadata Cloud Service database.
-
-
-
-
-</td>
-</tr>
-<table>
+![](./images/Infra/db_vault/restart.png " ")
