@@ -50,7 +50,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - The Python Application you installed is going to load the tweets from tweets stores in JSON format into the Oracle Database.
 
-- Since, JSON is natively supported by the Oracle Database. You dont have to worry about reformatting the JSON object or parsing the JSON object to extract the data and then store it. You can directly store the JSON objects in the Oracle database.
+- Since, JSON is natively supported by the Oracle Database. You don't have to worry about reformatting the JSON object or parsing the JSON object to extract the data and then store it. You can directly store the JSON objects in the Oracle database.
 
 
 - Now, Modify the application config to work with your environment.
@@ -91,7 +91,7 @@ sys_password=<Database SYS Password></copy>
 
 - verify that the tweets are being stored in the database by connecting to the database, using SQL Developer, as the same user for which you created the REST Service.
 
-- Run the second Python App. 
+- Run the second Python App.
 
     - This app will directly store JSON objects in Oracle Database because JSON data is natively supported in Oracle Database.
 
@@ -170,7 +170,7 @@ sys_password=<Database SYS Password></copy>
 
 - Click on the application and click on the Run Application button on top right corner of the screen.
 
-- On the Panel on left side, click on Report Page under Home to see the data we loaded into the database. This page loads the data up-loaded by the first python appliction
+- On the Panel on left side, click on Report Page under Home to see the data we loaded into the database. This page loads the data up-loaded by the first python application
 
 ![](./images/apex/CreateApexApp-13.png " ")
 

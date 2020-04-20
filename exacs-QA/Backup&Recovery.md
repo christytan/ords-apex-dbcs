@@ -1,8 +1,8 @@
 ## Introduction
 
-This lab walks you through the steps to get started with Backup and Recovery in EXACS database using Console, APIs and RMAN.
+This lab walks you through the steps to get started with Backup and Recovery in Exadata Cloud Service database using Console, APIs and RMAN.
 
-ExaCS supports backing up databases on an Exadata DB system to an Oracle Cloud Infrastructure Object Storage service and a local disk - Fast Recovery Area in Exadata storage.
+Exadata Cloud Service supports backing up databases on an Exadata DB system to an Oracle Cloud Infrastructure Object Storage service and a local disk - Fast Recovery Area in Exadata storage.
 
 **Note: If you intend to take backups to a local Exadata storage, you need to select a Storage option as below while provisioning Exadata DB system.**
 
@@ -16,6 +16,8 @@ Database Backups on Exadata Storage: Select this option if you intend to perform
 Create Sparse Disk Group: Select this configuration option if you intend to use snapshot functionality within your Exadata DB system environment. If you select this option, the SPARSE disk group is created, which enables you to use Exadata DB system snapshot functionality for PDB sparse cloning. If you do not select this option, the SPARSE disk group is not created and Exadata DB system snapshot functionality will not be available on any database deployments that are created in the environment.
 
 Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/exacreatingDBsystem.htm) for more details on Exadata storage selection.
+
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
 ## Objectives
 
@@ -145,7 +147,7 @@ As mentioned above in Backup using Console,
 
 ### STEP 2: Backup and Recover using API
 
-You can use Exadata\'s backup utility, bkup\_api, to back up databases on an Exadata DB system to an existing bucket in the Oracle Cloud Infrastructure Object Storage service and to the local disk Fast Recovery Area.
+You can use Exadata's backup utility, bkup\_api, to back up databases on an Exadata DB system to an existing bucket in the Oracle Cloud Infrastructure Object Storage service and to the local disk Fast Recovery Area.
 
 **Pre-requisites**
 

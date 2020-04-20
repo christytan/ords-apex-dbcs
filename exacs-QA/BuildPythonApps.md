@@ -1,13 +1,11 @@
 ## Introduction
 
-The Oracle Cloud Infrastructure marketplace provides a pre-built image with necessary client tools and drivers to build applications on EXACS databases. As an application developer you can now provision a developer image within minutes and connect it to your database deployment.
+The Oracle Cloud Infrastructure marketplace provides a pre-built image with necessary client tools and drivers to build applications on Exadata Cloud Service databases. As an application developer you can now provision a developer image within minutes and connect it to your database deployment.
 
 The image is pre-configured with tools and language drivers to help you build applications written in node.js, python, java and golang.
 For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu and browse details on the 'Oracle Developer Cloud Image'
 
-**In this lab we will configure and deploy a python application in a developer client VM and connect it to an EXACS database.**
-
-
+**In this lab we will configure and deploy a python application in a developer client VM and connect it to an Exadata Cloud Service database.**
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
@@ -22,7 +20,7 @@ As an application developer,
 
 - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](ConfigureDevClient.md)
 
-- A pre-provisioned EXACS database instance. Refer to [Lab 3](./ProvisionDatabase.md)
+- A pre-provisioned Exadata Cloud Service database instance. Refer to [Lab 3](./ProvisionDatabase.md)
 
 - A network that provides connectivity between the application and database subnets. Refer to [Lab 1](./EXACS-Networking.md)
 
@@ -53,7 +51,7 @@ As an application developer,
 
 **Windows users**
 
-- You can connect to and manage linux host mahine using SSH client. Recent versions of Windows 10 provide OpenSSH client commands to create and manage SSH keys and make SSH connections from a command prompt.
+- You can connect to and manage linux host machine using SSH client. Recent versions of Windows 10 provide OpenSSH client commands to create and manage SSH keys and make SSH connections from a command prompt.
 
 - Other common Windows SSH clients you can install locally is PuTTY. Click [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) to follow the steps to connect to linux host machine from you windows using PuTTY.
 
@@ -120,7 +118,7 @@ dns: dsn_tns
 
 - That's all! Lets fire up our python app and see if it makes a connection to the database.
 
-- In connection execute this application displayes all the users in the database.
+- In connection execute this application displays all the users in the database.
 
 ```
 <copy>python pythonapp.py</copy>

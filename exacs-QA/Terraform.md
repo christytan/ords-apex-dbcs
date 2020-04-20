@@ -6,6 +6,8 @@
 
 **Terraform** is a really handy tech tool that lets you build, change, and version infrastructure safely and efficiently. **Terraform** is quietly revolutionising DevOps by changing the way infrastructure is managed, and making it faster and more efficient to execute DevOps projects.
 
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+
 ## Objectives
 
 This lab shows how to use DevOps methodology to quickly develop and operate/maintain reliable infrastructure to deliver IT services.

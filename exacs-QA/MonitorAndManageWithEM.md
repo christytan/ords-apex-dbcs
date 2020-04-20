@@ -2,6 +2,8 @@
 
 This lab walks you through the steps to get started using Installing Enterprise Manager on ExaCS on Oracle Cloud Infrastructure. 
 
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+
 ## Requirements
 - To install Enterprise Manager Marketplace Image on a Private IP:
     - Followed Steps in the Networking Lab for setting up an app subnet in your ExaCS compartment

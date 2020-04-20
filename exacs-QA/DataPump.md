@@ -6,6 +6,7 @@ Data Pump Import lets you import data from Data Pump files. You can save your da
 
 This lab walks you through the steps to migrate a sample application schema using datapump import into your exadata cloud service database.
 
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
 ## Objectives
 
@@ -18,12 +19,12 @@ As a database admin or user,
 
 ## Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned Exadata cloud servicedatabase . Refer to [Lab 4](./ProvisionDatabase.md)
+- Access to a pre-provisioned Exadata cloud service database . Refer to [Lab 4](./ProvisionDatabase.md)
 - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](./ConfigureDevClient.md)
 
 ## Steps
 
-### STEP 1: Download sample data pump export file from Oracle Learning Library github repo
+### STEP 1: Download sample data pump export file from Oracle Learning Library github repository
 
 - Log into your bastion server
 

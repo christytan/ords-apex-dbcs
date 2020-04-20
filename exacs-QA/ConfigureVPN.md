@@ -4,14 +4,14 @@ Oracle's Exadata Cloud Service (ExaCS) is deployed in a private VCN in the Oracl
 
 This lab walks you through the steps to deploy a VPN server in OCI and create an SSL VPN connection between a client machine (your desktop) and the ExaCS infrastructure. Once configured, a single VPN server can be shared among multiple users.
 
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+
 ## Objectives
 As a network admin,
 
 - Configure a VPN server in OCI based on OpenVPN software
 - Configure your VPN client and connect to VPN Server
 - Launch SQL Developer on client and connect to an ExaCS database node
-
-
 
 ## Required Artifacts
 
@@ -30,8 +30,6 @@ The following illustration shows a network topology that can be used to provide 
 - Security lists have been setup such that tcp traffic into the private exadata subnet is allowed only through hosts in the public subnet. This can be further tightened by allowing traffic from specific hosts and ports. 
 
 - For detailed instructions on network setup for your ExaCS infrastructure, refer to [Lab 1](EXACS-Networking.md)
-
-
 
 
 ## Steps
