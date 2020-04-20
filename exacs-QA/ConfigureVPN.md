@@ -82,9 +82,10 @@ The following illustration shows a network topology that can be used to provide 
 
 ```
 <copy>
-    $ ssh opc@O<public_ipAddress_of_your_centOS_VM>
+ssh opc@O<public_ipAddress_of_your_centOS_VM>
 </copy>
 ```
+
 ```
 <copy>
 $ wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
@@ -97,7 +98,7 @@ $ wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
 
 ```
 <copy>
-$ sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
+sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
 </copy>
 ```
 
@@ -107,7 +108,7 @@ $ sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
 
 ```
 <copy>
-$ sudo passwd openvpn
+sudo passwd openvpn
 </copy>
 ```
 
