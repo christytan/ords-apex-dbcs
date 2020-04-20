@@ -35,7 +35,7 @@ $ ssh -i <private_key> opc@<public_IP_address>
 </copy>
 ```
 
-![bastion_login](./images/HOL-DataPump/bastion_login.png)
+![bastion_login](./images/HOL-DataPump/bastion_login.png " ")
 - Create a folder on your bastion server as your user_number 
 
 ```
@@ -56,9 +56,9 @@ cd user_XX
 </copy>
 ```
 
-![cd_dump_file](./images/HOL-DataPump/cd_dump_file.png)
+![cd_dump_file](./images/HOL-DataPump/cd_dump_file.png " ")
 
-![mkdir_user_dump](./images/HOL-DataPump/mkdir_user_dump.png)
+![mkdir_user_dump](./images/HOL-DataPump/mkdir_user_dump.png " ")
 
 - Use the following command in your folder on bastion server and download a sample schema dump from OLL
 
@@ -68,9 +68,9 @@ wget -O user_01.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 </copy>
 ```
 
-![wget_dump](./images/HOL-DataPump/wget_dump.png)
-![wget_dump_details](./images/HOL-DataPump/wget_dump_details.png)
-![dump_complete](./images/HOL-DataPump/dump_complete.png)
+![wget_dump](./images/HOL-DataPump/wget_dump.png " ")
+![wget_dump_details](./images/HOL-DataPump/wget_dump_details.png " ")
+![dump_complete](./images/HOL-DataPump/dump_complete.png " ")
 
 ### STEP 2: Setup environment to import data to Exadata Cloud Service Database 
 - Log into your database from your bastion server and execute following command
@@ -104,7 +104,7 @@ select directory_name, directory_path from all_directories order by 1
 </copy>
 ```
 
-![all_db_dir](./images/HOL-DataPump/all_db_dir.png)
+![all_db_dir](./images/HOL-DataPump/all_db_dir.png " ")
 **NOTE**: Make sure directory ***DATA_PUMP_DIR*** exists and copy the path
 
 - Secure copy the dump file to the oracle exadata cloud service server to the data pump directory that you have noted down before
@@ -174,7 +174,7 @@ IMPDP SYSTEM/<DB_PWD>@usrXX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUST
   * __directory__ - leave as shown above
   * __dumpfile__ -  The dump file that was secure copied to the directory location
 
-![impdp_log](./images/HOL-DataPump/impdp_log.png)
+![impdp_log](./images/HOL-DataPump/impdp_log.png " ")
 
 **For more information on Oracle Data Pump, please refer to the [documentation](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump.html#GUID-501A9908-BCC5-434C-8853-9A6096766B5A)**
 

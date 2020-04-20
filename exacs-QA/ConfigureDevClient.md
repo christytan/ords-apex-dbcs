@@ -6,7 +6,7 @@ The Oracle Cloud Infrastructure marketplace provides a pre-built image with nece
 The image is pre-configured with tools and language drivers so that you can configure a secure connection using Oracle SQL Developer, SQLCL and SQL*Plus.
 For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu and browse details on the 'Oracle Developer Cloud Image'
 
-![](./images/Infra/ConfigureDevEnv/marketplace.png)
+![](./images/Infra/ConfigureDevEnv/marketplace.png " ")
 
 
 
@@ -33,33 +33,33 @@ We start with deploying a pre-configured client machine instance from the OCI ma
 - Log into your cloud account using your tenant name, username and password
 - Click Compute Instance in the left side menu under services
 
-![](./images/Infra/ConfigureDevEnv/createcompute.png)
+![](./images/Infra/ConfigureDevEnv/createcompute.png " ")
 
 <br>
 
 - Click **Create Instance**
 
-![](./images/Infra/ConfigureDevEnv/createcomputebutton.png)
+![](./images/Infra/ConfigureDevEnv/createcomputebutton.png " ")
 
 <br>
 
 - Specify a name for compute instance
 
-![](./images/Infra/ConfigureDevEnv/computename.png)
+![](./images/Infra/ConfigureDevEnv/computename.png " ")
 
 <br>
 
 - Choose **Change Image** and a pop-up will appear. Select the **Oracle Images** tab and then select **Oracle Cloud Developer Image** from Oracle Image section
 
-![](./images/Infra/ConfigureDevEnv/changeimage.png)
-![](./images/Infra/ConfigureDevEnv/oracleimagestab.png)
-![](./images/Infra/ConfigureDevEnv/computeimage.png)
+![](./images/Infra/ConfigureDevEnv/changeimage.png " ")
+![](./images/Infra/ConfigureDevEnv/oracleimagestab.png " ")
+![](./images/Infra/ConfigureDevEnv/computeimage.png " ")
 
 <br>
 
 - Choose instance type as **Virtual Machine**
 
-![](./images/Infra/ConfigureDevEnv/computeinstancetype.png)
+![](./images/Infra/ConfigureDevEnv/computeinstancetype.png " ")
 
 <br>
 
@@ -68,19 +68,19 @@ We start with deploying a pre-configured client machine instance from the OCI ma
 **Note:**
 **- Please ensure you have picked the right compartments where network resources exist.**
 
-![](./images/Infra/ConfigureDevEnv/computenetwork.png)
+![](./images/Infra/ConfigureDevEnv/computenetwork.png " ")
 
 <br>
 
 Ensure that **Assign A Public IP Address** button is selected. You would need to ssh into this instance over public internet.
 
-![](./images/Infra/ConfigureDevEnv/public_ip.png)
+![](./images/Infra/ConfigureDevEnv/public_ip.png " ")
 
 <br>
 
 - Add SSH key, you can choose to import ssh public key or paste ssh public key
 
-![](./images/Infra/ConfigureDevEnv/computekey.png)
+![](./images/Infra/ConfigureDevEnv/computekey.png " ")
 
 - Within a few mins your developement instance will be available and a public IP address assigned (if it is provisioned in a public subnet)
 
@@ -89,7 +89,7 @@ Ensure that **Assign A Public IP Address** button is selected. You would need to
 
 - Once provisioned, you can click on the instance name to see details
 
-![](./images/Infra/ConfigureDevEnv/computeready.png)
+![](./images/Infra/ConfigureDevEnv/computeready.png " ")
 
 <br>
 <br>
@@ -151,7 +151,7 @@ You now have a secure ssh tunnel from your local laptop to your developement sys
 
 Start VNC Viewer on your laptop and configure a client connection using the settings as shown
 
-![](./images/Infra/ConfigureDevEnv/vncViewer.png)
+![](./images/Infra/ConfigureDevEnv/vncViewer.png " ")
 
 Note how the connect string for VNC Server is simply localhost:1  That is because the default port 5901 on your local machine is forwarded to 5901 on your OCI dev client over an ssh tunnel
 
@@ -164,7 +164,7 @@ If all goes well, you should now see a linux desktop in your VNC window.
 
 In your VNC session, invoke SQL Developer from the top left Applications menu as shown below
 
-![](./images/Infra/ConfigureDevEnv/sql-developer-vnc.png)
+![](./images/Infra/ConfigureDevEnv/sql-developer-vnc.png " ")
 
 **Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry**
 
@@ -192,7 +192,7 @@ Create an new connection in sql*developer and provide the following information,
 
 **Service name**: DatabaseUniqueName.HostDomainName (This can be found in the cloud console)
 
-![](./images/Infra/ConfigureDevEnv/sql-developer-conn.png)
+![](./images/Infra/ConfigureDevEnv/sql-developer-conn.png " ")
 
 - Test your connection and save. The **Status** bar will show **Success** if it is a successful connection!
 
@@ -206,7 +206,7 @@ You can either ssh into your EXACS VM to get the connection string (tnsnames.ora
 
 - Open Terminal from you Bastion Server
 
-![](./images/Infra/ConfigureDevEnv/sqlplus-open-terminal.png)
+![](./images/Infra/ConfigureDevEnv/sqlplus-open-terminal.png " ")
 
 - Type SQLPUS and enter the required details to connect it to your database
 
@@ -221,6 +221,6 @@ sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_
 
 - When succesfully connected, you should see similar to below image.
 
-![](./images/Infra/ConfigureDevEnv/sqlplus-conn.png)
+![](./images/Infra/ConfigureDevEnv/sqlplus-conn.png " ")
 
 Great Work! You successfully created a client machine and connected to your EXACS database instance using SQL Developer and SQLPLUS.
