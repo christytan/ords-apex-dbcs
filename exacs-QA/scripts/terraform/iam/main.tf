@@ -1,5 +1,4 @@
 #Create Group of users to the compartment for the activity
-/*
 module "create_group" {
   source = "./modules/idcs/group"
   providers = {
@@ -51,4 +50,3 @@ output "allUserOCIDs" {
   sensitive = false
   value     = module.create_users.allUserOCIDs
 }
-*/
