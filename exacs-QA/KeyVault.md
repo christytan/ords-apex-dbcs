@@ -1,15 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](./images/obe_tag.png)
-
-Sept 1, 2019
-</td>
-<td class="td-banner">
-# Centrally Manage Your TDE Keys with Oracle Key Vault
-</td></tr><table>
-
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
 ## Introduction
 
 Oracle Key Vault is the only key management solution for your TDE-enabled database estate that provides continuous encryption key availability and extreme scalability through clustering of up to 16 OKV nodes into one key management cluster, distributed across Oracle Cloud regions and on-premises data centers. It is optimized to support all deployment models of the Oracle Database, incl. Real Application Clusters (RAC), Oracle Data Guard, GoldenGate as well as engineered systems, on-prem and in the Oracle Cloud.

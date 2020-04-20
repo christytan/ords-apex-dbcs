@@ -1,22 +1,9 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](images/obe_tag.png)
-
-September 1, 2019
-</td>
-<td class="td-banner">
-# How to do stuff ...
-</td></tr><table>
-
-
-
-This Appendix covers some general help for Windows users and other occasional issues you may encounter while working with your ADB Dedicated service.
+## Introduction
+This Appendix covers some general help for Windows users and other occasional issues you may encounter while working with your Exadata Cloud Service.
 
 ## Objectives
 
 - Instructions for windows users and other items
-
-
 
 ## Topics
 
@@ -27,7 +14,7 @@ SSH keys are required to access a running OCI instance securely. You can use an 
 
 **For Linux/Mac :**
 ```
-ssh-keygen -t rsa -N "" -c "<Your comments>" -b 2048 -f </path/to/file/file_name> 
+<copy>ssh-keygen -t rsa -N "" -c "<Your comments>" -b 2048 -f </path/to/file/file_name></copy>
 ```
 
 ![](./images/appendix/linuxgeneratepublicprivatekey.png)
@@ -43,33 +30,33 @@ A third party SSH client needs to be installed for Windows versions prior to Win
 
 If you clicked on the link above you will be at the main putty donwload page.
 
-![](./images/appendix/downloadputty.png)
+![](./images/appendix/downloadputty.png " ")
 
 From the **Package Files** section select the 32 or 64 bit version depending of which version of Windows you are running. The download windows will pop up as shown above. Save the file on your local Windows system. Most likely to your *Downloads** directory unless you select a different location.
 
 Doubleclick on the downladed file (for example **putty-64bit-0.73-installer.msi**). This will launch the Putty installer.
 
-![](./images/appendix/puttyinstaller.png)
+![](./images/appendix/puttyinstaller.png " ")
 
 Click **Next** and leave the Destination Folder unchanged unless you have a good reason to select a different destination. Click **Next**
 
-![](./images/appendix/puttyinstall1.png)
+![](./images/appendix/puttyinstall1.png " ")
 
 On the next screen don't change any settings, and click **Install**
 
-![](./images/appendix/puttyinstall2.png)
+![](./images/appendix/puttyinstall2.png " ")
 
 - After installing Putty, from the Windows start menu, run the PuTTYgen utility
 
 
 
-![](./images/appendix/image35.png)
+![](./images/appendix/image35.png " ")
 
 
 
 - Click the Generate button and follow the instructions for generating random information.
 
-![](./images/appendix/image36.png)
+![](./images/appendix/image36.png " ")
 
 
 
@@ -77,13 +64,13 @@ On the next screen don't change any settings, and click **Install**
 
 **Note:** *A passphrase is not required but recommended for stronger security.*
 
-![](./images/deployimage/image37.png)
+![](./images/deployimage/image37.png " ")
 
 
 
 - The private key should have the .ppk extension. Name it whatever you want and store it in a folder that’s easily accessible.
 
-![](./images/appendix/image38.png)
+![](./images/appendix/image38.png " ")
 
 
 
@@ -91,13 +78,13 @@ On the next screen don't change any settings, and click **Install**
 
 - Left click on the Public key information and choose ‘Select All’ to select everything in the key field. Then left click again and copy the selected information to the clipboard.
 
-![](./images/appendix/image39.png)
+![](./images/appendix/image39.png " ")
 
 
 
 - Save your public key to a text file with Notepad. Open a plain text editor and paste the key information. Name and save the file with a .pub extension.
 
-![](./images/appendix/image40.png)
+![](./images/appendix/image40.png " ")
 
 
 
@@ -107,7 +94,7 @@ On the next screen don't change any settings, and click **Install**
 
 - Windows 10 users, **open Powershell terminal window** Either select the application from the Windows Start menu or type 'cmd' or 'powershell' from the Windows search menu.  
 
-![](./images/appendix/image400.png)
+![](./images/appendix/image400.png " ")
 
 
 
@@ -115,7 +102,7 @@ On the next screen don't change any settings, and click **Install**
 
     `PS C:\Users\myhome> ssh-keygen`
 
-![](./images/appendix/image402.png)
+![](./images/appendix/image402.png " ")
 
 
 
@@ -135,7 +122,7 @@ Typing *ssh-keygen* by itself creates a key named id_rsa under the default .ssh 
 
 
 
-![](./images/appendix/image403.png)
+![](./images/appendix/image403.png " ")
 
 
 ###  **Creating an ssh tunnel from your Windows system to your OCI dev client**
@@ -145,7 +132,7 @@ Typing *ssh-keygen* by itself creates a key named id_rsa under the default .ssh 
 Open powershell and run the following command replace values for ssh key file and instnace IP address as applicable to your deployment
 
 ```
-ssh -L 5901:localhost:5901 –i <path/to/private/key/id_rsa opc@<IP_address_of_dev_client>
+<copy>ssh -L 5901:localhost:5901 –i <path/to/private/key/id_rsa opc@<IP_address_of_dev_client></copy>
 ```
 
 **Older versions of Windows can use Putty to create an ssh tunnel as follows**
@@ -154,16 +141,16 @@ Start with creating an ssh session in Putty as usual,
 
 1. Specify public IP address of host. Provide a name and save your session
 
-![](./images/appendix/tunnel1.png)
+![](./images/appendix/tunnel1.png " ")
 
 
 2. Go to ssh --> Auth from the Category menu on the left. Provide your private .ppk key
 
-![](./images/appendix/tunnel2.png)
+![](./images/appendix/tunnel2.png " ")
 
  One final step before you hit Open. In ssh -->Tunnel, provide port forwarding information as shown below
 
- ![](./images/appendix/tunnel3.png)
+ ![](./images/appendix/tunnel3.png " ")
 
 3. Hit 'Open' and provide user name when prompted. 
 
@@ -189,12 +176,13 @@ IP Address: public IP address of the instance
 id_rsa: path to the SSH-2 RSA private key file
 
 For example:
+```
+<copy>cd .ssh
 
-$ cd .ssh
+ssh –i id_rsa opc@IP Address</copy>
+```
 
-$ ssh –i id_rsa opc@IP Address
-
-![](./images/appendix/ssh.jpeg)
+![](./images/appendix/ssh.jpeg " ")
 
 Once connected to the cloud developer image you will see the remote prompt **[opc@devclient ~]$**
 
@@ -205,11 +193,11 @@ To access a GUI via VNC, do the following:
 
 - Install a VNC viewer on your local computer. A common VNC Viewer can be downloaded from https://www.realvnc.com/en/connect/download/viewer/
 
-![](./images/appendix/vncviewerdownload.png)
+![](./images/appendix/vncviewerdownload.png " ")
 
 From the website select, select Windows and **Download VNC Viewer**. That will save a file to your downloads directory as in the previous step. Doublick on the file and it will launch the installer.
 
-![](./images/appendix/vncviewerinstall2.png)
+![](./images/appendix/vncviewerinstall2.png " ")
 
 Follow the installation steps in the installer to install VNC Viewer.
 
@@ -235,20 +223,20 @@ Now to connect to the image from your local Windows computer you need to execute
 
 If the connection request times out, try again
 
-![](./images/appendix/connection.jpeg)
+![](./images/appendix/connection.jpeg " ")
 
 - Start a VNC viewer on your local machine by selecting **VNC Viewer** from the **Start** menu, or typing **VNC Viewer** in the search bar.
 - Establish a VNC connection to: **localhost:1**
 
-![](./images/appendix/vnc.jpeg)
+![](./images/appendix/vnc.jpeg " ")
 
 If you get a warning message about the communication not being encrypted click continue
 
-![](./images/appendix/encrypted.jpeg)
+![](./images/appendix/encrypted.jpeg " ")
 
 - Enter the VNC password you set earlier, when you ran the **vncpasswd** command in the cloud developer image, in the password dialog and you will be connected!
 
-![](./images/appendix/devimage.jpeg)
+![](./images/appendix/devimage.jpeg " ")
 
 
 ###  **Finding private IP address of your Autonomous Exadata infrastructure (AEI)**
@@ -258,11 +246,11 @@ If you get a warning message about the communication not being encrypted click c
 
 Go to your Autonomous Database Console and open the details page of any ADB instance you have already provisioned on this AEI. Click the DB Connection button
 
-![](./images/appendix/dbconnection2.png)
+![](./images/appendix/dbconnection2.png " ")
 
 On the Database Connection popup, pick any TNS Connection String entry and expand it as shown below. Your exadata hostname is embedded in this TNS entry. Click 'copy' and paste the entire TNS string onto a notepad. You may then pick out the hostname when you need it in the steps below
 
-![](./images/appendix/hostname1.png)
+![](./images/appendix/hostname1.png " ")
 
 
 **Step 2: Deploy and ssh into your developer client VM**
@@ -278,7 +266,7 @@ On the Database Connection popup, pick any TNS Connection String entry and expan
 Here, we assume that you have deployed a VM in a public subnet and can ssh into it using its public IP.
 
 ````
-$ ssh -i <private-key-file> opc@<Public-IP-of-machine>
+<copy>ssh -i <private-key-file> opc@<Public-IP-of-machine></copy>
 
 ````
 
@@ -287,7 +275,10 @@ $ ssh -i <private-key-file> opc@<Public-IP-of-machine>
 Once you are ssh'd into a client VM, simply run nslookup on the scan-host name your picked out from step 1 above.
 
 ````
-$ nslookup host-xxxx-scan.exasubnet.ocivcn.oraclevcn.com
+<copy>nslookup host-xxxx-scan.exasubnet.ocivcn.oraclevcn.com</copy>
+````
+
+```
 Server:		169.XXX.169.254
 Address:	169.XXX.169.254#53
 
@@ -298,8 +289,8 @@ Name:	host-xxxx-scan.exasubnet.ocivcn.oraclevcn.com
 Address: 10.0.11.34
 Name:	host-xxxx-scan.exasubnet.ocivcn.oraclevcn.com
 Address: 10.0.11.35
+```
 
-````
 
 You now have the 3 SCAN IP's of your AEI cluster. Once your network admin adds the SCAN hostname and the 3 IPs to your corporate DNS Server, you may then be able to access your database instances via hostname using the downloaded wallet.
 
@@ -309,28 +300,14 @@ You now have the 3 SCAN IP's of your AEI cluster. Once your network admin adds t
 
 Default RMAN parameters after auto/bkup\_api backup setup will look as follow.
 
-![](./images/backup&recovery/rman_parameters.png)
+![](./images/backup&recovery/rman_parameters.png " ")
 
 You can initiate disk backup manually using RMAN with default settings as default device type configured to Disk as shown below.
 
-![](./images/backup&recovery/_rman.png)
-
+![](./images/backup&recovery/_rman.png " ")
 
 
 **Recover using RMAN**
 
 If you backed up your Exadata database using bkup\_api, you can manually restore that database backup by using the Oracle Recovery Manager (RMAN) utility. 
 
-
-
-<table>
-<tr><td class="td-logo">
-
-[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-
-
-eg1.0
-</td>
-</tr>
-<table>
