@@ -1,13 +1,7 @@
-<table class="tbl-heading"><tr><td class="td-logo">[![](images/obe_tag.png)](README.md)
-
-Last Updated:<br>April 08, 2020
-</td>
-<td class="td-banner">
-# Working with Exadata Cloud Service On OCI
-</td></tr><table>
+## Introduction
 
 An Exadata Cloud Service DB system consists of a quarter rack, half rack, or full rack of compute nodes and
-storage servers, tied together by a high-speed, low-latency InfiniBand network and intelligent
+storage servers, tied together by a high-speed, low-latency Infiniband network and intelligent
 Exadata software. You can configure automatic backups, optimize for different workloads, and
 scale up the system to meet increased demands.
 
@@ -26,34 +20,34 @@ full control of the recovery process in the event of a database failure.
 
 These hands-on lab guides provide step-by-step directions to setting up and using your Exadata Cloud Service platform in the Oracle Cloud Infrastructure.
 
-Lab 1 - 5 deals with setting up the infrastructure and connectivity to EXACS.
+Lab 1 - 5 deals with setting up the infrastructure and connectivity to Exadata Cloud Service.
 
-Labs 6 & 7 are geared towards Monitoring and Managing your EXACS databases.
+Labs 6 & 7 are geared towards Monitoring and Managing your Exadata Cloud Service databases.
 
 Labs 8 - 11  are intended for Backup, Recovering and Migrating your databases.
 
 Lab 12 - 14 onwards demonstrate advanced lab guides for Database Vault, Key Management using Oracle Key Vault and advanced Data safe lab guides.
 
-Lab 15 - 19 are additonal labs which talks about connectig your EXACS databases with Python application, working with OCI CLI, build APEX applications and automating with Terraform.
+Lab 15 - 19 are additional labs which talks about connecting your Exadata Cloud Service databases with Python application, working with OCI CLI, build APEX applications and automating with Terraform.
 
 ## Goals for this workshop
 1. Prepare your private network in the Oracle Cloud Infrastructure
 2. Provision Exadata Cloud Service Infrastructure in a private OCI network
-3. Provision databases on your ExaCS Infrastructure
-4. Configure a development system for use with your EXACS database
+3. Provision databases on your Exadata Cloud Service Infrastructure
+4. Configure a development system for use with your Exadata Cloud Service database
 5. Setup VPN Connectivity to your Exadata Cloud Service Infrastructure
 6. Setup, Discover, Manage and Monitor database with Enterprise Manager
-7. Data Safe with EXACS
-8. Migrate an on-prem application schema usign Data Pump
+7. Data Safe with Exadata Cloud Service
+8. Migrate an on-prem application schema using Data Pump
 9. Real time migration of database using Oracle Goldengate Replication
 10. Backup and Recovery using Console, RMAN and API's
 11. Protect your data with Database Vault
 12. Key Management using Oracle Key Vault
 13. Data Safe Advanced lab
-14. Use OCI CLI commands to wrok with EXACS
+14. Use OCI CLI commands to work with Exadata Cloud Service
 15. Automation with Terraform*
-16. Build and deploy Python application stacks on EXACS
-17. Build APEX applicaiton on EXACS
+16. Build and deploy Python application stacks on Exadata Cloud Service
+17. Build APEX application on Exadata Cloud Service
 
 
 # Workshop Overview
@@ -63,7 +57,7 @@ Lab 15 - 19 are additonal labs which talks about connectig your EXACS databases 
 
 - Exadata Cloud Service is offered on Oracle Cloud Infrastructure, within OCI regions.
 - Exadata Cloud Service available in quarter Rack, Half Rack or full Rack configurations.
-- Exadata rack in OCI includes DB nodes, storage nodes and InfiniBand switches.
+- Exadata rack in OCI includes DB nodes, storage nodes and Infiniband switches.
 - The storage and compute nodes are connected via high bandwidth Infiniband network that
 provides RDMA based storage access to the compute nodes.
 - Exadata storage software runs on storage servers and offloads database SQL processing
@@ -85,40 +79,30 @@ interface for Exadata cloud service provisioning and interactive access to servi
 - Create admin and database user accounts
 - Layout a secure network for the database and application infrastructure
 
-**[Click here to run Lab 1](EXACS-Networking.md)**
-
 
 ## Lab 2: Provision Exadata Infrastructure in a private OCI network (demo only)
 
 **Key Objectives**:
 
 As a fleet administrator,
-- deploy an Exadata Cloud Service Infrastructure in a pre-provisioned private network in your OCI account
+- Deploy an Exadata Cloud Service Infrastructure in a pre-provisioned private network in your OCI account
 
 
-**[Click here to run Lab 2](ProvisionExaInfra.md)**
-
-
-## Lab 3: Provision databases on your ExaCS Infrastructure (demo only)
+## Lab 3: Provision databases on your Exadata Cloud Service Infrastructure (demo only)
 
 **Key Objectives**:
 
 As a database administrator,
-- Deploy database onto an  Exadata Cloud Service Infrastructure
-
-**[Click here to run Lab 3](ProvisionDatabase.md)**
+- Deploy database onto an Exadata Cloud Service Infrastructure
 
 
-## Lab 4: Configure a development system for use with your EXACS database
+## Lab 4: Configure a development system for use with your Exadata Cloud Service database
 
 **Key Objectives**:
 
 As a database user, DBA or application developer,
 
-- Configure a secure connection from your application instance to your dedicated autonomous database using Oracle SQL Developer, SQLCL and SQL*Plus.
-
-**[Click here to run Lab 4](ConfigureDevClient.md)**
-
+- Configure a secure connection from your application instance to your dedicated autonomous database using Oracle SQL Developer, SQLCLI and SQL*Plus.
 
 
 ## Lab 5: Setup VPN Connectivity to your Exadata Cloud Service Infrastructure
@@ -128,7 +112,7 @@ As a database user, DBA or application developer,
 - Configure a VPN server in OCI based on OpenVPN software
 - Configure your VPN client and connect to VPN Server
 
-**[Click here to run Lab 5](ConfigureVPN.md)**
+
 
 ## Lab 6: Setup, Discover, Manage and Monitor database with Enterprise Manager
 
@@ -137,13 +121,10 @@ As a database user, DBA or application developer,
 As a System admin,
 
 - Install and configure Enterprise Manager on OCI
-- Configure Enterpise Manager with Exadata Cloud Service
+- Configure Enterprise Manager with Exadata Cloud Service
 
 
-**[Click here to run Lab 6](MonitorAndManageWithEM.md)**
-
-
-## Lab 7: Data Safe with EXACS
+## Lab 7: Data Safe with Exadata Cloud Service
 
 **Key Objectives**:
 
@@ -152,28 +133,27 @@ As an database admin,
 - Assess user security in your target database by using the User Assessment feature in Oracle Data Safe.
 - Fix some of the security issues based on the assessment findings
 
-**[Click here to run Lab 7](DataSafe.md)**
 
-## Lab 8: Migrate an on-prem application schema usign Data Pump
+
+## Lab 8: Migrate an on-prem application schema using Data Pump
 
 **Key Objectives**:
 
 As an database admin,
 - Download a sample datapump export dump file
 - Upload .dmp file to OCI Object storage bucket
-- Setup cloud credentials and use data pump import to move data to your EXACS database
+- Setup cloud credentials and use data pump import to move data to your Exadata Cloud Service database
 
-**[Click here to run Lab 8](DataPump.md)**
+
 
 ## Lab 9: Real time migration of database using Oracle Goldengate Replication
 
 **Key Objectives**:
 
 As an database admin,
-- Replicate real time data from a simulated on-premise database to EXACS database.
+- Replicate real time data from a simulated on-premise database to Exadata Cloud Service database.
 
 
-**[Click here to run Lab 9](Goldengate.md)**
 
 ## Lab 10: Backup and Recovery using Console and API's
 
@@ -183,7 +163,6 @@ As an application developer, DBA user,
 
 - Configure Exadata Cloud Service database backup and Recovery using Console and API
 
-**[Click here to run Lab 10](Backup&Recovery.md)**
 
 
 ## Lab 11: Protect your data with Database Vault
@@ -192,10 +171,10 @@ As an application developer, DBA user,
 
 As a database security admin,
 
-- Enable database vault in your EXACS database
+- Enable database vault in your Exadata Cloud Service database
 - Implement separation of duties to protect sensitive data in your database
 
-**[Click here to run Lab 11](DBVault.md)**
+
 
 ## Lab 12: Key Management using Oracle Key Vault
 
@@ -203,9 +182,8 @@ As a database security admin,
 
 As a database admin or user,
 
-- To be written...
+- Manage your database encryption keys using Oracle Key Vault
 
-**[Click here to run Lab 12](KeyVault.md)**
 
 ## Lab 13: Data Safe Advanced lab
 
@@ -213,11 +191,11 @@ As a database admin or user,
 
 As a database security admin,
 
-- Configure Data Masking and Auditing and Reporting for EXACS database
+- Configure Data Masking and Auditing and Reporting for Exadata Cloud Service database
 
-**[Click here to run Lab 13](DataSafePE.md)**
 
-## Lab 14: Use OCI CLI commands to wrok with EXACS
+
+## Lab 14: Use OCI CLI commands to work with Exadata Cloud Service
 
 
 **Key Objectives**:
@@ -226,7 +204,7 @@ As a application developer, DBA or DevOps user,
 
 - Interact with Oracle Cloud Infrastructure resources using CLI
 
-**[Click here to run Lab 14](OCI-CLI.md)**
+
 
 ## Lab 15: Automation with Terraform*
 
@@ -235,38 +213,33 @@ As a application developer, DBA or DevOps user,
 
 As a database or System admin,
 
-- Deploy EXACS database using Terraform
+- Deploy Exadata Cloud Service database using Terraform
 
-**[Click here to run Lab 15](Terraform.md)**
 
-## Lab 16: Build and deploy Python application stacks on EXACS
+
+## Lab 16: Build and deploy Python application stacks on Exadata Cloud Service
 
 
 **Key Objectives**:
 
 As an application developer,
 
-- Learn how to deploy a python application and connect it your EXACS database instance
-
-**[Click here to run Lab 16](BuildPythonApps.md)**
+- Learn how to deploy a python application and connect it your Exadata Cloud Service database instance
 
 
-## Lab 17: - Build APEX applicaiton on EXACS
+## Lab 17: - Build APEX application on Exadata Cloud Service
 
 
 **Key Objectives**:
 
 As an application developer, DBA or DevOps user,
 
-- Access OCI autonomous database console and get URL for apex web cosole
+- Access OCI autonomous database console and get URL for apex web console
 - Create a VNC connection to developer client VM and access apex on your database
 - Setup additional apex developer users
 
-**[Click here to run Lab 17](APEX.md)**
+
 
 ## Appendix
 
-**Common tools for windows Users**
-**Finding the IP address of your Database*
-
-**[Click here to access appendix](Appendix.md)**
+**This covers some general help for Windows users and other occasional issues you may encounter while working with your Exadata Cloud Service.**

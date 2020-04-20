@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-April 15, 2020
-</td>
-<td class="td-banner">
-# Lab 17 - Part-3: Creating an APEX application using the data loaded into Oracle Database using Python SDK and REST Service.
-</td></tr><table>
-
 ## Introduction
 
 In this lab, you will be installing 2 python applications and load tweets into the Oracle Database.
@@ -67,21 +59,21 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - open the config file
 
-    ```
-    vi parameters.txt
-    ```
+```
+<copy>vi parameters.txt</copy>
+```
 
 - change all the parameters based on your environment.
 
-    ```
-    jsonfile=<file containing Tweets>.json
-    ip=<DB IP>
-    port=<DB Port>
-    service=<DB Service Name>
-    sys_password=<Database SYS Password>
-    ```
+```
+<copy>jsonfile=<file containing Tweets>.json
+ip=<DB IP>
+port=<DB Port>
+service=<DB Service Name>
+sys_password=<Database SYS Password></copy>
+```
 
-![](./images/apex/paramfile.png)
+![](./images/apex/paramfile.png " ")
 
 ### **STEP 3: Running the Python Applications**
 
@@ -89,13 +81,13 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - Run the First Python App.
 
-    ```
-    python jsonapp.py parameters.txt
-    ```
+```
+<copy>python jsonapp.py parameters.txt</copy>
+```
     
 - Run the script.
 
-![](./images/apex/pythonapprun.png)
+![](./images/apex/pythonapprun.png " ")
 
 - verify that the tweets are being stored in the database by connecting to the database, using SQL Developer, as the same user for which you created the REST Service.
 
@@ -103,19 +95,19 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
     - This app will directly store JSON objects in Oracle Database because JSON data is natively supported in Oracle Database.
 
-    ```
-    python3 pythonapp.py <REST Endpoint URL> <JSON File Name with extension>
-    ```
-![](./images/apex/pythonapp2run.png)
+```
+<copy>python3 pythonapp.py <REST Endpoint URL> <JSON File Name with extension></copy>
+```
+![](./images/apex/pythonapp2run.png " ")
 
 - verify that the tweets are being stored in the database by connecting to the database, using SQL Developer, as the same user for which you created the REST Service.
 
-![](./images/apex/pythonapp1verify.png)
-![](./images/apex/pythonapp2verify.png)
+![](./images/apex/pythonapp1verify.png " ")
+![](./images/apex/pythonapp2verify.png " ")
 
 - Alternatively, you can also verify using the REST GET request as shown below.
 
-![](./images/apex/REST_GET.png)
+![](./images/apex/REST_GET.png " ")
 
 - Now lets log in to APEX installed on Oracle Database and create an application.
 
@@ -124,74 +116,66 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Login to APEX using the following URL : 
    http://<ip_address>:\<ORDS Port\>/ords
    
-![](./images/apex/Picture400-4.png)
+![](./images/apex/Picture400-4.png " ")
 
 - Click on Create an Application tab and then click on New Application option.
 
-![](./images/apex/CreateApexApp-1.png)
-![](./images/apex/CreateApexApp-01.png)
+![](./images/apex/CreateApexApp-1.png " ")
+![](./images/apex/CreateApexApp-01.png " ")
 
 - Enter the name for the application and click on "Add Page" to add a page to the application.
 
-![](./images/apex/CreateApexApp-2.png)
+![](./images/apex/CreateApexApp-2.png " ")
 
 - Select Interactive Grid from the options.
 
-![](./images/apex/CreateApexApp-3.png)
+![](./images/apex/CreateApexApp-3.png " ")
 
 - Enter a name for the Page, Select the "Table or View" option and make sure the "Interactive Report" option is selected. Select the correct table (which is TWEETSDATA for us) by click on the button beside the field. Finally click on Add Page button.
    
-![](./images/apex/CreateApexApp-4.png)
+![](./images/apex/CreateApexApp-4.png " ")
 
 - Observe that a new page has been added to the application
 
-![](./images/apex/CreateApexApp-5.png)
+![](./images/apex/CreateApexApp-5.png " ")
 
 - Similarly, click on Add Page option again and select Interactive Grid option.
 
 - **This page will display the data extracted from the json objects, ingested into the Oracle database using the REST Service in the previous step, using a simple sql statement. Since JSON is natively supported in oracle database, it is really simple to deal with data in JSON format.**
 
-![](./images/apex/CreateApexApp-3.png)
+![](./images/apex/CreateApexApp-3.png " ")
 
 - Enter a name for the Page, Select the "SQL Query" option and make sure the "Interactive Report" option is selected. Enter the query mentioned below in the query box. Finally click on Add Page button.
 
-    ```
-    SELECT a.tweetjson.created_at, a.tweetjson.id, a.tweetjson.text, a.tweetjson.source, a.tweetjson.place, a.tweetjson.retweet_count, a.tweetjson.retweeted FROM   appschema.jsontweets a;
-    ```
+```
+<copy>SELECT a.tweetjson.created_at, a.tweetjson.id, a.tweetjson.text, a.tweetjson.source, a.tweetjson.place, a.tweetjson.retweet_count, a.tweetjson.retweeted FROM   appschema.jsontweets a;</copy>
+```
 
     **Note : As you can see in this query, since JSON is supported natively in Oracle Database, we can very easily extract data from JSON objects using the dot notation.**
 
     - Here in this example, we have extracted the attribute tweet id from the JSON object as follows :
     \<tablename\>\.\<column_consisting_json_object\>\.\<attribute_to_be_extracted\>
 
-![](./images/apex/CreateApexApp-9.png)
-![](./images/apex/CreateApexApp-10.png)
-![](./images/apex/CreateApexApp-11.png)
+![](./images/apex/CreateApexApp-9.png " ")
+![](./images/apex/CreateApexApp-10.png " ")
+![](./images/apex/CreateApexApp-11.png " ")
 
 - Select APPSCHEMA user under the settings section and click Create Application
 
-![](./images/apex/CreateApexApp-6.png)
+![](./images/apex/CreateApexApp-6.png " ")
 
 - Observe that the application has been created under the apps builder tab.
 
-![](./images/apex/CreateApexApp-7.png)
+![](./images/apex/CreateApexApp-7.png " ")
 
 - Click on the application and click on the Run Application button on top right corner of the screen.
 
 - On the Panel on left side, click on Report Page under Home to see the data we loaded into the database. This page loads the data up-loaded by the first python appliction
 
-![](./images/apex/CreateApexApp-13.png)
+![](./images/apex/CreateApexApp-13.png " ")
 
 - Similarly, click on the Extracted Data option on the same panel to see the data we loaded using the REST Service.
 
-![](./images/apex/CreateApexApp-12.png)
+![](./images/apex/CreateApexApp-12.png " ")
 
 - You have now successfully loaded data using an SDK, send GET and POST data requests using REST Service and also created a Web Application using APEX and ORDS on top of the loaded data.
-
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>

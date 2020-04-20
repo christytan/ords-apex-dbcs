@@ -1,0 +1,116 @@
+{
+    "workshop": {
+        "title": "Exadata Cloud Service: Self-Guided Hands-On Workshop",
+        "description": "This workshop will show you how to use Oracle Autonomous Transaction Processing in the Oracle Public Cloud.",
+        "labs": [
+            {
+                "number": "0",
+                "filename": "README.md",
+                "title": "Read Me First",
+                "description": "Exadata Cloud Service self-guided hands-on Workshop overview"
+            },
+            {
+                "number": "1",
+                "filename": "EXACS-Networking.md",
+                "title": "Lab 1: Preparing your private data center in the Oracle Cloud Infrastructure",
+                "description": "Preparing your private data center in the Oracle Cloud Infrastructure"
+            },
+            {
+                "number": "2",
+                "filename": "ProvisionExaInfra.md",
+                "title": "Lab 2: Provision Exadata Infrastructure in a private OCI network",
+                "description": "Provision Exadata Infrastructure in a private OCI network"
+            },
+            {
+                "number": "3",
+                "filename": "ProvisionDatabase.md",
+                "title": "Lab 3: Provision databases on your Exadata Cloud Service Infrastructure",
+                "description": "Provision databases on your Exadata Cloud Service Infrastructure"
+            },
+            {
+                "number": "4",
+                "filename": "ConfigureDevClient.md",
+                "title": "Lab 4: Configure a development system for use with your Exadata Cloud Service database",
+                "description": "Configure a development system for use with your Exadata Cloud Service database"
+            },
+            {
+                "number": "5",
+                "filename": "ConfigureVPN.md",
+                "title": "Lab 5: Setup VPN Connectivity to your Exadata Cloud Service Infrastructure",
+                "description": "Setup VPN Connectivity to your Exadata Cloud Service Infrastructure"
+            },
+            {
+                "number": "6",
+                "filename": "MonitorAndManageWithEM.md",
+                "title": "Lab 6: Setup, Discover, Manage and Monitor database with Enterprise Manager",
+                "description": "Setup, Discover, Manage and Monitor database with Enterprise Manager"
+            },
+            {
+                "number": "7",
+                "filename": "DataSafe.md",
+                "title": "Lab 7: Data Safe with EXACS",
+                "description": "Data Safe with EXACS"
+            },
+            {
+                "number": "8",
+                "filename": "DataPump.md",
+                "title": "Lab 8: Migrate an on-prem application schema usign Data Pump",
+                "description": "Migrate an on-prem application schema usign Data Pump"
+            },
+            {
+                "number": "9",
+                "filename": "Goldengate.md",
+                "title": "Lab 9: Real time migration of database using Oracle Goldengate Replication",
+                "description": "Real time migration of database using Oracle Goldengate Replication"
+            },
+            {
+                "number": "10",
+                "filename": "Backup&Recovery.md",
+                "title": "Lab 10: Backup and Recovery using Console and API’s",
+                "description": "Backup and Recovery using Console and API’s"
+            },
+            {
+                "number": "11",
+                "filename": "DBVault.md",
+                "title": "Lab 11: Protect your data with Database Vault",
+                "description": "Protect your data with Database Vault"
+            },
+            {
+                "number": "12",
+                "filename": "KeyVault.md",
+                "title": "Lab 12: Key Management using Oracle Key Vault",
+                "description": "Key Management using Oracle Key Vault"
+            },
+            {
+                "number": "13",
+                "filename": "DataSafePE.md",
+                "title": "Lab 13: Data Safe Advanced lab",
+                "description": "Data Safe Advanced lab"
+            },
+            {
+                "number": "14",
+                "filename": "OCI-CLI.md",
+                "title": "Lab 14: Use OCI CLI commands to wrok with EXACS",
+                "description": "Use OCI CLI commands to wrok with EXACS"
+            },
+            {
+                "number": "15",
+                "filename": "Terraform.md",
+                "title": "Lab 15: Automation with Terraform",
+                "description": "Automation with Terraform"
+            },
+            {
+                "number": "16",
+                "filename": "BuildPythonApps.md",
+                "title": "Lab 16: Build and deploy Python application stacks on EXACS",
+                "description": "Build and deploy Python application stacks on EXACS"
+            },
+            {
+                "number": "17",
+                "filename": "APEX.md",
+                "title": "Lab 17: Build APEX applicaiton on EXACS",
+                "description": "Build APEX applicaiton on EXACS"
+            }
+        ]
+    }
+}
