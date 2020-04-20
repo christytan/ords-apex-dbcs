@@ -78,7 +78,6 @@ interface for Exadata cloud service provisioning and interactive access to servi
 - Create admin and database user accounts
 - Layout a secure network for the database and application infrastructure
 
-**[Click here to run Lab 1](EXACS-Networking.md)**
 
 
 ## Lab 2: Provision Exadata Infrastructure in a private OCI network (demo only)
@@ -89,7 +88,6 @@ As a fleet administrator,
 - deploy an Exadata Cloud Service Infrastructure in a pre-provisioned private network in your OCI account
 
 
-**[Click here to run Lab 2](ProvisionExaInfra.md)**
 
 
 ## Lab 3: Provision databases on your ExaCS Infrastructure (demo only)
@@ -99,7 +97,7 @@ As a fleet administrator,
 As a database administrator,
 - Deploy database onto an  Exadata Cloud Service Infrastructure
 
-**[Click here to run Lab 3](ProvisionDatabase.md)**
+
 
 
 ## Lab 4: Configure a development system for use with your EXACS database
@@ -110,7 +108,7 @@ As a database user, DBA or application developer,
 
 - Configure a secure connection from your application instance to your dedicated autonomous database using Oracle SQL Developer, SQLCL and SQL*Plus.
 
-**[Click here to run Lab 4](ConfigureDevClient.md)**
+
 
 
 
@@ -121,7 +119,7 @@ As a database user, DBA or application developer,
 - Configure a VPN server in OCI based on OpenVPN software
 - Configure your VPN client and connect to VPN Server
 
-**[Click here to run Lab 5](ConfigureVPN.md)**
+
 
 ## Lab 6: Setup, Discover, Manage and Monitor database with Enterprise Manager
 
@@ -133,7 +131,6 @@ As a System admin,
 - Configure Enterpise Manager with Exadata Cloud Service
 
 
-**[Click here to run Lab 6](MonitorAndManageWithEM.md)**
 
 
 ## Lab 7: Data Safe with EXACS
@@ -145,7 +142,7 @@ As an database admin,
 - Assess user security in your target database by using the User Assessment feature in Oracle Data Safe.
 - Fix some of the security issues based on the assessment findings
 
-**[Click here to run Lab 7](DataSafe.md)**
+
 
 ## Lab 8: Migrate an on-prem application schema usign Data Pump
 
@@ -156,7 +153,7 @@ As an database admin,
 - Upload .dmp file to OCI Object storage bucket
 - Setup cloud credentials and use data pump import to move data to your EXACS database
 
-**[Click here to run Lab 8](DataPump.md)**
+
 
 ## Lab 9: Real time migration of database using Oracle Goldengate Replication
 
@@ -166,7 +163,6 @@ As an database admin,
 - Replicate real time data from a simulated on-premise database to EXACS database.
 
 
-**[Click here to run Lab 9](Goldengate.md)**
 
 ## Lab 10: Backup and Recovery using Console and API's
 
@@ -176,7 +172,6 @@ As an application developer, DBA user,
 
 - Configure Exadata Cloud Service database backup and Recovery using Console and API
 
-**[Click here to run Lab 10](Backup&Recovery.md)**
 
 
 ## Lab 11: Protect your data with Database Vault
@@ -188,7 +183,7 @@ As a database security admin,
 - Enable database vault in your EXACS database
 - Implement separation of duties to protect sensitive data in your database
 
-**[Click here to run Lab 11](DBVault.md)**
+
 
 ## Lab 12: Key Management using Oracle Key Vault
 
@@ -198,7 +193,7 @@ As a database admin or user,
 
 - To be written...
 
-**[Click here to run Lab 12](KeyVault.md)**
+
 
 ## Lab 13: Data Safe Advanced lab
 
@@ -208,9 +203,9 @@ As a database security admin,
 
 - Configure Data Masking and Auditing and Reporting for EXACS database
 
-**[Click here to run Lab 13](DataSafePE.md)**
 
-## Lab 14: Use OCI CLI commands to wrok with EXACS
+
+## Lab 14: Use OCI CLI commands to work with EXACS
 
 
 **Key Objectives**:
@@ -219,7 +214,7 @@ As a application developer, DBA or DevOps user,
 
 - Interact with Oracle Cloud Infrastructure resources using CLI
 
-**[Click here to run Lab 14](OCI-CLI.md)**
+
 
 ## Lab 15: Automation with Terraform*
 
@@ -230,7 +225,7 @@ As a database or System admin,
 
 - Deploy EXACS database using Terraform
 
-**[Click here to run Lab 15](Terraform.md)**
+
 
 ## Lab 16: Build and deploy Python application stacks on EXACS
 
@@ -240,8 +235,6 @@ As a database or System admin,
 As an application developer,
 
 - Learn how to deploy a python application and connect it your EXACS database instance
-
-**[Click here to run Lab 16](BuildPythonApps.md)**
 
 
 ## Lab 17: - Build APEX applicaiton on EXACS
@@ -255,11 +248,8 @@ As an application developer, DBA or DevOps user,
 - Create a VNC connection to developer client VM and access apex on your database
 - Setup additional apex developer users
 
-**[Click here to run Lab 17](APEX.md)**
+
 
 ## Appendix
 
-**Common tools for windows Users**
-**Finding the IP address of your Database*
-
-**[Click here to access appendix](Appendix.md)**
+**This covers some general help for Windows users and other occasional issues you may encounter while working with your Exadata Cloud Service.**
