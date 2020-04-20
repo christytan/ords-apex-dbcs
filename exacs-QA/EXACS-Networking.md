@@ -4,6 +4,8 @@ The Oracle Exadata Cloud Service runs on dedicated Exadata hardware in the Oracl
 
 When configuring the Exadata Cloud Service, you need to ensure that your cloud users have access to use and create only the appropriate kinds of cloud resources to perform their job duties. Additionally, you need to ensure that only authorized personnel and applications have network access to the databases created on Exadata Cloud DB System.
 
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+
 ## Objectives
 
 As an OCI account administrator with network resource privileges,

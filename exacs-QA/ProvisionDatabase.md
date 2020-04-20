@@ -2,6 +2,8 @@
 
 This lab walks you through the steps to get started using the Oracle Exadata Cloud Service Database on Oracle Exadata Cloud Service Infrastructure. In this lab, you will provision a new database.
 
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+
 ## Objectives
 
 As a database user, DBA or application developer,
