@@ -1,5 +1,3 @@
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
 ## Introduction
 
 The Oracle Exadata Cloud Service runs on dedicated Exadata hardware in the Oracle Cloud Infrastructure. That means you have your own personal slice of high performance hardware akin to running your own private cloud in a public cloud setting. In this hands-on lab we take a look at some best practices to setting up a secure networking in OCI.
@@ -38,19 +36,19 @@ The exadata may be hosted in its own separate compartment and subnet**
 **a. Lets create compartment called "exacs" which will store our database system as well as other applications** as shown below
 
 
-![create_compartment](./images/Infra/networking/create_compartment.png)
+![create_compartment](./images/Infra/networking/create_compartment.png " ")
 
 **b. Create an IAM group exacsUsers to group all the ExaCS users**
 
 
 
-![create_groups](./images/Infra/networking/create_groups.png)
+![create_groups](./images/Infra/networking/create_groups.png " ")
 
 
 
 **c. Now, add the following IAM policies on the exacs Compartment**
 
-![create_policy1](./images/Infra/networking/create_policy1.png)
+![create_policy1](./images/Infra/networking/create_policy1.png " ")
 
 
 
@@ -76,7 +74,7 @@ The only privilege exacsUsers need on the compartment is READ privilege on the E
 The final set of policy statements on the exacs compartment appear as shown below
 
 
-![create_policy3](./images/Infra/networking/create_policy3.png)
+![create_policy3](./images/Infra/networking/create_policy3.png " ")
 
 
 **Additional information on restricting access to database users**
@@ -105,10 +103,10 @@ You may alternatively choose to grant 'MANAGE all-resources' privileges to users
 
 **d. And finally, lets create an admin user**  <u>and add it to the respective group</u>. Similarly, any additional admins or database users will simply need to be added to their groups and they will automatically assume their group privileges
 
-![dbuser1](./images/Infra/networking/dbuser1.png)
+![dbuser1](./images/Infra/networking/dbuser1.png " ")
 
 
-![adduserTogroup1](./images/Infra/networking/adduserTogroup1.png)
+![adduserTogroup1](./images/Infra/networking/adduserTogroup1.png " ")
 
 You now have the users, groups and compartments setup to provision an Exadata Cloud Service database system
 
@@ -119,7 +117,7 @@ If you are new to cloud Networking concepts, please refer to the OCI network doc
 
 Your OCI network can be treated as your own private datacenter. While various network topologies are possible, we pick a topology here where the database infrastructure is in a private subnet while the application and VPN infrastructure is in a public subnet. For more practical scenarios, the VPN and application servers can be further separated into their own subnets and additional firewalls setup.
 
-![network-topology](./images/Infra/networking/network-topology.png)
+![network-topology](./images/Infra/networking/network-topology.png " ")
 
 We will also follow these security guidelines as we build the network,
 
@@ -137,9 +135,9 @@ For this workshop, four subnets are being created here - a private subnet for ex
 
 **1.** Create a VCN in <u>exacs Compartment</u> with CIDR block 10.0.0.0/16 which provide for 64k IP addresses for the various subnets within this network
 
-![create_VCN](./images/Infra/networking/create_VCN.png)
+![create_VCN](./images/Infra/networking/create_VCN.png " ")
 
-![create_VCN](./images/Infra/networking/create_VCN1.png)
+![create_VCN](./images/Infra/networking/create_VCN1.png " ")
 
 
 
@@ -153,8 +151,8 @@ Start deploying the above configuration in the following order,
 
 We can have any naming convention but in this case we are going to name the Security List as 'Security List for Private Subnet-ExaVCN'.
 
-![add_seclist](./images/Infra/networking/add_seclist3.png)
-![add_seclist](./images/Infra/networking/add_seclistEgress3.png)
+![add_seclist](./images/Infra/networking/add_seclist3.png " ")
+![add_seclist](./images/Infra/networking/add_seclistEgress3.png " ")
 
 
 **b. Create a security list for the Bastion subnet**
@@ -163,9 +161,9 @@ Next, add a security list for the Bastion subnet.
 We can name Security List as 'Default Security List for ExaVCN'.
 When deployed, your Bastion subnet's security list appears as follows,
 
-![add_seclist](./images/Infra/networking/add_seclist_bastion.png)
+![add_seclist](./images/Infra/networking/add_seclist_bastion.png " ")
 
-![add_seclist](./images/Infra/networking/add_seclist_bastion_egress.png)
+![add_seclist](./images/Infra/networking/add_seclist_bastion_egress.png " ")
 
 
 **3. Create a route table for the Application Subnet** to route traffic to the internet gateway.
@@ -173,7 +171,7 @@ When deployed, your Bastion subnet's security list appears as follows,
 Note the destination CIDR block 0.0.0.0/0 indicate ALL IP addresses globally i.e. to any host anywhere on the internet. You can limit it to specific hosts or network as desired. For eg, you can limit it to hosts in your corporate network or to a specific host such as your personal laptop as long as it has a unique public ip address. Select the Internet Gateway you created earlier from the dropdown and click on "Add Route Rules" to save the rules.
 
 
-![create_routeTable](./images/Infra/networking/create_routeTable.png)
+![create_routeTable](./images/Infra/networking/create_routeTable.png " ")
 
 
 **5. Provision Client, App, DatabaseBackup and Bastion Subnet**
@@ -197,11 +195,11 @@ Security List: Security List for Private Subnet-ExaVCN**
 CIDR: 10.0.1.0/24
 Security List: Default Security List for ExaVCN**
 
-![create_exaSubnet](./images/Infra/networking/create_exaSubnet.png)
+![create_exaSubnet](./images/Infra/networking/create_exaSubnet.png " ")
 
 Next, provision the application subnet with CIDR 10.0.1.0/24. Note that we associate our custom route table to this subnet for internet access.
 
-![create_exaSubnet](./images/Infra/networking/create_appSubnet.png)
+![create_exaSubnet](./images/Infra/networking/create_appSubnet.png " ")
 
 Your network setup is now complete.
 
