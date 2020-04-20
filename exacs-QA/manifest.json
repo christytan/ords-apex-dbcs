@@ -50,8 +50,8 @@
         "filename": "DataSafe.md"
       },
       {
-        "title": "Lab 8: Migrate an on-prem application schema usign Data Pump",
-        "description": "Migrate an on-prem application schema usign Data Pump",
+        "title": "Lab 8: Migrate an on-prem application schema using Data Pump",
+        "description": "Migrate an on-prem application schema using Data Pump",
         "publisheddate": "4/20/2020",
         "filename": "DataPump.md"
       },
@@ -86,8 +86,8 @@
         "filename": "DataSafePE.md"
       },
       {
-        "title": "Lab 14: Use OCI CLI commands to wrok with EXACS",
-        "description": "Use OCI CLI commands to wrok with EXACS",
+        "title": "Lab 14: Use OCI CLI commands to work with EXACS",
+        "description": "Use OCI CLI commands to work with EXACS",
         "publisheddate": "4/20/2020",
         "filename": "OCI-CLI.md"
       },
@@ -104,10 +104,28 @@
         "filename": "BuildPythonApps.md"
       },
       {
-        "title": "Lab 17: Build APEX applicaiton on EXACS",
-        "description": "Build APEX applicaiton on EXACS",
+        "title": "Lab 17: Introduction to Oracle APEX and ORDS",
+        "description": "Introduction to Oracle APEX and ORDS",
         "publisheddate": "4/20/2020",
         "filename": "APEX.md"
+      },
+      {
+        "title": "Lab 17-1: Install ORDS and APEX",
+        "description": "Install ORDS and APEX",
+        "publisheddate": "4/20/2020",
+        "filename": "SetupORDSandAPEXonDBCS.md"
+      },
+      {
+        "title": "Lab 17-2: Create a RestService on Database",
+        "description": "Create a RestService on Database",
+        "publisheddate": "4/20/2020",
+        "filename": "Create_a_RestService_on_DBCS.md"
+      },
+      {
+        "title": "Lab 17-3: Build APEX application on EXACS",
+        "description": "Build APEX application on EXACS",
+        "publisheddate": "4/20/2020",
+        "filename": "Creating_an_Apex_Application.md"
       }
     ]
 }

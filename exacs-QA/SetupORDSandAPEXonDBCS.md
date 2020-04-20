@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-April 15, 2020
-</td>
-<td class="td-banner">
-# Lab 17 - Part-1: Setup ORDS and APEX on Oracle Database Cloud Service (DBCS) on Exadata
-</td></tr><table>
-
 ## Introduction
 
 In this lab we will install ORDS (Oracle REST Data Services) and APEX (Application Express) on Oracle Database Cloud Service using Terraform.
@@ -19,8 +11,8 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 ## Required Artifacts
 
 - Access to your Oracle cloud account.
-- A pre-provisioned DB instance on Exadata. Refer [Lab 3](ProvisionDatabase.md) on how provision a DB instance on Exadata.
-- Access to a Dev. Client on OCI for the database instance. Refer [Lab 4](ConfigureDevClient.md) to know how to setup a Dev Client.
+- A pre-provisioned DB instance on Exadata. Refer **Lab 3** on how provision a DB instance on Exadata.
+- Access to a Dev. Client on OCI for the database instance. Refer **Lab 4** to know how to setup a Dev Client.
 - Have appropriate access to run Terraform on OCI.
 
 
@@ -36,7 +28,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### STEP 3: RUN the Terraform script
 
-- Open the env-vars.sh script and edit the Target DB details which will be the DBCS instance we created in Lab 100 or your own existing DBCS instance on which you want to install ORDS and APEX.
+- Open the env-vars.sh script and edit the Target DB details which will be the database instance we created in Lab 100 or your own existing database instance on which you want to install ORDS and APEX.
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_PathToYourSshPublicKey**: "keys/<"ssh key file name">.pub"
 
@@ -101,76 +93,76 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - The env-vars.sh file looks like this after you have entered all the information.
 
-![](./images/apex/Picture200-1.png)
+![](./images/apex/Picture200-1.png " ")
 
-![](./images/apex/Picture200-2.png)
+![](./images/apex/Picture200-2.png " ")
 
 - To run the script, navigate to the directory which contains the terraform scripts and there are 3 simple commands which you need to execute:
 
 - Source the env-vars.sh file and Initialize terraform
 
-    ```
-    $cd ORDS_APEX_Comp
-    $source env-vars.sh
-    $terraform init
-    ```
+```
+<copy>cd ORDS_APEX_Comp
+source env-vars.sh
+terraform init</copy>
+```
 
-![](./images/apex/Picture200-2-1.png)
+![](./images/apex/Picture200-2-1.png " ")
 
-- Create the terraform state file by executing the terrafor plan command.
+- Create the terraform state file by executing the terraform plan command.
 
-    ```
-    terraform plan
-    ```
+```
+<copy>terraform plan</copy>
+```
 
     If you chose to deploy ORDS on a separate compute instance, then you will see that the terraform plan shows that it is going to create the compute instance.
 
-![](./images/apex/Picture200-2-2.png)
-![](./images/apex/Picture200-2-3.png)
+![](./images/apex/Picture200-2-2.png " ")
+![](./images/apex/Picture200-2-3.png " ")
 
     if you chose to deploy ORDS on the DB Server itself, then your terraform plan will look like below.
 
-![](./images/apex/Picture200-2-3-1.png)
+![](./images/apex/Picture200-2-3-1.png " ")
 
 - Execute the plan using the apply command
 
-    ```
-    terraform apply
-    ```
+```
+<copy>terraform apply</copy>
+```
 
     when you execute the terraform apply command, terraform asks you to confirm. Enter yes and hit enter
 
     For ORDS on a separate compute : 
 
-![](./images/apex/Picture200-2-4.png)
-![](./images/apex/Picture200-2-5.png)
+![](./images/apex/Picture200-2-4.png " ")
+![](./images/apex/Picture200-2-5.png " ")
 
     For ORDS on the DB Server itself : 
 
-![](./images/apex/Picture200-2-4-1.png)
+![](./images/apex/Picture200-2-4-1.png " ")
 
     Then, you will see the execution running where terraform installs all the dependencies before installing ORDS and APEX.
 
-![](./images/apex/Picture200-2-5.png)
-![](./images/apex/Picture200-3.png)
+![](./images/apex/Picture200-2-5.png " ")
+![](./images/apex/Picture200-3.png " ")
 
 - If ORDS was installed on a separate VM. You will see the IP of the compute instance displayed on the screen, when  the script finishes execution.
 
     - Then, copy the IP address displayed, as you will need it to login to the APEX server through ORDS server.
 
-![](./images/apex/Picture202-1.png)
-![](./images/apex/Picture200-4.png)
+![](./images/apex/Picture202-1.png " ")
+![](./images/apex/Picture200-4.png " ")
 
 - If ORDS was installed on the DB Server itself, then you will need the IP address of the DB Server to connect to login to APEX through ORDS server.
 
-![](./images/apex/Picture202.png)
+![](./images/apex/Picture202.png " ")
 
 - The URL is as follows:
 http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
 
 - Enter the above URL in the browser and you will see APEX Login Page
 
-![](./images/apex/Picture203.png)
+![](./images/apex/Picture203.png " ")
 
     **Note : If the URL is unreachable then you might have to add a rule in the firewall of the server where ORDS is installed to allow incoming connections on the ORDS port.**
 
@@ -183,9 +175,9 @@ http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
 - Refer [Lab 4](ConfigureDevClient.md) to know how to connect to the database.
 
 
-### STEP 3: Creating Users and Tables for the users in DBCS
+### STEP 3: Creating Users and Tables for the users in database
 
-Now, since we have provisioned the DBCS instance and connected to it. We will now create a user and create a table to load data into it.
+Now, since we have provisioned the database instance and connected to it. We will now create a user and create a table to load data into it.
 
 - Execute the below SQL commands to create user (let's say APPSCHEMA). 
 
@@ -210,11 +202,3 @@ Now, since we have provisioned the DBCS instance and connected to it. We will no
 - Now, you have setup the schema and the tables.
 
 -   You are now ready to move to the next part of this lab.
-
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>
