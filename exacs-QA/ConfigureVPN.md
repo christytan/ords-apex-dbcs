@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](./images/obe_tag.png)
-
-</td>
-<td class="td-banner">
-# Lab 5: Configuring VPN connectivity into your private Exadata cloud service network
-</td></tr><table>
-
-
 ## Introduction
 
 Oracle's Exadata Cloud Service (ExaCS) is deployed in a private VCN in the Oracle Cloud Infrastructure with no public IP address assigned. Hence to gain connectivity to the databases, a best practice approach is to use a VPN connection. 
@@ -90,27 +82,36 @@ The following illustration shows a network topology that can be used to provide 
 
 -   ssh into centOS vm and download the openVPN rpm package
 
-    ```
+```
+<copy>
     $ ssh opc@O<public_ipAddress_of_your_centOS_VM>
-    ```
-    ```
-    $ wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
-    ```
-
+</copy>
+```
+```
+<copy>
+$ wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
+</copy>
+```
    
 ![](./images/Infra/configure_vpn/openvpn_configure.jpeg)
 
-
 -   Use the RPM command to install the package
 
-        $ sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
+```
+<copy>
+$ sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
+</copy>
+```
+
 ![](./images/Infra/configure_vpn/openvpn_url.jpeg)
 
 -   Change password of OpenVPN Server
 
-    ```
-    $ sudo passwd openvpn
-    ```
+```
+<copy>
+$ sudo passwd openvpn
+</copy>
+```
 
 -    From your local browser, access the admin UI console of your VPN Server (**https://<*public_ipAddress_of_your_centOS_VM*>:943/admin**), using the username as 'openvpn' and password for OpenVPN server.
  
@@ -193,10 +194,4 @@ Once you test, you should see "Success" in Status.
 
 ![](./images/Infra/configure_vpn/sqldev_success.png)
 
-<table>
-<tr><td class="td-logo">[![](./images/Infra/configure_vpn/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Congratulations! You just configured a secure VPN connection into your private Exadata Cloud Service infrastructure.
-</td>
-</tr>
-<table>
+Congratulations! You just configured a secure VPN connection into your private Exadata Cloud Service infrastructure.

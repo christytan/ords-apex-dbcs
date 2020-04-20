@@ -78,9 +78,11 @@ Configure database backups : do not check this</copy>
 
 #### For this lab, we will be using the following as password
 
-```<copy>
+```
+<copy>
 WE#lcome_1234
-</copy>```
+</copy>
+```
 
 - After filling all the required details, click on **Create Database**  
 ![](./images/Infra/provision_db/oci_create_db.png)

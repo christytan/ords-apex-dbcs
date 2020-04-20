@@ -103,20 +103,27 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 
 - SSH into your dev client compute instance
 
-    ```<copy>
-    $ ssh -i <private-key> opc@PublicIP
-    <copy>```
+```
+<copy>
+$ ssh -i <private-key> opc@PublicIP
+</copy>
+```
 
 - Change the password on the VNC server
-    
-    ```<copy>
-    $ vncpasswd
-    <copy>```
+   
+```
+<copy>
+$ vncpasswd
+</copy>
+```
 - Once you update the password, start your VNC server with the following command,
 
-    ```<copy>
-    $ vncserver -geometry 1280x1024
-    <copy>```
+ ```
+ <copy>
+ $ vncserver -geometry 1280x1024
+ </copy>
+ ```
+
 - Your development system may now be ready for accepting VNC connections
 
 **Mac Users**
@@ -124,9 +131,12 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 On your local laptop,
 
 - Open a terminal window and create an ssh tunnel using the following command,
-    ```<copy>
-    $ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devClient>
-    <copy>```
+
+````
+<copy>
+$ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devClient>
+</copy>
+```
 
 **Windows Users**
 - Windows 10 users can use powershell to connect using command above.
@@ -156,12 +166,13 @@ In your VNC session, invoke SQL Developer from the top left Applications menu as
 
 ![](./images/Infra/ConfigureDevEnv/sql-developer-vnc.png)
 
-
-
 **Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry**
-```<copy>
+
+```
+<copy>
 SetJavaHome /usr/java/jdk1.8.0_231-amd64
-<copy>```
+</copy>
+```
 
 Create an new connection in sql*developer and provide the following information,
 
@@ -199,9 +210,11 @@ You can either ssh into your EXACS VM to get the connection string (tnsnames.ora
 
 - Type SQLPUS and enter the required details to connect it to your database
 
-```<copy>
+```
+<copy>
 sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_VM_IP')(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = databaseUniqueName.hostDomainName)(FAILOVER_MODE=(TYPE = select)(METHOD = basic))))" as sysdba
-<copy>```
+</copy>
+```
 
 **Note: Please make sure to change you Database Password, Host, Service_Name in the above command.**
 
