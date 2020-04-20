@@ -1,16 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](./images/obe_tag.png)
-
-April 3, 2020
-</td> 
-<td class="td-banner">
-
-# Lab 10: Backup and Recovery in EXACS
-</td></tr><table>
-
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
-
 ## Introduction
 
 This lab walks you through the steps to get started with Backup and Recovery in EXACS database using Console, APIs and RMAN.
@@ -63,48 +50,48 @@ You can use Console to enable automatic incremental backups, create full backu
 
 Service gateway from console is shown below.
 
-![](./images/backup&recovery/Service_Gateway.png) 
+![](./images/backup&recovery/Service_Gateway.png " ") 
 
 Below diagram depicts an Oracle Cloud Infrastructure architecture with static route and service gateway.
 
-![](./images/backup&recovery/Exa_static_route_service_gateway.png)
+![](./images/backup&recovery/Exa_static_route_service_gateway.png " ")
 
 ### **Backup using Console**
 **To configure Automatic backup through console:**
 - Go to Oracle Cloud Infrastructure Home page and click on hamburger menu.
 
-![](./images/backup&recovery/oci_homepage.png)
+![](./images/backup&recovery/oci_homepage.png " ")
 - Click **Bare Metal, VM, and Exadata**.
 
-![](./images/backup&recovery/oci_hamburger_menu.png)
+![](./images/backup&recovery/oci_hamburger_menu.png " ")
 - Choose your **Compartment**. Here, DB System is in **EXACS** compartment. A list of DB Systems is displayed as below. 
 
-![](./images/backup&recovery/oci_db_display.png)
+![](./images/backup&recovery/oci_db_display.png " ")
 - Click on a DB system where the database is located. Here HubExaCS DB System is selected as below.
 
-![](./images/backup&recovery/oci_db_system_list.png)
+![](./images/backup&recovery/oci_db_system_list.png " ")
 - General Information about DB System is displayed as below.
 
-![](./images/backup&recovery/oci_db_system.png)
+![](./images/backup&recovery/oci_db_system.png " ")
 
 - A list of databases under the DB System is displayed as below,  when you scroll down.
 
-![](./images/backup&recovery/oci_db_list.png)
+![](./images/backup&recovery/oci_db_list.png " ")
 
 - Click on a database you want to enable or disable automatic backups. The details in General Information indicate if automatic backup is enabled.
 
-![](./images/backup&recovery/oci_db_list.png)
+![](./images/backup&recovery/oci_db_list.png " ")
 - Click **Configure Automatic Backups** as shown below.
     
-![](./images/backup&recovery/Configure_Auto_bkp.png)
+![](./images/backup&recovery/Configure_Auto_bkp.png " ")
 
 - In the **Configure Automatic Backups** dialog, check or uncheck **Enable Automatic Backup**, as applicable. If you are enabling automatic backups, you can choose one of the following preset retention periods: 7 days, 15 days, 30 days, 45 days, or 60 days. The default selection is 30 days. Click **Save Changes**.
 
-![](./images/backup&recovery/Bkp_retention_schedule.png)
+![](./images/backup&recovery/Bkp_retention_schedule.png " ")
 
 - You can view the backups from Backup Resources in DB page as below.
 
-![](./images/backup&recovery/Auto_bkp_list.png)
+![](./images/backup&recovery/Auto_bkp_list.png " ")
 
 
 
@@ -112,7 +99,7 @@ Below diagram depicts an Oracle Cloud Infrastructure architecture with static ro
 database.
 
 
-![](./images/backup&recovery/On_Demand_bkp_console.png)
+![](./images/backup&recovery/On_Demand_bkp_console.png " ")
 
 Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/exabackingup.htm), for more details on Managing Exadata DB Backups.
 
@@ -131,7 +118,7 @@ As mentioned above in Backup using Console,
 
 - Click **Restore** as shown below.
 
-![](./images/backup&recovery/Restore_frm_obj_storage.png)
+![](./images/backup&recovery/Restore_frm_obj_storage.png " ")
 
 - Select one of the following options and click **Restore Database** as shown below.
 
@@ -142,16 +129,16 @@ As mentioned above in Backup using Console,
 
     **Restore to System Change Number (SCN):** Restores the database using the SCN specified. This SCN must be valid.
 
-![](./images/backup&recovery/Restore_db_options.png)
+![](./images/backup&recovery/Restore_db_options.png " ")
 
 **Note: You can determine the SCN number to use either by accessing and querying your database host, or by accessing any online or archived logs.**
 - Confirm when prompted. DB status will show a status "Updating" as shown below. 
 
-![](./images/backup&recovery/Restore_Initiated.png)
+![](./images/backup&recovery/Restore_Initiated.png " ")
 
 - Once restore is complete, it will show a status "Available" as shown below.
 
-![](./images/backup&recovery/Restore_complete.png)
+![](./images/backup&recovery/Restore_complete.png " ")
 
 **Note: If the restore operation fails, the database will be in a \"Restore Failed\" state. You can try restoring again using a different restore option. However, Oracle recommends that you review the RMAN logs on the host and fix any issues before reattempting to restore the database. These log files can be found in subdirectories of the /var/opt/oracle/log directory.**
 
@@ -177,9 +164,9 @@ You can use Exadata\'s backup utility, bkup\_api, to back up databases on an Ex
     A username specified in the backup configuration file must have tenancy-level access to Object Storage. Administrator should create a policy as follow to limit access to only required resources in Object Storage for backing up and restoring the database.
 
 ```
-Allow group <group_name> to manage objects in compartment <compartment_name> where target.bucket.name = <bucket_name>
+<copy>Allow group <group_name> to manage objects in compartment <compartment_name> where target.bucket.name = <bucket_name>
 
-Allow group <group_name> to read buckets in compartment <compartment_name>
+Allow group <group_name> to read buckets in compartment <compartment_name></copy>
 ```
 Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/policygetstarted.htm) for more details on working with policies in OCI
 
@@ -190,11 +177,11 @@ Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/
  **Note: The following procedure must be performed on the first compute node in the Exadata DB system. To determine the first compute node, connect to any compute node as a grid user and execute the following command:**
  
 ```
-$ORACLE_HOME/bin/olsnodes --n
+<copy>$ORACLE_HOME/bin/olsnodes --n</copy>
 ```
 - SSH to the first compute node in the Exadata DB system.
 ```
-ssh -i <private_key_path> opc@<node_1_ip_address>
+<copy>ssh -i <private_key_path> opc@<node_1_ip_address></copy>
 ```
 
 - Log in as opc and sudo to the root user.
@@ -203,7 +190,7 @@ ssh -i <private_key_path> opc@<node_1_ip_address>
 This example uses the file name bkup.cfg. You can provide your own file name. The following file schedules a backup to both local storage and an existing bucket in Object Storage.
 
 ```
-cd /var/opt/oracle/ocde/assistants/bkup/
+<copy>cd /var/opt/oracle/ocde/assistants/bkup/
 vi bkup.cfg
 
 bkup_disk=yes
@@ -220,7 +207,7 @@ bkup_oss_recovery_window=7
 
 bkup_daily_time=06:45
 
-bkup_cron_entry=yes
+bkup_cron_entry=yes</copy>
 ```
 
 - We used file name bkup.cfg.hubex1.
@@ -229,28 +216,28 @@ bkup_cron_entry=yes
 
 -   After performing necessary changes, the end result file will look like below.
 
-![](./images/backup&recovery/bkp.cfg.png)
+![](./images/backup&recovery/bkp.cfg.png " ")
 
 - Change the permissions of the file as follow.
 
 ```
-chmod 600 bkup.cfg.hubexa1
+<copy>chmod 600 bkup.cfg.hubexa1</copy>
 ```
 
 - Use following command to install the backup configuration, configure the credentials, schedule the backup, and associate the configuration with a database name.
 
 ```
-./bkup -cfg bkup.cfg.hubexa1 -dbname=hubexa1
+<copy>./bkup -cfg bkup.cfg.hubexa1 -dbname=hubexa1</copy>
 ```
 
 - The backup is scheduled via cron and can be viewed at /etc/crontab as shown below.
 
-![](./images/backup&recovery/cron\_after\_api.png)
+![](./images/backup&recovery/cron\_after\_api.png " ")
 
 - When the scheduled backup runs, you can check its progress with following command.
 
 ```
-cd/var/opt/oracle/bkup_api/bkup_api bkup_status
+<copy>cd/var/opt/oracle/bkup_api/bkup_api bkup_status</copy>
 ```
 
 Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/exabackingupBKUPAPI.htm) for more details on managing Exadata DB Backups using bkup_api.
@@ -264,23 +251,23 @@ You can let the backup follow the current retention policy or you can create a l
 a)  To create a backup that follows the current retention policy, enter following command:
 
 ```
-/var/opt/oracle/bkup_api/bkup_api bkup_start--dbname=<database_name>
+<copy>/var/opt/oracle/bkup_api/bkup_api bkup_start--dbname=<database_name></copy>
 ```
 
 In this example, a backup following a current retention policy is created as shown below.
 
-![](./images/backup&recovery/on_demand_bkp_api.png)
+![](./images/backup&recovery/on_demand_bkp_api.png " ")
 
 b)  To create a long-term backup, enter following command:
 
 ```
-#/var/opt/oracle/bkup_api/bkup_api bkup_start --keep--dbname=<database_name>
+<copy>#/var/opt/oracle/bkup_api/bkup_api bkup_start --keep--dbname=<database_name></copy>
 ```
 
 c)  For other on demand backup options, enter following command.
 
 ```
-#/var/opt/oracle/bkup_api/bkup_api --help
+<copy>#/var/opt/oracle/bkup_api/bkup_api --help</copy>
 ```
 
 **To list backups**
@@ -288,19 +275,19 @@ c)  For other on demand backup options, enter following command.
 To list the available backups, execute following command as root user.
 
 ```
-# /var/opt/oracle/bkup_api/bkup_api recover_list--dbname=<database_name>
+<copy># /var/opt/oracle/bkup_api/bkup_api recover_list--dbname=<database_name></copy>
 ```
 
 In this example, backups are listed as shown below.
 
-![](./images/backup&recovery/list_backup.png)
+![](./images/backup&recovery/list_backup.png " ")
 
 **To delete a local backup**
 
 To delete a local backup, execute following command as root user.
 
 ```
-/var/opt/oracle/bkup_api/bkup_api bkup_delete--bkup=<backup-tag> --dbname=<database_name>
+<copy>/var/opt/oracle/bkup_api/bkup_api bkup_delete--bkup=<backup-tag> --dbname=<database_name></copy>
 ```
 
 where backup-tag is a tag of the backup you want to delete.
@@ -324,28 +311,28 @@ bkup_api utility provides following options for recovery.
 1.  Execute following command to get available recover options with syntax .Select an option as per your requirement.
 
 ```
-#/var/opt/oracle/bkup_api/bkup_api recover_start --dbname hubexa1
+<copy>#/var/opt/oracle/bkup_api/bkup_api recover_start --dbname hubexa1</copy>
 ```
 
-![](./images/backup&recovery/recover_options_api.png)
+![](./images/backup&recovery/recover_options_api.png " ")
 
 2.  Execute recovery command with required option as follow. Here, we recover DB to latest available backup with option.
 
 ```
-#/var/opt/oracle/bkup_api/bkup_api recover_start --latest--dbname hubexa1
+<copy>#/var/opt/oracle/bkup_api/bkup_api recover_start --latest--dbname hubexa1</copy>
 ```
 
-![](./images/backup&recovery/recover_using_api.png)
+![](./images/backup&recovery/recover_using_api.png " ")
 
 3.  Execute following command to check recovery status.
 
 ```
-#/var/opt/oracle/bkup_api/bkup_api recover_status--dbname=hubexa1
+<copy>#/var/opt/oracle/bkup_api/bkup_api recover_status--dbname=hubexa1</copy>
 ```
 
 In this example, recovery completion status is checked as shown below.
 
-![](./images/backup&recovery/recovery_status-api.png)
+![](./images/backup&recovery/recovery_status-api.png " ")
 
 
 
@@ -354,14 +341,3 @@ In this example, recovery completion status is checked as shown below.
 ### STEP 3: Backup and Recover using RMAN
 
 [Backup and Recover using RMAN # 306](./Appendix.md) 
-
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
-
-### All Done! You have successfully backup and recovered your EXACS Database instance.
-</td>
-</tr>
-<table>

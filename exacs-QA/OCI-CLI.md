@@ -1,12 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-April 08, 2020
-</td>
-<td class="td-banner">
-# Lab 14: Using CLI commands to work with your EXACS databases
-</td></tr><table>
- 
-
 ## Introduction
 
 The Oracle Cloud Infrastructure Command Line Interface, OCI CLI, is a small footprint tool that you can use on its own or with the Console to complete Oracle Cloud Infrastructure tasks. The CLI provides the same core functionality as the Console, plus additional commands. Some of these, such as the ability to run scripts, extend the Console's functionality.
@@ -49,8 +40,8 @@ Note:
 To ensure OCI-CLI installed is the correct version needed for ATP-Dedicated database, lets ssh into the dev client host and check version
     
 ```
-$ ssh -i <ssh_key> opc@<ip address>
-$ oci --version   
+<copy>ssh -i <ssh_key> opc@<ip address>
+oci --version</copy>
 ```
 **The OCI CLI version needs to be 2.5.14 or higher to support EXACS database commands. Refer to the [OCI CLI Github Change Log](https://github.com/oracle/oci-cli/blob/master/CHANGELOG.rst#2514---2019-06-11) for version details**
 
@@ -65,13 +56,13 @@ $ oci --version
 - To have the CLI walk you through the first-time setup process, step by step, use
 
 ```
-$ oci setup config
+<copy>oci setup config</copy>
 ```
 
 - The command prompts you for the information required for the config file and the API public/private keys. The setup dialog generates an API key pair and creates the config file.
 
 
-![](./images/oci-cli/OCI-Setup-Config.png)
+![](./images/oci-cli/OCI-Setup-Config.png " ")
 
 - Once you run the above command, you will need to enter the following:
 
@@ -79,11 +70,11 @@ $ oci setup config
     - **Enter a user OCID**: This is located on your user information page in OCI console
 
     To access your user OCID, click on the user icon on the top right of the page and click on your username from the menu
-    ![](./images/oci-cli/usericon.png)
+    ![](./images/oci-cli/usericon.png " ")
 
     Copy the user OCID from the user details page
 
-   ![](./images/oci-cli/userOCID.png)
+   ![](./images/oci-cli/userOCID.png " ")
 
     - **Enter a tenancy OCID**: Similarly, for the tenancy, click on the tenancy name in the top right menu as shown above and copy the tenancy OCID
     
@@ -105,31 +96,31 @@ Add public key to OCI User setting
 - Open Terminal and navigate to folder containing **oci_api_key_public.pem**. Copy the public key.
 
 ```
-cat oci_api_key_public.pem
+<copy>cat oci_api_key_public.pem</copy>
 ```
 
-![](./images/oci-cli/OCIPublicKeycleare.png)
+![](./images/oci-cli/OCIPublicKeycleare.png " ")
 
 - Login to your OCI console and click on Menu and select Identity and Users. Select a User and navigate to User Detail page.
 
 - Click on Add Public Key under API Keys section.
 
-![](./images/oci-cli/ResourcesMenu.png)
+![](./images/oci-cli/ResourcesMenu.png " ")
 
-![](./images/oci-cli/APIKeys.png)
+![](./images/oci-cli/APIKeys.png " ")
 
 - Paste Public key which you copied from CLI in Add Public Key
 
-![](./images/oci-cli/AddPublicKey.png)
+![](./images/oci-cli/AddPublicKey.png " ")
 
 
 Once you add the key run the below command to autocomplete OCI setup.
 
 ```
-oci setup autocomplete
+<copy>oci setup autocomplete</copy>
 ```
 
-![](./images/oci-cli/OCISetupAutocomplete.png)
+![](./images/oci-cli/OCISetupAutocomplete.png " ")
 
 ### **STEP 4: Interacting with Oracle EXACS Database**
 
@@ -142,14 +133,14 @@ Let's start with a simpler command to get details on your EXACS database instanc
 Open your command line interface and run the following command to get list of database in your EXACS
 
 ```
-oci db database list --db-system-id [OCID] --compartment-id [OCID]
+<copy>oci db database list --db-system-id [OCID] --compartment-id [OCID]</copy>
 ```
 
 #### NOTE: You can get your --db-system-id and --compartment-id in OCI console
 
 You are expected to see the following output in the command line interface
 
-![](./images/oci-cli/GetDBOutput1.png)
+![](./images/oci-cli/GetDBOutput1.png " ")
 
 
 #### Creating Database
@@ -157,12 +148,12 @@ You are expected to see the following output in the command line interface
 To create a database in your EXACS you will need some information handy such as the OCID of the Database System ID. Once you have that ready, open your command line interface and run the following command to create a Database in your EXACS infrastructure. 
 
 ```
-oci db database create --admin-password [text] --db-name [text] --db-system-id [OCID] --db-version [text] --pdb-name [text]
+<copy>oci db database create --admin-password [text] --db-name [text] --db-system-id [OCID] --db-version [text] --pdb-name [text]</copy>
 ```
 
 You are expected to see the following output in the command line interface
 
-![](./images/oci-cli/CreateDBOutput1.png)
+![](./images/oci-cli/CreateDBOutput1.png " ")
 
 
 
@@ -171,19 +162,9 @@ You are expected to see the following output in the command line interface
 Open your command line interface and run the following command to delete a Database in your EXACS infrastructure
 
 ```
-oci db database delete --database-id [OCID]
+<copy>oci db database delete --database-id [OCID]</copy>
 ```
 
 #### Bonus Step: In similar way you can try the follwing examples
 
 These are a handful of examples on using the OCI CLI REST interface to work with databases in your EXACS infrastructure. For a complete command reference,check out OCI documentation [here](https://docs.cloud.oracle.com/en-us/iaas/tools/oci-cli/2.9.9/oci_cli_docs/cmdref/db/database.html).
-
-
-
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-### Congratulations! You successfully configured Oracle Cloud Infrastructure Command Line Interface and interacted with OCI resources using CLI commands.
-</td>
-</tr>
-<table>
