@@ -1,8 +1,3 @@
-\| \| \|
-\| \-\-\- \| \-\-\- \|
-<table class="tbl-heading"><tbody><tr><td class="td-logo">\\!\\[\\]\\(\\./images/obe\\\_tag\\.png\\)<br>
-<br>
-Sept 1, 2019</td><td class="td-banner">\\\# Lab 15: Automation with Terraform\\\\\\*</td></tr></tbody></table>To \\\*\\\*log issues\\\*\\\*\\, click \\[here\\]\\(https://github\\.com/oracle/learning\\-library/issues/new\\) to go to the github oracle repository issue submission form\\.
 
 ## Introduction
 

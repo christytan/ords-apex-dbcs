@@ -25,20 +25,6 @@ variable "db_count" {
 variable "proj_id" {
 }
 
-variable "uidList" {
-  type    = list(string)
-  default = [
-  ]
-}
-
-variable "dbaOCIDs" {
-  type    = list(string)
-  default = [
-  ]
-}
-
-variable "adminOCIDs" {
-  type    = list(string)
-  default = [
-  ]
+variable "dbsysid" {
+  default = "ocid1.dbsystem.oc1.iad.abuwcljtgtdbuh4xs2r4gfedt6rhhazezin4v32am5lysqzxlvmnzrwrnqka"
 }
