@@ -205,4 +205,4 @@ Next, provision the application subnet with CIDR 10.0.1.0/24. Note that we assoc
 
 Your network setup is now complete.
 
-### Fantastic! You have now setup your OCI network and users and are ready to deploy EXACS infrastructure, databases and applications.
+Fantastic! You have now setup your OCI network and users and are ready to deploy EXACS infrastructure, databases and applications.

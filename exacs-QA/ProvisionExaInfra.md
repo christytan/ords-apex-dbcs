@@ -117,4 +117,4 @@ WE#lcome_1234
 
 ![](./images/Infra/provision_db/oci_db_provisioning.png)
 
-### All Done! You have successfully deployed your Exadata cloud service infrastructure and created a database instance and it should be ready for use.
+All Done! You have successfully deployed your Exadata cloud service infrastructure and created a database instance and it should be ready for use.

@@ -58,7 +58,7 @@ More information about Compartments and Policies is provided in the OCI Identity
 
 - Upon clicking a pop-up will appear that will enable you to create a database. Fill in the required details as shown below 
 
-```
+```<copy>
 Database name : usrXX
 Database version : 19c
 PDB Name : usr_XX
@@ -70,7 +70,7 @@ Select workload type:
     - On-Line Transaction Processing (Choose this)
     - Decision Support System (DSS)
 Configure database backups : do not check this
-```
+ <copy>```
 
 ![](./images/Infra/provision_db/oci_create_db_1.png)
 ![](./images/Infra/provision_db/oci_create_db_2.png)
@@ -79,9 +79,9 @@ Configure database backups : do not check this
 
 #### For this lab, we will be using the following as password
 
-```
+```<copy>
 WE#lcome_1234
-```
+<copy>```
 
 - After filling all the required details, click on **Create Database**  
 ![](./images/Infra/provision_db/oci_create_db.png)
@@ -91,4 +91,4 @@ WE#lcome_1234
 ![](./images/Infra/provision_db/oci_db_provisioning.png)
 
 
-### All Done! You have successfully deployed your first Exadata cloud service database instance and it should be ready for use in a few minutes.
+All Done! You have successfully deployed your first Exadata cloud service database instance and it should be ready for use in a few minutes.

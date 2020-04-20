@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-March 26, 2020
-</td>
-<td class="td-banner">
-# Lab 4: Configuring a development system for use with your EXACS database
-</td></tr><table>
-
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Introduction
@@ -111,19 +103,20 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 
 - SSH into your dev client compute instance
 
-    ```
+    ```<copy>
     $ ssh -i <private-key> opc@PublicIP
-    ```
+    <copy>```
 
 - Change the password on the VNC server
     
-    ```
+    ```<copy>
     $ vncpasswd
-    ```
+    <copy>```
 - Once you update the password, start your VNC server with the following command,
-    ```
+
+    ```<copy>
     $ vncserver -geometry 1280x1024
-    ```
+    <copy>```
 - Your development system may now be ready for accepting VNC connections
 
 **Mac Users**
@@ -131,9 +124,9 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 On your local laptop,
 
 - Open a terminal window and create an ssh tunnel using the following command,
-    ```
+    ```<copy>
     $ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devClient>
-    ```
+    <copy>```
 
 **Windows Users**
 - Windows 10 users can use powershell to connect using command above.
@@ -166,9 +159,9 @@ In your VNC session, invoke SQL Developer from the top left Applications menu as
 
 
 **Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry**
-````
+```<copy>
 SetJavaHome /usr/java/jdk1.8.0_231-amd64
-````
+<copy>```
 
 Create an new connection in sql*developer and provide the following information,
 
@@ -206,9 +199,9 @@ You can either ssh into your EXACS VM to get the connection string (tnsnames.ora
 
 - Type SQLPUS and enter the required details to connect it to your database
 
-```
+```<copy>
 sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_VM_IP')(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = databaseUniqueName.hostDomainName)(FAILOVER_MODE=(TYPE = select)(METHOD = basic))))" as sysdba
-```
+<copy>```
 
 **Note: Please make sure to change you Database Password, Host, Service_Name in the above command.**
 
@@ -217,10 +210,4 @@ sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_
 
 ![](./images/Infra/ConfigureDevEnv/sqlplus-conn.png)
 
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-### Great Work! You successfully created a client machine and connected to your EXACS database instance using SQL Developer and SQLPLUS.
-</td>
-</tr>
-<table>
+Great Work! You successfully created a client machine and connected to your EXACS database instance using SQL Developer and SQLPLUS.
