@@ -35,8 +35,6 @@ $ ssh -i <private_key> opc@<public_IP_address>
 </copy>
 ```
 
-```
-```
 ![bastion_login](./images/HOL-DataPump/bastion_login.png)
 - Create a folder on your bastion server as your user_number 
 
@@ -45,11 +43,13 @@ $ ssh -i <private_key> opc@<public_IP_address>
 cd dump_file
 </copy>
 ```
+
 ```
 <copy>
 mkdir user_XX
 </copy>
 ```
+
 ```
 <copy>
 cd user_XX
@@ -80,11 +80,13 @@ wget -O user_01.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 ssh -i </path/to/identity/file> oracle@<exadata_node>
 </copy>
 ```
+
 ```
 <copy>
 source userXX
 </copy>
 ```
+
 ```
 <copy>
 sqlplus system/<system_password>@usr_xx
@@ -118,8 +120,7 @@ scp -i </path/to/identity/file> user_xx.dmp oracle@<Exadata_private_ip>:</path/t
 
 ```
 <copy>
-ssh -i </path/to/identity/file> oracle@<exadata_node>
-</copy>
+ssh -i </path/to/identity/file> oracle@<exadata_node/copy>
 ```
 
 ```
@@ -135,6 +136,7 @@ source userXX
 cd $ORACLE_HOME/network/admin/user_xx/
 </copy>
 ```
+
 ```
 <copy>
 vi tnsnames.ora

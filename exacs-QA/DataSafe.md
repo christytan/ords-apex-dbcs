@@ -1,4 +1,4 @@
-<table class="tbl-heading">
+
 <tr>
 <td class="td-logo">
 
