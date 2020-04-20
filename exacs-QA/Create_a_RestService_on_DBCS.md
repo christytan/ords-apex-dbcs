@@ -72,7 +72,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 ![](./images/apex/workspace-8.png " ")
 ![](./images/apex/workspace-9.png " ")
 
-- Click on SQL Workshop  and then on RESTful Services tab and Click **Register schema with ORDS**  button, if prompted. 
+- Click on SQL Workshop  and then on RESTful Services tab and Click **Register schema with ORDS**  button, if prompted.
 
 ![](./images/apex/Picture300-8.png " ")
 ![](./images/apex/Picture300-9.png " ")
@@ -110,7 +110,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - On the Handler Definition page, select the **Method** as GET and select the **Source Type** as PL/SQL from the dropdown.
 
--  Now, enter the below PL/SQL procedure in the **source** section below the comments box. This procedure will create a get request to extract data from the table containing tweets. 
+-  Now, enter the below PL/SQL procedure in the **source** section below the comments box. This procedure will create a get request to extract data from the table containing tweets.
 
 ```
     <copy>begin

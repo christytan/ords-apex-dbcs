@@ -62,7 +62,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Load data into the database
 - Learn how to Load data into Oracle Database using the Application through the Python SDK.
 - Create an Application in APEX using the loaded data.
-- Demnstrate native JSON support in oracle database.
+- Demonstrate native JSON support in oracle database.
 
 
 **[Click here to run Lab 3](Creating_an_Apex_Application.md)**
