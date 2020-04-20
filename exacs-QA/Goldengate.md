@@ -1,11 +1,3 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
-July 30, 2019
-</td>
-<td class="td-banner">
-# Lab 9: Live migration to Exadata Cloud Service using Oracle Goldengate replication
-</td></tr><table>
-
 ## Introduction
 
 Data Replication is a essential part of your efforts and tasks when you are migrating your Oracle databases. While data migration can be acheived in many ways, there are fewer options when downtime tolerance is low and live, trickle feed replication may be the only way. Oracle Cloud Infrastructure Marketplace provides a goldengate microservice that can easily be setup for logical data replication between a variety of databases. In this hands-on lab we will setup goldengate to replicate data from a 12.2 Oracle database comparable to an 'on-prem' source database to an ExaCS  database in OCI. This approach is recommended while migrating most production or business critical application to ExaCS .
@@ -65,18 +57,18 @@ Hit Next, rest of the items are filled in or optional
 
 4. Enter the following network setting. This is essentially to select the network you wish to deploy your goldengate image.
 
-![](./images/goldengate/network1.png)
+![](./images/goldengate/network1.png " ")
 
 5. Hit next. For instance details pick and AD with sufficient compute capacity. **Note this deployment needs a minimum 2 ocpu instance**
 Make sure you check the 'public IP' checkbox. We will use this later to ssh into the instance and also connect to the Goldengate admin console.
 
-![](./images/goldengate/network2.png)
+![](./images/goldengate/network2.png " ")
 
 6. Next, under **Create OGG deployments** choose your source and target deployment names and versions. Note that you may select one or two deployments (the second deployment is optional). This simply tell Goldengate admin server the location of relevant artifacts for source and target DB connections. 
 
 In this lab we choose a single deployment called Databases. Therefore, under **Deployment 1 -Name**, type **Databases** and leave Deployment 2- Name blank. We keep this simple by using a single deployment folder for both source and target configurations.
 
-![](./images/goldengate/source-target.png)
+![](./images/goldengate/source-target.png " ")
 
 Next, paste your public key and hit **Create**
 
@@ -95,30 +87,35 @@ Lets also assume that the schema we wish to replicate with Goldengate is the 'ap
 
 - Connect as sys to your source DB and execute the following SQL commands
 
-````
+```
+<copy>
 create user C##user01 identified by WElcome_123#;
 grant connect, resource, dba to c##user01;
 alter database add supplemental log data;
 exec dbms_goldengate_auth.grant_admin_privilege('C##user01', container=>'all');
 alter system set ENABLE_GOLDENGATE_REPLICATION=true scope=both;
-````
+</copy>
+```
 
 Check if Goldengate replication is enabled,
 
-````
+```
+<copy>
 show parameter ENABLE_GOLDENGATE_REPLICATION;
-````
+</copy>
+```
 
 This should return **True**
 
 
-![](./images/goldengate/GGConfigSourceCDB.png)
+![](./images/goldengate/GGConfigSourceCDB.png " ")
 
 - Next, lets create a schema user to replicated called **appschema** in PDB1 and add a table to it. A sample 'Comments' table is provided here. You may add one or more table of your choice to the appschema.
 
 - Next, we need to create a golden gate user and grant the necessary previliges.
 
-````
+```
+<copy>
 alter session set container=pdb1;
 create user appschema identified by WElcome_123# default tablespace users;
 grant connect, resource, dba to appschema;
@@ -132,9 +129,10 @@ CREATE TABLE appschema.COMMENTS
 create user ggadmin identified by WElcome_123#;
 alter user ggadmin quota unlimited on users;
 alter user ggadmin quota unlimited on system;
-````
+</copy>
+```
 
-![](./images/goldengate/GGConfigSourcePDB.png)
+![](./images/goldengate/GGConfigSourcePDB.png " ")
 
 The source database is all set. Next, lets setup the target ExaCS instance.
 
@@ -146,20 +144,23 @@ The source database is all set. Next, lets setup the target ExaCS instance.
 
 - First, lets create the a common user in ExaCS and grant the necessary previliges.
 
-````
+```
+<copy>
 create user C##user01 identified by WElcome_123#;
 grant connect, resource, dba to c##user01;
 alter database add supplemental log data;
 exec dbms_goldengate_auth.grant_admin_privilege('C##user01', container=>'all');
 alter system set ENABLE_GOLDENGATE_REPLICATION=true scope=both;
 show parameter ENABLE_GOLDENGATE_REPLICATION;
-````
+</copy>
+```
 
-![](./images/goldengate/GGConfigExaCDB.png)
+![](./images/goldengate/GGConfigExaCDB.png " ")
 
 - Next we create an 'appschema' user similar to source and create the same set of tables as source. Also, we will create a goldengate admin user and grant necessary previliges to that user.
 
-````
+```
+<copy>
 create user appschema identified by WElcome_123# default tablespace data;
 grant connect, resource to appschema;
 alter user appschema quota unlimited on users;
@@ -173,9 +174,10 @@ CREATE TABLE appschema.COMMENTS
 alter user ggadmin identified by WElcome_123#;
 alter user ggadmin quota unlimited on users;
 alter user ggadmin quota unlimited on system;
-````
+</copy>
+```
 
-![](./images/goldengate/GGConfigExaPDB.png)
+![](./images/goldengate/GGConfigExaPDB.png " ")
 
 
 That is it! Your target DB is now ready.
@@ -186,7 +188,7 @@ By now, your Goldengate service instance must be deployed. On your OCI console n
 
 Click on your Goldengate compute instance to get to the details page that looks as follows.
 
-![](./images/goldengate/ggcompute.png)
+![](./images/goldengate/ggcompute.png " ")
 
 Note down the public IP address of your instance. We will use this IP to ssh into the virtual machine.
 
@@ -204,15 +206,17 @@ Remember the deployment name 'Databases' provided while provisioning the goldeng
 
 Edit the sqlnet.ora file and update the WALLET_LOCATION parameter to point to the wallet folder
 
-````
+```
+<copy>
 WALLET_LOCATION = (SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY="/u02/deployments/Databases/etc")))
-````
+</copy>
+```
 
 Next we edit the tnsnames.ora file and add entries for the source common user, source appschema user, target common user and the target appschema user. This single tnsnames.ora will serve to connect to both source and target.
 
 -Open tnsnames.ora in vi and add TNS connection entries as shown in the example screen shot below. Note the TNS entries for the source and target DB.
 
-![](./images/goldengate/tns-entries.png)
+![](./images/goldengate/tns-entries.png " ")
 
 Also, rarely you might have to replace the hostname of the source db with the IP address to circumvent the dns resolution issue. 
 
@@ -224,51 +228,54 @@ Also, rarely you might have to replace the hostname of the source db with the IP
 
 Open the file and save the credentials on a notepad.
 
-````
+```
+<copy>
 $ cd
 $ cat ogg-credentials.json
 {"username": "oggadmin", "credential": "E-kqQH8.MPA0u0.g"}
-````
+</copy>
+```
+
 - Next we logon to the Goldengate admin console using credentials above.
 
 **Open a browser and navigate to https://\<ip_address_of_goldengate_image\>**
 
 If you have browser issues or get Unicode warning, try using Firefox browser. Fixing browser issues is beyond scope for this lab guide.
 
-![](./images/goldengate/ogg1.png)
+![](./images/goldengate/ogg1.png " ")
 
 Once logged on, click on the port # for Admin server to get into configurtion mode as shown below
 
-![](./images/goldengate/ogg2.png)
+![](./images/goldengate/ogg2.png " ")
 
 
 If prompted, login with the same credentials one more time.
 
 From the top left hamberger menu, select 'Configuration' as shown below -
 
-![](./images/goldengate/ogg3.png)
+![](./images/goldengate/ogg3.png " ")
 
 **Here we configure connectivity to our source and target databases. We will setup 3 connections - The Source DB common user, Source DB appschema user and Target DB ggadmin user.**
 
 Use the screenshots below as a guide - 
 
-![](./images/goldengate/creds1.png)
+![](./images/goldengate/creds1.png " ")
 
 Add the first credential for C##user01 you created earlier in the lab in the source DB.
 
-![](./images/goldengate/AddCred2.png)
+![](./images/goldengate/AddCred2.png " ")
 
 **Note the userid format is userid@connectString. The connect string is how it knows which database to connect to. It looks for this connect string in /u02/deployments/Databases/etc/tnsnames.ora**
 
 
 Submit credentials and test connectivity as shown in screenshot below
 
-![](./images/goldengate/creds3.png)
+![](./images/goldengate/creds3.png " ")
 
 
 Similarly, add credentials for source DB appschema and target ExaCS ggadmin schema as shown below. Note the ggadmin user connects using the same tns enty as 'admin' user.
 
-![](./images/goldengate/AllCredGG.png)
+![](./images/goldengate/AllCredGG.png " ")
 
 Make sure you test connectivity for each credential.
 
@@ -276,44 +283,44 @@ Make sure you test connectivity for each credential.
 
 Lets start with appschema in source. Connect to the pdb on the source database and click + sign beside the Checkpoint section heading to add a checkpoint table as shown below
 
-![](./images/goldengate/chkpt1.png)
+![](./images/goldengate/chkpt1.png " ")
 
-![](./images/goldengate/chkpt2.png)
+![](./images/goldengate/chkpt2.png " ")
 
 We also specify the schema we want to replicate here. In the Transaction Information section below checkpoint, add the schema first by clicking the + sign and hit Submit.
 
-![](./images/goldengate/chkpt3.png)
+![](./images/goldengate/chkpt3.png " ")
 
 Now when you enter the schema name and search for it, it shows up as shown below with 3 tables. 2 checkpoint tables and one 'comments' table we created earlier.
 
-![](./images/goldengate/chkpt4.png)
+![](./images/goldengate/chkpt4.png " ")
 
 
 **Next, we add a checkpoint table to the target instance and also set the heartbeat**
 
 Connect to the target DB from the goldengate admin console just like you did for the source DB. Lets also add a checkpoint table here
-![](./images/goldengate/ChkpointtabExa.png)
+![](./images/goldengate/ChkpointtabExa.png " ")
 
-![](./images/goldengate/ChkpointtabExa2.png)
+![](./images/goldengate/ChkpointtabExa2.png " ")
 
 Scroll down and set the hearbeat for target. Use default configuration for the purpose of this lab
 
-![](./images/goldengate/heartbeat.png)
+![](./images/goldengate/heartbeat.png " ")
 
 **As a final step, we now create an 'extract' and a 'replicat' process to conduct the replication from source to target.**
 
 - Navigate back to the Goldengate Admin server dashboard so you can see both the extract and replicat setup as shown below
 
-![](./images/goldengate/extract1.png)
+![](./images/goldengate/extract1.png " ")
 
 
 Choose **Integrated Extract** on the next screen and hit next.
 
-![](./images/goldengate/ExtConf1.png)
+![](./images/goldengate/ExtConf1.png " ")
 
 Entries on the following screen may be entered as follows,
 
-![](./images/goldengate/ExtConf2.png)
+![](./images/goldengate/ExtConf2.png " ")
 
 Process Name: Provide any name of choice
 
@@ -325,20 +332,22 @@ Trail Name: Any 2 character name
 
 Scroll down and click in the text box Register to PDBs. PDB1 should popup as shown
 
-![](./images/goldengate/ExtConf3.png)
+![](./images/goldengate/ExtConf3.png " ")
 
 **If you do not see Register to PDBs text box, make sure you have picked the 'Common User' alias and provided all mandatory entries**
 
 Click next. As a final step, add this entry at the end of your parameter file as shown below.
 
-````
+```
+<copy>
 extract source
 useridalias cdb_source domain OracleGoldenGate
 exttrail et
 table pdb1.appschema.*;
-````
+</copy>
+```
 
-![](./images/goldengate/ParamExt.png)
+![](./images/goldengate/ParamExt.png " ")
 
 This tells Goldengate to capture changes on all tables in pdb1.appschema
 
@@ -346,11 +355,11 @@ Hit 'Create and Run'. If all goes well you should now see the extract running on
 
 Next, we configure a replicat on the target. On the same screen hit the **+** sign on the **Replicats** side to start configuring one.
 
-![](./images/goldengate/RepConf0.png)
+![](./images/goldengate/RepConf0.png " ")
 
 Pick **Integrated Replicat**
 
-![](./images/goldengate/RepConf1.png)
+![](./images/goldengate/RepConf1.png " ")
 
 Fill out the mandatory items in **Basic Information** on the next screen as follows. You may leave the rest at default values.
 
@@ -366,36 +375,38 @@ Fill out the mandatory items in **Basic Information** on the next screen as foll
 
 Hit **Next**
 
-![](./images/goldengate/RepConf2.png)
-![](./images/goldengate/RepConf3.png)
+![](./images/goldengate/RepConf2.png " ")
+![](./images/goldengate/RepConf3.png " ")
 
 On the last and final screen (phew!) edit the parameter file to REPLACE the line mapping the source and target schemas as show below. 
 **Note: Pls remove the original line MAP *.*, TARGET *.*;**
 
-![](./images/goldengate/paramRep.png)
+![](./images/goldengate/paramRep.png " ")
 
 Hit **Create and Run**. If all goes well, you should now see both extract and replicat processes running on the dashboard.
 
-![](./images/goldengate/GGExtRepSuccess.png)
+![](./images/goldengate/GGExtRepSuccess.png " ")
 
 Hurray! You have completed the replication setup. To test, simply connect to your source database, insert and commit some rows. Then check your corresponding target table and in a few secs you should see the data appear.
 
 A sample Insert script for the Comments table is provided below.
 
-````
+```
+<copy>
 Insert into appschema.COMMENTS (COMMENT_ID,ITEM_ID,COMMENT_BY,COMMENT_CREATE_DATE,COMMENT_TEXT) values (7,4,4,to_date('06-JUL-15','DD-MON-RR'),'Im putting an offer. Can you meet me at the apple store this evening?');
 commit;
-````
+</copy>
+```
 
-![](./images/goldengate/AddRowsSource.png)
+![](./images/goldengate/AddRowsSource.png " ")
 
-![](./images/goldengate/VerifyTarget.png)
+![](./images/goldengate/VerifyTarget.png " ")
 
 
 
 
 <table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
+<tr><td class="td-logo">[![](images/obe_tag.png " ")](#)</td>
 <td class="td-banner">
 ## Great Work - All Done!
 </td>
