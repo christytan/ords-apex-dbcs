@@ -1,0 +1,13 @@
+# Terraform files
+.terraform
+terraform.tfstate
+*.tfstate*
+#Nohup, log, and other temp files
+nohup.out*
+*.log
+t
+#VIM temp files
+.*.swp
+.*.swo
+#Generated/Publish web content
+web
