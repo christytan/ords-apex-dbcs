@@ -51,9 +51,9 @@ More information about Compartments and Policies is provided in the OCI Identity
 ![](./images/Infra/provision_db_infra/create_db_popup.png " ")
 ![](./images/Infra/provision_db_infra/create_db_system_details.png " ")
 
-- Select a compartment : <Your working compartment>
-- Name your DB system : <DB Display Name >
-- Select an availability domain : <AD1, AD2, AD3>
+- Select a compartment : < Your working compartment >
+- Name your DB system : < DB Display Name >
+- Select an availability domain : < AD1, AD2, AD3 >
 
 ![](./images/Infra/provision_db_infra/create_db_system_details.png " ")
 
@@ -66,12 +66,12 @@ More information about Compartments and Policies is provided in the OCI Identity
 - Configure the DB system
     - Total node count : 2
     - Oracle Database software edition : Enterprise Edition Extreme Performance
-    - CPU core count : <Min 4 upto 48>
+    - CPU core count : < Min 4 upto 48 >
 
 ![](./images/Infra/provision_db_infra/configure_db_system.png " ")
 - Configure storage (Optional)
-- Add public SSH keys : <Add public key>
-- Choose a license type : <License Included>
+- Add public SSH keys : < Add public key >
+- Choose a license type : < License Included >
 
 ![](./images/Infra/provision_db_infra/add_public_key.png " ")
 
