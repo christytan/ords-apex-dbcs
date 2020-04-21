@@ -10,12 +10,14 @@ In this lab you will practice the following:
 * [Add database](#add-database)
 * [Delete database](#delete-database)
 
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+
 ## Create database
 
 In this exercise, you will be creating a database using follow Terraform code template.
 <br>
 ```
-variable "xx_db_count" {
+<copy>variable "xx_db_count" {
   description = "Number of database created by xx"
 }
 resource "oci_database_database" "xx_database" {
@@ -40,7 +42,7 @@ resource "oci_database_database" "xx_database" {
 
   db_home_id = oci_database_db_home.tf_db_home.id
   source     = "NONE"
-}
+}</copy>
 ```
 
 ### Tasks:
@@ -55,11 +57,17 @@ When you create a branch in your project, you're creating an environment where y
 
 To create a branch on the repository that you clone/copy from previous lab, you run [`git checkout -b <my branch name>`](http://git-scm.com/docs/git-checkout) in the directory where you clone the repository.
 
-```
-myInitial=\<your initial>
-cd ~/ecs-workshop-osc
-git checkout -b ${myInitial}Branch1
-```
+````
+<copy>myInitial=\<your initial></copy>
+````
+
+````
+<copy>cd ~/ecs-workshop-osc</copy>
+````
+
+````
+<copy>git checkout -b ${myInitial}Branch1</copy>
+````
 The following is the sample output for the above commands:
 ```
 akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (master)
@@ -98,12 +106,17 @@ Once you've used the git add command to add all the files you want to the stagin
 
 The following are the commands that you need to execute:
 
-```
-myInitial=ak
-git add ${myInitial}DB.tf
-git commit -m "This is to commit changes made by ${myInitial}"
-```
+````
+<copy>myInitial=ak</copy>
+````
+
+````
+<copy>git add ${myInitial}DB.tf
+git commit -m "This is to commit changes made by ${myInitial}"</copy>
+````
+
 The following is the sample output for the above commands:
+
 ```
 akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (akBranch1)
 $ git add ${myInitial}DB.tf
@@ -122,10 +135,12 @@ Once you are happy with your work. You will **push** the commit in your branch
 
 To push changes onto a new branch on GitHub, you'll want to run `**[git push](http://git-scm.com/docs/git-push) origin yourbranchname**.`GitHub will automatically create the branch for you on the remote repository:
 
-```
-git push origin ${myInitial}Branch1
-```
+````
+<copy>git push origin ${myInitial}Branch1</copy>
+````
+
 The following is the sample output for the above commands:
+
 ```
 akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (akBranch1)
 $ git push origin ${myInitial}Branch1

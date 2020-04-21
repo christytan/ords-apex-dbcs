@@ -14,6 +14,8 @@ version control.
 
 We will use GitHub for the lab exercise.
 
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+
 ## Tasks:
 
 ### **Task 1. Sing up an account on GitHub**
@@ -48,8 +50,8 @@ the following, of course replacing the values with your user name and
 email from Task 1.
 
 ```
-git config --global user.name 'My_Name'
-git config --global user.email 'myEmail@wherever.com'
+<copy>git config --global user.name 'My_Name'
+git config --global user.email 'myEmail@wherever.com'</copy>
 ```
 
 ### **Task 5. Clone a repository**

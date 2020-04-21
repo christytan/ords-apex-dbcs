@@ -18,11 +18,11 @@ As an application developer,
 
 - An Oracle Cloud Infrastructure account
 
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](ConfigureDevClient.md)
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
 
-- A pre-provisioned Exadata Cloud Service database instance. Refer to [Lab 3](./ProvisionDatabase.md)
+- A pre-provisioned Exadata Cloud Service database instance. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
 
-- A network that provides connectivity between the application and database subnets. Refer to [Lab 1](./EXACS-Networking.md)
+- A network that provides connectivity between the application and database subnets. Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o)
 
 ## Steps
 
@@ -32,7 +32,7 @@ As an application developer,
 
 ![](./images/pythonApp/Compute1.png " ")
 
-- Select the right Oracle Developer Cloud image you created in [Lab4](ConfigureDevClient.md) 
+- Select the right Oracle Developer Cloud image you created in [Lab 4](?lab=lab-4-configure-development-system-for-use) 
 
 - Copy the public IP address of the instance in a note pad. 
 

@@ -182,6 +182,24 @@
         "filename": "Terraform.md"
       },
       {
+        "title": "Lab 15-1: Git for Beginner",
+        "description": "Git for Beginner",
+        "publisheddate": "4/20/2020",
+        "filename": "gitBeginner.md"
+      },      
+      {
+        "title": "Lab 15-2: Terraform for Beginner",
+        "description": "Terraform for Beginner",
+        "publisheddate": "4/20/2020",
+        "filename": "tfBeginner.md"
+      },
+      {
+        "title": "Lab 15-3: Terraform for database",
+        "description": "Terraform for database",
+        "publisheddate": "4/20/2020",
+        "filename": "tf4Db.md"
+      },
+      {
         "title": "Lab 16: Build and deploy Python application stacks on EXACS",
         "description": "Build and deploy Python application stacks on EXACS",
         "publisheddate": "4/20/2020",

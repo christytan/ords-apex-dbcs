@@ -22,6 +22,8 @@
 
 [Step 8:  Install and configure Terraform](#practice-8-install-and-configure-terraform)
 
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+
 ## Overview
 
 The lab exercises are designed to complement your training, reinforcing the key concepts by applying and demonstrating what you learned in the presentation sessions. This lab book is comprised of individual exercises. These exercises allow you to get first hands-on exposure working with the Oracle Cloud Infrastructure (OCI) using a demo environment, where you will see how key features and functionality are deployed in the software. Using what you learn in the presentations and individual exercises working with the software, you will collaborate as a team in developing and delivering practice presentations.
@@ -42,13 +44,13 @@ Generate SSH keys to be used later while launching an instance.
 
 1) Generate ssh-keys for your machine if you don’t have one. As long as an id_rsa and id_rsa.pub key pair is present they can be reused. By default these are stored in ~/.ssh
 ```   
-   # ssh-keygen
+<copy>ssh-keygen</copy>
 ```
 2) Make sure permissions are restricted, sometimes ssh will fail if private keys have permissive permissions.
 ``` 
-    # chmod 0700 ~/.ssh  
-    # chmod 0600 ~/.ssh/id_rsa  
-    # chmod 0644 ~/.ssh/id_rsa.pub
+<copy>chmod 0700 ~/.ssh  
+chmod 0600 ~/.ssh/id_rsa  
+chmod 0644 ~/.ssh/id_rsa.pub</copy>
 ```
 #### FOR WINDOWS
 
@@ -60,7 +62,10 @@ Generate SSH keys to be used later while launching an instance.
 
 3) Generate ssh-keys by running this command in Git Bash
 ```
-# ssh-keygen  
+<copy>ssh-keygen</copy>
+```
+
+```
 Generating public/private rsa key pair.  
 Enter file in which to save the key
 (/c/Users/username/.ssh/id\_rsa):  
@@ -208,7 +213,7 @@ Launching an instance is simple and intuitive with few options to select. Provis
 
 > **Note:** *For Oracle Linux VMs, the default username is **opc**
 ```
-# ssh -i /path/privateKey opc@PublicIP_Address
+<copy>ssh -i /path/privateKey opc@PublicIP_Address</copy>
 ```
 
 ## Step 6: Generate an API Signing Key
@@ -217,28 +222,28 @@ You can use the following [OpenSSL](http://www.openssl.org/) commands to generat
 
 1) Create a `.oci` directory to store the credentials:
 ```
-# mkdir ~/.oci
+<copy>mkdir ~/.oci</copy>
 ```
 2) Generate the private key with one of the following commands:
 
 ```
-# openssl genrsa -out ~/.oci/oci_api_key.pem 2048
+<copy>openssl genrsa -out ~/.oci/oci_api_key.pem 2048</copy>
 ```
 3) Ensure that only you can read the private key file:
 ```
-# chmod go-rwx ~/.oci/oci_api_key.pem
+<copy>chmod go-rwx ~/.oci/oci_api_key.pem</copy>
 ```
 4) Generate the public key:
 ```
-# openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem
+<copy>openssl rsa -pubout -in ~/.oci/oci_api_key.pem -out ~/.oci/oci_api_key_public.pem</copy>
 ```
 5) Copy the contents of the public key to your notepad (you'll need to paste the value into the Console later):
 ```
-# cat ~/.oci/oci_api_key_public.pem
+<copy>cat ~/.oci/oci_api_key_public.pem</copy>
 ```
 6) Get the key's fingerprint with the following OpenSSL command.
 ```
-# openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c
+<copy>openssl rsa -pubout -outform DER -in ~/.oci/oci_api_key.pem | openssl md5 -c</copy>
 ```
 
 **Note: Copy the output of the step 5 and 6 and save to your notepad**
@@ -263,45 +268,60 @@ Oracle Cloud Infrastructure (OCI) platform can run both Oracle workloads and clo
 
 1)  Connect to your Oracle Linux instance using SSH and run the following commands:
 ```
-# sudo yum install -y terraform terraform-provider-oci
+<copy>sudo yum install -y terraform terraform-provider-oci</copy>
 ```
 2) Clone the following git hub repository:
 ```
-# git clone https://github.com/flavio-santino/terraform-examples.git
+<copy>git clone https://github.com/flavio-santino/terraform-examples.git</copy>
 ```
 3) Inside of terraform-examples folder you will find two directories:
 ```
-# cd terraform-examples
-# ls -l
+<copy>cd terraform-examples
+ls -l
 oracle-linux-instance
-web-app-load-balancer
+web-app-load-balancer</copy>
 ```
 4) Enter on ``oracle-linux-instance`` folder and edit ``env_vars`` file:
 
 **Note: You will have to adjust the variables to use the data you collected before**
 ```
-# cd oracle-linux-instance
-# vi env_vars
+<copy>cd oracle-linux-instance</copy>
+```
 
+```
+<copy>vi env_vars</copy>
+```
+
+```
 ## Terraform Authentication Details
-export TF_VAR_tenancy_ocid="<tenancy-ocid>"
+<copy>export TF_VAR_tenancy_ocid="<tenancy-ocid>"
 export TF_VAR_user_ocid="<user-ocid>"
 export TF_VAR_compartment_ocid="<compartment-ocid>"
 export TF_VAR_fingerprint="<fingerprint>"
 export TF_VAR_private_key_path="<path-to-oci_api_key.pem>"
-export TF_VAR_region="us-ashburn-1"
-
+export TF_VAR_region="us-ashburn-1"</copy>
+```
+```
 ### Public/private keys used on the instance
-export TF_VAR_ssh_public_key=$(cat path-to-public-ssh-key)
-export TF_VAR_ssh_private_key=$(cat path-to-private-ssh-key)
+<copy>export TF_VAR_ssh_public_key=$(cat path-to-public-ssh-key)
+export TF_VAR_ssh_private_key=$(cat path-to-private-ssh-key)</copy>
 ```
 
 5) Save your ``env_vars`` file. Now you can deploy your infrastructure executing the following steps:
 ```
-# source env_vars
-# terraform init
-# terraform plan
-# terraform apply
+<copy>source env_vars</copy>
+```
+
+```
+<copy>terraform init</copy>
+```
+
+```
+<copy>terraform plan</copy>
+```
+
+```
+<copy>terraform apply</copy>
 ```
 
 
