@@ -1,269 +1,268 @@
-## Introduction
+<table class="tbl-heading">
+<tr>
+<td class="td-logo">![](images/obe_tag.png) March 25, 2020</td>
+<td class="td-banner">
 
-This lab walks you through the steps to get started using Installing Enterprise Manager on ExaCS on Oracle Cloud Infrastructure. 
+# Enterprise Manager Lab 6 - Install Enterprise Manager on ExaCS on Oracle Cloud</td>
+</tr>
+<table>
 
-To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
+## Objectives
+
+In this lab, you learn how to do the following:
+- Deploy an Enterprise Manager Marketplace Image.
+- Install Agents.
+- View monitoring details and set alerts.
 
 ## Requirements
-- To install Enterprise Manager Marketplace Image on a Private IP:
-    - Followed Steps in the Networking Lab for setting up an app subnet in your ExaCS compartment
-- Have a preexisting EM with Fast Connect to connect to OCI infrastructure
+
+To complete this lab, you will have needed to do the following:
+- Installed Enterprise Manager Marketplace Image on a Private IP:
+    - Followed Steps in the Networking Lab (EXACS-Networking.md) to setting up an app subnet in your ExaCS compartment
+- Created a preexisting EM with Fast Connect to connect to OCI infrastructure
 
 
-## Sections
-- Deploy Enterprise Manager Marketplace Image
-- Install Agents
-- View monitoring details/ set alerts
+## Challenge
+Follow these general steps:
+Deploy Enterprise Manager Marketplace Image:
+1. Setting Up Policies/Pre-reqs
+2. Provision Marketplace Image
+3. Logging into the Image
+Install Agents:
+4. Set up credentials in Enterprise Manager
+5. Add host target manually
+6. Add Non-Host targets using a guided process
+View monitoring details/ set alerts:
+7. View monitoring details/set alerts
+8. Creating Groups
+9. Viewing Monitoring Details
+
+## Step-by-Step Instructions
 
 
-### Deploying Enterprise Manager Marketplace Image
+### Part 1: Setting Up Policies/Pre-reqs
 
-#### Setting Up Policies/Pre-reqs
-- Reference the [documentation](https://blogs.oracle.com/oem/oracle-enterprise-manager-is-now-available-on-oracle-cloud-marketplace) here to help set up your EM markeplace Image.
-- The following steps must be done by an OCI ADMIN
-- We assume you already have a Exa compartment setup.
-- Navigate to that compartment and copy the compartment OCID
+- Reference the [documentation](https://blogs.oracle.com/oem/oracle-enterprise-manager-is-now-available-on-oracle-cloud-marketplace) here to help set up your EM Markeplace Image.
 
-![](./images/dbsec/lab6EM/NavigatetoCompartment.png " ")
+- Keep in mind that the following steps must be executed by an OCI ADMIN, and that it is assumed you already have an Exa compartment setup.
 
-![](./images/dbsec/lab6EM/CopyCompartmentOCID.png " ")
+- Navigate to the Exa compartment and copy the compartment OCID.
 
-- Now navigate to dynamic groups
+![](./images/dbsec/lab6EM/NavigatetoCompartment.png)
+![](./images/dbsec/lab6EM/CopyCompartmentOCID.png)
 
-![](./images/dbsec/lab6EM/NavigateOCIDynamic.png " ")
+- From the navigation menu, under 'Identity', click **Dynamic Groups**
 
-- Press Create Dynamic Group
-- Give a name such as OEM_GROUP, description and optionally a tag
+![](./images/dbsec/lab6EM/NavigateOCIDDynamic.png)
 
-![](./images/dbsec/lab6EM/CreateOCIDynamicGroup.png " ")
+- Click **Create Dynamic Group**
 
-- In the Matching Rules section, insert
+-  Name your dynamic group **OEM_GROUP**, give it a description, and optionally give it a tag.
 
-```
-<copy>
+![](./images/dbsec/lab6EM/CreateOCIDDynamicGroup.png)
+
+-----
+
+- In the **Matching Rules** section, type the following for 'Rule 1':
+``` 
 ALL {instance.compartment.id = '<compartment ocid>'}
-</copy>
 ```
+- Click **Create Dynamic Group**
 
-- Press Create Dynamic Group
-- Now, navigate to policies
+- Now, from the navigation menu, under 'Identity' click on **Policies**
 
-![](./images/dbsec/lab6EM/NavigateOCIPolicies.png " ")
+![](./images/dbsec/lab6EM/NavigateOCIPolicies.png)
 
-- Under List scope, change compartment to root
+- Under 'List Scope', select the 'root' compartment.
 
-![](./images/dbsec/lab6EM/ChangetorootCompartment.png " ")
+![](./images/dbsec/lab6EM/ChangetorootCompartment.png)
 
-- Press Create Policy
+- Click **Create Policy**
 
-- Enter a name such as OEM_Policy and an optional description
+- Name your policy **OEM_Policy** and provide an optional description.
 
-- Then give these two Policy Statements to the group you created earlier.
+- Under 'Policy Statements', provide the following:
 
 ```
-<copy>
 Allow dynamic-group OEM_Group to manage instancefamily in tenancy
-</copy>
 ```
 
 ```
-<copy>
 Allow dynamic-group OEM_Group to manage volumefamily in tenancy
-</copy>
 ```
+![](./images/dbsec/lab6EM/SetOCIPolicy.png)
 
-![](./images/dbsec/lab6EM/SetOCIPolicy.png " ")
+- Click **Create Policy**
 
-- Press Create Policy
+- Lastly, you need to ensure that these ports are open in your app subnet in your EXACS VPN (see the ExaCS Networking Lab for reference)
 
-- Lastly, you need to make sure these ports are open in your app subnet in your EXACS VPN (see networking lab for reference)
-
-| Destination Port Range |	Protocol Type |	Service |
+| Destination Port Range |  Protocol Type | Service |
 |------------------------|----------------|---------|
-|22    |  TCP |	SSH
-|7803 |	TCP |	Console
-|4903 |	TCP |	Agent Upload
-|7301 |	TCP |	JVMD
-|9851 |	TCP |	BIP
+|22    |  TCP | SSH
+|7803 | TCP |   Console
+|4903 | TCP |   Agent Upload
+|7301 | TCP |   JVMD
+|9851 | TCP |   BIP
 
-#### Provision Marketplace Image
-- Navigate to OCI Marketplace
 
-![](./images/dbsec/lab6EM/NavigateMarketplace.png " ")
 
-- Select the EM image in the OCI Marketplace.  From the OCI Main Menu, Click on the Marketplace.  Search for Oracle Enterprise Manager 13.3 and Click on it.
+### Part 2: Provision Marketplace Image
 
-![](./images/dbsec/lab6EM/FindEMinMarketplace.png " ")
+- From the navigation menu, under 'Solutions and Platform' click on **Marketplace**
 
-- Review the Oracle Enterprise Manager Overview and Click on Launch Instance
+![](./images/dbsec/lab6EM/NavigateMarketplace.png)
 
-![](./images/dbsec/lab6EM/ReviewandLaunch.png " ")
+- Search for 'Oracle Enterprise Manager 13.3' and click on it.
 
-- Select the Package Version, specify your OCI Compartment name, Accept the Terms of Use and click Launch Instance
+![](./images/dbsec/lab6EM/FindEMinMarketplace.png)
 
-![](./images/dbsec/lab6EM/SpecifyCompartment.png " ")
+- Review the 'Oracle Enterprise Manager Overview' and click on **Launch Instance**
 
-- Create an Instance Name, select your desired OCI Availability Domain and Select the desired shape for VM. You can choose any shape that is available.
+![](./images/dbsec/lab6EM/ReviewandLaunch.png)
 
-![](./images/dbsec/lab6EM/NameInstanceSelectAD.png " ")
+- Select the 'Package Version', select the 'Compartment', Accept the Terms of Use, and click **Launch Instance**
 
-![](./images/dbsec/lab6EM/SelectComputeShape.png " ")
+![](/images/dbsec/SpecifyCompartment.png)
 
-- Enter the ssh public key that will be used to access the instance as well as the Virtual Cloud Network and Subnet created in the prerequisites, and then Click on Create!  
+- Create an Instance Name, select your desired OCI Availability Domain, and select the desired shape for the VM. You can choose any shape that is available.
 
-![](./images/dbsec/lab6EM/EnterSSHkey.png " ")
+![](./images/dbsec/lab6EM/NameInstanceSelectAD.png)
 
-- Now you can go get some coffee while the Image is installed in your OCI compartment.  The installation takes approximately 30 minutes of elapsed time.
+![](./images/dbsec/lab6EM/SelectComputeShape.png)
 
-### Logging into Image
+- Add the SSH Public Key that will be used to access the instance as well as the Virtual Cloud Network and Subnet created in the prerequisites, and then click **Create**
 
-- Once your VM instance is running, Click on the instance and copy the Public IP Address.  SSH to the VM instance with the ssh key
+![](./images/dbsec/lab6EM/EnterSSHkey.png)
 
+- Now you can go get some coffee while the Image is installed in your OCI compartment. The installation should take approximately 30 minutes.
+
+
+### Part 3: Logging into the Image
+
+- Once your VM instance is running, click on the instance and copy the Public IP Address.  SSH into the VM instance with the ssh key
 ```
-<copy>
-</copy>
+$ ssh –i <private_ssh_key> opc@<public IP Address>
 ```
-
-```
-$ ssh –i <private_ssh_key> opc@<public_IP_Address>
-```
-
-![](./images/dbsec/lab6EM/CopyVMIP.png " ")
+![](./images/dbsec/lab6EM/CopyVMIP.png)
 
 - Check the status of your newly-installed EM:  In the command line console, change your user to ‘oracle’ user by executing below in the command and then Check the OMS status using the EMCLI.
 
 ```
-<copy>
+
 $ sudo su – oracle
-</copy>
+
 ```
 
 ```
-<copy>
+
 $ /u01/app/em13c/middleware/bin/emctl status oms
-</copy>
-```
 
+```
 - Sample status:
-
-![](./images/dbsec/lab6EM/CheckStatus.png " ")
-
-- Change default passwords.  The password for the EM user sysman, EM Agent, Registration Password, Fusion Middleware user weblogic and Node Manager can be accessed in the below file (access as root user)"
+![](./images/dbsec/lab6EM/CheckStatus.png)
+- Change the default passwords. The password for the EM user sysman, EM Agent, Registration Password, Fusion Middleware user weblogic and Node Manager can be accessed in the below file (access as root user)
 
 ```
-<copy>
 $ cat /root/.oem/.sysman.pwd 
-</copy>
 ```
 
 ```
-<copy>
 $ /u01/app/em13c/middleware/bin/emctl config oms -change_repos_pwd
-</copy>
 ```
+- Log into your new EM Console
 
-- Log in to your new EM Console
+``` 
+https://<public ip address>:7803/em
+``` 
 
+- If you need help trouble shooting before going to Part 4, the installation log is located at:
 ```
-<copy>
-https://<public_ip_address>:7803/em
-</copy>
-```
-
-#### Troubleshooting
-
-Installation log is located at:
-
-```
-<copy>
 cat /var/log/emcg_setup.log
-</copy>
 ```
+You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-on-oci-installation-phase-2-installing-the-em-app-into-your-oci-compartment) for more help.
 
-Refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-on-oci-installation-phase-2-installing-the-em-app-into-your-oci-compartment) for more help.
+### Part 4: Set up credentials in Enterprise Manager
+- Log in to your Enterprise Manager
+
+- Go to **Setup**, and from there, go to **Security**, and then click on **Named Credentials**
+
+![](./images/dbsec/lab6EM/SelectNamedCredentials.png)
+
+- Click **Create**
+![](./images/dbsec/lab6EM/PressCreateCredentials.png)
+
+- Fill in the required fields (write **Credential Name** as 'ExaCS1'), Select **SSH Credentials** under **Credential Type**. Select **Global** as the **Scope**.
+- Upload SSH Private Key. UserName should be opc
+
+![](./images/dbsec/lab6EM/CreateCredential.png)
 
 
+### Part 5: Add host target manually
 
-### Install Agents
-#### Set up Credentials in Enterprise Manager
-- Login in to your Enterprise Manager
+- Select **Add Target manually**. Click on **Setup**, then select **Add Target**, and then **Add Targets Manually**
 
-- Go to Setup->Security-Named Credentials
+![](./images/dbsec/lab6EM/SelectAddTargets.png)
 
-![](./images/dbsec/lab6EM/SelectNamedCredentials.png " ")
+- Select **Install Agent on Host**
 
-- Click Create
+- Click **Add**
 
-![](./images/dbsec/lab6EM/PressCreateCredentials.png " ")
+- If you have added the ExaCS node IP addresses to your host file, enter the Full Qualified Domain Name you have entered there, otherwise enter the IP address
 
-- Fill in Fields (Give Credential Name 'ExaCS1), Select SSH Credentials under Credential Type. Select Scope: Global
-
-- Upload SSH Private Key. UserName should be Oracle
-
-![](./images/dbsec/lab6EM/CreateCredential.png " ")
-
-#### Add host target manually
-
-- Select Add Target manually Setup->Add Target->Add Targets Manually
-
-![](./images/dbsec/lab6EM/SelectAddTargets.png " ")
-
-- Select 'Install Agent on Host'
-
-- Press 'Add'
-
-- If you have added the ExaCS node IP addresses to your hosts file, enter the Full Qualified Domain Name you have entered there, else enter the IP address
-
-- Platform: Select Linux x86-64
+- For the Platform, select **Linux x86-64**
 
 - Add as many nodes as are on the ExaCS (Quarter Rack=2, Half=4, etc....)
 
-![](./images/dbsec/lab6EM/EnterHostName.png " ")
+![](./images/dbsec/lab6EM/EnterHostName.png)
 
-- Click Next, then select your Named Credential and specify a install directory that your user in your named credentials file has access to.
+- Click **Next**, then select your 'Named Credential' and specify an install directory that the user in your named credentials file has access to.
 
-![](./images/dbsec/lab6EM/InstallationDetails.png " ")
+![](./images/dbsec/lab6EM/InstallationDetails.png)
 
-- Click Next, after reviewing click 'Deploy Agent'
+- Click **Next**, and after reviewing, click **Deploy Agent**
 
-- If there are errors, you need to make changes to your credentials or installation details page.
+- If you run into deployment issues, make sure port 3872 is open on DB port, and edit hosts file on both target and EM host to include each other with a full qualified unique name. 
 
-#### Add Non-Host Targets Using Guided Process
-- Setup-> Add Target-> Configure Auto Discovery
 
-![](./images/dbsec/lab6EM/SelectConfigureAutoDisc.png " ")
 
-- Select 'Targets on Hosts'
+### Part 6: Add Non-Host Targets using a guided process
 
-![](./images/dbsec/lab6EM/SetupDiscovery.png " ")
+- Click on **Setup**, then **Add Target**, and then **Configure Auto Discovery**
 
-- Select your hosts, one at a time!
+![](./images/dbsec/lab6EM/SelectConfigureAutoDisc.png)
 
-- Select 'Discover Now'
+- Select **Targets on Hosts**
 
-- Select your next host and repeat until all nodes have been discovered
+![](./images/dbsec/lab6EM/SetupDiscovery.png)
 
-- Now navigate to Auto Discovery Results
+- Select your hosts, one at a time
 
-![](./images/dbsec/lab6EM/NavigateAutoDiscRes.png " ")
+- Select **Discover Now**
 
-- You now need to find the 'cluster' Target and promote it. 
+- Select your next host and repeat the process until all nodes have been discovered
 
-- No Cluster database target can be added/promoted/discovered until the 'cluster' target has been added or discovered. Promote it with its default inputs.
+- Now navigate to 'Auto Discovery Results'
 
-- After promoting the 'cluster' Target, promote the 'Cluster Database' target by finding one and clicking promote. Promoting the Cluster DB should also promote its DB instances.
+![](./images/dbsec/lab6EM/NavigateAutoDiscRes.png)
 
-![](./images/dbsec/lab6EM/FindClusterDB.png " ")
+- You now need to find the 'Cluster' Target and promote it. 
 
-- You will need to enter a monitoring user credentials (like dbnsmp) for this cluster. You can also enter the SYSDBA Password.
+![](./images/dbsec/lab6EM/SelectClusterTarget.png)
 
-![](./images/dbsec/lab6EM/PromoteClusterDatabase.png " ")
+- No Cluster database target can be added/promoted/discovered until the 'Cluster' target has been added or discovered. Promote it with its default inputs.
 
-- If you have selected multiple databases and you want to set the same monitoring properties for all of them, select Specify Common Monitoring Credentials. Enter the monitoring credentials, monitoring password, and role. Click Apply.
+- After promoting the 'Cluster' Target, promote the 'Cluster Database' target by finding one and clicking **Promote**. Promoting the Cluster DB should also promote its DB instances.
 
-- Click Next, review and then click Save.
+![](./images/dbsec/lab6EM/FindClusterDB.png)
 
-![](./images/dbsec/lab6EM/PromoteClusterReview.png " ")
+- You will need to enter Monitoring User Credentials (like dbnsmp) for this cluster. You can also enter the SYSDBA Password.
+
+![](PromoteClusterDatabase.png)
+
+- If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
+- Click **Next**, review the page, and then click **Save**
+.
+![](./images/dbsec/lab6EM/PromoteClusterReview.png)
 
 - For additional documentation see: https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664
 
@@ -271,71 +270,81 @@ Refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-on-oci-insta
 
 - You can review by going to the 'Configure Auto Discovery' to see what has been promoted.
 
-### View monitoring details/set alerts
+- If there are errors, you need to make changes to your credentials or Installation Details Page.
 
-- To View an Enterprise Summary of all targets, go to Enterprise->Summary
 
-![](./images/dbsec/lab6EM/NavigateEnterpriseSummary.png " ")
+### Part 7: View monitoring details/set alerts
 
-- In Enterprise Summary you can view status of all targets, with the availability to sort by different types.
+- To View an Enterprise Summary of all targets, go to 'Enterprise' and click on **Summary**
 
-![](./images/dbsec/lab6EM/EnterpriseSummary.png " ")
+![](./images/dbsec/lab6EM/NavigateEnterpriseSummary.png)
 
-#### Creating Groups
+- In 'Enterprise Summary' you can view the status of all the targets, with the availability to sort by different types.
 
-- To create a group, navigate to Targets->Groups. We will create a dynamic group that includes everything on our Exadata Cloud Service hosts.
+![](./images/dbsec/lab6EM/EnterpriseSummary.png)
 
-![](./images/dbsec/lab6EM/NavigateGroups.png " ")
 
-- Once there press Create Group->Dynamic Group
+### Part 8: Creating Groups
+- To create a group, navigate to 'Targets', and click on **Groups**. We will create a dynamic group that includes everything on our Exadata Cloud Service hosts.
 
-![](./images/dbsec/lab6EM/CreateGroupButton.png " ")
+![](./images/dbsec/lab6EM/NavigateGroups.png)
+
+- Once there, click **Create** and then **Dynamic Group**
+
+![](./images/dbsec/lab6EM/CreateGroupButton.png)
 
 - Give it a name (for example ExaCS)
 
-- Press Define Membership Criteria
+- Click **Define Membership Criteria**
 
-![](./images/dbsec/lab6EM/CreateDynamic.png " ")
+![](./images/dbsec/lab6EM/CreateDynamic.png)
 
 - Press the search bar next to 'On Host'
 
-![](./images/dbsec/lab6EM/DefineMemberCriteria.png " ")
+![](DefineMemberCriteria.png)
 
-- Move over all nodes(hosts) from the ExaCS and Press Select
+- Move over all nodes(hosts) from the ExaCS and press **Select**
 
-![](./images/dbsec/lab6EM/AddHosts.png " ")
+![](./images/dbsec/lab6EM/AddHosts.png)
 
-- Then Press OK and OK again to create Group.
+- Then press **OK** and **OK** again to create 'Group'.
 
-#### Viewing Monitoring Details
 
-- To navigate to targets, press the targets dropdown, then select All Targets
+### Part 9: Viewing Monitoring Details
+- To navigate to 'Targets', press the **Targets** dropdown, then select **All Targets**
 
-![](./images/dbsec/lab6EM/NavigateTargets.png " ")
+![](NavigateTargets.png)
 
-- Search for a target you want to see metrics for, for example a db name
+- In 'Search Target Name', add a target you want to see the metrics for, for example a db name
 
-![](./images/dbsec/lab6EM/SearchTarget.png " ")
+![](./images/dbsec/lab6EM/SearchTarget.png)
 
-- Select the Cluster Database
+- Select **Cluster Database**
 
-- This will take you to main target page for the database. TO see all metrics, select Cluster Database-> Monitoring ->All Metrics
+- This will take you to main target page for the database. To see all metrics, select **Cluster Database**, and then **Monitoring**, and choose **All Metrics**
 
-![](./images/dbsec/lab6EM/NavigateAllMetrics.png " ")
+![](./images/dbsec/lab6EM/NavigateAllMetrics.png)
 
-- Here you can search and explore for different metrics on the cluster level.
+- Here you can search and explore different metrics on the cluster level.
 
-![](./images/dbsec/lab6EM/SearchMetrics.png " ")
+![](./images/dbsec/lab6EM/SearchMetrics.png)
 
-- To view metrics navigate to Members->Dashboard
+- To view metrics, navigate to 'Members', and select **Dashboard**
 
-![](./images/dbsec/lab6EM/NavigateMemDash.png " ")
+![](./images/dbsec/lab6EM/NavigateMemDash.png)
 
 - Here you can select a database instance and repeat the process to see metrics for an instance.
 
-![](./images/dbsec/lab6EM/SeeMembers.png " ")
-
-All Done! Your EM is successfully installed and setup to monitor activity ! 
+![](./images/dbsec/lab6EM/SeeMembers.png)
 
 
-Congratulations! You have successfully completed setting up of EM for an Exadata Cloud Service Database
+
+
+
+<table>
+<tr><td class="td-logo">[![](./images/obe_tag.png)](#)</td>
+<td class="td-banner">
+### All Done!
+</td>
+</tr>
+<table>
