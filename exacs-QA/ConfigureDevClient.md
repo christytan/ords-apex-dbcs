@@ -167,7 +167,7 @@ Create a new connection in SQL Developer and provide the following information
 
 **Username**: sys
 
-**Password**: -password-
+**Password**: (choose a password)
 
 **Connection Type**: Basic
 
@@ -185,9 +185,9 @@ Create a new connection in SQL Developer and provide the following information
 
 **Let's also test connectivity through some command line client tools like SQL*Plus**
 
-**Connect to database instance using Oracle SQL Plus**
+**Connect to the database instance using Oracle SQL Plus**
 
-For SQL*Plus, you will need to have tnanames.ora to connect to your database from your Bastion Server-
+For SQL*Plus, you will need to have tnsnames.ora to connect to your database from your Bastion Server
 
 You can either ssh into your EXACS VM to get the connection string (tnsnames.ora), or you could ask you DBA to provide you with the necessary details. 
 
@@ -195,19 +195,17 @@ You can either ssh into your EXACS VM to get the connection string (tnsnames.ora
 
 ![](./images/Infra/ConfigureDevEnv/sqlplus-open-terminal.png " ")
 
-- Type SQLPUS and enter the required details to connect it to your database
+- Type SQLPLUS and enter the required details to connect it to your database
 
 ```
-<copy>
 sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_VM_IP')(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = databaseUniqueName.hostDomainName)(FAILOVER_MODE=(TYPE = select)(METHOD = basic))))" as sysdba
-</copy>
 ```
 
-**Note: Please make sure to change you Database Password, Host, Service_Name in the above command.**
+**Note: Please make sure to change you Database Password, Host, and Service_Name in the above command.**
 
 
-- When succesfully connected, you should see similar to below image.
+- When succesfully connected, you should see the below image or something similar to it.
 
 ![](./images/Infra/ConfigureDevEnv/sqlplus-conn.png " ")
 
-Great Work! You successfully created a client machine and connected to your EXACS database instance using SQL Developer and SQLPLUS.
+Great Work! You successfully created a client machine and connected to your EXACS database instance using SQL Developer and SQL*PLUS.
