@@ -1,8 +1,8 @@
 ## Introduction
 The Oracle Cloud Infrastructure marketplace provides a pre-built image with necessary client tools and drivers to build applications on Exadata Cloud Service databases. As an application developer you can now provision a developer image within minutes and connect it to your database deployment.
 
-The image is pre-configured with tools and language drivers so that you can configure a secure connection using Oracle SQL Developer, SQLCL and SQL*Plus.
-For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu and browse details on the 'Oracle Developer Cloud Image'
+The image is pre-configured with tools and language drivers so that you can configure a secure connection using Oracle SQL Developer, SQLcl, and SQL*Plus.
+For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu, and browse details on the 'Oracle Developer Cloud Image'
 
 ![](./images/Infra/ConfigureDevEnv/marketplace.png " ")
 
@@ -10,7 +10,7 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 ## Objectives
 
-As a database user, DBA or application developer,
+As a database user, a DBA, or an application developer,
 - Configure a development system from a pre-built marketplace image
 - Create an ssh tunnel from your local laptop into your development system
 - Invoke SQL Developer on your development system over a VNC connection from your local laptop 
