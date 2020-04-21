@@ -79,7 +79,13 @@ The following illustration shows a network topology that can be used to provide 
 -   ssh into centOS vm and download the openVPN rpm package
 
 ```
+<<<<<<< HEAD
 <copy>ssh opc@O<public_ipAddress_of_your_centOS_VM></copy>
+=======
+<copy>
+ssh opc@\<public_ipAddress_of_your_centOS_VM\>
+</copy>
+>>>>>>> b1fc10ecc62653d4abc3a06751c9ddd6fdc3b8fb
 ```
 
 ```
