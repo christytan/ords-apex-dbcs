@@ -1,8 +1,8 @@
 ## Introduction
 The Oracle Cloud Infrastructure marketplace provides a pre-built image with necessary client tools and drivers to build applications on Exadata Cloud Service databases. As an application developer you can now provision a developer image within minutes and connect it to your database deployment.
 
-The image is pre-configured with tools and language drivers so that you can configure a secure connection using Oracle SQL Developer, SQLCL and SQL*Plus.
-For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu and browse details on the 'Oracle Developer Cloud Image'
+The image is pre-configured with tools and language drivers so that you can configure a secure connection using Oracle SQL Developer, SQLcl, and SQL*Plus.
+For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu, and browse details on the 'Oracle Developer Cloud Image'
 
 ![](./images/Infra/ConfigureDevEnv/marketplace.png " ")
 
@@ -10,16 +10,16 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 ## Objectives
 
-As a database user, DBA or application developer,
+As a database user, a DBA, or an application developer,
 - Configure a development system from a pre-built marketplace image
-- Create an ssh tunnel from your local laptop into your development system
+- Create a ssh tunnel from your local laptop into your development system
 - Invoke SQL Developer on your development system over a VNC connection from your local laptop 
 - Configure a secure connection from your development system to your EXACS database using Oracle SQL Developer and SQL*Plus.
 
 ## Required Artifacts
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
-- A pre-provisioned ExaCS database instance. Refer [Lab 3](./ProvisionDatabase.md) on how provision an EXACS database.
+- A pre-provisioned ExaCS database instance. Refer [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how provision an EXACS database.
 - VNC Viewer or other suitable VNC client on your local laptop
 
 ## Steps
@@ -102,9 +102,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 - SSH into your dev client compute instance
 
 ```
-<copy>
-$ ssh -i <private-key> opc@PublicIP
-</copy>
+<copy>ssh -i <private-key> opc@PublicIP</copy>
 ```
 
 - Change the password on the VNC server
@@ -139,10 +137,10 @@ $ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devCl
 **Windows Users**
 - Windows 10 users can use powershell to connect using command above.
 
-- Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](./Appendix.md)
+- Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](?lab=appendix)
 
 
-You now have a secure ssh tunnel from your local laptop to your developement system in OCI on VNC port 5901
+You now have a secure ssh tunnel from your local laptop to your development system in OCI on VNC port 5901
 
 **Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer**
 

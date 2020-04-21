@@ -19,8 +19,8 @@ As a database admin or user,
 
 ## Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned Exadata cloud service database . Refer to [Lab 4](./ProvisionDatabase.md)
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 6](./ConfigureDevClient.md)
+- Access to a pre-provisioned Exadata cloud service database . Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
 
 ## Steps
 
@@ -30,7 +30,7 @@ As a database admin or user,
 
 ```
 <copy>
-$ ssh -i <private_key> opc@<public_IP_address>
+ssh -i &ltprivate_key&gt opc@&ltpublic_IP_address&gt
 </copy>
 ```
 
@@ -76,7 +76,7 @@ wget -O user_01.dmp https://objectstorage.us-ashburn-1.oraclecloud.com/p/LdwVJ20
 
 ```
 <copy>
-ssh -i </path/to/identity/file> oracle@<exadata_node>
+ssh -i &lt/path/to/identity/file&gt opc@&ltexadata_node&gt
 </copy>
 ```
 
@@ -110,7 +110,7 @@ select directory_name, directory_path from all_directories order by 1
 
 ```
 <copy>
-scp -i </path/to/identity/file> user_xx.dmp oracle@<Exadata_private_ip>:</path/to/DATA_PUMP_DIR>
+scp -i &lt/path/to/identity/file&gt user_xx.dmp oracle@&ltExadata_private_ip&gt:&lt/path/to/DATA_PUMP_DIR&gt
 </copy>
 ```
 
@@ -119,7 +119,8 @@ scp -i </path/to/identity/file> user_xx.dmp oracle@<Exadata_private_ip>:</path/t
 
 ```
 <copy>
-ssh -i </path/to/identity/file> oracle@<exadata_node/copy>
+ssh -i &lt/path/to/identity/file&gt oracle@&ltexadata_node&gt
+</copy>
 ```
 
 ```
