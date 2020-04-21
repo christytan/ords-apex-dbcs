@@ -342,4 +342,4 @@ In this example, recovery completion status is checked as shown below.
 
 ### STEP 3: Backup and Recover using RMAN
 
-[Backup and Recover using RMAN](?lab=Appendix) 
+[Backup and Recover using RMAN](?lab=appendix) 

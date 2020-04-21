@@ -20,9 +20,9 @@ Infrastructure as Code evolved to solve the problem of environment drift in the 
 
 ## Topics
 
-* [Getting started with GitHub](scripts/terraform/gitBeginner.md)..
+* [Getting started with GitHub](?lab=lab-15-1-git-for-beginner)
     - GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
-* [Getting started with Terraform](scripts/terraform/tfBeginner.md).
+* [Getting started with Terraform](?lab=lab-15-2-terraform-for-beginner)
     - Terraform allows infrastructure to be expressed as code in a simple, human readable language called HCL (HashiCorp Configuration Language).
-* [Manage Database with Terraform](scripts/terraform/tf4Db.md).
+* [Manage Database with Terraform](?lab=lab-15-3-terraform-for-database)
     - Terraform enables you to safely and predictably create, change, and improve infrastructure that include databases.

@@ -102,9 +102,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 - SSH into your dev client compute instance
 
 ```
-<copy>
-$ ssh -i <private-key> opc@PublicIP
-</copy>
+<copy>ssh -i <private-key> opc@PublicIP</copy>
 ```
 
 - Change the password on the VNC server
@@ -139,7 +137,7 @@ $ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devCl
 **Windows Users**
 - Windows 10 users can use powershell to connect using command above.
 
-- Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](?lab=Appendix)
+- Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](?lab=appendix)
 
 
 You now have a secure ssh tunnel from your local laptop to your development system in OCI on VNC port 5901
