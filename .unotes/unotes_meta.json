@@ -1,0 +1,158 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "exacs-QA": {
+      "name": "exacs-QA",
+      "isOrdered": true,
+      "folders": {
+        "css": {
+          "name": "css",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "files": {
+          "name": "files",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "images": {
+          "name": "images",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "js": {
+          "name": "js",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "scripts": {
+          "name": "scripts",
+          "isOrdered": true,
+          "folders": {
+            "300": {
+              "name": "300",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "600": {
+              "name": "600",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "800": {
+              "name": "800",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "datapump": {
+              "name": "datapump",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "networking": {
+              "name": "networking",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "pythonApp": {
+              "name": "pythonApp",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "terraform": {
+              "name": "terraform",
+              "isOrdered": true,
+              "folders": {
+                "dbs": {
+                  "name": "dbs",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {
+                    "README": 0
+                  }
+                },
+                "iam": {
+                  "name": "iam",
+                  "isOrdered": true,
+                  "folders": {
+                    "modules": {
+                      "name": "modules",
+                      "isOrdered": true,
+                      "folders": {},
+                      "files": {}
+                    }
+                  },
+                  "files": {
+                    "README": 0
+                  }
+                },
+                "media": {
+                  "name": "media",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                }
+              },
+              "files": {
+                "tf4Db": 0,
+                "gitBeginner": 1,
+                "tfBeginner": 2
+              }
+            }
+          },
+          "files": {}
+        }
+      },
+      "files": {
+        "Appendix": 0,
+        "APEX": 1,
+        "Backup&Recovery": 2,
+        "BuildPythonApps": 3,
+        "ConfigureDevClient": 4,
+        "ConfigureVPN": 5,
+        "Create_a_RestService_on_DBCS": 6,
+        "Creating_an_Apex_Application": 7,
+        "DataPump": 8,
+        "DataSafe": 9,
+        "DataSafeAssessment": 10,
+        "DataSafeAssessment2": 11,
+        "DataSafeAudit": 12,
+        "DataSafeAudit2": 13,
+        "DataSafeAudit3": 14,
+        "DataSafeDM": 15,
+        "DataSafeDM2": 16,
+        "DataSafeDM3": 17,
+        "DataSafeDM4": 18,
+        "DataSafePE": 19,
+        "DataSafeSDD": 20,
+        "DataSafeSDD2": 21,
+        "DataSafeSDD3": 22,
+        "DataSafeSDD4": 23,
+        "DBVault": 24,
+        "DisasterRecevoryUsingDG": 25,
+        "EXACS-Networking": 26,
+        "Goldengate": 27,
+        "KeyVault": 28,
+        "MonitorAndManageWithEM": 29,
+        "OCI-CLI": 30,
+        "ProvisionDatabase": 31,
+        "ProvisionExaInfra": 32,
+        "README": 33,
+        "SetupORDSandAPEXonDBCS": 34,
+        "Terraform": 35
+      }
+    }
+  },
+  "files": {}
+}

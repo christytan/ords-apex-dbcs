@@ -116,23 +116,22 @@ You can open a Pull Request at any point during the development process: when yo
 * Browser to the project URL, it should look something like the following. Please ask the instructor if you don't have it.
     * https://github.com/albertyckwok/ecs-workshop-osc
 * Login to GitHub.
-* Click the ‘Pull requests’ tab.
-* Click ‘New pull request’.
-* Once you click on pull request, select the branch and click ‘readme- changes’ file to view changes between the two files present in our repository.
-* Click “Create pull request”.
-* Enter any title, description to your changes and click on “Create pull request”. Refer to the below screenshots.
-
-<span class="colour" style="color:rgb(74, 74, 74)">![Pull - how to use github - Edureka](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/11/Pull-commands-how-to-use-github-Edureka.png)![Pull - how to use github - Edureka](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/11/Pull-command-how-to-use-github-Edureka.png)Next, let us move forward and see how can you merge your pull request.</span>
+* Click the ‘Pull requests’ tab.![img_1.png](media/img_1.png).
+* Click ‘Compare and pull request’ button for your branch, e.g. akBranch1.![image2.png](media/image2.png)
+* Write something, e.g. "This is TF code to create DB for xx".
+* Click “Create pull request”.![image3.png](media/image3.png)
 
 #### Task 5: Merge your work with others
 
 Once merged, Pull Requests preserve a record of the historical changes to your code. Because they're searchable, they let anyone go back in time to understand why and how a decision was made.
-
-* Click on “Merge pull request” to merge the changes into master branch.
-* Click “Confirm merge”.
-* You can delete the branch once all the changes have been incorporated and if there are no conflicts. Refer to the below screenshots.
-
-<span class="colour" style="color:rgb(74, 74, 74)">![Merge command - how to use github - Edureka](https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2017/11/Merge-command-how-to-use-github-Edureka-1.png)</span>
+<br>
+* Browser to the project URL, it should look something like the following. Please ask the instructor if you don't have it.
+    * [https://github.com/albertyckwok/ecs-workshop-osc](https://github.com/albertyckwok/ecs-workshop-osc)
+* Login to GitHub.
+* Click the ‘Pull requests’ tab.
+* Click on “Merge pull request” to merge the changes into master branch.![image4.png](media/image4.png)
+* Click “Confirm merge”.![image5.png](media/image5.png)
+* You can delete the branch once all the changes have been incorporated and if there are no conflicts. ![image.png](media/img_0.png)
 
 ## Add database
 
