@@ -94,13 +94,4 @@ You cannot specify database roles, such as SYSDBA or SYSKM, and you cannot speci
 
 - Grant privileges to the database user that you created for Data Safe using the privilege script you downloaded in step 19. See [Grant Roles to the Oracle Data Safe Service Account on a DB System](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/grant-roles-oracle-data-safe-service-account-db-system.html).
 
-
-<table><tr>
-<td class="td-logo">
-
-[![](./images/obe_tag.png)](#)
-
-</td>
-<td class="td-banner">
 ### All Done!
-</td></tr><table>
