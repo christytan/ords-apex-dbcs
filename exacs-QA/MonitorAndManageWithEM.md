@@ -256,7 +256,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 .
 ![](./images/dbsec/lab6EM/PromoteClusterReview.png " ")
 
-- For additional documentation see: https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664
+- For additional documentation click [here](https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664)
 
 - Repeat this process for all Cluster Databases. Promote any additional targets you want to monitor.
 
