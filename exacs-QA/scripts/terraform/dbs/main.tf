@@ -4,18 +4,9 @@ resource "oci_database_db_home" "tf_db_home" {
   db_system_id = var.dbsysid
   database {
     admin_password = "BEstr0ng1--"
-    db_name        = "tfDb"
-    /*
-    admin_password = "BEstrO0ng--${count.index}"
-    db_name        = "tfDb${count.index}"
-    character_set  = "AL32UTF8"
-    ncharacter_set = "AL16UTF16"
-    db_workload    = "OLTP"
-    pdb_name       = "tfPdb${count.index}"
-    */
+//  db_name        = "tfDb"
   }
-  source       = "NONE"
+ //ource       = "NONE"
   db_version   = "19.0.0.0"
-  //display_name = "${count.index+1} of 1 DB for project ID ${var.proj_id}"
-  display_name = "DB home for project ID ${var.proj_id}"
+  display_name = "Home for ${var.proj_id}"
 }
