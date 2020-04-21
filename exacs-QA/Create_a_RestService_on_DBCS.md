@@ -13,7 +13,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Required Artifacts
 
-- Please ensure you have installed ORDS and APEX on the database instance you want to create a REST service. Refer [Part-1](SetupORDSandAPEXonDBCS.md) for more information.
+- Please ensure you have installed ORDS and APEX on the database instance you want to create a REST service. Refer **lab 17-1**for more information.
 
 
 ## Steps
@@ -160,4 +160,5 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - You are going to use this REST endpoint in the Python Application in the next lab.
 
 
--   You are now ready to move to the next part of this lab.
+- You are now ready to move to the next part of this lab.
+- **Click on Lab 17-3 from the menu on the right.**

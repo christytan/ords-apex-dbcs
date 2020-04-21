@@ -45,7 +45,7 @@ Lab 15 - 19 are additional labs which talks about connecting your Exadata Cloud 
 12. Key Management using Oracle Key Vault
 13. Data Safe Advanced lab
 14. Use OCI CLI commands to work with Exadata Cloud Service
-15. Automation with Terraform*
+15. Automation with Terraform
 16. Build and deploy Python application stacks on Exadata Cloud Service
 17. Build APEX application on Exadata Cloud Service
 
@@ -206,7 +206,7 @@ As a application developer, DBA or DevOps user,
 
 
 
-## Lab 15: Automation with Terraform*
+## Lab 15: Automation with Terraform
 
 
 **Key Objectives**:
