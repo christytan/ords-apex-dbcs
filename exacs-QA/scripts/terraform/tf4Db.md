@@ -57,15 +57,24 @@ To create a branch on the repository that you clone/copy from previous lab, you 
 
 ```
 myInitial=\<your initial>
-cd \~/ecs-workshop-osc
+cd ~/ecs-workshop-osc
 git checkout -b ${myInitial}Branch1
 ```
+The following is the sample output for the above commands:
+```
+akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (master)
+$ myInitial=ak
 
+akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (master)
+$ git checkout -b ${myInitial}Branch1
+Switched to a new branch 'akBranch1'
+
+```
 #### Task 2: Do your work independently
 
 1. Use your favor editor, such as VS code IDE, vi, gedit, etc to create/edit a terraform config file by copy/paste the above terraform code template or using command line sed editor as follow:
     * myInitial=\<your initial>
-    * cd \~/ecs-workshop-osc
+    * cd ~/ecs-workshop-osc
     * sed -e "s/xx/$myInitial/g" > ${myInitial}DB.tf
     * Copy/paste the above terraform code template then ctrl-D to exit sed.
 2. Run the following to intialize terraform. Note: you only need to run it once and someone else, likely the OSC lead engineer has run it before but it doesn't hurt to run it multiple times.
@@ -92,7 +101,19 @@ The following are the commands that you need to execute:
 ```
 myInitial=ak
 git add ${myInitial}DB.tf
-get commit -m "This is to commit changes made by ${myInitial}"
+git commit -m "This is to commit changes made by ${myInitial}"
+```
+The following is the sample output for the above commands:
+```
+akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (akBranch1)
+$ git add ${myInitial}DB.tf
+
+akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (akBranch1)
+$ git commit -m "This is to commit changes made by ${myInitial}"
+[akBranch1 00e84a5] This is to commit changes made by ak
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 akDB.tf
+
 ```
 
 #### Task 3: Publish your work
@@ -103,6 +124,25 @@ To push changes onto a new branch on GitHub, you'll want to run `**[git push](h
 
 ```
 git push origin ${myInitial}Branch1
+```
+The following is the sample output for the above commands:
+```
+akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (akBranch1)
+$ git push origin ${myInitial}Branch1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 285 bytes | 285.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'akBranch1' on GitHub by visiting:
+remote:      https://github.com/albertyckwok/ecs-workshop-osc/pull/new/akBranch1
+remote:
+To github.com:albertyckwok/ecs-workshop-osc.git
+ * [new branch]      akBranch1 -> akBranch1
+
 ```
 
 You might be wondering what that "origin" word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an **alias** for you. In nearly all cases this alias is called "[**origin**](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)." It's essentially shorthand for the remote repository's URL. So, to push your changes to the remote repository, you could've used either the command: <b>`git push [git@github.com](mailto:git@github.com):git/git.git yourbranchname`</b> or <b>`git push origin yourbranchname`</b>
