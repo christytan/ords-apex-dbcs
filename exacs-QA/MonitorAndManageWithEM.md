@@ -172,7 +172,7 @@ $ /u01/app/em13c/middleware/bin/emctl config oms -change_repos_pwd
 - Log into your new EM Console
 
 ``` 
-https://<public ip address>:7803/em
+https://<private ip address>:7803/em
 ``` 
 
 - If you need help trouble shooting before going to Part 4, the installation log is located at:
@@ -182,7 +182,12 @@ cat /var/log/emcg_setup.log
 You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-on-oci-installation-phase-2-installing-the-em-app-into-your-oci-compartment) for more help.
 
 ### Part 4: Set up credentials in Enterprise Manager
-- Log in to your Enterprise Manager
+- Log in to your Enterprise Manager from a bastion host GUI via a browser
+``` 
+https://<private ip address>:7803/em
+``` 
+
+- Username should be sysman / welcome16
 
 - Go to **Setup**, and from there, go to **Security**, and then click on **Named Credentials**
 
@@ -257,7 +262,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - You will need to enter Monitoring User Credentials (like dbnsmp) for this cluster. You can also enter the SYSDBA Password.
 
-![](PromoteClusterDatabase.png)
+![](./images/dbsec/lab6EM/PromoteClusterDatabase.png)
 
 - If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
 - Click **Next**, review the page, and then click **Save**
@@ -301,7 +306,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Press the search bar next to 'On Host'
 
-![](DefineMemberCriteria.png)
+![](./images/dbsec/lab6EM/DefineMemberCriteria.png)
 
 - Move over all nodes(hosts) from the ExaCS and press **Select**
 
@@ -313,7 +318,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 ### Part 9: Viewing Monitoring Details
 - To navigate to 'Targets', press the **Targets** dropdown, then select **All Targets**
 
-![](NavigateTargets.png)
+![](./images/dbsec/lab6EM/NavigateTargets.png)
 
 - In 'Search Target Name', add a target you want to see the metrics for, for example a db name
 
