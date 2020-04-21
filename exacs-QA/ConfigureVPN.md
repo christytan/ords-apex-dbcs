@@ -80,7 +80,7 @@ The following illustration shows a network topology that can be used to provide 
 
 ```
 <copy>
-ssh opc@O<public_ipAddress_of_your_centOS_VM>
+ssh opc@\<public_ipAddress_of_your_centOS_VM\>
 </copy>
 ```
 
