@@ -132,7 +132,7 @@ View monitoring details/ set alerts:
 
 - Once your VM instance is running, click on the instance and copy the Public IP Address.  SSH into the VM instance with the ssh key
 ```
-<copy>ssh –i <private_ssh_key> opc@<public IP Address></copy>
+<copy>ssh –i &lt;private_ssh_key&gt; opc@&ltpublic IP Address&gt</copy>
 ```
 ![](./images/dbsec/lab6EM/CopyVMIP.png " ")
 
