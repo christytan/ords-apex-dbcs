@@ -17,7 +17,7 @@ As a network admin,
 
 - An Oracle Cloud Infrastructure account with privileges to create compute instance and network resources
 - A pre-provisioned ExaCS instance in a private network
-- A pre-provisioned Virtual Cloud Network with public and private subnets setup with appropriate security lists. Refer to [Lab 1](./ATPD-Networking.md)
+- A pre-provisioned Virtual Cloud Network with public and private subnets setup with appropriate security lists. Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o)
 
 
 The following illustration shows a network topology that can be used to provide secure access to your EXACS infrastructure.
@@ -29,7 +29,7 @@ The following illustration shows a network topology that can be used to provide 
 
 - Security lists have been setup such that tcp traffic into the private exadata subnet is allowed only through hosts in the public subnet. This can be further tightened by allowing traffic from specific hosts and ports. 
 
-- For detailed instructions on network setup for your ExaCS infrastructure, refer to [Lab 1](EXACS-Networking.md)
+- For detailed instructions on network setup for your ExaCS infrastructure, refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o)
 
 
 ## Steps
@@ -39,7 +39,7 @@ The following illustration shows a network topology that can be used to provide 
 
 - Login to the Oracle Cloud Infrastructure using your tenancy, userId and password. 
 
-    Refer to [Lab 1](EXACS-Networking.md) for detailed instructions on logging into your OCI account.
+    Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o) for detailed instructions on logging into your OCI account.
 
 - Once logged in, Click on **Menu**, **Compute**, **Instances** and **Create Instance**
 

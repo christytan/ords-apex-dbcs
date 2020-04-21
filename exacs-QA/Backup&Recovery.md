@@ -48,7 +48,7 @@ You can use Console to enable automatic incremental backups, create full backu
 
     Before you configure backup, make sure that a subnet for Backup is associated with route through Service Gateway which facilitates access to Object Storage(OSS).
 
-    Refer [Lab 1](./EXACS-Networking.md) for how to set up Service Gateway for your VCN.
+    Refer [Lab 1](?lab=lab-1-preparing-private-data-center-o) for how to set up Service Gateway for your VCN.
 
 Service gateway from console is shown below.
 
@@ -342,4 +342,4 @@ In this example, recovery completion status is checked as shown below.
 
 ### STEP 3: Backup and Recover using RMAN
 
-[Backup and Recover using RMAN # 306](./Appendix.md) 
+[Backup and Recover using RMAN](?lab=Appendix) 
