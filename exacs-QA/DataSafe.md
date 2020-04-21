@@ -1,16 +1,3 @@
-
-<tr>
-<td class="td-logo">
-
-![](images/obe_tag.png)
-
-March 25, 2020
-</td>
-<td class="td-banner">
-# Lab 7: Data Safe for ExaCS Lab</td>
-</tr>
-<table>
-
 ## Introduction
 
 Data Safe is a unified control center for your Oracle Databases which helps you understand the sensitivity of your data, evaluate risks to data, mask sensitive data, implement and monitor security controls, assess user security, monitor user activity, and address data security compliance requirements. Whether you’re using Oracle Autonomous Database or Oracle Database Cloud Service (Exadata, Virtual Machine, or Bare Metal), Data Safe delivers essential data security capabilities as a service on Oracle Cloud Infrastructure.
@@ -49,16 +36,3 @@ This lab walks you through the steps to get started using Oracle Data Safe with 
 - [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](DataSafeAudit.md)
 - [Auditing Lab 2 - Analyze Audit Data with Reports and Alerts in Oracle Data Safe](DataSafeAudit2.md)
 - [Auditing Lab 3 - Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe](DataSafeAudit3.md)
-
-![](./images/400/Picture100-20.jpeg)
-
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)
-</td>
-<td class="td-banner">
-### [Register a Target Database](DataSafePE.md)
-</td>
-</tr>
-<table>

@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](./images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-# Assessment Lab 2 - Assess Users with Oracle Data Safe</td>
-</tr>
-<table>
+# Assessment Lab 2 - Assess Users with Oracle Data Safe
 
 ## Objectives
 In this lab, you learn how to:
