@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-#Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe</td>
-</tr>
-<table>
+# Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe
 
 ## Objectives
 
@@ -205,12 +199,4 @@ You need to turn this feature off if you want to keep the audit data on your tar
 The **Edit Policies** dialog box is displayed. Here you can provision and disable audit and alert policies, if needed.
 3. Click **Cancel**.
 
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

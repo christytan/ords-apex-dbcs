@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-# Assessment Lab 1 - Assess Database Configurations with Oracle Data Safe</td>
-</tr>
-<table>
+# Assessment Lab 1 - Assess Database Configurations with Oracle Data Safe
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -161,13 +155,4 @@ If you fixed any of the previous risks, then the totals will be lower than in th
 > **Note:**
 Currently, there's no compare functionality in the product so to compare assessment results, you need to view both reports and manually compare
 
-
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-# Masking Lab 2 - Explore Data Masking Results and Reports in Oracle Data Safe</td>
-</tr>
-<table>
+# Masking Lab 2 - Explore Data Masking Results and Reports in Oracle Data Safe
 
 ## Objectives
 
@@ -121,13 +115,4 @@ A confirmation message is displayed on your page.
 7. Click a data masking job's ID to view all of its details.
 8. Click the **X** button to close the dialog box.
 
-
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

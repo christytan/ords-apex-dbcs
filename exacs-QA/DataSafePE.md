@@ -1,17 +1,10 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](images/obe_tag.png)
-
-March 25, 2020
-</td><td class="td-banner">
-# Register a Target Database that has a Private IP Address
-</td></tr><table>
-
 ## Introduction
 Oracle Data Safe can connect to an Oracle Cloud database that has a public or private IP address on a virtual cloud network (VCN) in Oracle Cloud Infrastructure (OCI). This workshop describes the difference between public and private endpoints and explains the network connection between Oracle Data Safe and the databases. It also walks you through the steps of creating a private endpoint and registering a Exadata Cloud DB system with Oracle Data Safe when the DB system has a private IP address.
 
 ## Requirements
 The following diagram illustrates the network connections between Oracle Data Safe and a DB system (VM, BM, or Exadata) and an Autonomous Database (ATP-D, ATP-S, or ADW) that have private IP addresses.
+
+# Register a Target Database that has a Private IP Address
 
 ## Create a Private Endpoint
 If your DB system has a private IP address, you need to create a private endpoint for it prior to registering it with Oracle Data Safe. You can create private endpoints on the Data Safe page in OCI. Be sure to create the private endpoint in the same tenancy and VCN as your database. The private IP address does not need to be on the same subnet as your database, although, it does need to be on a subnet that can communicate with the database. You can create a maximum of one private endpoint per VCN.
@@ -101,13 +94,4 @@ You cannot specify database roles, such as SYSDBA or SYSKM, and you cannot speci
 
 - Grant privileges to the database user that you created for Data Safe using the privilege script you downloaded in step 19. See [Grant Roles to the Oracle Data Safe Service Account on a DB System](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/grant-roles-oracle-data-safe-service-account-db-system.html).
 
-
-<table><tr>
-<td class="td-logo">
-
-[![](./images/obe_tag.png)](#)
-
-</td>
-<td class="td-banner">
 ### All Done!
-</td></tr><table>

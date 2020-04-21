@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](./images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-# Masking Lab 3 - Create a Masking Format in Oracle Data Safe</td>
-</tr>
-<table>
+# Masking Lab 3 - Create a Masking Format in Oracle Data Safe
 
 ## Objectives
 
@@ -88,12 +82,4 @@ A confirmation message states that you successfully created the masking format.
 
 ![](./images/dbsec/datasafe/masking/hide-pre-defined-custom-id.png)
 
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

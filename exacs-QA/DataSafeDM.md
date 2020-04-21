@@ -1,12 +1,4 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-
-![](images/obe_tag.png)
-
-March 25, 2020
-</td><td class="td-banner">
-# Masking Lab 1 - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe</td>
-</tr>
-<table>
+# Masking Lab 1 - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe
 
 ## Objectives
 
@@ -182,13 +174,4 @@ sensitive column, you can view the masking format used and the number of rows ma
 4. If a dialog box is displayed stating that your session has expired, click **OK**, sign in again, and then click the **Run Statement** button.
 5. Review the masked data. You can resize the panel to view more data, and you can scroll down and to the right.
 
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)
-</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

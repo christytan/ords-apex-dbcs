@@ -1,15 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">
-
-![](images/obe_tag.png)
-
-March 25, 2020
-</td>
-<td class="td-banner">
-# Auditing Lab 3 - Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe</td>
-</tr>
-<table>
+# Auditing Lab 3 - Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe
 
 ## Objective
 In this lab, you learn how to do the following:
@@ -144,12 +133,5 @@ NOAUDIT POLICY empextended_data_access;
 ![](./images/dbsec/datasafe/auditing/all-alerts.png)
 
 - If an alert is not generated, restart the audit trail (follow step 10 in Part 5), and then check again.
-<table>
-<tr><td class="td-logo">
 
-[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

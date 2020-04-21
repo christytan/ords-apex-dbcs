@@ -1,9 +1,4 @@
-<table class="tbl-heading"><tr><td class="td-logo">
-![](images/obe_tag.png) March 25, 2020
-</td>
-<td class="td-banner">
 # Discovery Lab 1 - Discover Sensitive Data with Oracle Data Safe
-</td></tr><table>
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -187,10 +182,4 @@ Your sensitive data model is downloaded to your browser.
 - Save the file to your desktop as **<username> SDM1.xml**, and then close the file.<br>
 In **Masking Lab 4 - Configure a Variety of Masking Formats with Oracle Data Safe**, you import this file-based sensitive data model into the Data Masking wizard.
 
-<table>
-<tr><td class="td-logo">[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

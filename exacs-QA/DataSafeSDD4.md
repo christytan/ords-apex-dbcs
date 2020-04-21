@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-# Discovery Lab 4 - Create a Sensitive Type and Sensitive Category with Oracle Data Safe</td>
-</tr>
-<table>
+# Discovery Lab 4 - Create a Sensitive Type and Sensitive Category with Oracle Data Safe
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -127,10 +121,4 @@ Your sensitive type is included in the list and is available in the Data Discove
 
 - Move the **Hide Oracle Predefined** slider to the right to view your custom sensitive type in the list.
 
-<table>
-<tr><td class="td-logo">[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>
