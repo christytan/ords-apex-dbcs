@@ -19,7 +19,7 @@ As a database user, a DBA, or an application developer,
 ## Required Artifacts
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
-- A pre-provisioned ExaCS database instance. Refer [Lab 3](./ProvisionDatabase.md) on how provision an EXACS database.
+- A pre-provisioned ExaCS database instance. Refer [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how provision an EXACS database.
 - VNC Viewer or other suitable VNC client on your local laptop
 
 ## Steps
@@ -102,9 +102,7 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 - SSH into your dev client compute instance
 
 ```
-<copy>
-$ ssh -i <private-key> opc@PublicIP
-</copy>
+<copy>ssh -i <private-key> opc@PublicIP</copy>
 ```
 
 - Change the password on the VNC server
@@ -139,10 +137,10 @@ $ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devCl
 **Windows Users**
 - Windows 10 users can use powershell to connect using command above.
 
-- Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](./Appendix.md)
+- Alternatively, you may create and ssh tunnel using putty. Detailed instructions on using putty for ssh tunnels are provided in the [Appendix](?lab=appendix)
 
 
-You now have a secure ssh tunnel from your local laptop to your developement system in OCI on VNC port 5901
+You now have a secure ssh tunnel from your local laptop to your development system in OCI on VNC port 5901
 
 **Note: As mentioned earlier, you need a VNC client installed on your laptop. This lab uses VNC Viewer**
 

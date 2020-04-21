@@ -164,4 +164,3 @@ Use your browser to navigate to the Key Vault server `http://PUBLIC_IP`
 - Click `Endpoints`
 
 You will see that there are no endpoints available. You will use the utility we have created, `OKVdeploy.tar`, to automate this process. Let's use `OKVdeploy.tar`.
-

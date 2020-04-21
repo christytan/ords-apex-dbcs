@@ -1,5 +1,7 @@
 # Masking Lab 1 - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe
 
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+
 ## Objectives
 
 In this lab, you learn how to do the following:

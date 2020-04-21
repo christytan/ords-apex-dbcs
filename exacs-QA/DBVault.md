@@ -22,9 +22,9 @@ As a database security admin,
 
 - An Oracle Cloud Infrastructure account
 
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab2](20DeployImage.md)
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [[Lab 2](?lab=lab-2-provision-exadata-infrastructure)
 
-- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 1](./10ProvisionAnATPDatabase.md)
+- A pre-provisioned Autonomous Transaction Processing instance. Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o)
 
 ## Steps
 

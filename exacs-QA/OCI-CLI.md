@@ -28,9 +28,8 @@ As a developer, DBA or DevOps user,
 
 Note: 
 - The OCI Marketplace 'Developer Cloud Image' is pre-configured with many client tools and drivers including OCI command line interface.
-- To deploy a dev client compute image, refer to [Lab 4: Configure a development system for use with your Exadata Cloud Service database](./ConfigureDevClient.md)
+- To deploy a dev client compute image, refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
 
-  
 
 
 ## Steps

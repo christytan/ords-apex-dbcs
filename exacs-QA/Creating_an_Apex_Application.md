@@ -22,7 +22,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Required Artifacts
 
-- Please ensure you completed the previous parts of this lab before you start this lab. Refer **Lab 17-1** and **Lab 17-2** for more info.
+- Please ensure you completed the previous parts of this lab before you start this lab. Refer [Lab 17-1](?lab=lab-17-1-install-ords-apex) and [Lab 17-2](?lab=lab-17-2-create-restservice-on-database) for more info.
 
 ## Steps
 
