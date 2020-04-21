@@ -24,7 +24,11 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### STEP 2: Download the Terraform Script from the Github Repository
 
-- Download the Terraform script from this <a href="https://github.com/Abdul-Rafae-Mohammed/ORDS_APEX_on_ExadataCloudService_OCI.git">link</a>.
+- Download the Terraform script as shown below
+
+```
+<copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Lab17Apex/ORDS-APEX_ExaCS.zip?raw=true</copy>
+```
 
 ### STEP 3: RUN the Terraform script
 
