@@ -9,6 +9,8 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
+[Lab 1](?lab=lab-1-Preparing-your-private-data-center-in-the-Oracle-Cloud-Infrastructure)
+
 ## Objectives
 
 As an application developer,

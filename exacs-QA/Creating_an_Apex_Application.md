@@ -30,7 +30,33 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - For this lab, you can download the application available in the following repositories. 
 
-- Click <a href="https://github.com/Abdul-Rafae-Mohammed/LoadDataintoOracleDBusingSDK.git" target="_blank">here</a> to download a zipfile of the first Python Application. Copy the zip file to the developer client we provisioned in lab-4 for our database and unzip it to a directory on your machine.
+- ssh into the developer client we provisioned in lab-4.
+
+```
+<copy>ssh -i <path_to_private_ssh_key> opc@PublicIP</copy>
+```
+
+```
+<copy>cd /home/opc/</copy>
+```
+
+```
+<copy>mkdir apex</copy>
+```
+
+```
+<copy> cd /home/opc/apex</copy>
+```
+
+- Download python application and parameters files in **/home/opc/apex/** folder as shown below.
+
+```
+<copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/pythonApp/jsonapp.py?raw=true</copy>
+```
+
+```
+<copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/pythonApp/parameters.txt?raw=true</copy>
+```
 
     - You will see:
         - Python Application: **jsonapp.py**
@@ -38,7 +64,16 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
     **Note : This Application will store the data in "TWEETSDATA" table which you can use to verify that the data is loaded**
 
-- Click <a href="https://github.com/Abdul-Rafae-Mohammed/Load-Data-into-Oracle-DB-using-REST.git" target="_blank">here</a> to download a zipfile of the first Python Application. Copy the zip file to the developer client we provisioned in lab-4 for our database and unzip it to a directory on your machine.
+
+- Download python application and json files as shown below. Copy files to the developer client we provisioned in lab-4 for our database.
+
+```
+<copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/pythonApp/pythonapp.py?raw=true</copy>
+```
+```
+<copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/pythonApp/testjson.json?raw=true</copy>
+```
+
 
     - You will see:
         - Python Application: **pythonapp.py**

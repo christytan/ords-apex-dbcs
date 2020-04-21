@@ -309,5 +309,4 @@ You can initiate disk backup manually using RMAN with default settings as defaul
 
 **Recover using RMAN**
 
-If you backed up your Exadata database using bkup\_api, you can manually restore that database backup by using the Oracle Recovery Manager (RMAN) utility. 
-
+If you backed up your Exadata database using bkup\_api, you can manually restore that database backup by using the Oracle Recovery Manager (RMAN) utility.
