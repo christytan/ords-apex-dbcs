@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-# Discovery Lab 2 - Verify a Sensitive Data Model with Oracle Data Safe</td>
-</tr>
-<table>
+# Discovery Lab 2 - Verify a Sensitive Data Model with Oracle Data Safe
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -86,10 +80,5 @@ The wizard launches a data discovery job.
 - To view all of the sensitive columns in the sensitive data model, click **View all sensitive columns**.
   - You can toggle the view back and forth between displaying all of the sensitive columns or just the newly discovered ones.
 - Click **Exit**.
-<table>
-<tr><td class="td-logo">[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
+
 ### All Done!
-</td>
-</tr>
-<table>

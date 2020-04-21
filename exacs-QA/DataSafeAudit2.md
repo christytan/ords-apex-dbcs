@@ -1,14 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">
-
-![](images/obe_tag.png)
-
-March 25, 2020
-</td><td class="td-banner">
-# Audit Lab 2: Analyze Audit Data with Reports and Alerts in Oracle Data Safe</td>
-</tr>
-<table>
+# Audit Lab 2: Analyze Audit Data with Reports and Alerts in Oracle Data Safe
 
 ## Objectives
 
@@ -279,13 +269,4 @@ View this report to identify which schema objects were modified by the ADMIN use
 - Examine the report to view the changes made by the **SYS** user.
 - Click a row to view the details.
 
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)
-</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>

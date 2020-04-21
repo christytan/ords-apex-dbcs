@@ -1,13 +1,4 @@
-<table class="tbl-heading"><tr>
-<td class="td-logo">
-
-![](images/obe_tag.png)
-
-March 25, 2020
-</td>
-<td class="td-banner">
 # Masking Lab 4 - Configure a Variety of Masking Formats with Oracle Data Safe
-</td></tr><table>
 
 ## Objectives
 
@@ -277,12 +268,5 @@ SELECT * FROM SUPPLEMENTAL_DATA;
   - `TAXPAYER_ID`: Sample data before masking: `406-12-9866`. Sample data after masking: `***-**-****`
   - `BONUS_AMOUNT`: Sample data before masking: `40396`. Sample data after masking: `2500`
 
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)
-</td><td class="td-banner">
 
 #### All Done!
-
-</td></tr><table>

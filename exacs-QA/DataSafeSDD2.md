@@ -1,10 +1,4 @@
-<table class="tbl-heading">
-<tr>
-<td class="td-logo">![](images/obe_tag.png) March 25, 2020</td>
-<td class="td-banner">
-# Discovery Lab 2 - Verify a Sensitive Data Model with Oracle Data Safe</td>
-</tr>
-<table>
+# Discovery Lab 2 - Verify a Sensitive Data Model with Oracle Data Safe
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -172,12 +166,4 @@ You can manually update your sensitive data model while continuing to work in th
 -Your sensitive data model is now updated and accurate.
 - Click **Save** then **Exit**.
 
-<table>
-<tr><td class="td-logo">
-
-[![](./images/obe_tag.png)](#)</td>
-<td class="td-banner">
 ### All Done!
-</td>
-</tr>
-<table>
