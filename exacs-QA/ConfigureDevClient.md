@@ -12,7 +12,7 @@ For a complete list of features, login to your OCI account, select 'Marketplace'
 
 As a database user, a DBA, or an application developer,
 - Configure a development system from a pre-built marketplace image
-- Create an ssh tunnel from your local laptop into your development system
+- Create a ssh tunnel from your local laptop into your development system
 - Invoke SQL Developer on your development system over a VNC connection from your local laptop 
 - Configure a secure connection from your development system to your EXACS database using Oracle SQL Developer and SQL*Plus.
 
