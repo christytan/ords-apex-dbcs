@@ -1,3 +1,9 @@
+# Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe
+
+## Introduction
+Using Data Safe, create a custom audit policy on a target database, and enable a custom audit policy in the Oracle Data Safe Console. Perform some operations against the table defined in the audit policy and view the generated audit records in the Oracle Data Safe Console.
+
+
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objective

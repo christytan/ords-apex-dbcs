@@ -1,3 +1,8 @@
+# Explore Data Masking Results and Reports in Oracle Data Safe
+
+## Introduction 
+Using Data Safe, view masking formats and masking policies in the Library and analyze data masking results and reports.
+
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives

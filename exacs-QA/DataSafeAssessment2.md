@@ -1,4 +1,9 @@
-# Assessment Lab 2 - Assess Users with Oracle Data Safe
+# Assess Users with Oracle Data Safe
+
+## Introduction
+Using Oracle Data Safe assess user security in your target database by using the User Assessment feature and fix issues.
+
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
 ## Objectives
 In this lab, you learn how to:

@@ -1,4 +1,9 @@
-# Discovery Lab 2 - Verify a Sensitive Data Model with Oracle Data Safe
+# Verify a Sensitive Data Model with Oracle Data Safe
+
+## Introduction
+Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and verify a sensitive data model by using the Data Discovery wizard.
+
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
 ## Objectives
 In this lab, you learn how to do the following:

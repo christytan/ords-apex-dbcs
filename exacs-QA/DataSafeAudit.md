@@ -1,3 +1,8 @@
+# Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe
+
+## Introduction 
+Using Data Safe, provision audit and alert policies for a target database and configure an audit trail for a target database for collecting audit data.
+
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives

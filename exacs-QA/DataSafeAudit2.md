@@ -1,3 +1,8 @@
+# Analyze Audit Data with Reports and Alerts in Oracle Data Safe
+
+## Introduction
+Using Data Safe, access, interpret, and manipulate reports in Oracle Data Safe so that you can improve the overall security of your databases.
+
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives

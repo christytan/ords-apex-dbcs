@@ -1,3 +1,7 @@
+# Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe
+
+## Introduction
+Using Data Safe, view sensitive data in your Exadata Cloud Service (ExaCS) database and discover sensitive data by using Data Discovery. Also, mask sensitive data by using the default masking formats in Data Masking and validate.
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 

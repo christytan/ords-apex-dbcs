@@ -1,4 +1,9 @@
-# Assessment Lab 1 - Assess Database Configurations with Oracle Data Safe
+# Assess Database Configurations with Oracle Data Safe
+
+## Introduction 
+Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues. 
+
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
 ## Objectives
 In this lab, you learn how to do the following:

@@ -1,3 +1,8 @@
+# Configure a Variety of Masking Formats with Oracle Data Safe
+
+## Introduction
+Using Data Safe, perform data discovery and data masking in one flow, configure a variety of masking formats, such as random number, fixed string, group shuffle, regular expression, and conditional and pre-defined custom mask.
+
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives

@@ -1,3 +1,8 @@
+# Create a Masking Format in Oracle Data Safe
+
+## Introduction 
+Using Data Safe, create a masking format and assign a default masking format to a user-defined sensitive type.
+
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
