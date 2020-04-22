@@ -2,7 +2,7 @@
 
 Terraform enables you to safely and predictably create, change, and improve infrastructure. It is an open source tool that codifies APIs into declarative configuration files that can be shared amongst team members, treated as code, edited, reviewed, and versioned.
 
-During the privious lab using Console/UI to manage database and VM Cluster manually, you are most likely has made some mistake, selecting the wrong link, clicking on the wrong button, couldn't find what you wanted, etc. Terraform provides a much better way to maintain a stable, scale-able, manageable, etc environment that minimimize down time due to human errors.
+During the previous lab using Console/UI to manage database and VM Cluster manually, you could have made some mistake: selecting the wrong link, clicking on the wrong button, couldn't find what you wanted, etc. Terraform provides a much better way to maintain a stable, scaleable, and manageable environment that minimizes downtime due to human errors.
 
 In this lab you will practice the following:
 
@@ -14,7 +14,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Create database
 
-In this exercise, you will be creating a database using follow Terraform code template.
+In this exercise, you will be creating a database using the following Terraform code template.
 <br>
 ```
 <copy>variable "xx_db_count" {
@@ -47,7 +47,7 @@ resource "oci_database_database" "xx_database" {
 
 ### Tasks:
 
-As mention before, we will use simple GitHub workflow to show how to develop and operation infrastruture specifically database in this case.
+As mentioned before, we will use simple GitHub workflow to show how to develop an operation infrastruture, specifically database, in this case.
 
 #### Task 1: Create a branch
 
@@ -80,21 +80,21 @@ Switched to a new branch 'akBranch1'
 ```
 #### Task 2: Do your work independently
 
-1. Use your favor editor, such as VS code IDE, vi, gedit, etc to create/edit a terraform config file by copy/paste the above terraform code template or using command line sed editor as follow:
+1. Use your favorite editor, such as VS code IDE, vi, gedit, etc to create/edit a terraform config file by copy/paste the above terraform code template or using command line sed editor as follow:
     * myInitial=\<your initial>
     * cd ~/ecs-workshop-osc
     * sed -e "s/xx/$myInitial/g" > ${myInitial}DB.tf
     * Copy/paste the above terraform code template then ctrl-D to exit sed.
-2. Run the following to intialize terraform. Note: you only need to run it once and someone else, likely the OSC lead engineer has run it before but it doesn't hurt to run it multiple times.
+2. Run the following to intialize terraform. Note: you only need to run it once and someone else, likely the OSC lead engineer, has run it before. However, it doesn't hurt to run it multiple times.
     * terraform init
 3. The following command will show what terraform will do:
     * terraform plan
-    * You may need to edit your terraform code ${myInitial}DB.tf to fix any error and feel free to changes other config too and re-run the above command. As with all terraform commands, they are idompodent, namely, you can run it many times and the state of the environment will not change, i.e. remain the same, till you change the code and apply it.
-4. If the above command check out OK, i.e. what it plan to do is exactly what you want, then you can run the following apply command to execute the plan. Or your company is likely to have a formal DevOps process/workflow to ensure a stable environment that requires you to go through a review process before applying the changes. The following lab will show an example of DevOps workflow for this purpose.
+    * You may need to edit your terraform code ${myInitial}DB.tf to fix any error and feel free to change other config too and re-run the above command. As with all terraform commands, they are idempotent, namely, you can run it many times and the state of the environment will not change, i.e. remain the same, till you change the code and apply it.
+4. If the above command checks out OK, i.e. what it plans to do is exactly what you want, then you can run the following apply command to execute the plan. Or your company is likely to have a formal DevOps process/workflow to ensure a stable environment that requires you to go through a review process before applying the changes. The following lab will show an example of DevOps workflow for this purpose.
     * nohup terraform apply -auto-approve -no-color & sleep 3; tail -f nohup.out
     * **Note**: we need to use nohup to ensure the terraform will continue to execute in case there is network problem that disconnect your terminal session.
 
-#### Task 3: Add commits
+#### Task 3: Add Commits
 
 Once your branch has been created, it's time to start making changes. Whenever you add, edit, or delete a file, you're making a commit, and adding them to your branch. This process of adding commits keeps track of your progress as you work on a feature branch.
 
@@ -129,7 +129,7 @@ $ git commit -m "This is to commit changes made by ${myInitial}"
 
 ```
 
-#### Task 3: Publish your work
+#### Task 3: Publish your Work
 
 Once you are happy with your work. You will **push** the commit in your branch to your new GitHub repo. This allows other people to see the changes you've made. If they're approved by the repository's owner, the changes can then be merged into the master branch.
 

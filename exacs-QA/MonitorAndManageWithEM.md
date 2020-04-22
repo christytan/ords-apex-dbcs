@@ -351,14 +351,23 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Select **Targets on Hosts**.
 
+<<<<<<< HEAD
 ![](./images/dbsec/lab6EM/SetupDiscovery.png " ")
+=======
+![](./images/dbsec/lab6EM/SetupDiscovery.png)
 
-- Select your hosts, one at a time.
+>>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
+
+- Select your hosts, one at a time and click **Discover Now**.
 
 ​![](./images/dbsec/lab6EM/SelectTargetsonHosts.png " ")
 
+<<<<<<< HEAD
 - Select **Discover Now**.
 ​
+=======
+
+>>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 - Select your next host and repeat the process until all nodes have been discovered.
 
 - Now navigate to 'Auto Discovery Results'.
@@ -366,6 +375,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 ![](./images/dbsec/lab6EM/NavigateAutoDiscRes.png " ")
 
+<<<<<<< HEAD
 ​
 - Now, you need to find the 'Cluster' Target and promote it. 
 
@@ -390,6 +400,26 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 - If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
 
 
+=======
+- Now, you need to find the 'Cluster' Target and promote it. 
+
+![](./images/dbsec/lab6EM/SelectClusterTarget.png)
+
+- No Cluster database target can be added/promoted/discovered until the 'Cluster' target has been added or discovered. Promote it with its default inputs.
+
+- After promoting the 'Cluster' Target, promote the 'Cluster Database' target by finding one and clicking **Promote**. Promoting the Cluster DB should also promote its DB instances.
+
+
+![](./images/dbsec/lab6EM/FindClusterDB.png)
+
+- You will need to enter Monitoring User Credentials (like dbnsmp) for this cluster. You can also enter the SYSDBA Password.
+
+![](./images/dbsec/lab6EM/PromoteClusterDatabase.png)
+
+
+- If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
+
+>>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 - Click **Next**, review the page and  click **Save**.
 
 
@@ -398,16 +428,30 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Click [here](https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664) for more details on Discovering and adding DB Targets.
 
+<<<<<<< HEAD
 
 - Repeat this process for all Cluster Databases. Promote any additional target you want to monitor.​
 
 - You can review by going to the 'Configure Auto Discovery' to see what has been promoted.
 
 
+=======
+- Repeat this process for all Cluster Databases. Promote any additional target you want to monitor.
+
+- You can review by going to the 'Configure Auto Discovery' to see what has been promoted.
+
+>>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 - If there are errors, you need to make changes to your credentials or Installation Details Page.
 ​
 
+<<<<<<< HEAD
 ### Step 7: View monitoring details/set alerts
+=======
+
+### Part 7: View monitoring details/set alerts
+
+​
+>>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 
 - To View an Enterprise Summary of all targets, go to 'Enterprise' and click on **Summary**.
 
@@ -492,6 +536,26 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Here you can select a database instance and repeat the process to see the metrics for an instance.
 
+<<<<<<< HEAD
+=======
+
+![](./images/dbsec/lab6EM/SeeMembers.png)
+<table>
+
+<tr><td class="td-logo">
+
+​
+
+[![](./images/obe_tag.png)](#)</td>
+
+<td class="td-banner">
+
+### All Done!
+
+</td>
+
+</tr>
+>>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 
 ![](./images/dbsec/lab6EM/SeeMembers.png " ")
 
