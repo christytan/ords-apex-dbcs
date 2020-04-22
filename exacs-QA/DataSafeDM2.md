@@ -1,3 +1,8 @@
+# Explore Data Masking Results and Reports in Oracle Data Safe
+
+## Introduction 
+Using Data Safe, view masking formats and masking policies in the Library and analyze data masking results and reports.
+
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
@@ -17,7 +22,7 @@ Follow these general steps:
   - Are there masking formats to mask columns like Employee ID and Department ID?
   - What is the range used in the Age masking format?
 3. Explore masking policies in the Library, and answer the following questions:
-  - Do you see the masking policy that you created in [Masking Lab 1 - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe](DataSafeDM.md)?
+  - Do you see the masking policy that you created in [Masking Lab 1 - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe](?lab=lab-12-1-discover-mask-sensitive-data-by)
   - When was your masking policy last updated?
   - What details are shown when you open a masking policy?
 4. Download your masking policy. You can use Notepad or TextEdit to open the XML file.

@@ -205,5 +205,5 @@ Now, since we have provisioned the database instance and connected to it. We wil
 
 - Now, you have setup the schema and the tables.
 
-- You are now ready to move to [Lab 17-2](?lab=lab-17-2-create-restservice-on-database)
+- You are now ready to move to [Lab 16-2](?lab=lab-16-2-create-restservice-on-database)
 

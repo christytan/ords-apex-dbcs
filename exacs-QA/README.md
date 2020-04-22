@@ -24,7 +24,7 @@ Lab 1 - 5 deals with setting up the infrastructure and connectivity to Exadata C
 
 Labs 6 & 7 are geared towards Monitoring and Managing your Exadata Cloud Service databases.
 
-Labs 8 - 10  are intended for Backup, Recovering and Migrating your databases.
+Labs 8 - 10 are intended for Backup, Recovering and Migrating your databases.
 
 Lab 11 - 12 onwards demonstrate advanced lab guides for Database Vault and advanced Data safe lab guides.
 
@@ -122,7 +122,6 @@ As a System admin,
 - Install and configure Enterprise Manager on OCI
 - Configure Enterprise Manager with Exadata Cloud Service
 
-
 ## Lab 7: Data Safe with Exadata Cloud Service
 
 **Key Objectives**:
@@ -175,6 +174,7 @@ As a database security admin,
 - Implement separation of duties to protect sensitive data in your database
 
 
+
 ## Lab 12: Data Safe Advanced lab
 
 **Key Objectives**:
@@ -182,7 +182,6 @@ As a database security admin,
 As a database security admin,
 
 - Configure Data Masking and Auditing and Reporting for Exadata Cloud Service database
-
 
 
 ## Lab 13: Use OCI CLI commands to work with Exadata Cloud Service

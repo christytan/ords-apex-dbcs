@@ -1,4 +1,9 @@
-# Discovery Lab 2 - Verify a Sensitive Data Model with Oracle Data Safe
+# Update a Sensitive Data Model with Oracle Data Safe
+
+## Introduction 
+Using Oracle Data Safe, perform an incremental update to a sensitive data model by using the Data Discovery wizard.
+
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 In this lab, you learn how to do the following:

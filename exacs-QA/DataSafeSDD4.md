@@ -1,3 +1,9 @@
+# Create a Sensitive Type and Sensitive Category with Oracle Data Safe
+
+## Introduction
+Using Oracle Data Safe, create your own sensitive type and sensitive category.
+
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
 ## Objectives
 In this lab, you learn how to do the following:

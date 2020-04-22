@@ -8,7 +8,7 @@ This lab shows how to integrate the SDK and a REST Service with the Python appli
 
 - The First Python Application will upload data to oracle database using the Python SDK. This application will parse tweets and unpacks the tweets from a file using the Python SDK for Oracle DB before uploading it to the database.
 
-- The second Python Application will upload tweets in the form of JSON objects using the REST Service we created in the earlier exercise. Please refer **Lab 17-2** for more information. 
+- The second Python Application will upload tweets in the form of JSON objects using the REST Service we created in the earlier exercise. Please refer **Lab 16-2** for more information. 
 
 - To Demonstrate the native JSON support in Oracle Database, we will then create an APEX application which will directly extract data from these JSON objects without having to parse them first like any other data structure within the database.
 
@@ -22,7 +22,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Required Artifacts
 
-- Please ensure you completed the previous parts of this lab before you start this lab. Refer [Lab 17-1](?lab=lab-17-1-install-ords-apex) and [Lab 17-2](?lab=lab-17-2-create-restservice-on-database) for more info.
+- Please ensure you completed the previous parts of this lab before you start this lab. Refer [Lab 16-1](?lab=lab-16-1-install-ords-apex) and [Lab 16-2](?lab=lab-16-2-create-restservice-on-database) for more info.
 
 ## Steps
 
