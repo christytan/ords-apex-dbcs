@@ -1,6 +1,6 @@
 ## Introduction
 
-Oracle's Exadata Cloud Service (ExaCS) is deployed in a private VCN in the Oracle Cloud Infrastructure with no public IP address assigned. Hence to gain connectivity to the databases, a best practice approach is to use a VPN connection. 
+Oracle's Exadata Cloud Service (ExaCS) is deployed in a private VCN in the Oracle Cloud Infrastructure with no public IP address assigned. Thus, to gain connectivity to the databases, the best practice is to use a VPN connection. 
 
 This lab walks you through the steps to deploy a VPN server in OCI and create an SSL VPN connection between a client machine (your desktop) and the ExaCS infrastructure. Once configured, a single VPN server can be shared among multiple users.
 
@@ -10,20 +10,20 @@ To log issues and view the Lab Guide source, go to the [github oracle](https://g
 As a network admin,
 
 - Configure a VPN server in OCI based on OpenVPN software
-- Configure your VPN client and connect to VPN Server
-- Launch SQL Developer on client and connect to an ExaCS database node
+- Configure your VPN client and connect to a VPN Server
+- Launch SQL Developer on a client and connect to an ExaCS database node
 
 ## Required Artifacts
 
-- An Oracle Cloud Infrastructure account with privileges to create compute instance and network resources
+- An Oracle Cloud Infrastructure account with privileges to create a compute instance and network resources
 - A pre-provisioned ExaCS instance in a private network
-- A pre-provisioned Virtual Cloud Network with public and private subnets setup with appropriate security lists. Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o)
+- A pre-provisioned Virtual Cloud Network with public and private subnets set up with appropriate security lists. Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o)
 
 
 The following illustration shows a network topology that can be used to provide secure access to your EXACS infrastructure.
 ![](./images/Infra/configure_vpn/highlevelSSL.png " ")
 
-- As shown above, your OCI Virtual Cloud Network (VCN) has two subnets. A private subnet with CIDR 10.0.2.0/24 (for example that hosts your exadata infrastructure and a public subnet with CIDR 10.0.1.0/24 that has public facing web and application servers and also the VPN Server. 
+- As shown above, your OCI Virtual Cloud Network (VCN) has two subnets. There is a private subnet with CIDR 10.0.0.0/24 (for example that hosts your exadata infrastructure) and a public subnet with CIDR 10.0.1.0/24 that has public facing web and application servers, as well as the VPN Server. 
 
 - An internet gateway is attached to the public subnet to allow all resources within that subnet to be accessible over the internet.
 
@@ -41,7 +41,7 @@ The following illustration shows a network topology that can be used to provide 
 
     Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o) for detailed instructions on logging into your OCI account.
 
-- Once logged in, Click on **Menu**, **Compute**, **Instances** and **Create Instance**
+- Once logged in, Click on **Menu**, **Compute**, **Instances**, and **Create Instance**
 
 ![](./images/Infra/configure_vpn/createCompute.png " ")
 
@@ -57,7 +57,7 @@ The following illustration shows a network topology that can be used to provide 
 ![](./images/Infra/configure_vpn/ComputeType.png " ")
 
 -  Next, select the network for your VPN Server
-    - Select the compartment & VCN where your exadata infrastructure is provisioned
+    - Select the compartment and VCN where your exadata infrastructure is provisioned
     - Select the compartment where your public subnet is provisioned
     - Pick public subnet from the drop down
     - Select "Assign a public IP address"
@@ -65,29 +65,25 @@ The following illustration shows a network topology that can be used to provide 
     
 ![](./images/Infra/configure_vpn/ComputeNetwork.png " ")
 
-#### Note that while your ExaCS infrastructure and VPN server are in the same VCN, ExaCS is in a private subnet while the VPN server is deployed in a public subnet for access over the internet. 
+#### Note that while your ExaCS infrastructure and VPN server are in the same VCN, the ExaCS is in a private subnet while the VPN server is deployed in a public subnet for access over the internet. 
 
 
 
 
--  Click Create and within a few mins your CentOS server will be ready with a public IP for ssh access
+-  Click Create and within a few minutes your CentOS server will be ready with a public IP for ssh access
 
 
 
 ### **STEP 2: Install and Configure OpenVPN Server**
 
--   ssh into centOS vm and download the openVPN rpm package
+-   Use the following to ssh into centOS vm and download the openVPN rpm package
 
 ```
-<copy>
 ssh opc@&lt;public_ipAddress_of_your_centOS_VM&gt;
-</copy>
 ```
 
 ```
-<copy>
 wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
-</copy>
 ```
    
 ![](./images/Infra/configure_vpn/openvpn_configure.jpeg)
@@ -95,22 +91,18 @@ wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
 -   Use the RPM command to install the package
 
 ```
-<copy>
 sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
-</copy>
 ```
 
 ![](./images/Infra/configure_vpn/openvpn_url.jpeg)
 
--   Change password of OpenVPN Server
+-   Change the password of OpenVPN Server
 
 ```
-<copy>
 sudo passwd openvpn
-</copy>
 ```
 
--    From your local browser, access the admin UI console of your VPN Server (**https://<*public_ipAddress_of_your_centOS_VM*>:943/admin**), using the username as 'openvpn' and password for OpenVPN server.
+-    From your local browser, access the admin UI console of your VPN Server (**https://<*public_ipAddress_of_your_centOS_VM*>:943/admin**), using the username 'openvpn' and the password for OpenVPN server.
  
 
 ![](./images/Infra/configure_vpn/openvpn_login.png " ")
@@ -119,16 +111,16 @@ sudo passwd openvpn
 
 ![](./images/Infra/configure_vpn/openvpn_network.png " ")
 
-****Save your setting before advancing to the VPN settings page**
+****Save your settings before advancing to the VPN settings page**
 
 Click **VPN settings** and scroll down to the section labeled **Routing**
 
-Here we configure how traffic from your VPN client (i.e. your personal laptop for example) shoud be NATed and how DNS resolution should occur.
+Here we configure how traffic from your VPN client (for example, your personal laptop) shoud be NATed and how DNS resolution should occur.
 
 Configure this section as shown in the screenshot below. 
 - Choose **Yes using NAT**
 - Provide CIDR ranges for your application and exadata subnets
-- Pick 'No' for the question - **Should client internet traffic be routed through the VPN?**
+- Choose **No** for the question: **Should client internet traffic be routed through the VPN?**
 
 ![](./images/Infra/configure_vpn/vpn_NAT.png " ")
 
@@ -143,7 +135,7 @@ Scroll down and configure the DNS settings as shown below.
 ![](./images/Infra/configure_vpn/openvpn_advancedVPN.png " ")
 
 
-Note: Once you have applied your changes, click **Save Settings** once again. Then, **Update Running Server** to push your new configuration to the OpenVPN server.
+Note: Once you have applied your changes, click **Save Settings** once again. Then click **Update Running Server** to push your new configuration to the OpenVPN server.
 
 ![](./images/Infra/configure_vpn/vpn_routing3.png " ")
 
@@ -156,7 +148,7 @@ Note: Once you have applied your changes, click **Save Settings** once again. Th
 
     
 
-- Once the installation process has completed, you can see an OpenVPN icon in your OS taskbar. Right-Click this icon to bring up the context menu to start your OpenVPN connection
+- Once the installation process is complete, you will see an OpenVPN icon in your OS taskbar. Right-Click this icon to bring up the context menu to start your OpenVPN connection.
 
 ![](./images/Infra/configure_vpn/openvpn_conn.png " ")
 
@@ -164,7 +156,7 @@ Note: Once you have applied your changes, click **Save Settings** once again. Th
     
 ##### Note: IP should be Public IP for OpenVPN Compute Instance
 
-- Click **Connect** brings up a window asking for the OpenVPN username and password. Enter the credentials for your **openvpn** user and click **Connect** to establish a VPN tunnel
+- Clicking **Connect** brings up a window asking for the OpenVPN username and password. Enter the credentials for your **openvpn** user and click **Connect** to establish a VPN tunnel.
 
 ![](./images/Infra/configure_vpn/openvpn_clientwindow.png " ")
 

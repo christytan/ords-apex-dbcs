@@ -1,4 +1,9 @@
-# Masking Lab 4 - Configure a Variety of Masking Formats with Oracle Data Safe
+# Configure a Variety of Masking Formats with Oracle Data Safe
+
+## Introduction
+Using Data Safe, perform data discovery and data masking in one flow, configure a variety of masking formats, such as random number, fixed string, group shuffle, regular expression, and conditional and pre-defined custom mask.
+
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 
@@ -35,23 +40,23 @@ Follow these general steps:
 
 - From the navigation menu, click **Data Safe**
 
-![](./images/dbsec/datasafe/login/navigation.png)
+![](./images/dbsec/datasafe/login/navigation.png " ")
 
 - You are taken to the **Registered Databases** Page.
 - Click on **Service Console**
 
-![](./images/dbsec/datasafe/login/service-console.png)
+![](./images/dbsec/datasafe/login/service-console.png " ")
 
 - You are taken to the Data Safe login page. Sign into Data Safe using your credentials.
 
-![](./images/dbsec/datasafe/login/sign-in.png)
+![](./images/dbsec/datasafe/login/sign-in.png " ")
 
 ### Part 2: Launch the Data Masking wizard and discover sensitive data
 
 - In Oracle Data Safe, click the **Home** tab, and then click **Data Masking**. The **Data Masking** wizard is displayed.
 - On the **Select Target for Data Masking** page, select your target database, and then click **Continue**.
 
-![](./images/dbsec/datasafe/masking/select-target-masking.png)
+![](./images/dbsec/datasafe/masking/select-target-masking.png " ")
 
 - The **Select Masking Policy** page is displayed.
 - For **Masking Policy**, leave **Create** selected.
@@ -62,24 +67,24 @@ Follow these general steps:
 - Select your resource group.
 - Click **Continue**.
 
-![](./images/dbsec/datasafe/masking/select-masking-policy.png)
+![](./images/dbsec/datasafe/masking/select-masking-policy.png " ")
 
 - The **Select Target for Sensitive Data Discovery** page is displayed.
 - Select your target database, and then click **Continue**.
 
-![](./images/dbsec/datasafe/masking/sdd-target.png)
+![](./images/dbsec/datasafe/masking/sdd-target.png " ")
 
 - The **Select Schemas for Sensitive Data Discovery** page is displayed.
 - Select the `HCM1` schema, and then click **Continue**.
 
-![](./images/dbsec/datasafe/masking/hcm1-select.png)
+![](./images/dbsec/datasafe/masking/hcm1-select.png " ")
 
 - The **Select Sensitive Types for Sensitive Data Discovery** page is displayed.
 -  Select **Select All**.
 - To start the data discovery job, click **Continue**.
 - When the data discovery job is completed, click **Continue**.
 
-![](./images/dbsec/datasafe/masking/sdd-discovery-completed.png)
+![](./images/dbsec/datasafe/masking/sdd-discovery-completed.png " ")
 
 - The **Sensitive Data Discovery Result** page is displayed.
 - Click **Save and Continue**.<br>
@@ -87,20 +92,20 @@ The **Masking Policy** page is displayed.
 - Clear the selected columns by deselecting **Select All**. In this example, you select specific sensitive columns to mask.
 - Expand all of the nodes.
 
-![](./images/dbsec/datasafe/masking/masking-policy2.png)
+![](./images/dbsec/datasafe/masking/masking-policy2.png " ")
 
 ### Part 3: Configure a masking format for `EMP_EXTENDED.TAXPAYERID` to generate random numbers between 100,000,000 and 899,999,999
 
 - Search for `EMP_EXTENDED.TAXPAYERID`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 
-![](./images/dbsec/datasafe/masking/tax-id-edit.png)
+![](./images/dbsec/datasafe/masking/tax-id-edit.png " ")
 
 - Select **Random Number**.
 - Set **Start Number** equal to **100,000,000**.
   - Leave out the commas in the numbers. Commas are automatically added.
 - Set **End Number** equal to **899,999,999**.
 
-![](./images/dbsec/datasafe/masking/random-tax.png)
+![](./images/dbsec/datasafe/masking/random-tax.png " ")
 
 - Click **Save**.
 
@@ -111,13 +116,13 @@ The **Masking Policy** page is displayed.
 - Enter the string `***-**-****`.
 - Click **Save**.
 
-![](./images/dbsec/datasafe/masking/fixed-string.png)
+![](./images/dbsec/datasafe/masking/fixed-string.png " ")
 
 ### Part 5: Configure a masking format for `LOCATIONS.POSTAL_CODE` to generate 5-digit random numbers between 10000 and 99999
 
 - Search for `LOCATIONS.POSTAL_CODE`, select it in the table to enable it for masking, and then click its **Edit** button (pencil icon). The **Edit Format** dialog box is displayed.
 
-![](./images/dbsec/datasafe/masking/postal-code.png)
+![](./images/dbsec/datasafe/masking/postal-code.png " ")
 
 - Select **Random Number**.
 - Set **Start Number** equal to **10000**.
@@ -125,7 +130,7 @@ The **Masking Policy** page is displayed.
   - You want 5-digit numbers only.
 - Click **Save**.
 
-![](./images/dbsec/datasafe/masking/random-postal-code.png)
+![](./images/dbsec/datasafe/masking/random-postal-code.png " ")
 
 ### Part 6: Configure a masking format for `COUNTRIES.COUNTRY_NAME` to shuffle values within each `REGION_ID`
 
@@ -134,7 +139,7 @@ The **Masking Policy** page is displayed.
 - Enter the grouping column `REGION_ID`, and press **Enter**.
 - Click **Save**.
 
-![](./images/dbsec/datasafe/masking/group-shuffle-region.png)
+![](./images/dbsec/datasafe/masking/group-shuffle-region.png " ")
 
 ### Part 7: Configure a masking format that masks columns with email addresses that contain `@ORACLE.COM`
 
@@ -145,7 +150,7 @@ The **Masking Policy** page is displayed.
 - Enter the replacement expression `@EXAMPLE.COM`.
 - Click **Save**.
 
-![](./images/dbsec/datasafe/masking/regular-expression.png)
+![](./images/dbsec/datasafe/masking/regular-expression.png " ")
 
 ### Part 8: Configure a masking format for `JOB_HISTORY.DATE_OF_TERMINATION` that generates dates from two years ago to the present
 
@@ -155,7 +160,7 @@ The **Masking Policy** page is displayed.
 - For **End Date**, configure the current date by using the calendar.
 - Click **Save**.
 
-![](./images/dbsec/datasafe/masking/random-date.png)
+![](./images/dbsec/datasafe/masking/random-date.png " ")
 
 ### Part 9: Configure a masking format for `EMPLOYEES.SALARY` that masks values greater than 10,000 with the fixed number 10,000
 
@@ -176,11 +181,11 @@ The **Masking Policy** page is displayed.
 - Select the **Preserve Original Data** masking format.
 - Click **Save**.
 
-![](./images/dbsec/datasafe/masking/employee-salary-mask.png)
+![](./images/dbsec/datasafe/masking/employee-salary-mask.png " ")
 
 - Notice that the masking format is marked as **Complex Format**.
 
-![](./images/dbsec/datasafe/masking/complex-format.png)
+![](./images/dbsec/datasafe/masking/complex-format.png " ")
 
 ### Part 10: Configure a masking format for `SUPPLEMENTAL_DATA.BONUS_AMOUNT` that generates a random list of values, including 1000, 1500, 2000, 2500, and 3000
 
@@ -191,22 +196,22 @@ The **Masking Policy** page is displayed.
  - **1000**, **1500**, **2000**, **2500**, **3000**.
 - Click **Save**.
 
-![](./images/dbsec/datasafe/masking/random-list.png)
+![](./images/dbsec/datasafe/masking/random-list.png " ")
 
 ### Part 11: Schedule the data masking job to run immediately and then view the masking report
 
 - **Select all** the sensitive columns and click **Confirm Policy**.
 
-![](./images/dbsec/datasafe/masking/confirm-policy.png)
+![](./images/dbsec/datasafe/masking/confirm-policy.png " ")
 
 - Schedule the data masking job to run immediately and then view the masking report.
 
-![](./images/dbsec/datasafe/masking/mask-run-now.png)
+![](./images/dbsec/datasafe/masking/mask-run-now.png " ")
 
 - Click **Review**<br />
 Now you are ready to run the data masking job.
 
-![](./images/dbsec/datasafe/masking/review-and-submit.png)
+![](./images/dbsec/datasafe/masking/review-and-submit.png " ")
 
 - Click **Submit**
   - How many values are masked?
@@ -223,7 +228,7 @@ Because many of the masking formats use random formulas, your results are probab
 - Select all the contents of the `DEPARTMENTS` table:
 
 ```
-SELECT * FROM HCM1.COUNTRIES;
+<copy>SELECT * FROM HCM1.COUNTRIES;</copy>
 ```
 
 - View the masked data for the `COUNTRY_NAME` column. Clear the worksheet when you're done.
@@ -234,7 +239,7 @@ SELECT * FROM HCM1.COUNTRIES;
 - Select all the contents of the `EMPLOYEES` table:
 
 ```
-SELECT * FROM HCM1.EMPLOYEES;
+<copy>SELECT * FROM HCM1.EMPLOYEES;</copy>
 ```
 
 - `EMAIL`: Sample data before masking: `JLIVINGS@ORACLE.COM`. Sample data after masking: `JLIVINGS@EXAMPLE.COM`
@@ -243,7 +248,7 @@ SELECT * FROM HCM1.EMPLOYEES;
 - Select all the contents of the `EMPLOYEES` table:
 
 ```
-SELECT * FROM HCM1.JOB_HISTORY;
+<copy>SELECT * FROM HCM1.JOB_HISTORY;</copy>
 ```
 
 - View the masked data for the `DATE_OF_TERMINATION` column. Clear the worksheet when you're done.
@@ -252,7 +257,7 @@ SELECT * FROM HCM1.JOB_HISTORY;
 - Select all the contents of the `LOCATIONS` table:
 
 ```
-SELECT * FROM HCM1.LOCATIONS;
+<copy>SELECT * FROM HCM1.LOCATIONS;</copy>
 ```
 
 - View the masked data for the `POSTAL_CODE` column. Clear the worksheet when you're done.
@@ -261,7 +266,7 @@ SELECT * FROM HCM1.LOCATIONS;
 - Select all the contents of the `SUPPLEMENTAL_DATA` table:
 
 ```
-SELECT * FROM SUPPLEMENTAL_DATA;
+<copy>SELECT * FROM SUPPLEMENTAL_DATA;</copy>
 ```
 
 - View the masked data for the following columns.

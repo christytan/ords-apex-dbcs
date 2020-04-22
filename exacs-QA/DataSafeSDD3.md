@@ -1,4 +1,9 @@
-# Discovery Lab 2 - Verify a Sensitive Data Model with Oracle Data Safe
+# Update a Sensitive Data Model with Oracle Data Safe
+
+## Introduction 
+Using Oracle Data Safe, perform an incremental update to a sensitive data model by using the Data Discovery wizard.
+
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -23,52 +28,52 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
-ALTER SESSION SET CONTAINER=PDB1;
+<copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
 ```
 - Expand the `EMPLOYEES` table to view the current columns.
 On the SQL Worksheet, run the following commands to add an `AGE` column to the `EMPLOYEES` table.
 
 ```
-ALTER TABLE HCM1.EMPLOYEES ADD AGE NUMBER;
+<copy>ALTER TABLE HCM1.EMPLOYEES ADD AGE NUMBER;</copy>
 ```
 - On the Navigator tab, click the Refresh button.<br>
 `AGE` is added to the bottom of the list in the `EMPLOYEES` table.
 - Run the following command to gather schema statistics.
 
 ```
-EXEC DBMS_STATS.GATHER_SCHEMA_STATS('HCM1');
+<copy>EXEC DBMS_STATS.GATHER_SCHEMA_STATS('HCM1');</copy>
 ```
 ### Part 3: Sign in to the Oracle Data Safe Console in your region
 
 - From the navigation menu, click **Data Safe**
 
-![](./images/dbsec/datasafe/login/navigation.png)
+![](./images/dbsec/datasafe/login/navigation.png " ")
 
 - You are taken to the **Registered Databases** Page.
 - Click on **Service Console**
 
-![](./images/dbsec/datasafe/login/service-console.png)
+![](./images/dbsec/datasafe/login/service-console.png " ")
 
 - You are taken to the Data Safe login page. Sign into Data Safe using your credentials.
 
-![](./images/dbsec/datasafe/login/sign-in.png)
+![](./images/dbsec/datasafe/login/sign-in.png " ")
 
 ### Part 4: Update your sensitive data model against your database by using the update option in the Data Masking wizard
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click Data Discovery. The Select Target for **Data Discovery** page is displayed.
 
-![](./images/dbsec/datasafe/discovery/discovery-nav.png)
+![](./images/dbsec/datasafe/discovery/discovery-nav.png " ")
 - Select your target database, and then click **Continue**. The **Select Sensitive Data Model** page is displayed.
 
-![](./images/dbsec/datasafe/discovery/discovery-target2.png)
+![](./images/dbsec/datasafe/discovery/discovery-target2.png " ")
 - For Sensitive Data Model, click **Pick from Library**.
 
-![](./images/dbsec/datasafe/discovery/library-pick.png)
+![](./images/dbsec/datasafe/discovery/library-pick.png " ")
 - Click **Continue**.
 The **Select Sensitive Data Model** page is displayed.
 - Select your sensitive data model (**<username> SDM1**).
 
-![](./images/dbsec/datasafe/discovery/select-target2.png)
+![](./images/dbsec/datasafe/discovery/select-target2.png " ")
 
 - Leave **Update the SDM with the target** selected.
 - Click **Continue**.

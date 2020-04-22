@@ -1,4 +1,9 @@
-# Masking Lab 2 - Explore Data Masking Results and Reports in Oracle Data Safe
+# Explore Data Masking Results and Reports in Oracle Data Safe
+
+## Introduction 
+Using Data Safe, view masking formats and masking policies in the Library and analyze data masking results and reports.
+
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 
@@ -33,27 +38,27 @@ Follow these general steps:
 
 - From the navigation menu, click **Data Safe**
 
-![](./images/dbsec/datasafe/login/navigation.png)
+![](./images/dbsec/datasafe/login/navigation.png " ")
 
 - You are taken to the **Registered Databases** Page.
 - Click on **Service Console**
 
-![](./images/dbsec/datasafe/login/service-console.png)
+![](./images/dbsec/datasafe/login/service-console.png " ")
 
 - You are taken to the Data Safe login page. Sign into Data Safe using your credentials.
 
-![](./images/dbsec/datasafe/login/sign-in.png)
+![](./images/dbsec/datasafe/login/sign-in.png " ")
 
 ### Part 2: Explore masking formats in the Library
 
 - In the Oracle Data Safe Console, click the **Library** tab.
 - Click **Masking Formats**.
 
-![](./images/dbsec/datasafe/masking/library-formats.png)
+![](./images/dbsec/datasafe/masking/library-formats.png " ")
 
 - In the search box, enter **Employee** (case-sensitive) and press **Enter** or click the magnifying glass button. Do the same for **Department**. Notice that there are no matching masking formats listed for Employee.
 
-![](./images/dbsec/datasafe/masking/employee-search.png)
+![](./images/dbsec/datasafe/masking/employee-search.png " ")
 
 - Clear the search field and press **Enter** to restore the list of masking formats.
 - Click the **Age** masking format.
@@ -67,7 +72,7 @@ Follow these general steps:
 Data by Using Default Masking Formats in Oracle Data Safe](DataSafeDM.md) should be listed (**<username> Mask1_HCM1**). The dates when the policy was created and last updated are displayed.
 - Click your masking policy.
 
-![](./images/dbsec/datasafe/masking/click-policy.png)
+![](./images/dbsec/datasafe/masking/click-policy.png " ")
 
 - Review the details, and then close the window.
 - Notice that you can move the **Expand All** slider to the right to view all of the sensitive columns and their respective masking policies.
@@ -80,12 +85,12 @@ Data by Using Default Masking Formats in Oracle Data Safe](DataSafeDM.md) should
 
 - Go to the **Library tab** and click on **Masking Policies**.
 
-![](./images/dbsec/datasafe/masking/library-masking.png)
+![](./images/dbsec/datasafe/masking/library-masking.png " ")
 
 - Select the check box for your masking policy.
 - Click **Download**.
 
-![](./images/dbsec/datasafe/masking/download-policy.png)
+![](./images/dbsec/datasafe/masking/download-policy.png " ")
 
 - The **Download Masking Policy** dialog box is displayed.
 - Click Yes to download both the sensitive data model and the masking policy as a
@@ -93,7 +98,7 @@ combined template. Or, click **No** to download just the masking policy.
 The XML file is downloaded to your browser.
 A confirmation message is displayed on your page.
 
-![](./images/dbsec/datasafe/masking/download-policy2.png)
+![](./images/dbsec/datasafe/masking/download-policy2.png " ")
 
 4. View your list of downloads in your browser and open the masking policy XML file.
 5. Review the file, and then close it.

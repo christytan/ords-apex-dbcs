@@ -1,4 +1,9 @@
-# Assessment Lab 1 - Assess Database Configurations with Oracle Data Safe
+# Assess Database Configurations with Oracle Data Safe
+
+## Introduction 
+Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues. 
+
+To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
 ## Objectives
 In this lab, you learn how to do the following:
@@ -24,25 +29,25 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - Return to the Oracle Data Safe Console.
 - Click the **Home** tab and then **Security Assessment**.
 
-![](./images/dbsec/datasafe/assessment/security-assessment.png)
+![](./images/dbsec/datasafe/assessment/security-assessment.png " ")
 - On the **Security Assessment** page, select the check box for your target database, and click **Assess**.
 
-![](./images/dbsec/datasafe/assessment/target.png)
+![](./images/dbsec/datasafe/assessment/target.png " ")
 
 - Wait a moment for the report to generate.
 - When the report is generated, review the high risk, medium risk, and low risk values.
 - In the **Last Generated Report** column, click **View Report**.
 
-![](./images/dbsec/datasafe/assessment/target2.png)
+![](./images/dbsec/datasafe/assessment/target2.png " ")
 
 - The **Comprehensive Assessment** report is displayed on the **Reports** tab.
 - In the upper right corner, view the target name, when the database was assessed, and the database version.
 
-![](./images/dbsec/datasafe/assessment/comprehensive-assessment.png)
+![](./images/dbsec/datasafe/assessment/comprehensive-assessment.png " ")
 
 - View the values for the different risk levels. These values give you an idea of how secure your database is.
 
-![](./images/dbsec/datasafe/assessment/high-risk.png)
+![](./images/dbsec/datasafe/assessment/high-risk.png " ")
 
 - View the values for security controls, user security, and security configurations. These totals show you the number of findings for each high-level category.
 - Browse the report by scrolling down and expanding and collapsing categories.
@@ -50,7 +55,7 @@ Each category lists related findings about your database and how you can make ch
 11. View the **Summary** table.
 This table compares the number of findings for each category and counts the number of findings per risk level. It helps you to identify the areas that need attention on your database.
 
-![](./images/dbsec/datasafe/assessment/summary.png)
+![](./images/dbsec/datasafe/assessment/summary.png " ")
 
 ### Part 3: Review the Medium Risk, Low Risk, and Advisory findings
 - At the top of the report, click **Medium Risk** to filter the report to show only the medium risk findings.
@@ -67,37 +72,37 @@ This table compares the number of findings for each category and counts the numb
 
 - At the top of the report, click **Evaluate** to filter the report to show only the Evaluate findings.
 
-![](./images/dbsec/datasafe/assessment/evaluate.png)
+![](./images/dbsec/datasafe/assessment/evaluate.png " ")
 - Deselect all other risk levels.
 - Scroll through the report to view the findings.
 - Focus on **System Privilege Grants**:
   - System privileges `(ALTER USER, CREATE USER, DROP USER)` can be used to create and modify other user accounts, including changing passwords. This ability can be abused to gain access to another user's account, which may have greater privileges. The Privilege Analysis feature may be helpful to determine whether or not a user or role have used account management privileges.
   - Security Assessment found 59 grants of system privilege grants on your target database.
 
-![](./images/dbsec/datasafe/assessment/system-grants.png)
+![](./images/dbsec/datasafe/assessment/system-grants.png " ")
 
   - Fix: In SQL Developer, run the following query on your database to find out who has the `PDB_DBA` role. Sort the results by `GRANTED_ROLE` to make it easy to identify the users with the role. Then, revoke the `PDB_DBA` role from the `EVIL_RICH` user account.
 
 ```
-select * from dba_role_privs;
+<copy>select * from dba_role_privs;</copy>
 ```
 
-![](./images/dbsec/datasafe/assessment/dba-roles-privs.png)
+![](./images/dbsec/datasafe/assessment/dba-roles-privs.png " ")
 
 ```
-revoke pdb_dba from EVIL_RICH;
+<copy>revoke pdb_dba from EVIL_RICH;</copy>
 ```
 
 - Focus on **Audit Records**:
   - Auditing is an essential component for securing any system. The audit trail lets you monitor the activities of highly privileged users. Even though auditing cannot prevent attacks that exploit gaps in other security policies, it does act as a critical last line of defense by detecting malicious activity. Enable unified auditing policies on the database and ensure that audit records exist. This is a STIG, GDPR, and CIS recommended policy.
 
-![](./images/dbsec/datasafe/assessment/audit.png)
+![](./images/dbsec/datasafe/assessment/audit.png " ")
 
 - Review the Details section in this finding and answer these questions: How many audit trails exist in your database and how many of those trails contain audit records? The report states that Security Assessment examined two audit trails and found records in one audit trail. There's only one audit trail because Autonomous Transaction Processing databases are in pure unified audit mode.
 - Fix: You do not need to do anything on your database because your database already has unified auditing policies enabled.
 - Focus on **Unified Audit**:
 
-![](./images/dbsec/datasafe/assessment/unified-audit.png)
+![](./images/dbsec/datasafe/assessment/unified-audit.png " ")
 
 - Unified Auditing is the recommended audit method and is available in Oracle Database 12.1 and later releases. Not using Unified Auditing or disabling unified auditing policies is a risk. Verify that unified audit policies are enabled on the database. Audit all sensitive operations, including privileged user activities. Also audit access to application data that bypasses the application.
 - How many unified audit policies are on your target database and how many of them are enabled?
@@ -106,35 +111,35 @@ revoke pdb_dba from EVIL_RICH;
 
 - At the top of the report, click **Advisory** to filter the report to show only the Advisory findings.
 
-![](./images/dbsec/datasafe/assessment/advisory.png)
+![](./images/dbsec/datasafe/assessment/advisory.png " ")
 
 - Deselect all other risk levels.
 - Scroll through the report to review the findings. For example, the following findings have a **Pass status**.
 
-![](./images/dbsec/datasafe/assessment/pass-status.png)
+![](./images/dbsec/datasafe/assessment/pass-status.png " ")
 
   - User Accounts in `SYSTEM` or `SYSAUX` Tablespace Case-Sensitive Passwords
 
-![](./images/dbsec/datasafe/assessment/system-sysaux.png)
+![](./images/dbsec/datasafe/assessment/system-sysaux.png " ")
 
   - Users with Default Passwords
 
-![](./images/dbsec/datasafe/assessment/users-default-password.png)
+![](./images/dbsec/datasafe/assessment/users-default-password.png " ")
 
   - Password Verifiers
   - User Parameters
   - Users with Unlimited Password Lifetime
   - System Privileges Granted to `PUBLIC`
 
-![](./images/dbsec/datasafe/assessment/system-privileges-public.png)
+![](./images/dbsec/datasafe/assessment/system-privileges-public.png " ")
 
   - Roles Granted to Public
 
-![](./images/dbsec/datasafe/assessment/public-roles.png)
+![](./images/dbsec/datasafe/assessment/public-roles.png " ")
 
   - Column Privileges Granted to `PUBLIC DBA` Role
 
-![](./images/dbsec/datasafe/assessment/column-privileges.png)
+![](./images/dbsec/datasafe/assessment/column-privileges.png " ")
 
   - ....and more
 

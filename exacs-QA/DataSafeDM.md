@@ -1,4 +1,7 @@
-# Masking Lab 1 - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe
+# Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe
+
+## Introduction
+Using Data Safe, view sensitive data in your Exadata Cloud Service (ExaCS) database and discover sensitive data by using Data Discovery. Also, mask sensitive data by using the default masking formats in Data Masking and validate.
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
@@ -41,66 +44,66 @@ data.
 
 - From the navigation menu, click **Data Safe**
 
-![](./images/dbsec/datasafe/login/navigation.png)
+![](./images/dbsec/datasafe/login/navigation.png " ")
 
 - You are taken to the **Registered Databases** Page.
 - Click on **Service Console**
 
-![](./images/dbsec/datasafe/login/service-console.png)
+![](./images/dbsec/datasafe/login/service-console.png " ")
 
 - You are taken to the Data Safe login page. Sign into Data Safe using your credentials.
 
-![](./images/dbsec/datasafe/login/sign-in.png)
+![](./images/dbsec/datasafe/login/sign-in.png " ")
 
 ### Part 4: Discover sensitive data by using Data Discovery
 
 - Access the **Data Discovery** wizard by clicking the **Data Discovery** tab.
 
-![](./images/dbsec/datasafe/masking/discovery-home.png)
+![](./images/dbsec/datasafe/masking/discovery-home.png " ")
 
 - The **Select Target for Sensitive Data Discovery** page is displayed.
 
-![](./images/dbsec/datasafe/masking/ssd-model.png)
+![](./images/dbsec/datasafe/masking/ssd-model.png " ")
 
 - Select your target database, and then click **Continue**.
 - The Select **Sensitive Data Model** page is displayed.
 - Leave **Create** selected, enter **<username> SDM2** for the name, enable **Show and save
 sample data**, select your resource group, and then click **Continue**.
 
-![](./images/dbsec/datasafe/masking/select-data-model.png)
+![](./images/dbsec/datasafe/masking/select-data-model.png " ")
 
 - The **Select Schemas for Sensitive Data Discovery** page is displayed.
 - Scroll down and select the `HCM1` schema, and then click **Continue**.
 
-![](./images/dbsec/datasafe/masking/select-shema.png)
+![](./images/dbsec/datasafe/masking/select-shema.png " ")
 
 - The **Select Sensitive Types for Sensitive Data Discovery** page is displayed.
 - **Expand all** of the categories by moving the slider to the right, and then scroll down the page and review the sensitive types.
 - Notice that you can select individual sensitive types, sensitive categories, and all sensitive
 types.
 
-![](./images/dbsec/datasafe/masking/select-sensitive-types2.png)
+![](./images/dbsec/datasafe/masking/select-sensitive-types2.png " ")
 
 - At the top of the page, select the **Select All** check box, and then click **Continue** to start
 the data discovery job.
 - When the job is completed, ensure that the **Detail** column states `Data discovery job finished successfully`, and then click **Continue**.
 
-![](./images/dbsec/datasafe/masking/discovery-complete.png)
+![](./images/dbsec/datasafe/masking/discovery-complete.png " ")
 
 - The **Sensitive Data Discovery Result** page is displayed.
 - Examine the sensitive data model created by the Data Discovery wizard.
 - To view all of the sensitive columns, move the **Expand All** slider to the right. Oracle Data Safe automatically saves your sensitive data model to the Oracle Data Safe Library.
 
-![](./images/dbsec/datasafe/masking/sensitive-results.png)
+![](./images/dbsec/datasafe/masking/sensitive-results.png " ")
 
 - From the drop-down list, select **Schema View** to sort the sensitive columns by table.
 
-![](./images/dbsec/datasafe/masking/schema-view.png)
+![](./images/dbsec/datasafe/masking/schema-view.png " ")
 
 - Scroll down the page to view the sensitive columns. You can view sample data (if it's available for a sensitive column), column counts, and estimated data counts. In particular, take a look at the sensitive columns that Data Discovery found in the `EMPLOYEES` table. Columns that do not have a check mark are called referential relationships. They are included because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary.
 - Also view the sample data provided to get an idea of what the sensitive data looks like.
 
-![](./images/dbsec/datasafe/masking/report-chart.png)
+![](./images/dbsec/datasafe/masking/report-chart.png " ")
 
 - Scroll to the bottom of the page, and then click **Report** to view the Data Discovery report. The chart compares sensitive categories. You can view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns. The table displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts.
 15. Click the chart's **Expand** button.
@@ -114,59 +117,59 @@ the data discovery job.
 
 - Click **Continue to mask the data**.
 
-![](./images/dbsec/datasafe/masking/continue-mask.png)
+![](./images/dbsec/datasafe/masking/continue-mask.png " ")
 
 - On the **Select Target for Data Masking** page, your target database is selected. Click **Continue**. The **Masking Policy** page is displayed.
 
-![](./images/dbsec/datasafe/masking/select-target-mask.png)
+![](./images/dbsec/datasafe/masking/select-target-mask.png " ")
 
 - In the field below **Masking Policy**, enter **Mask1_HCM1** for the masking policy name.
 - Move the **Expand All** slider to the right to view all of the sensitive columns.
 
-![](./images/dbsec/datasafe/masking/mask-policy-page.png)
+![](./images/dbsec/datasafe/masking/mask-policy-page.png " ")
 
 - Scroll down the page to view the default masking format selected for each sensitive column.
 - For the `HCM1.LOCATIONS.STREET_ADDRESS` column, click the arrow to the right of the masking format to view other masking formats.
 
-![](./images/dbsec/datasafe/masking/expand-street.png)
+![](./images/dbsec/datasafe/masking/expand-street.png " ")
 
 - Next to the arrow, click the **Edit Format** button (pencil icon). The **Edit Format** dialog box is displayed.
 - View the description, examples, and default configuration for the masking format. This is where you can modify a masking format.
 - Click **Cancel**.
 - At the bottom of the page, click **Confirm Policy**, and then wait a moment while Data Masking creates the masking policy. The **Schedule the Masking Job** page is displayed.
 
-![](./images/dbsec/datasafe/masking/schedule-masking.png)
+![](./images/dbsec/datasafe/masking/schedule-masking.png " ")
 
 - Leave **Right Now** selected, and then click **Review**. The **Review and Submit** page is displayed.
 - Review the information, and then click **Submit** to start the data masking job.
 
-![](./images/dbsec/datasafe/masking/review-masking-job.png)
+![](./images/dbsec/datasafe/masking/review-masking-job.png " ")
 
 - Wait for the data masking job to finish. It takes a couple of minutes. You can follow the status of the job on the **Masking Jobs** page.
 
-![](./images/dbsec/datasafe/masking/masking-progress.png)
+![](./images/dbsec/datasafe/masking/masking-progress.png " ")
 
 - When the job is finished, click **Report**.
 
-![](./images/dbsec/datasafe/masking/masking-success.png)
+![](./images/dbsec/datasafe/masking/masking-success.png " ")
 
 - Examine the **Data Masking** report. At the top of the report, you can view the number of values, sensitive types, tables, and columns that were masked. The table shows you column counts for the sensitive categories and types. For each
 sensitive column, you can view the masking format used and the number of rows masked.
 
-![](./images/dbsec/datasafe/masking/report-examine.png)
+![](./images/dbsec/datasafe/masking/report-examine.png " ")
 
 - Click **Generate Report**.
 - In the **Generate Report** dialog box, leave **PDF** selected, enter **<username> Mask1_HCM1** for the description, ensure your resource group is selected, and then click **Generate Report**.
 
-![](./images/dbsec/datasafe/masking/generate-report.png)
+![](./images/dbsec/datasafe/masking/generate-report.png " ")
 
 - Wait for the report to generate. When it's generated, click **Download Report**.
 
-![](./images/dbsec/datasafe/masking/download-report.png)
+![](./images/dbsec/datasafe/masking/download-report.png " ")
 
 - Access the browser's downloads and open the report in Adobe Acrobat. Review the report, and then close it.
 
-![](./images/dbsec/datasafe/masking/masking-report-pdf.png)
+![](./images/dbsec/datasafe/masking/masking-report-pdf.png " ")
 
 ### Part 6: Verify the masked data in your ExaCS database
 
