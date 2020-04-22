@@ -123,19 +123,11 @@ As a System admin,
 - Configure Enterprise Manager with Exadata Cloud Service
 
 
-## Lab 7: Data Safe with Exadata Cloud Service
-
-**Key Objectives**:
-
-As an database admin,
-- Assess the security of a database by using the Security Assessment feature in Oracle Data Safe
-- Assess user security in your target database by using the User Assessment feature in Oracle Data Safe.
-- Fix some of the security issues based on the assessment findings
-- Discover sensitive data in database
 
 
 
-## Lab 8: Migrate an on-prem application schema using Data Pump
+
+## Lab 7: Migrate an on-prem application schema using Data Pump
 
 **Key Objectives**:
 
@@ -146,7 +138,7 @@ As an database admin,
 
 
 
-## Lab 9: Real time migration of database using Oracle Goldengate Replication
+## Lab 8: Real time migration of database using Oracle Goldengate Replication
 
 **Key Objectives**:
 
@@ -155,7 +147,7 @@ As an database admin,
 
 
 
-## Lab 10: Backup and Recovery using Console and API's
+## Lab 9: Backup and Recovery using Console and API's
 
 **Key Objectives**:
 
@@ -165,7 +157,7 @@ As an application developer, DBA user,
 
 
 
-## Lab 11: Protect your data with Database Vault
+## Lab 10: Protect your data with Database Vault
 
 **Key Objectives**:
 
@@ -175,17 +167,11 @@ As a database security admin,
 - Implement separation of duties to protect sensitive data in your database
 
 
-## Lab 12: Data Safe Advanced lab
-
-**Key Objectives**:
-
-As a database security admin,
-
-- Configure Data Masking and Auditing and Reporting for Exadata Cloud Service database
 
 
 
-## Lab 13: Use OCI CLI commands to work with Exadata Cloud Service
+
+## Lab 11: Use OCI CLI commands to work with Exadata Cloud Service
 
 
 **Key Objectives**:
@@ -196,7 +182,7 @@ As a application developer, DBA or DevOps user,
 
 
 
-## Lab 14: Automation with Terraform
+## Lab 12: Automation with Terraform
 
 
 **Key Objectives**:
@@ -207,7 +193,7 @@ As a database or System admin,
 
 
 
-## Lab 15: Build and deploy Python application stacks on Exadata Cloud Service
+## Lab 13: Build and deploy Python application stacks on Exadata Cloud Service
 
 
 **Key Objectives**:
@@ -217,7 +203,7 @@ As an application developer,
 - Learn how to deploy a python application and connect it your Exadata Cloud Service database instance
 
 
-## Lab 16: - Build APEX application on Exadata Cloud Service
+## Lab 14: - Build APEX application on Exadata Cloud Service
 
 
 **Key Objectives**:
