@@ -120,7 +120,7 @@ Here we configure how traffic from your VPN client (for example, your personal l
 Configure this section as shown in the screenshot below. 
 - Choose **Yes using NAT**
 - Provide CIDR ranges for your application and exadata subnets
-- Choose **No** for the question - 'Should client internet traffic be routed through the VPN?'
+- Choose **No** for the question: 'Should client internet traffic be routed through the VPN?'
 
 ![](./images/Infra/configure_vpn/vpn_NAT.png " ")
 
