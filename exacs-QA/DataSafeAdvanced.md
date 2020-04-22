@@ -16,12 +16,12 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 ## Sections
 
 ### Data Masking
-- [Masking Lab 1](?lab=lab-7-8-discover-mask-sensitive-data-by) - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe
-- [Masking Lab 2](?lab=lab-7-9-explore-data-masking-results-reports) - Explore Data Masking Results and Reports in Oracle Data Safe
-- [Masking Lab 3](?lab=lab-7-10-create-masking-format-oracle-data) - Create a Masking Format in Oracle Data Safe
-- [Masking Lab 4](?lab=lab-7-11-configure-variety-masking-formats) - Configure a Variety of Masking Formats with Oracle Data Safe
+- [Masking Lab 1](?lab=lab-12-1-discover-mask-sensitive-data-by) - Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe
+- [Masking Lab 2](?lab=lab-12-2-explore-data-masking-results) - Explore Data Masking Results and Reports in Oracle Data Safe
+- [Masking Lab 3](?lab=lab-12-3-create-masking-format-oracle-data) - Create a Masking Format in Oracle Data Safe
+- [Masking Lab 4](?lab=lab-12-4-configure-variety-masking-formats) - Configure a Variety of Masking Formats with Oracle Data Safe
 
 ### Auditing and Reporting
-- [Auditing Lab 1](?lab=lab-7-12-provision-audit-alert-policies) - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe
-- [Auditing Lab 2](?lab=lab-7-13-analyze-audit-data-reports-aler) - Analyze Audit Data with Reports and Alerts in Oracle Data Safe
-- [Auditing Lab 3](?lab=lab-7-14-create-provision-custom-audit) - Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe
+- [Auditing Lab 1](?lab=lab-12-5-provision-audit-alert-policies) - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe
+- [Auditing Lab 2](?lab=lab-12-6-analyze-audit-data-reports-aler) - Analyze Audit Data with Reports and Alerts in Oracle Data Safe
+- [Auditing Lab 3](?lab=lab-12-7-create-provision-custom-audit) - Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe
