@@ -92,48 +92,6 @@
         "filename": "DataSafeSDD4.md"
       },
       {
-        "title": "Lab 7-8: Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe",
-        "description": "Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "DataSafeDM.md"
-      },
-      {
-        "title": "Lab 7-9: Explore Data Masking Results and Reports in Oracle Data Safe",
-        "description": "Explore Data Masking Results and Reports in Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "DataSafeDM2.md"
-      },
-      {
-        "title": "Lab 7-10: Create a Masking Format in Oracle Data Safe",
-        "description": "Create a Masking Format in Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "DataSafeDM3.md"
-      },
-      {
-        "title": "Lab 7-11: Configure a Variety of Masking Formats with Oracle Data Safe",
-        "description": "Configure a Variety of Masking Formats with Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "DataSafeDM4.md"
-      },
-      {
-        "title": "Lab 7-12: Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe",
-        "description": "Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "DataSafeAudit.md"
-      },
-      {
-        "title": "Lab 7-13: Analyze Audit Data with Reports and Alerts in Oracle Data Safe",
-        "description": "Analyze Audit Data with Reports and Alerts in Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "DataSafeAudit2.md"
-      },
-      {
-        "title": "Lab 7-14: Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe",
-        "description": "Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe",
-        "publisheddate": "4/20/2020",
-        "filename": "DataSafeAudit3.md"
-      },
-      {
         "title": "Lab 8: Migrate an on-prem application schema using Data Pump",
         "description": "Migrate an on-prem application schema using Data Pump",
         "publisheddate": "4/20/2020",
@@ -161,7 +119,49 @@
         "title": "Lab 12: Data Safe Advanced lab",
         "description": "Data Safe Advanced lab",
         "publisheddate": "4/20/2020",
-        "filename": "DataSafePE.md"
+        "filename": "DataSafeAdvanced.md"
+      },
+      {
+        "title": "Lab 12-1: Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe",
+        "description": "Discover and Mask Sensitive Data by Using Default Masking Formats in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM.md"
+      },
+      {
+        "title": "Lab 12-2: Explore Data Masking Results and Reports in Oracle Data Safe",
+        "description": "Explore Data Masking Results and Reports in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM2.md"
+      },
+      {
+        "title": "Lab 12-3: Create a Masking Format in Oracle Data Safe",
+        "description": "Create a Masking Format in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM3.md"
+      },
+      {
+        "title": "Lab 12-4: Configure a Variety of Masking Formats with Oracle Data Safe",
+        "description": "Configure a Variety of Masking Formats with Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeDM4.md"
+      },
+      {
+        "title": "Lab 12-5: Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe",
+        "description": "Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAudit.md"
+      },
+      {
+        "title": "Lab 12-6: Analyze Audit Data with Reports and Alerts in Oracle Data Safe",
+        "description": "Analyze Audit Data with Reports and Alerts in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAudit2.md"
+      },
+      {
+        "title": "Lab 12-7: Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe",
+        "description": "Create and Provision a Custom Audit Policy and View Audit Data in Oracle Data Safe",
+        "publisheddate": "4/20/2020",
+        "filename": "DataSafeAudit3.md"
       },
       {
         "title": "Lab 13: Use OCI CLI commands to work with EXACS",

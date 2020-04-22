@@ -131,6 +131,7 @@ As an database admin,
 - Assess the security of a database by using the Security Assessment feature in Oracle Data Safe
 - Assess user security in your target database by using the User Assessment feature in Oracle Data Safe.
 - Fix some of the security issues based on the assessment findings
+- Discover sensitive data in database
 
 
 
