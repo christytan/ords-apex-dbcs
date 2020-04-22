@@ -10,12 +10,14 @@ In this lab you will practice the following:
 * [Add database](#add-database)
 * [Delete database](#delete-database)
 
+To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
+
 ## Create database
 
 In this exercise, you will be creating a database using follow Terraform code template.
 <br>
 ```
-variable "xx_db_count" {
+<copy>variable "xx_db_count" {
   description = "Number of database created by xx"
 }
 resource "oci_database_database" "xx_database" {
@@ -40,7 +42,7 @@ resource "oci_database_database" "xx_database" {
 
   db_home_id = oci_database_db_home.tf_db_home.id
   source     = "NONE"
-}
+}</copy>
 ```
 
 ### Tasks:
@@ -55,11 +57,17 @@ When you create a branch in your project, you're creating an environment where y
 
 To create a branch on the repository that you clone/copy from previous lab, you run [`git checkout -b <my branch name>`](http://git-scm.com/docs/git-checkout) in the directory where you clone the repository.
 
-```
-myInitial=\<your initial>
-cd ~/ecs-workshop-osc
-git checkout -b ${myInitial}Branch1
-```
+````
+<copy>myInitial=<your initial></copy>
+````
+
+````
+<copy>cd ~/ecs-workshop-osc</copy>
+````
+
+````
+<copy>git checkout -b ${myInitial}Branch1</copy>
+````
 The following is the sample output for the above commands:
 ```
 akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (master)
@@ -98,12 +106,17 @@ Once you've used the git add command to add all the files you want to the stagin
 
 The following are the commands that you need to execute:
 
-```
-myInitial=ak
-git add ${myInitial}DB.tf
-git commit -m "This is to commit changes made by ${myInitial}"
-```
+````
+<copy>myInitial=ak</copy>
+````
+
+````
+<copy>git add ${myInitial}DB.tf
+git commit -m "This is to commit changes made by ${myInitial}"</copy>
+````
+
 The following is the sample output for the above commands:
+
 ```
 akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (akBranch1)
 $ git add ${myInitial}DB.tf
@@ -120,12 +133,14 @@ $ git commit -m "This is to commit changes made by ${myInitial}"
 
 Once you are happy with your work. You will **push** the commit in your branch to your new GitHub repo. This allows other people to see the changes you've made. If they're approved by the repository's owner, the changes can then be merged into the master branch.
 
-To push changes onto a new branch on GitHub, you'll want to run `**[git push](http://git-scm.com/docs/git-push) origin yourbranchname**.`GitHub will automatically create the branch for you on the remote repository:
+To push changes onto a new branch on GitHub, you'll want to run **[git push](http://git-scm.com/docs/git-push) origin yourbranchname**. GitHub will automatically create the branch for you on the remote repository:
 
-```
-git push origin ${myInitial}Branch1
-```
+````
+<copy>git push origin ${myInitial}Branch1</copy>
+````
+
 The following is the sample output for the above commands:
+
 ```
 akwok@DESKTOP-7JNMR77 MSYS ~/ecs-workshop-osc (akBranch1)
 $ git push origin ${myInitial}Branch1
@@ -145,7 +160,7 @@ To github.com:albertyckwok/ecs-workshop-osc.git
 
 ```
 
-You might be wondering what that "origin" word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an **alias** for you. In nearly all cases this alias is called "[**origin**](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)." It's essentially shorthand for the remote repository's URL. So, to push your changes to the remote repository, you could've used either the command: <b>`git push [git@github.com](mailto:git@github.com):git/git.git yourbranchname`</b> or <b>`git push origin yourbranchname`</b>
+You might be wondering what that "origin" word means in the command above. What happens is that when you clone a remote repository to your local machine, git creates an **alias** for you. In nearly all cases this alias is called "[**origin**](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)." It's essentially shorthand for the remote repository's URL. So, to push your changes to the remote repository, you could've used either the command: **git push git@github.com:git/git.git yourbranchname** or **git push origin yourbranchname**.
 
 #### Task 4: Open a Pull Request
 
@@ -156,10 +171,10 @@ You can open a Pull Request at any point during the development process: when yo
 * Browser to the project URL, it should look something like the following. Please ask the instructor if you don't have it.
     * https://github.com/albertyckwok/ecs-workshop-osc
 * Login to GitHub.
-* Click the ‘Pull requests’ tab.![img_1.png](media/img_1.png).
-* Click ‘Compare and pull request’ button for your branch, e.g. akBranch1.![image2.png](media/image2.png)
+* Click the ‘Pull requests’ tab.![img_1.png](images/terraform/img_1.png).
+* Click ‘Compare and pull request’ button for your branch, e.g. akBranch1.![image2.png](images/terraform/image2.png)
 * Write something, e.g. "This is TF code to create DB for xx".
-* Click “Create pull request”.![image3.png](media/image3.png)
+* Click “Create pull request”.![image3.png](images/terraform/image3.png)
 
 #### Task 5: Merge your work with others
 
@@ -169,20 +184,20 @@ Once merged, Pull Requests preserve a record of the historical changes to your c
     * [https://github.com/albertyckwok/ecs-workshop-osc](https://github.com/albertyckwok/ecs-workshop-osc)
 * Login to GitHub.
 * Click the ‘Pull requests’ tab.
-* Click on “Merge pull request” to merge the changes into master branch.![image4.png](media/image4.png)
-* Click “Confirm merge”.![image5.png](media/image5.png)
-* You can delete the branch once all the changes have been incorporated and if there are no conflicts. ![image.png](media/img_0.png)
+* Click on “Merge pull request” to merge the changes into master branch.![image4.png](images/terraform/image4.png)
+* Click “Confirm merge”.![image5.png](images/terraform/image5.png)
+* You can delete the branch once all the changes have been incorporated and if there are no conflicts. ![image.png](images/terraform/img_0.png)
 
 ## Add database
 
-Once you have the basic terraform config is setup, add database can be easily accomplished by chaning the config or adding more config file.
+Once you have the basic terraform config is setup, add database can be easily accomplished by chaning the config such as increase the database count (xx_db_count) or adding more config file.
 
 ### Tasks:
 
-1. To create/add more database of the same type, you can simply update the statement count says from **2** in bold above to 3, the run terraform plan and apply.
+1. To create/add more database of the same type, you can simply update the statement count says from **2** in bold above to 3, then run terraform plan and apply.
 2. To create other type of database, e.g. db version 19, you can copy/paste the same code block and update the statement to `db_version   = "19.0.0.0"`.
 
 ## Delete database
 
 Similar to adding database, you can update the config by reduce the count of database or deleting the file all together, then run plan and apply to delete the database that you don't want.
-**Note**: most companies will want to take great care in delete database as data/information is the bread and butter of their business thus you will likely need to go through some formal process/workflow such as the DevOps exercise in the next lab.
+**Note**: most companies will want to take great care in delete database as data/information is the bread and butter of their business thus you will likely need to go through some formal process/workflow such as the GitHub workflow above.

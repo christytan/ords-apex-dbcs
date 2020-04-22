@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <table class="tbl-heading">
@@ -22,6 +23,8 @@
 
 ​
 
+=======
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ## Objectives
 
 ​
@@ -102,12 +105,18 @@ Install Agents:
 
 ​
 
+<<<<<<< HEAD
 ![](./images/dbsec/lab6EM/NavigatetoCompartment.png)
 
 ![](./images/dbsec/lab6EM/CopyCompartmentOCID.png)
+=======
+![](./images/dbsec/lab6EM/NavigatetoCompartment.png " ")
+![](./images/dbsec/lab6EM/CopyCompartmentOCID.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
+<<<<<<< HEAD
 - From the navigation menu, under 'Identity', click **Dynamic Groups**.
 
 ​
@@ -115,6 +124,9 @@ Install Agents:
 ![](./images/dbsec/lab6EM/NavigateOCIDynamic.png)
 
 ​
+=======
+![](./images/dbsec/lab6EM/NavigateOCIDDynamic.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 - Click **Create Dynamic Group**
 
@@ -122,11 +134,15 @@ Install Agents:
 
 -  Name your dynamic group **OEM_GROUP**, give it a description, and optionally give it a tag.
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/CreateOCIDynamicGroup.png)
 
 ​
+=======
+![](./images/dbsec/lab6EM/CreateOCIDDynamicGroup.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 -----
 
@@ -135,9 +151,13 @@ Install Agents:
 - In the **Matching Rules** section, type the following for 'Rule 1':
 
 ``` 
+<<<<<<< HEAD
 
 ALL {instance.compartment.id = '<compartment ocid>'}
 
+=======
+<copy>ALL {instance.compartment.id = '<compartment ocid>'}</copy>
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ```
 
 - Click **Create Dynamic Group**
@@ -146,17 +166,25 @@ ALL {instance.compartment.id = '<compartment ocid>'}
 
 - Now, from the navigation menu, under 'Identity' click on **Policies**
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/NavigateOCIPolicies.png)
+=======
+![](./images/dbsec/lab6EM/NavigateOCIPolicies.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
 - Under 'List Scope', select the 'root' compartment.
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/ChangetorootCompartment.png)
+=======
+![](./images/dbsec/lab6EM/ChangetorootCompartment.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -173,14 +201,19 @@ ALL {instance.compartment.id = '<compartment ocid>'}
 ​
 
 ```
+<<<<<<< HEAD
 
 Allow dynamic-group OEM_Group to manage instancefamily in tenancy
 
+=======
+<copy>Allow dynamic-group OEM_Group to manage instancefamily in tenancy</copy>
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ```
 
 ​
 
 ```
+<<<<<<< HEAD
 
 Allow dynamic-group OEM_Group to manage volumefamily in tenancy
 
@@ -191,6 +224,11 @@ Allow dynamic-group OEM_Group to manage volumefamily in tenancy
 ​
 
 ![](./images/dbsec/lab6EM/SetOCIPolicy.png)
+=======
+<copy>Allow dynamic-group OEM_Group to manage volumefamily in tenancy</copy>
+```
+![](./images/dbsec/lab6EM/SetOCIPolicy.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -228,25 +266,37 @@ Allow dynamic-group OEM_Group to manage volumefamily in tenancy
 
 - From the navigation menu, under 'Solutions and Platform' click on **Marketplace**
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/NavigateMarketplace.png)
+=======
+![](./images/dbsec/lab6EM/NavigateMarketplace.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
 - Search for 'Oracle Enterprise Manager 13.3' and click on it.
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/FindEMinMarketplace.png)
+=======
+![](./images/dbsec/lab6EM/FindEMinMarketplace.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
 - Review the 'Oracle Enterprise Manager Overview' and click on **Launch Instance**
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/ReviewandLaunch.png)
+=======
+![](./images/dbsec/lab6EM/ReviewandLaunch.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -258,15 +308,23 @@ Allow dynamic-group OEM_Group to manage volumefamily in tenancy
 
 ​
 
+<<<<<<< HEAD
 - Enter an Instance Name, select your desired OCI Availability Domain and select the desired shape for the VM. You can choose any shape that is available.
+=======
+![](/images/dbsec/SpecifyCompartment.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
-![](./images/dbsec/lab6EM/NameInstanceSelectAD.png)
+![](./images/dbsec/lab6EM/NameInstanceSelectAD.png " ")
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/SelectComputeShape.png)
+=======
+![](./images/dbsec/lab6EM/SelectComputeShape.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -274,7 +332,7 @@ Allow dynamic-group OEM_Group to manage volumefamily in tenancy
 
 ​
 
-![](./images/dbsec/lab6EM/EnterSSHkey.png)
+![](./images/dbsec/lab6EM/EnterSSHkey.png " ")
 
 ​
 
@@ -291,12 +349,18 @@ Allow dynamic-group OEM_Group to manage volumefamily in tenancy
 - Once your VM instance is in running state, click on the instance and copy the Public IP Address.  SSH into the VM instance with the ssh key.
 
 ```
+<<<<<<< HEAD
 
 $ ssh –i <private_ssh_key> opc@<public IP Address>
 
 ```
 
 ![](./images/dbsec/lab6EM/CopyVMIP.png)
+=======
+<copy>ssh –i &lt;private_ssh_key&gt; opc@&ltpublic IP Address&gt</copy>
+```
+![](./images/dbsec/lab6EM/CopyVMIP.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -305,18 +369,15 @@ $ ssh –i <private_ssh_key> opc@<public IP Address>
 ​
 
 ```
-
-$ sudo su – oracle
-
+<copy>sudo su – oracle</copy>
 ```
 
 ​
 
 ```
-
-$ /u01/app/em13c/middleware/bin/emctl status oms
-
+<copy>/u01/app/em13c/middleware/bin/emctl status oms</copy>
 ```
+<<<<<<< HEAD
 
 - Refer sample status as follow:
 
@@ -332,14 +393,26 @@ $ /u01/app/em13c/middleware/bin/emctl status oms
 
 $ cat /root/.oem/.sysman.pwd 
 
+=======
+- Sample status:
+![](./images/dbsec/lab6EM/CheckStatus.png " ")
+- Change the default passwords. The password for the EM user sysman, EM Agent, Registration Password, Fusion Middleware user weblogic and Node Manager can be accessed in the below file (access as root user)
+
+```
+<copy>cat /root/.oem/.sysman.pwd</copy>
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ```
 
 ​
 
 ```
+<<<<<<< HEAD
 
 $ /u01/app/em13c/middleware/bin/emctl config oms -change_repos_pwd
 
+=======
+<copy>/u01/app/em13c/middleware/bin/emctl config oms -change_repos_pwd</copy>
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ```
 
 - Log into your new EM Console
@@ -347,9 +420,13 @@ $ /u01/app/em13c/middleware/bin/emctl config oms -change_repos_pwd
 ​
 
 ``` 
+<<<<<<< HEAD
 
 https://<private ip address>:7803/em
 
+=======
+<copy>https://<private ip address>:7803/em</copy>
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ``` 
 
 ​
@@ -357,9 +434,13 @@ https://<private ip address>:7803/em
 - If you need help trouble shooting before going to Part 4, the installation log is located at:
 
 ```
+<<<<<<< HEAD
 
 cat /var/log/emcg_setup.log
 
+=======
+<copy>cat /var/log/emcg_setup.log</copy>
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ```
 
 You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-on-oci-installation-phase-2-installing-the-em-app-into-your-oci-compartment) for more help.
@@ -371,9 +452,13 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 - Log in to your Enterprise Manager from a bastion host through VNC/ VNC like application.
 
 ``` 
+<<<<<<< HEAD
 
 https://<private ip address>:7803/em
 
+=======
+<copy>https://<private ip address>:7803/em</copy>
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 ``` 
 
 ​
@@ -386,8 +471,9 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/SelectNamedCredentials.png)
+![](./images/dbsec/lab6EM/SelectNamedCredentials.png " ")
 
+<<<<<<< HEAD
 ​
 
 - Click **Create**.
@@ -395,6 +481,10 @@ https://<private ip address>:7803/em
 ​
 
 ![](./images/dbsec/lab6EM/PressCreateCredentials.png)
+=======
+- Click **Create**
+![](./images/dbsec/lab6EM/PressCreateCredentials.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -406,7 +496,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/CreateCredential.png)
+![](./images/dbsec/lab6EM/CreateCredential.png " ")
 
 ​
 
@@ -420,7 +510,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/SelectAddTargets.png)
+![](./images/dbsec/lab6EM/SelectAddTargets.png " ")
 
 ​
 
@@ -438,7 +528,7 @@ https://<private ip address>:7803/em
 - For the Platform, select **Linux x86-64**.
 
 
-![](./images/dbsec/lab6EM/EnterHostName.png)
+![](./images/dbsec/lab6EM/EnterHostName.png " ")
 
 ​- Add as many nodes as there are on the ExaCS (Quarter Rack=2, Half=4, etc.).
 
@@ -446,7 +536,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/InstallationDetails.png)
+![](./images/dbsec/lab6EM/InstallationDetails.png " ")
 
 ​
 
@@ -470,7 +560,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/SelectConfigureAutoDisc.png)
+![](./images/dbsec/lab6EM/SelectConfigureAutoDisc.png " ")
 
 ​
 
@@ -478,7 +568,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/SetupDiscovery.png)
+![](./images/dbsec/lab6EM/SetupDiscovery.png " ")
 
 ​
 
@@ -498,7 +588,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/NavigateAutoDiscRes.png)
+![](./images/dbsec/lab6EM/NavigateAutoDiscRes.png " ")
 
 ​
 
@@ -506,7 +596,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/SelectClusterTarget.png)
+![](./images/dbsec/lab6EM/SelectClusterTarget.png " ")
 
 ​
 
@@ -516,21 +606,30 @@ https://<private ip address>:7803/em
 
 - After promoting the 'Cluster' Target, promote the 'Cluster Database' target by finding one and clicking **Promote**. Promoting the Cluster DB should also promote its DB instances.
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/FindClusterDB.png)
+=======
+![](./images/dbsec/lab6EM/FindClusterDB.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
 - You will need to enter Monitoring User Credentials (like dbnsmp) for this cluster. You can also enter the SYSDBA Password.
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/PromoteClusterDatabase.png)
+=======
+![](./images/dbsec/lab6EM/PromoteClusterDatabase.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
 - If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
+<<<<<<< HEAD
 
 ​
 
@@ -541,6 +640,13 @@ https://<private ip address>:7803/em
 ![](./images/dbsec/lab6EM/PromoteClusterReview.png)
 
 ​
+=======
+- Click **Next**, review the page, and then click **Save**
+.
+![](./images/dbsec/lab6EM/PromoteClusterReview.png " ")
+
+- For additional documentation click [here](https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664)
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 - Click [here](https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664) for more details on Discovering and adding DB Targets.
 
@@ -568,15 +674,19 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/NavigateEnterpriseSummary.png)
+![](./images/dbsec/lab6EM/NavigateEnterpriseSummary.png " ")
 
 ​
 
 - In 'Enterprise Summary' you can view the status of all the targets, with the availability to sort by different types.
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/EnterpriseSummary.png)
+=======
+![](./images/dbsec/lab6EM/EnterpriseSummary.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -588,7 +698,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/NavigateGroups.png)
+![](./images/dbsec/lab6EM/NavigateGroups.png " ")
 
 ​
 
@@ -596,7 +706,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/CreateGroupButton.png)
+![](./images/dbsec/lab6EM/CreateGroupButton.png " ")
 
 ​
 
@@ -608,7 +718,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/CreateDynamic.png)
+![](./images/dbsec/lab6EM/CreateDynamic.png " ")
 
 ​
 
@@ -616,7 +726,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/DefineMemberCriteria.png)
+![](./images/dbsec/lab6EM/DefineMemberCriteria.png " ")
 
 ​
 
@@ -624,7 +734,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/AddHosts.png)
+![](./images/dbsec/lab6EM/AddHosts.png " ")
 
 ​
 
@@ -640,7 +750,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/NavigateTargets.png)
+![](./images/dbsec/lab6EM/NavigateTargets.png " ")
 
 ​
 
@@ -648,7 +758,7 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/SearchTarget.png)
+![](./images/dbsec/lab6EM/SearchTarget.png " ")
 
 ​
 
@@ -660,23 +770,31 @@ https://<private ip address>:7803/em
 
 ​
 
-![](./images/dbsec/lab6EM/NavigateAllMetrics.png)
+![](./images/dbsec/lab6EM/NavigateAllMetrics.png " ")
 
 ​
 
 - Here you can search and explore different metrics on the cluster level.
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/SearchMetrics.png)
+=======
+![](./images/dbsec/lab6EM/SearchMetrics.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
 - To view metrics, navigate to 'Members', and select **Dashboard**
 
+<<<<<<< HEAD
 ​
 
 ![](./images/dbsec/lab6EM/NavigateMemDash.png)
+=======
+![](./images/dbsec/lab6EM/NavigateMemDash.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8
 
 ​
 
@@ -684,6 +802,7 @@ https://<private ip address>:7803/em
 
 ​
 
+<<<<<<< HEAD
 ![](./images/dbsec/lab6EM/SeeMembers.png)
 
 ​
@@ -714,3 +833,6 @@ https://<private ip address>:7803/em
 
 <table>
 
+=======
+![](./images/dbsec/lab6EM/SeeMembers.png " ")
+>>>>>>> 233ca050839486eebcca78a88cd85645118b0de8

@@ -11,8 +11,8 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 ## Required Artifacts
 
 - Access to your Oracle cloud account.
-- A pre-provisioned DB instance on Exadata. Refer **Lab 3** on how provision a DB instance on Exadata.
-- Access to a Dev. Client on OCI for the database instance. Refer **Lab 4** to know how to setup a Dev Client.
+- A pre-provisioned DB instance on Exadata. Refer [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how provision a DB instance on Exadata.
+- Access to a Dev. Client on OCI for the database instance. Refer [Lab 4](?lab=lab-4-configure-development-system-for-use) to know how to setup a Dev Client.
 - Have appropriate access to run Terraform on OCI.
 
 
@@ -205,5 +205,5 @@ Now, since we have provisioned the database instance and connected to it. We wil
 
 - Now, you have setup the schema and the tables.
 
-- You are now ready to move to the next part of this lab.
-- **Click on Lab 17-2 from the menu on the right.**
+- You are now ready to move to [Lab 17-2](?lab=lab-17-2-create-restservice-on-database)
+

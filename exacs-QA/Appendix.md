@@ -294,7 +294,7 @@ Address: 10.0.11.35
 
 You now have the 3 SCAN IP's of your AEI cluster. Once your network admin adds the SCAN hostname and the 3 IPs to your corporate DNS Server, you may then be able to access your database instances via hostname using the downloaded wallet.
 
-### STEP 3: Backup and Recover using RMAN
+### Backup and Recover using RMAN
 
 **Backup using RMAN**
 
@@ -309,4 +309,191 @@ You can initiate disk backup manually using RMAN with default settings as defaul
 
 **Recover using RMAN**
 
-If you backed up your Exadata database using bkup\_api, you can manually restore that database backup by using the Oracle Recovery Manager (RMAN) utility.
+If you backed up your Exadata database using bkup\_api, you can manually restore that database backup by using the Oracle Recovery Manager (RMAN) utility. 
+
+
+### Provisioning an Database Cloud Service Instance
+
+In this section you will be provisioning a database on Oracle Cloud Infrastructure using the Cloud Console.
+
+### **Steps**
+
+#### **STEP 1: Sign in to Oracle Cloud Infrastructure console**
+
+- Go to cloud.oracle.com, click Sign In to sign in with your Oracle Cloud account.
+
+![](./images/goldengate/signin.png " ")
+
+- Enter your Cloud Account Name and click My Services.
+
+![](./images/goldengate/cloudaccname.png " ")
+
+- Enter your Oracle Cloud username and password, and click Sign In.
+
+![](./images/goldengate/unpw.png " ")
+
+- Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you.
+
+- Click "Bare Metal, VM and Exadata" in the left side menu.
+
+![](./images/goldengate/myservices.png " ")
+
+#### **STEP 2: Create a Compartment**
+
+- In the Cloud Infrastructure Console, click on the hamburger menu on the top left of the screen. From the pull-out menu, under Identity, click Compartments.
+
+![](./images/goldengate/Compartments.jpeg " ")
+
+-  Click on **Create Compartment** button to start the compartment creation process
+
+![](./images/goldengate/CreateCompartment.jpeg " ")
+
+Enter the following in create Compartment window
+
+- **Name**: Enter a friendly name to idenitfy your compartment (To complete this workshop let us name compartment as **Demo**)
+- **Description**: Enter a description for the compartment
+- Click on Create Compartment link 
+
+Managing Tags and Tag Namespaces: When you have many resources (for example, instances, VCNs, load balancers, and block volumes) across multiple compartments in your tenancy, it can become difficult to track resources used for specific purposes, or to aggregate them, report on them, or take bulk actions on them. Tagging allows you to define keys and values and associate them with resources. You can then use the tags to help you organize and list resources based on your business needs. For more information please click [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm).
+
+![](./images/goldengate/CreateCompartment1.jpeg " ")
+
+![](./images/goldengate/CreateCompartment3.jpeg " ")
+
+- You can verify the compartment created on Compartments page
+
+![](./images/goldengate/CreateCompartment2.jpeg " ")
+
+
+#### **STEP 3: Create a Database Cloud Service Instance**
+
+-  Click on the hamburger menu icon on the top left of the screen
+
+![](./images/goldengate/Picture100-20.jpeg " ")
+
+-  Click on **Bare Metal,VM and Exadata** from the menu
+
+![](./images/goldengate/Picture100-21.jpeg " ")
+
+- Select **Reston Compartment** 
+
+![](./images/goldengate/DemoComp.png " ")
+
+-  Click on **Launch DB System** button to start the instance creation process
+
+![](./images/goldengate/Picture100-23.png " ")
+
+-  This will bring up Launch DB System screen where you specify the configurations of the instance
+
+![](./images/goldengate/Picture100-24.png " ")
+
+
+#### Note: Oracle Cloud Infrastructure allows logical isolation of users within a tenant through Compartments. This allows multiple users and business units to share a tenant account while being isolated from each other.
+
+If you have chosen the compartment you do not have privileges on, you will not be able to see or provision instance in it.
+
+More information about Compartments and Policies is provided in the OCI Identity and Access Management documentation [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm?tocpath=Services%7CIAM%7C_____13).
+
+-  Verify Reston compartment is selected
+
+![](./images/goldengate/Picture100-26.png " ")
+
+-  Specify a name for the instance
+
+![](./images/goldengate/Picture100-27.png " ")
+
+- Select Availability Domain from the dropdown.
+
+![](./images/goldengate/Picture100-27-1.png " ")
+
+- Select the Shape Type as "VIRTUAL MACHINE".
+
+![](./images/goldengate/Picture100-27-2.png " ")
+
+-  You can choose an available instance shape, For this lab, we are going to select "VM.Standard2.1" as the option.
+
+![](./images/goldengate/Picture100-28.png " ")
+
+- Select the Database Software Edition from the dropdown.
+
+![](./images/goldengate/Picture100-28-1.png " ")
+
+- Select available storage size from the dropdown menu.
+
+![](./images/goldengate/Picture100-28-2.png " ")
+
+- License Type: You will see 2 options under licensing options. 
+
+#### My organization already owns Oracle database software licenses: Oracle allows you to bring your unused on-prem licenses to the cloud and your instances are billed at a discounted rate. This is the default option so ensure you have the right license type for this subscription.
+
+![](./images/goldengate/Picture100-29.png " ")
+
+#### Subscribe to new database software licenses and the database cloud service: Your cloud service instance should include database license. This is an all-inclusive cost and you do not need to bring any additional licenses to cloud.
+
+![](./images/goldengate/Picture100-30.png " ")
+
+- Click on browse and select the ssh you would like to use for the database.
+
+![](./images/goldengate/Picture100-31.png " ")
+
+- Select the VCN in which you would like to create the database instance from the dropdown list.
+
+![](./images/goldengate/Picture100-32.png " ")
+
+- Select the subnet from the dropdown list in the selected VCN.
+
+![](./images/goldengate/Picture100-33.png " ")
+
+- Give a Hostname Prefix for the database.
+
+![](./images/goldengate/Picture100-34.png " ")
+
+- Also, make sure to verify the VCN and Subnet Compartment.
+
+![](./images/goldengate/Picture100-35.png " ")
+
+- Give a name for the database and select the database version from the available list in the dropdown.
+
+![](./images/goldengate/Picture100-36.png " ")
+
+- Enter the PDB name for the database.
+
+![](./images/goldengate/Picture100-37.png " ")
+
+-  Specify the password for the instance and confirm it.
+
+#### For this lab, we will be using the following as password
+
+```
+WElCome12_34#
+```
+
+![](./images/goldengate/Picture100-38.png " ")
+
+- Select the type of workload for the database, which is either OLAP or OLTP. For this workshop we are going to use OLTP.
+
+![](./images/goldengate/Picture100-39.png " ")
+
+- Tagging is a metadata system that allows you to organize and track resources within your tenancy. Tags are composed of keys and values that can be attached to resources. 
+
+More information about Tags and Tag Namespaces is provided in the OCI Identity and Access Management documentation [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm).
+
+
+![](./images/goldengate/Picture100-40.png " ")
+
+For this workshop we will not be creating any TAG NAMESPACE. 
+
+- Make sure you have everything filled all required details
+
+-  Click on **Launch DB System** to start provisioning the instance
+
+![](./images/goldengate/Picture100-41.png " ")
+
+- Once you click on Launch DB System it would take 60-90 minutes for the instance to be provisioned.
+
+-  Once it finishes provisioning, you can click on the instance name to see details of it
+
+![](./images/goldengate/Picture100-42.png " ")
+
+You now have created your Oracle Database Cloud service instance.
+

@@ -12,19 +12,19 @@ If your DB system has a private IP address, you need to create a private endpoin
 
 - From your database's Console in OCI, obtain the name of the virtual cloud network (VCN) on which your database resides. You can find the name on the DB System Information tab.
 
-![](./images/dbsec/datasafe/register_pe/dbsystem-info.png)
+![](./images/dbsec/datasafe/register_pe/dbsystem-info.png " ")
 
 - From the navigation menu in OCI, select **DataSafe**. The **Data Safe** page is displayed.
 
-![](./images/dbsec/datasafe/register_pe/login.png)
+![](./images/dbsec/datasafe/register_pe/login.png " ")
 
 - On the left click **Private Endpoint**. The **Private Endpoint** is displayed.
 
-![](./images/dbsec/datasafe/register_pe/private-endpoint.png)
+![](./images/dbsec/datasafe/register_pe/private-endpoint.png " ")
 
 - Click **Create Private Endpoint**. The **Create Private Endpoint** page is displayed.
 
-![](./images/dbsec/datasafe/register_pe/create-pe.png)
+![](./images/dbsec/datasafe/register_pe/create-pe.png " ")
 
 - In the **Name** field, enter the name of your private endpoint.
 - Select the compartment in which you want to store the private endpoint.
@@ -34,12 +34,12 @@ If your DB system has a private IP address, you need to create a private endpoin
 - (Optional) In the **PRIVATE IP** field, specify a private IP address. If you do not specify a private IP address, OCI automatically generates one for you in the selected subnet.
 - (Optional)Select a network security group. The following screenshot shows you an example configuration for a private endpoint:
 
-![](./images/dbsec/datasafe/register_pe/private-endpoint-details.png)
+![](./images/dbsec/datasafe/register_pe/private-endpoint-details.png " ")
 
 - Click **Create Private Endpoint.**
 A private endpoint is provisioned in the customer VCN (the VCN that you selected). The following screenshot shows you the private endpoint listed on the **Private Endpoints** page.
 
-![](./images/dbsec/datasafe/register_pe/private-endpoint-view.png)
+![](./images/dbsec/datasafe/register_pe/private-endpoint-view.png " ")
 
 ## Update the Related Security List and Network Security Group
 
@@ -47,11 +47,11 @@ After creating the private endpoint and before registering the DB system with Or
 
 - **Ingress for the database:** The database (on port 1521) can receive incoming traffic from the private endpoint's private IP address (from any port).
 
-![](./images/dbsec/datasafe/register_pe/private-ip-nsg.png)
+![](./images/dbsec/datasafe/register_pe/private-ip-nsg.png " ")
 
 - **Egress for the private endpoint:** The private endpoint (from any port) can send requests to the database IP address (on port 1521).
 
-![](./images/dbsec/datasafe/register_pe/private-ip-nsg2.png)
+![](./images/dbsec/datasafe/register_pe/private-ip-nsg2.png " ")
 
 ## Register a ExaCS DB using a Private IP
 
@@ -59,13 +59,13 @@ You can manually register DB systems (with public or private IP addresses) with 
 
 - From the database's Console in OCI, obtain the private IP address for the database. For an Exadata DB system, Oracle recommends that you use one of the scan IP addresses. You can find a scan IP address under Network on the DB System Information tab, as shown below.
 
-![](./images/dbsec/datasafe/register_pe/exacs-scan-ip.png)
+![](./images/dbsec/datasafe/register_pe/exacs-scan-ip.png " ")
 
 - Sign in to the Oracle Data Safe Console.
 - Click the **Targets** tab.
 - Click **Register.** The **Register Target** dialog box is displayed.
 
-![](./images/dbsec/datasafe/register_pe/register-target.png)
+![](./images/dbsec/datasafe/register_pe/register-target.png " ")
 
 - Specify a name for your target database.
 - For **Target Type**, select **Oracle Database**.
@@ -80,7 +80,7 @@ You can manually register DB systems (with public or private IP addresses) with 
 - Enter the long version of the database service name for the target database; for example, **abc_prod.subnetad3.tttvcn.companyvcn.com**. For Virtual Machine, Bare Metal, and Exadata DB systems, you can find the service name by running the following statement when connected to the PDB via SQL Plus:
 
 ```
-select sys_context('userenv','service_name') from dual;
+<copy>select sys_context('userenv','service_name') from dual;</copy>
 ```
 > **Note:** For Virtual Machine and Bare Metal DB systems, you can also find the name in the database's Console in OCI.
 
@@ -90,7 +90,7 @@ You cannot specify database roles, such as SYSDBA or SYSKM, and you cannot speci
 - Before you register the target, click **Download Privilege Script** and save the dscs_privileges.sql script to your computer. You need to run this script on your database after you are done with registration.
 - Click **Register Target**. You cannot register the target database if the connection test fails or if the target database does not exist.
 
-![](./images/dbsec/datasafe/register_pe/target-details.png)
+![](./images/dbsec/datasafe/register_pe/target-details.png " ")
 
 - Grant privileges to the database user that you created for Data Safe using the privilege script you downloaded in step 19. See [Grant Roles to the Oracle Data Safe Service Account on a DB System](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/grant-roles-oracle-data-safe-service-account-db-system.html).
 
