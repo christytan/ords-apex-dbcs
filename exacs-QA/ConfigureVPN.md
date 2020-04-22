@@ -120,7 +120,7 @@ Here we configure how traffic from your VPN client (for example, your personal l
 Configure this section as shown in the screenshot below. 
 - Choose **Yes using NAT**
 - Provide CIDR ranges for your application and exadata subnets
-- Choose **No** for the question: 'Should client internet traffic be routed through the VPN?'
+- Choose **No** for the question: **Should client internet traffic be routed through the VPN?**
 
 ![](./images/Infra/configure_vpn/vpn_NAT.png " ")
 
@@ -135,7 +135,7 @@ Scroll down and configure the DNS settings as shown below.
 ![](./images/Infra/configure_vpn/openvpn_advancedVPN.png " ")
 
 
-Note: Once you have applied your changes, click **Save Settings** once again. Then, **Update Running Server** to push your new configuration to the OpenVPN server.
+Note: Once you have applied your changes, click **Save Settings** once again. Then click **Update Running Server** to push your new configuration to the OpenVPN server.
 
 ![](./images/Infra/configure_vpn/vpn_routing3.png " ")
 
@@ -148,7 +148,7 @@ Note: Once you have applied your changes, click **Save Settings** once again. Th
 
     
 
-- Once the installation process has completed, you can see an OpenVPN icon in your OS taskbar. Right-Click this icon to bring up the context menu to start your OpenVPN connection
+- Once the installation process is complete, you will see an OpenVPN icon in your OS taskbar. Right-Click this icon to bring up the context menu to start your OpenVPN connection.
 
 ![](./images/Infra/configure_vpn/openvpn_conn.png " ")
 
@@ -156,7 +156,7 @@ Note: Once you have applied your changes, click **Save Settings** once again. Th
     
 ##### Note: IP should be Public IP for OpenVPN Compute Instance
 
-- Click **Connect** brings up a window asking for the OpenVPN username and password. Enter the credentials for your **openvpn** user and click **Connect** to establish a VPN tunnel
+- Clicking **Connect** brings up a window asking for the OpenVPN username and password. Enter the credentials for your **openvpn** user and click **Connect** to establish a VPN tunnel.
 
 ![](./images/Infra/configure_vpn/openvpn_clientwindow.png " ")
 
