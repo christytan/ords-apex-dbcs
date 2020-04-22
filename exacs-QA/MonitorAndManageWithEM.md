@@ -45,7 +45,7 @@ To complete this lab, you will have needed to do the following:
 ## Step-by-Step Instructions
 
 
-### Step 1: Setting Up Policies/Pre-reqs
+### Step 1: Setting Up Policies
 
 
 - Refer the [documentation](https://blogs.oracle.com/oem/oracle-enterprise-manager-is-now-available-on-oracle-cloud-marketplace) here to help set up your EM Marketplace Image.
