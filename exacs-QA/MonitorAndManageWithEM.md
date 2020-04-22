@@ -196,12 +196,16 @@ To complete this lab, you will have needed to do the following:
 ​
 
 ### Step 3: Logging into the Image
+- Once your VM instance is in running state, click on the instance and copy the Private IP address.
+-First SSH into you Bastion host
+```
+<copy>ssh –i private_ssh_key opc@public_IP_of_Bastion</copy>
+```
 
-
-- Once your VM instance is in running state, click on the instance and copy the Public IP Address.  SSH into the VM instance with the ssh key.
+-  SSH into the EM VM instance with the ssh key.
 
 ```
-<copy>ssh –i private_ssh_key opc@public_IP_Address</copy>
+<copy>ssh –i private_ssh_key opc@private_IP_Address_of_em</copy>
 ```
 
 ![](./images/dbsec/lab6EM/CopyVMIP.png " ")
@@ -231,15 +235,10 @@ To complete this lab, you will have needed to do the following:
 
 ![](./images/dbsec/lab6EM/CheckStatus.png " ")
 
-- Change the default passwords. The password for the EM user sysman, EM Agent, Registration Password, Fusion Middleware user weblogic and Node Manager can be accessed from the following file (access as root user).
+-The password for the Enterprise Manager user sysman, EM Agent Registration Password, Fusion Middleware user weblogic and Node Manager are set initially to the value: welcome1
+Change the sysman password with the following command:
 
-​
-
-```
-
-<copy>cat /root/.oem/.sysman.pwd</copy>
-
-```
+$ /u01/app/em13c/middleware/bin/emctl config oms -change_repos_pwd
 
 
 ```
@@ -248,8 +247,7 @@ To complete this lab, you will have needed to do the following:
 
 ```
 
-- Log into your new EM Console
-
+- Log into your new EM Console via the firefox browser in your VNC session
 
 ``` 
 
@@ -270,7 +268,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 ### Step 4: Set up credentials in Enterprise Manager
 
-- Log in to your Enterprise Manager from a bastion host through VNC/ VNC like application.
+- Log into your new EM Console via the firefox browser in your VNC session
 
 ``` 
 
@@ -279,7 +277,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 ``` 
 ​
 
-- Username should be **sysman / welcome16**
+- Username by default is **sysman / welcome1**
 
 
 - Go to **Setup**, select **Security** and  click on **Named Credentials**.
@@ -302,7 +300,10 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 - UserName should be opc. Upload SSH Private Key. ​
 
 ![](./images/dbsec/lab6EM/CreateCredential.png " ")
+- Change Run Privilege to Sudo as oracle
 
+![](./images/dbsec/lab6EM/SudoasOracle.png " ")
+- Click Save
 ### Step 5: Add host target manually
 
 - To **Add Target manually**, Click on **Setup**, select **Add Target** and then click **Add Targets Manually**.
@@ -351,23 +352,14 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Select **Targets on Hosts**.
 
-<<<<<<< HEAD
 ![](./images/dbsec/lab6EM/SetupDiscovery.png " ")
-=======
-![](./images/dbsec/lab6EM/SetupDiscovery.png)
-
->>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 
 - Select your hosts, one at a time and click **Discover Now**.
 
 ​![](./images/dbsec/lab6EM/SelectTargetsonHosts.png " ")
 
-<<<<<<< HEAD
 - Select **Discover Now**.
 ​
-=======
-
->>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 - Select your next host and repeat the process until all nodes have been discovered.
 
 - Now navigate to 'Auto Discovery Results'.
@@ -375,7 +367,6 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 ![](./images/dbsec/lab6EM/NavigateAutoDiscRes.png " ")
 
-<<<<<<< HEAD
 ​
 - Now, you need to find the 'Cluster' Target and promote it. 
 
@@ -400,26 +391,6 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 - If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
 
 
-=======
-- Now, you need to find the 'Cluster' Target and promote it. 
-
-![](./images/dbsec/lab6EM/SelectClusterTarget.png)
-
-- No Cluster database target can be added/promoted/discovered until the 'Cluster' target has been added or discovered. Promote it with its default inputs.
-
-- After promoting the 'Cluster' Target, promote the 'Cluster Database' target by finding one and clicking **Promote**. Promoting the Cluster DB should also promote its DB instances.
-
-
-![](./images/dbsec/lab6EM/FindClusterDB.png)
-
-- You will need to enter Monitoring User Credentials (like dbnsmp) for this cluster. You can also enter the SYSDBA Password.
-
-![](./images/dbsec/lab6EM/PromoteClusterDatabase.png)
-
-
-- If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
-
->>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 - Click **Next**, review the page and  click **Save**.
 
 
@@ -428,30 +399,16 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Click [here](https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664) for more details on Discovering and adding DB Targets.
 
-<<<<<<< HEAD
 
 - Repeat this process for all Cluster Databases. Promote any additional target you want to monitor.​
 
 - You can review by going to the 'Configure Auto Discovery' to see what has been promoted.
 
 
-=======
-- Repeat this process for all Cluster Databases. Promote any additional target you want to monitor.
-
-- You can review by going to the 'Configure Auto Discovery' to see what has been promoted.
-
->>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 - If there are errors, you need to make changes to your credentials or Installation Details Page.
 ​
 
-<<<<<<< HEAD
 ### Step 7: View monitoring details/set alerts
-=======
-
-### Part 7: View monitoring details/set alerts
-
-​
->>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 
 - To View an Enterprise Summary of all targets, go to 'Enterprise' and click on **Summary**.
 
@@ -536,26 +493,6 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Here you can select a database instance and repeat the process to see the metrics for an instance.
 
-<<<<<<< HEAD
-=======
-
-![](./images/dbsec/lab6EM/SeeMembers.png)
-<table>
-
-<tr><td class="td-logo">
-
-​
-
-[![](./images/obe_tag.png)](#)</td>
-
-<td class="td-banner">
-
-### All Done!
-
-</td>
-
-</tr>
->>>>>>> 99fcaed43362cae2844305b91140d7e2b8a99dd3
 
 ![](./images/dbsec/lab6EM/SeeMembers.png " ")
 
