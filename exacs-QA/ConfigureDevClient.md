@@ -16,6 +16,7 @@ As a database user, a DBA, or an application developer,
 - Invoke SQL Developer on your development system over a VNC connection from your local laptop 
 - Configure a secure connection from your development system to your EXACS database using Oracle SQL Developer and SQL*Plus.
 
+
 ## Required Artifacts
 
 - An Oracle Cloud Infrastructure account with IAM privileges to provision compute instances
@@ -102,18 +103,18 @@ First we shh into the dev client and invoke the VNC server that comes pre-instal
 - SSH into your dev client compute instance
 
 ```
-ssh -i <private-key> opc@PublicIP
+<copy>ssh -i <private-key> opc@PublicIP</copy>
 ```
 
 - Change the password on the VNC server
    
 ```
-$ vncpasswd
+<copy>vncpasswd</copy>
 ```
 - Once you update the password, start your VNC server with the following command
 
  ```
- $ vncserver -geometry 1280x1024
+ <copy>vncserver -geometry 1280x1024</copy>
  ```
 
 - Your development system may now be ready for accepting VNC connections
@@ -124,7 +125,7 @@ On your local laptop
 - Open a terminal window and create an ssh tunnel using the following command
 
 ```
-$ ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devClient>
+<copy>ssh -N -L 5901:127.0.0.1:5901 -i \<priv-key-file\> opc@<publicIP-of-your-devClient></copy>
 ```
 
 **Windows Users**
@@ -158,7 +159,7 @@ In your VNC session, invoke SQL Developer from the top left Applications menu as
 **Note: In the event you have issues launching SQL Developer and it prompts with a java classpath error, simply add the following line to ~/.sqldeveloper/19.1.0/product.conf and retry**
 
 ```
-SetJavaHome /usr/java/jdk1.8.0_231-amd64
+<copy>SetJavaHome /usr/java/jdk1.8.0_231-amd64</copy>
 ```
 
 Create a new connection in SQL Developer and provide the following information
@@ -198,7 +199,7 @@ You can either ssh into your EXACS VM to get the connection string (tnsnames.ora
 - Type SQLPLUS and enter the required details to connect it to your database
 
 ```
-sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_VM_IP')(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = databaseUniqueName.hostDomainName)(FAILOVER_MODE=(TYPE = select)(METHOD = basic))))" as sysdba
+<copy>sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_VM_IP')(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = databaseUniqueName.hostDomainName)(FAILOVER_MODE=(TYPE = select)(METHOD = basic))))" as sysdba</copy>
 ```
 
 **Note: Please make sure to change you Database Password, Host, and Service_Name in the above command.**
