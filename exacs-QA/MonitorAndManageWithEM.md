@@ -492,7 +492,7 @@ https://<private ip address>:7803/em
 
 - Select your hosts, one at a time.
 
-​
+​![](./images/dbsec/lab6EM/SelectTargetsonHosts.png)
 
 - Select **Discover Now**.
 
