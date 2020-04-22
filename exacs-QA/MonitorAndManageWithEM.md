@@ -484,89 +484,55 @@ https://<private ip address>:7803/em
 
 - Select **Targets on Hosts**.
 
-​
-
 ![](./images/dbsec/lab6EM/SetupDiscovery.png)
 
-​
 
-- Select your hosts, one at a time.
+- Select your hosts, one at a time and click **Discover Now**.
 
 ​![](./images/dbsec/lab6EM/SelectTargetsonHosts.png)
 
-- Select **Discover Now**.
-
-​
 
 - Select your next host and repeat the process until all nodes have been discovered.
 
-​
-
 - Now navigate to 'Auto Discovery Results'.
 
-​
 
 ![](./images/dbsec/lab6EM/NavigateAutoDiscRes.png)
 
-​
-
 - Now, you need to find the 'Cluster' Target and promote it. 
-
-​
 
 ![](./images/dbsec/lab6EM/SelectClusterTarget.png)
 
-​
-
 - No Cluster database target can be added/promoted/discovered until the 'Cluster' target has been added or discovered. Promote it with its default inputs.
-
-​
 
 - After promoting the 'Cluster' Target, promote the 'Cluster Database' target by finding one and clicking **Promote**. Promoting the Cluster DB should also promote its DB instances.
 
-​
 
 ![](./images/dbsec/lab6EM/FindClusterDB.png)
 
-​
-
 - You will need to enter Monitoring User Credentials (like dbnsmp) for this cluster. You can also enter the SYSDBA Password.
-
-​
 
 ![](./images/dbsec/lab6EM/PromoteClusterDatabase.png)
 
-​
 
 - If you have selected multiple databases and you want to set the same monitoring properties for all of them, select **Specify Common Monitoring Credentials**. Enter the monitoring credentials, monitoring password, and role. Click **Apply**.
 
-​
-
 - Click **Next**, review the page and  click **Save**.
 
-​
 
 ![](./images/dbsec/lab6EM/PromoteClusterReview.png)
 
-​
 
 - Click [here](https://docs.oracle.com/cd/E63000_01/EMADM/discovery_db.htm#EMADM13664) for more details on Discovering and adding DB Targets.
 
-​
-
 - Repeat this process for all Cluster Databases. Promote any additional target you want to monitor.
 
-​
-
 - You can review by going to the 'Configure Auto Discovery' to see what has been promoted.
-
-​
 
 - If there are errors, you need to make changes to your credentials or Installation Details Page.
 
 ​
 
-​
 
 ### Part 7: View monitoring details/set alerts
 
@@ -690,20 +656,8 @@ https://<private ip address>:7803/em
 
 - Here you can select a database instance and repeat the process to see the metrics for an instance.
 
-​
 
 ![](./images/dbsec/lab6EM/SeeMembers.png)
-
-​
-
-​
-
-​
-
-​
-
-​
-
 <table>
 
 <tr><td class="td-logo">
