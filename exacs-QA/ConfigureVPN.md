@@ -79,27 +79,27 @@ The following illustration shows a network topology that can be used to provide 
 -   Use the following to ssh into centOS vm and download the openVPN rpm package
 
 ```
-ssh opc@&lt;public_ipAddress_of_your_centOS_VM&gt;
+<copy>ssh opc@&lt;public_ipAddress_of_your_centOS_VM&gt</copy>;
 ```
 
 ```
-wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm
+<copy>wget http://swupdate.openvpn.org/as/openvpn-as-2.5.2-CentOS7.x86_64.rpm</copy>
 ```
    
-![](./images/Infra/configure_vpn/openvpn_configure.jpeg)
+![](./images/Infra/configure_vpn/openvpn_configure.jpeg " ")
 
 -   Use the RPM command to install the package
 
 ```
-sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm
+<copy>sudo rpm -ivh openvpn-as-2.5.2-CentOS7.x86_64.rpm</copy>
 ```
 
-![](./images/Infra/configure_vpn/openvpn_url.jpeg)
+![](./images/Infra/configure_vpn/openvpn_url.jpeg " ")
 
 -   Change the password of OpenVPN Server
 
 ```
-sudo passwd openvpn
+<copy>sudo passwd openvpn</copy>
 ```
 
 -    From your local browser, access the admin UI console of your VPN Server (**https://<*public_ipAddress_of_your_centOS_VM*>:943/admin**), using the username 'openvpn' and the password for OpenVPN server.

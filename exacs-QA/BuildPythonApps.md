@@ -32,7 +32,7 @@ As an application developer,
 
 ![](./images/pythonApp/Compute1.png " ")
 
-- Select the right Oracle Developer Cloud image you created in [Lab 4](?lab=lab-4-configure-development-system-for-use) 
+- Select the right Oracle Developer Cloud image you created in [Lab 4](?lab=lab-4-configure-development-system-for-use)
 
 - Copy the public IP address of the instance in a note pad. 
 
@@ -74,7 +74,6 @@ Lets download a sample python application for the purpose of this lab,
 ```
 <copy>unzip EXACSPython.zip</copy>
 ```
-
 
 ### STEP 2: Run your python application**
 

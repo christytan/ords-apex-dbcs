@@ -1,10 +1,10 @@
 ## Introduction
 
-This lab walks you through the steps to get started with Backup and Recovery in Exadata Cloud Service database using Console, APIs and RMAN.
+This lab walks you through getting started with Backup and Recovery in Exadata Cloud Service database using Console, APIs, and RMAN.
 
 Exadata Cloud Service supports backing up databases on an Exadata DB system to an Oracle Cloud Infrastructure Object Storage service and a local disk - Fast Recovery Area in Exadata storage.
 
-**Note: If you intend to take backups to a local Exadata storage, you need to select a Storage option as below while provisioning Exadata DB system.**
+**Note: If you intend to take backups to a local Exadata storage, you need to select a Storage option below while provisioning the Exadata DB system.**
 
 Configure storage: Specify the following:
 
