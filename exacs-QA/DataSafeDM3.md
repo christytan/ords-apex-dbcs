@@ -22,7 +22,7 @@ Follow these general steps:
 4. In the Oracle Data Safe Console, create a masking format to mask the `HCM1.DEPARTMENT_ID` column in your target database.
 5. Select your masking format as the default masking format for the sensitive type that you created in [Discovery Lab 4 - Create a Sensitive Type and Sensitive Category with Oracle Data Safe](DataSafeSDD4.md) (<username> **Custom Department ID Number)**.
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
 

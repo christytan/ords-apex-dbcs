@@ -26,6 +26,8 @@ While you are working on the challenge, think about the following questions:
 - How many sensitive columns and sensitive types did you discover?
 - How many tables contain the discovered sensitive columns?
 
+## Steps
+
 ### Step 1: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**

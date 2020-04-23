@@ -18,7 +18,7 @@ Follow these general steps:
 3. Sign in to the Oracle Data Safe Console in your region.
 4. In the Oracle Data Safe Console, update your sensitive data model against your target database by using the update option in the Data Discovery wizard. What does the update test find?
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
 

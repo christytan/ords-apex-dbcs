@@ -34,7 +34,7 @@ Follow these general steps:
 15. Sign in to your ExaCS database as the `SYS` user with SQL Developer.
 16. In SQL Developer, verify that the data is masked according to your masking policy.
 
-## Step-By-Step Instructions
+## Steps
 
 ### Step 1: Sign in to the Oracle Data Safe Console for your region
 

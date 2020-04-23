@@ -36,7 +36,7 @@ All of the alert policies
 6. Configure the audit trail to collect audit data from the target database and start the audit trail.
 7. Review the audit policies for your target database to ensure that the policies you selected are correctly provisioned.
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Sign in to the Oracle Data Safe Console for your region
 

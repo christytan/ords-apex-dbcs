@@ -23,7 +23,7 @@ Follow these general steps:
 5. Continue in the Data Masking wizard to define a masking policy for your sensitive data model. Name it **<username> Mask1_HCM1**. Use all of the default masking formats automatically configured by Oracle Data Safe. Schedule the data masking job to run immediately. After the job runs, view and analyze the Data Masking report. Generate a PDF of the report and download it.
 6. Return to SQL Developer Web and query the `HCM1.EMPLOYEES` table in your ExaCS database. Verify that the sensitive data is now masked.
 
-## Step-By-Step Instructions
+## Steps
 
 ### Step 1: Connect to your ExaCS database with SQL Developer
 

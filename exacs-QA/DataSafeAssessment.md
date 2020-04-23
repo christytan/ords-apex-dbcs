@@ -19,7 +19,7 @@ Suppose that you are notified by the “Audit and Compliance” department that 
 - `DBA_HARVEY` (Company Junior DBA)
 - `SECURE_STEVE`
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
 

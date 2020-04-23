@@ -32,7 +32,7 @@ Follow these general steps:
   - How much time did the data discovery job take?
   - How much time did the data masking job take?
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Sign in to the Oracle Data Safe Console for your region
 

@@ -13,7 +13,7 @@ In this lab, you learn how to:
 ## Challenge
 Suppose that recent data breaches in your industry occurred due to stolen credentials of high privileged users. You are notified by “Audit and Compliance” to quickly report high risk users on your target database and show their recent activity. You want to know who the users are and what entitlements they have.
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Sign in to the Oracle Data Safe Console for your region
 

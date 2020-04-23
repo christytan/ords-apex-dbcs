@@ -36,7 +36,7 @@ Follow these general steps:
 **Note:**
 The totals and data in your reports will most likely be different than the reports shown here.
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Explore the All Activity report to view and analyze audit data
 

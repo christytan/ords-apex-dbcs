@@ -22,7 +22,7 @@ In this lab, you learn how to do the following:
 7. In Oracle Data Safe, run the verification test again against your database, but this time use the Data Discovery wizard. Observe the verification findings. Do you need to do anything to your sensitive data model?
 8. If needed, manually update your sensitive data model from the Library so that it accurately reflects your target database.
 
-## Step-by-Step Instructions
+## Steps
 
 ### Step 1: Connect to ExaCS DB using SQL Developer
 

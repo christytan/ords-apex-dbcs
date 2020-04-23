@@ -34,6 +34,8 @@ Follow these general steps:
 7. In the Oracle Data Safe Console, examine the **All Activity** report to view the newly generated audit records.
 8. In SQL Developer, disable the recently created audit policy, and then verify if any alerts are generated in the Oracle Data Safe Console.
 
+## Steps
+
 ### Step 1: In SQL Developer, create a query to view the list of enabled audit policies and their details
 - In SQL Developer Web, run the following query to view a list of enabled unified audit policies.
 
