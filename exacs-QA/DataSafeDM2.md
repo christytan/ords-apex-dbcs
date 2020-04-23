@@ -69,7 +69,7 @@ Follow these general steps:
 
 - Click the **Library** tab.
 - Click **Masking Policies**. Your masking policy that you created in [Masking Lab 1 - Discover and Mask Sensitive
-Data by Using Default Masking Formats in Oracle Data Safe](DataSafeDM.md) should be listed (**<username> Mask1_HCM1**). The dates when the policy was created and last updated are displayed.
+Data by Using Default Masking Formats in Oracle Data Safe](?lab=lab-12-1-discover-mask-sensitive-data-by) should be listed (**<username> Mask1_HCM1**). The dates when the policy was created and last updated are displayed.
 - Click your masking policy.
 
 ![](./images/dbsec/datasafe/masking/click-policy.png " ")

@@ -26,7 +26,7 @@ In this lab, you learn how to do the following:
 
 ### Step 1: Connect to ExaCS DB using SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
 ### Step 2: In SQL Developer, add a column to the `EMPLOYEES` table in your database
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:

@@ -18,7 +18,7 @@ To complete this lab, you need to have the following:
 - Login credentials for the Oracle Data Safe Console
 - An Oracle Data Safe service enabled in a region of your tenancy
 - A registered target database in Oracle Data Safe with sample audit data and the password for the SYS user account. This lab refers to an ExaCS database.
-An audit trail is running on your target database and alert policies are enabled in Oracle Data Safe. If not, see [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](DataSafeAudit.md).
+An audit trail is running on your target database and alert policies are enabled in Oracle Data Safe. If not, see [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](?lab=lab-12-5-provision-audit-alert-policies).
 
 ## Challenge
 
@@ -87,7 +87,7 @@ target database.
 
 ![](./images/dbsec/datasafe/auditing/edit-policies3.png " ")
 
-- Click the **Alert Policies** tab and verify that the alert policy called **Audit Policy Changes** is enabled. If it's not, enable it now. You enable this policy in [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](DataSafeAudit.md).
+- Click the **Alert Policies** tab and verify that the alert policy called **Audit Policy Changes** is enabled. If it's not, enable it now. You enable this policy in [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](?lab=lab-12-5-provision-audit-alert-policies).
 
 ![](./images/dbsec/datasafe/auditing/alert-policies2.png " ")
 

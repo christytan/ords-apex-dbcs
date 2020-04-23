@@ -31,7 +31,7 @@ Suppose that recent data breaches in your industry occurred due to stolen creden
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
 ### Step 2: In SQL Developer connect to SYS user
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
 ### Step 3: Run User Assessment on your target database
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **User Assessment**. The User Assessment page is displayed.
