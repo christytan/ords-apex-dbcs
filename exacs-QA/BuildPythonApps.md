@@ -67,7 +67,7 @@ Lets download a sample python application for the purpose of this lab,
 
 
 ```
-<copy>wget -O https://objectstorage.us-ashburn-1.oraclecloud.com/p/1UCl5L8GIvhaF96FuBJ1dPAQMAzf4ZQUIAEILCRJp2M/n/orasenatdpltintegration02/b/ExaCSScripts/o/EXACSPython.zip</copy>
+<copy>wget -O EXACSPython.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/qvAWQt4VJBTU25lXtqKk3MzmRZ4vE-XJli9g0MhgWfQ/n/orasenatdpltintegration02/b/ExaCSScripts/o/EXACSPython.zip</copy>
 ```
 - Unzip the application 
 
