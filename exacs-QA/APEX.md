@@ -29,9 +29,9 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - An Oracle Cloud Infrastructure account
 
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to **Lab 4**
 
-- A pre-provisioned Exadata Cloud Service Database instance. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
+- A pre-provisioned Exadata Cloud Service Database instance. Refer to **Lab 3**
 
 **You are all set, let's begin!**
 
@@ -41,15 +41,19 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 **Key Objectives**:
 
-- Learn how to setup ORDS and APEX on Oracle Database using Terraform [Lab 16-1](?lab=lab-16-1-install-ords-apex)
+- Learn how to setup ORDS and APEX on Oracle Database using Terraform
+
+**Click on Lab 16-1 from the menu on the right.**
 
 ### **STEP 2: Create a REST Service using APEX**
 
 **Key Objectives**:
 
-- Learn how to create a REST Service using APEX [Lab 16-2](?lab=lab-16-2-create-restservice-on-database)
+- Learn how to create a REST Service using APEX
 
-### **STEP 3: Integrating the REST Service in Python Application and Create a Web Application using APEX with Oracle Database.**
+**Click on Lab 16-2 from the menu on the right.**
+
+### **STEP 3: Integrating the REST Service in an Python Application and Create a Web Application using APEX with Oracle Database.**
 
 **Key Objectives**:
 
@@ -60,4 +64,5 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Create an Application in APEX using the loaded data.
 - Demonstrate native JSON support in oracle database.
 
-_ Learn how to integrate REST service [Lab 16-3](?lab=lab-16-3-build-apex-application-on-exacs)
+
+**Click on Lab 16-3 from the menu on the right.**

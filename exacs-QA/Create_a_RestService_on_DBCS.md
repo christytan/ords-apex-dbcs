@@ -13,7 +13,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Required Artifacts
 
-- Please ensure you have installed ORDS and APEX on the database instance you want to create a REST service. Refer **lab 17-1**for more information.
+- Please ensure you have installed ORDS and APEX on the database instance you want to create a REST service. Refer **lab 16-1**for more information.
 
 
 ## Steps
@@ -168,4 +168,4 @@ Note :
 
 
 - You are now ready to move to the next part of this lab.
-- **Click on Lab 17-3 from the menu on the right.**
+- **Click on Lab 16-3 from the menu on the right.**

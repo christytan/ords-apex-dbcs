@@ -296,4 +296,4 @@ Now, since we have provisioned the database instance and connected to it. We wil
 - Now, you have setup the schema and the tables.
 
 - You are now ready to move to the next part of this lab.
-- **Click on Lab 17-2 from the menu on the right.**
+- **Click on Lab 16-2 from the menu on the right.**
