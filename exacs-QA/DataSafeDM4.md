@@ -14,11 +14,11 @@ In this lab, you learn how to do the following:
 - Select a predefined and custom masking format for a sensitive type.
 
 ## Challenge
-You want to discover and mask your sensitive data all within the same flow in Oracle Data Safe. You configure a variety of masking formats, including basic masking formats, predefined masking formats, and the user-defined masking format you created in [Masking Lab 3 - Create a Masking Format in Oracle Data Safe](DataSafeDM3.md).
+You want to discover and mask your sensitive data all within the same flow in Oracle Data Safe. You configure a variety of masking formats, including basic masking formats, predefined masking formats, and the user-defined masking format you created in [Masking Lab 3 - Create a Masking Format in Oracle Data Safe](?lab=lab-12-3-create-masking-format-oracle-data).
 
 Follow these general steps:
 1. Sign in to the Oracle Data Safe Console for your region.
-2. Launch the Data Masking wizard and discover sensitive data in the `HCM1` schema. Select all of the predefined sensitive types and the sensitive type that you created in [Discovery Lab 4 - Create a Sensitive Type and Sensitive Category with Oracle Data Safe](DataSafeSDD4.md). Save your sensitive data model as **<username> SDM3**. Clear all of the selected sensitive columns in the masking policy, and define masking formats only for those listed in steps 3 through 13 below. Save your masking format as **<username> Mask2_HCM1**.
+2. Launch the Data Masking wizard and discover sensitive data in the `HCM1` schema. Select all of the predefined sensitive types and the sensitive type that you created in [Discovery Lab 4 - Create a Sensitive Type and Sensitive Category with Oracle Data Safe](?lab=lab-7-7-create-sensitive-type-sensitive). Save your sensitive data model as **<username> SDM3**. Clear all of the selected sensitive columns in the masking policy, and define masking formats only for those listed in steps 3 through 13 below. Save your masking format as **<username> Mask2_HCM1**.
 3. Configure a masking format for `EMP_EXTENDED.TAXPAYERID` to generate random numbers between **100,000,000** and **899,999,999**.
 4. Configure a masking format for `SUPPLEMENTAL_DATA.TAXPAYER_ID` to generate a fixed string `***-**-****`.
 5. Configure a masking format for `EMPLOYEES.FIRST_NAME` to generate a fixed string **<username>_tiger**.
@@ -29,7 +29,7 @@ Follow these general steps:
 10. Configure a masking format for `EMPLOYEES.SALARY` that masks values greater than **10000** with the fixed number **10000**.
 11. Configure a masking format for `SUPPLEMENTAL_DATA.BONUS_AMOUNT` that generates a random list of values, including **1000**, **1500**, **2000**, **2500**, and **3000**.
 12. Configure a masking format for `EMP_EXTENDED.PAYMENTACCOUNTNO` that generates random Visa credit card numbers.
-13. Configure a masking format for `DEPARTMENTS.DEPARTMENT_ID` that uses the masking format you created (**<username> Custom Department IDs**). If you did not create this masking format, see [Masking Lab 3 - Create a Masking Format in Oracle Data Safe](DataSafeDM3.md). This masking format generates random numbers from **10** to **9990**.
+13. Configure a masking format for `DEPARTMENTS.DEPARTMENT_ID` that uses the masking format you created (**<username> Custom Department IDs**). If you did not create this masking format, see [Masking Lab 3 - Create a Masking Format in Oracle Data Safe](?lab=lab-12-3-create-masking-format-oracle-data). This masking format generates random numbers from **10** to **9990**.
 14. Schedule the data masking job to run immediately and then view the masking report.
 15. Sign in to your ExaCS database as the `SYS` user with SQL Developer.
 16. In SQL Developer, verify that the data is masked according to your masking policy.
@@ -219,7 +219,7 @@ Now you are ready to run the data masking job.
 
 ### Step 12: Connect to your ExaCS database as the `SYS` user with SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
 ### Step 13: In SQL Developer, verify that the data is masked according to your masking policy
 

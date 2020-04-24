@@ -16,7 +16,7 @@ To complete this lab, you need to have the following:
 - Login credentials for your tenancy in Oracle Cloud Infrastructure
 - An Oracle Data Safe service enabled in a region of your tenancy
 - A registered target database in Oracle Data Safe with sample audit data
-- An audit policy created on your target database, alerts configured, and an audit trail started. If not, see [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](DataSafeAudit.md).
+- An audit policy created on your target database, alerts configured, and an audit trail started. If not, see [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](?lab=lab-12-5-provision-audit-alert-policies).
 
 ## Challenge
 

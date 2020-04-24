@@ -65,10 +65,10 @@ In your developer client ssh session,
 
 Lets download a sample python application for the purpose of this lab,
 
-```
-<copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/pythonApp/EXACSpython.zip?raw=true</copy>
-```
 
+```
+<copy>wget -O EXACSPython.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/qvAWQt4VJBTU25lXtqKk3MzmRZ4vE-XJli9g0MhgWfQ/n/orasenatdpltintegration02/b/ExaCSScripts/o/EXACSPython.zip</copy>
+```
 - Unzip the application 
 
 ```
