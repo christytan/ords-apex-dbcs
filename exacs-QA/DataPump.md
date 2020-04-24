@@ -1,10 +1,10 @@
 ## Introduction
 
-Oracle Data Pump offers very fast bulk data and metadata movement between user managed Oracle databases and Exadata Cloud Service Databaes.
+Oracle Data Pump offers very fast bulk data and metadata movement between user managed Oracle databases and Exadata Cloud Service Databases.
 
-Data Pump Import lets you import data from Data Pump files. You can save your data to either the database server or File Storage Server and use Oracle Data Pump to load data to Exadata Cloud Service Database.
+Data Pump Import lets you import data from Data Pump files. You can save your data to either the database server or File Storage Server and use Oracle Data Pump to load data to an Exadata Cloud Service Database.
 
-This lab walks you through the steps to migrate a sample application schema using datapump import into your exadata cloud service database.
+This lab walks you through the steps to migrate a sample application schema using Data Pump Import into your Exadata Cloud Service Database.
 
 To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
@@ -12,14 +12,14 @@ To log issues and view the Lab Guide source, go to the [github oracle](https://g
 
 As a database admin or user,
 
-1. Download a sample datapump export dump file from Oracle Learning Library github repository.
-2. Secure copy the dump file to the exadata machine to the required directory and run import data pump
+1. Download a sample datapump export dump file from the Oracle Learning Library github repository.
+2. Secure copy the dump file to the exadata machine and then to the required directory and run import data pump
 
 
 
 ## Required Artifacts
 - An Oracle Cloud Infrastructure account with privileges to create object storage buckets and dedicated autonomous databases.
-- Access to a pre-provisioned Exadata cloud service database . Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
+- Access to a pre-provisioned Exadata cloud service database. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud)
 - A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
 
 ## Steps
