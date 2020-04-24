@@ -13,7 +13,7 @@ To log issues and view the Lab Guide source, go to the [github oracle](https://g
 As a database admin or user,
 
 1. Download a sample datapump export dump file from the Oracle Learning Library github repository.
-2. Secure copy the dump file to the exadata machine and then to the required directory and run import data pump
+2. Securely copy the dump file to the exadata machine and then to the required directory and run import data pump
 
 
 
