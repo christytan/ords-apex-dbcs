@@ -17,6 +17,7 @@ Suppose that you are notified by the “Audit and Compliance” department that 
 - `APP_USER`
 - `DBA_DEBRA` (Company DBA)
 - `DBA_HARVEY` (Company Junior DBA)
+- `EVIL_RICH`
 - `SECURE_STEVE`
 
 ## Steps
