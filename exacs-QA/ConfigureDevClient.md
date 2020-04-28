@@ -204,7 +204,7 @@ sqlplus sys/DBpassword@"(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 'EXACS_
 **Note: Please make sure to change you Database Password, Host, and Service_Name in the above command.**
 
 
-- When succesfully connected, you should see the below image or something similar to it.
+- When successfully connected, you should see the below image or something similar to it.
 
 ![](./images/Infra/ConfigureDevEnv/sqlplus-conn.png " ")
 
