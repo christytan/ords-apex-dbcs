@@ -46,7 +46,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 - Access to your Oracle cloud account.
 - A pre-provisioned DB instance on Exadata. Refer to **Lab 3** on how to provision a DB instance on Exadata.
-- Access to a Dev Client on OCI for the database instance. Refer to **Lab 4** to know how to setup a Dev Client.
+- Access to a Developer Client on OCI for the database instance. Refer to **Lab 4** to know how to setup a Dev Client.
 - Have appropriate access to run Terraform on OCI.
 
 
@@ -54,11 +54,11 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### STEP 1: Install Terraform
 
-- Since our Exadata Cloud Service is sitting in a private network we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer **lab 4** in this workshop for more information.
+- Since our Exadata Cloud Service is sitting in a private network, we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer to **lab 4** in this workshop for more information.
 
-- Then, we install Terraform and execute the terraform script from that Developer Client/bastion Host which has access to the Exadata Cloud Service database so that Terraform can access it.
+- Then we install Terraform and execute the terraform script from that Developer Client/bastion Host which has access to the Exadata Cloud Service database, so that Terraform can access it.
 
-- Once the developer client is provisioned, Login to the Developer Client using ssh.
+- Once the developer client is provisioned, Log in to the Developer Client using ssh.
 
 ```
 <copy> ssh -i private_ssh_key opc@public_ip</copy>
