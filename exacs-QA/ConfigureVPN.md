@@ -115,7 +115,7 @@ sudo passwd openvpn
 
 Click **VPN settings** and scroll down to the section labeled **Routing**
 
-Here we configure how traffic from your VPN client (for example, your personal laptop) shoud be NATed and how DNS resolution should occur.
+Here we configure how traffic from your VPN client (for example, your personal laptop) should be NAT'ed and how DNS resolution should occur.
 
 Configure this section as shown in the screenshot below. 
 - Choose **Yes using NAT**
