@@ -6,13 +6,13 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Objectives
 
-- Learn how setup ORDS and APEX on Oracle Database Cloud Service using Terraform.
+- Learn how set up ORDS and APEX on Oracle Database Cloud Service using Terraform.
 
 ## Required Artifacts
 
 - Access to your Oracle cloud account.
-- A pre-provisioned DB instance on Exadata. Refer [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how provision a DB instance on Exadata.
-- Access to a Dev. Client on OCI for the database instance. Refer [Lab 4](?lab=lab-4-configure-development-system-for-use) to know how to setup a Dev Client.
+- A pre-provisioned DB instance on Exadata. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how to provision a DB instance on Exadata.
+- Access to a Dev Client on OCI for the database instance. Refer [Lab 4](?lab=lab-4-configure-development-system-for-use) to know how to setup a Dev Client.
 - Have appropriate access to run Terraform on OCI.
 
 
@@ -29,6 +29,8 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 ```
 <copy>wget --no-check-certificate --content-disposition https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Lab17Apex/ORDS-APEX_ExaCS.zip?raw=true</copy>
 ```
+
+**NOTE: Make sure you have wget installed before running the above command, otherwise run 'brew install wget' beforehand**
 
 ### STEP 3: RUN the Terraform script
 
