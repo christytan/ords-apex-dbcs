@@ -1,6 +1,44 @@
 ## Introduction
 
+<<<<<<< Updated upstream
 In this lab we will install ORDS (Oracle REST Data Services) and APEX (Application Express) on Oracle Database Cloud Service using Terraform.
+=======
+In this lab we will install ORDS (Oracle REST Data Services) and Oracle APEX (Application Express) on Oracle Database Cloud Service using Terraform.
+
+Oracle REST Data Services(ORDS) is a tool offered by oracle through which we can develop and host Applications and REST Services. Oracle Application express is low-code application development tool to build applications and REST Services right on top of Oracle Database. In this lab, we will deploy ORDS to host application developed using APEX.
+
+In production environments, we deploy ORDS on a server in public network and configure it to interact with APEX installed on the database server deployed in a private network. However, in Dev/test environments, we can choose deploy both ORDS and APEX on the same database server.
+
+To automate the deployment process for ORDS and APEX, we can use tools like Terraform, Ansible, etc. In this exercise, we will see how we can automate it using Terraform. The Terraform script provided in this lab will install ORDS and APEX for you. You just have to configure few parameters mentioned below. The Terraform script will provide you two options to deploy ORDS and APEX as mentioned below:
+
+1. Deploy ORDS on a separate compute and APEX on the database server.
+2. Deploy ORDS and APEX on the Database Server.
+
+#### ORDS Architecture Options
+```
+#### ARCHITECTURE - 1           |-------------Terraform Script Automation-----------------|
+####      +-+-+-+-+-+-+-+       |        +-+-+-+-+-+-+-+               +-+-+-+-+-+-+-+    |
+####      +             +       |        +             +               +             +    |
+####      + APPLICATION +       |        +             +               +    APEX     +    |
+####      + GENERATING  +-------|--------+    ORDS     +---------------+      +      +    |
+####      + JSON CONTENT+       |        +   SERVER    +               +   ORACLE    +    |
+####      +             +       |        +             +               +  DATABASE   +    |
+####      +-+-+-+-+-+-+-+       |        +-+-+-+-+-+-+-+               +-+-+-+-+-+-+-+    |
+####                            |---------------------------------------------------------|
+
+
+#### ARCHITECTURE - 2           |-------------Terraform Script Automation-----------------|
+####      +-+-+-+-+-+-+-+       |                       +-+-+-+-+-+-+-+                   |
+####      +             +       |                       +             +                   |
+####      + APPLICATION +       |                       +ORDS and APEX+                   |
+####      + GENERATING  +-------|-----------------------+      +      +                   |
+####      + JSON CONTENT+       |                       +   ORACLE    +                   |
+####      +             +       |                       +  DATABASE   +                   |
+####      +-+-+-+-+-+-+-+       |                       +-+-+-+-+-+-+-+                   |
+####                            |---------------------------------------------------------|
+```
+
+>>>>>>> Stashed changes
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
