@@ -25,7 +25,7 @@ As a database admin or user,
 
 ## Steps
 
-### STEP 1: Download sample data pump export file from Oracle Learning Library github repository
+### STEP 1: Download a sample data pump export file from Oracle Learning Library github repository
 
 - Log into your bastion server
 
