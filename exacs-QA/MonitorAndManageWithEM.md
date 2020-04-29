@@ -108,14 +108,14 @@ To complete this lab, you will have needed to do the following:
 
 ```
 
-<copy>Allow dynamic-group OEM_Group to manage instancefamily in tenancy</copy>
+<copy>Allow dynamic-group OEM_Group to manage instance-family in tenancy</copy>
 
 ```
 ​
 
 ```
 
-<copy>Allow dynamic-group OEM_Group to manage volumefamily in tenancy</copy>
+<copy>Allow dynamic-group OEM_Group to manage volume-family in tenancy</copy>
 
 ```
 
@@ -259,10 +259,10 @@ $ /u01/app/em13c/middleware/bin/emctl config oms -change_repos_pwd
 - If you need help trouble shooting before going to Step 4, the installation log is located at:
 
 ```
-<copy>cat /var/log/emcg_setup.log</copy>
+<copy>sudo tail –f /var/log/emgc_setup.log</copy>
 ```
 
-You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-on-oci-installation-phase-2-installing-the-em-app-into-your-oci-compartment) for more help.
+Refer to this [documentation](https://blogs.oracle.com/oem/enterprise-manager-on-oci-installation-phase-2-installing-the-em-app-into-your-oci-compartment) for more help.
 
 ​
 
@@ -341,7 +341,7 @@ You should refer to this [doc](https://blogs.oracle.com/oem/enterprise-manager-o
 
 - Click **Next** and after reviewing, click **Deploy Agent**.
 
-**NOTE: If you run into deployment issues, make sure port 3872 is open on DB port, and edit hosts file on both target and EM host to include each other with a full qualified unique name.** 
+**NOTE: If you run into deployment issues, make sure that a port 3872 is open on DB port, and edit hosts file on both target and EM host to include each other with a full qualified unique name.** 
 
 ​
 ### Step 6: Add Non-Host Targets using a guided process
