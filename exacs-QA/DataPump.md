@@ -104,7 +104,7 @@ exit
 
 - Exit to your **bastion server**
 
-- Secure copy the dump file to the oracle exadata cloud service server to the data pump directory that you have noted down before
+- Securely copy the dump file to the oracle exadata cloud service server to the data pump directory that you have noted down before
 
 ```
 <copy>
@@ -127,7 +127,7 @@ source userXX
 </copy>
 ```
 
-***NOTE:*** Login to Node of Exadata and make a TNS entry on your tnsnames.ora file such that your import data pump process only uses this particular node as we are placing the dump file on only one node and not on a shared file system.
+***NOTE:*** Log in to the Node of Exadata and make a TNS entry on your tnsnames.ora file such that your import data pump process only uses this particular node as we are placing the dump file on only one node and not on a shared file system.
 
 ```
 <copy>
@@ -140,7 +140,7 @@ cd $ORACLE_HOME/network/admin/user_xx/
 vi tnsnames.ora
 </copy>
 ```
-- Since we have not attached the file system to the exadata, and to maintain consistency in the node usage, we will copy the PDB tns entry and edit the **Host** to the private IP of node1 of exadata cloud service
+- Since we have not attached the file system to the exadata, and to maintain consistency in the node usage, we will copy the PDB tns entry and edit the **Host** to the private IP of node1 of the exadata cloud service
 
 ```
 usrxx_1 =
@@ -162,15 +162,15 @@ usrxx_1 =
 
 ```
 <copy>
-impdp SYSTEM/DB_PWD@usrXX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUSTER=NO; 
+impdp SYSTEM/password@usr_XX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUSTER=NO; 
 </copy>
 ```
 
 - In the above command, replace
   * __password__ - Admin password for your database system user
   * __usr_XX__ - The pluggable database that you created 
-  * __directory__ - leave as shown above
-  * __dumpfile__ -  The dump file that was secure copied to the directory location
+  * __DIRECTORY__ - leave as shown above
+  * __user_xx.dmp__ -  The dump file that was securely copied to the directory location
 
 ![impdp_log](./images/HOL-DataPump/impdp_log.png " ")
 
@@ -180,4 +180,4 @@ All Done! Your application schema was successfully imported.
 
 You may now connect to your exadata cloud service database using a SQL client and validate import.
 
-Congratulations! You have successfully completed migration of an Oracle database to the Exadata Cloud Service Database using Data Pump
+Congratulations! You have successfully completed migration of an Oracle database to the Exadata Cloud Service Database using Data Pump.
