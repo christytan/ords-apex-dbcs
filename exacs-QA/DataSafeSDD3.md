@@ -28,7 +28,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
-<copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
+<copy>ALTER SESSION SET CONTAINER=YOUR_PDB_NAME;</copy>
 ```
 - On the SQL Worksheet, run the following commands to add an `AGE` column to the `EMPLOYEES` table.
 
