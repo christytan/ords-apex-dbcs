@@ -75,8 +75,8 @@ This table compares the number of findings for each category and counts the numb
 ![](./images/dbsec/datasafe/assessment/evaluate.png " ")
 - Deselect all other risk levels.
 - Scroll through the report to view the findings.
-- Focus on **System Privilege Grants**:
-  - System privileges `(ALTER USER, CREATE USER, DROP USER)` can be used to create and modify other user accounts, including changing passwords. This ability can be abused to gain access to another user's account, which may have greater privileges. The Privilege Analysis feature may be helpful to determine whether or not a user or role have used account management privileges.
+- Focus on **System Privilege Grants** under Privileges and Roles:
+  - System privileges `(ALTER USER, CREATE USER, DROP USER)` can be used to create and modify other user accounts, including the ability to change passwords. This ability can be abused to gain access to another user's account, which may have greater privileges. The Privilege Analysis feature may be helpful to determine whether or not a user or role has used account management privileges.
   - Security Assessment found 59 grants of system privilege grants on your target database.
 
 ![](./images/dbsec/datasafe/assessment/system-grants.png " ")

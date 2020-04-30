@@ -1,7 +1,7 @@
 # Assess Users with Oracle Data Safe
 
 ## Introduction
-Using Oracle Data Safe assess user security in your target database by using the User Assessment feature and fix issues.
+Using Oracle Data Safe, assess user security in your target database by using the User Assessment feature and fix issues.
 
 To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
@@ -11,7 +11,7 @@ In this lab, you learn how to:
 - Fix some issues pertaining to user security.
 
 ## Challenge
-Suppose that recent data breaches in your industry occurred due to stolen credentials of high privileged users. You are notified by “Audit and Compliance” to quickly report high risk users on your target database and show their recent activity. You want to know who the users are and what entitlements they have.
+Suppose that recent data breaches in your industry occurred due to stolen credentials of high-privileged users. You are notified by “Audit and Compliance” to quickly report high risk users on your target database and show their recent activity. You want to know who the users are and what entitlements they have.
 
 ## Steps
 
@@ -53,7 +53,6 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - View the **User Roles** chart. This chart compares the number of users with the DBA, DV Admin, and Audit Admin roles.
 
 ![](./images/dbsec/datasafe/assessment/user-risk.png " ")
-- View the **Last Password Change** chart. This chart shows you the number of users who have changed their passwords in the last 30 days, the last 30-90 days, and 90 days ago or more.
 - Click the second small circle below the charts to view the third and fourth charts.
 - View the **Last Password Change** chart. This chart shows you the number of users who have changed their passwords in the last 30 days, the last 30-90 days, and 90 days ago or more.
 - View the **Last Login** chart. This chart shows you the number of users that logged in in the last 24 hours, in the last week, within the current month, within the current year, and a year ago or more.
