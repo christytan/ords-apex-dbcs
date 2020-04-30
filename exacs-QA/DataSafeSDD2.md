@@ -171,7 +171,7 @@ You can manually update your sensitive data model while continuing to work in th
 
 ![](./images/dbsec/datasafe/discovery/age-search.png " ")
 - In the list of sensitive columns, deselect `HCM1.EMPLOYEES.AGE`.
-- Your sensitive data model is now updated and accurate.$
+- Your sensitive data model is now updated and accurate.
 - Click **Save** then **Exit**.
 
 ### All Done!
