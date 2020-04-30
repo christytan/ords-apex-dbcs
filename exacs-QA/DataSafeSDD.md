@@ -73,7 +73,7 @@ While you are working on the challenge, think about the following questions:
 
 ![](./images/dbsec/datasafe/discovery/sensitive-types-un.png " ")
 
-- Return to the top of the list and select the **Identification Information**, **Healthcare Information**, and **Employment Information** check boxes.
+- Return to the top of the list and select the **Select All** check box.
 - At the bottom of the page, select the **Non-Dictionary Relationship Discovery** check box.<br>
   Oracle Data Safe automatically discovers referential relationships defined in the data dictionary. The **Non-Dictionary Relationship Discovery** feature helps to identify application-level parent-child relationships that are not defined in the data dictionary. It helps discover application-level relationships so that data integrity is maintained during data masking.
 - When you are ready to start the data discovery job, click **Continue**.

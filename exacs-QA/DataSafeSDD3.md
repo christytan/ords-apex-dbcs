@@ -30,8 +30,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 <copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
 ```
-- Expand the `EMPLOYEES` table to view the current columns.
-On the SQL Worksheet, run the following commands to add an `AGE` column to the `EMPLOYEES` table.
+- On the SQL Worksheet, run the following commands to add an `AGE` column to the `EMPLOYEES` table.
 
 ```
 <copy>ALTER TABLE HCM1.EMPLOYEES ADD AGE NUMBER;</copy>

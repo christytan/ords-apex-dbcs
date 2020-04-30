@@ -48,7 +48,7 @@ Follow these general steps:
 ![](./images/dbsec/datasafe/discovery/sensitive-types-page.png " ")
 
 - Move the **Hide Oracle Predefined** slider to the right.
-The list becomes empty because you haven't created any sensitive types yet.
+The list removes the Oracle defined sensitive types, showing only the ones that you have defined.
 
 ![](./images/dbsec/datasafe/discovery/sensitive-custom3.png " ")
 

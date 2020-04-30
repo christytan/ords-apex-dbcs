@@ -122,10 +122,13 @@ Your sensitive data model is updated to include the `AGE` column.
 ```
 <copy>EXEC DBMS_STATS.GATHER_SCHEMA_STATS('HCM1');</copy>
 ```
-- To verify that the `EMPLOYEES` table no longer has an `AGE` column, on the **Navigator** tab, select the `HCM1` schema from the first drop-down menu.
-- From the second drop-down menu, ensure that **Tables** is selected.
-- Expand the `EMPLOYEES` table.
-- Notice that the `AGE` column is gone.
+- To verify that the `EMPLOYEES` table no longer has an `AGE` column, run the following script:
+
+```
+<copy>SELECT AGE FROM HCM1.EMPLOYEES;</copy>
+```
+
+- Notice that the `AGE` column is gone and you receive an "Invalid Identifier" message when you run the command.
 - If the AGE column is still there, click the **Refresh** button to refresh the table.
 
 
