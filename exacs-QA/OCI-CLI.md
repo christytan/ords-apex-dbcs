@@ -22,6 +22,8 @@ As a developer, DBA or DevOps user,
 
 - An Oracle Cloud Infrastructure account with privileges to create Exadata Cloud Service databases
 
+- A pre-provisioned Exadata Cloud Service Database System 
+
 - A pre-provisioned instance of Oracle Cloud Developer Image from the OCI marketplace
 
 
@@ -92,7 +94,7 @@ oci --version</copy>
 
 Add public key to OCI User setting
 
-- Open Terminal and navigate to folder containing **oci_api_key_public.pem**. Copy the public key.
+- Open Terminal and navigate to folder containing **oci_api_key_public.pem**. Copy the public key. Please note that you will either need to be in the directory containing your pem key (/home/opc/.oci if you followed the default configuration in step 2), or provide the correct path to it.
 
 ```
 <copy>cat oci_api_key_public.pem</copy>
@@ -135,7 +137,7 @@ Open your command line interface and run the following command to get list of da
 <copy>oci db database list --db-system-id [OCID] --compartment-id [OCID]</copy>
 ```
 
-#### NOTE: You can get your --db-system-id and --compartment-id in OCI console
+#### NOTE: Your --db-system-id is available from the OCI console by clicking the hamburger menu in the upper-left corner and following "Database > Bare Metal, VM, and Exadata" and then selecting the compartment your system is provisioned in. Similarly, you may find your --compartment-id by clicking the hamburger menu and following "Governance and Administration > Identity > Compartments" 
 
 You are expected to see the following output in the command line interface
 
