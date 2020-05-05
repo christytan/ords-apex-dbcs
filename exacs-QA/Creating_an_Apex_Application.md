@@ -31,7 +31,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - For this lab, you can download the applications to your developer client, from in the following repositories. These applications will help us load data into our database.
 
 ```
-<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/jsonapp.zip</copy>
+<copy>wget -O jsonapp.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/YRsIM_FwyTnFwvjYHNVSGrq_-vZkZ_h7NVrzDXqi6vY/n/orasenatdpltintegration02/b/ExaCSScripts/o/jsonapp.zip</copy>
 ```
 
 - Execute the above command to download a zipfile of the first Python Application. 
@@ -46,7 +46,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
     **Note : This Application will store the data in "TWEETSDATA" table which you can use to verify that the data is loaded**
 
 ```
-<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/pythonapp.zip</copy>
+<copy>wget -O pythonapp.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/aScoF9QtxLAo558bbsyp1_rA0SutbFk_ASsYyd_5WBE/n/orasenatdpltintegration02/b/ExaCSScripts/o/pythonapp.zip</copy>
 ```
 
 - Execute the above command to download a zipfile of the second Python Application. 

@@ -83,7 +83,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Download the Terraform script using the below command.
 
 ```
-<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/ORDS-APEX_ExaCS.zip</copy>
+<copy>wget -O ORDS-APEX_ExaCS.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/AvptmXHHfN-nAgnfOFLl5efClTlzb9oljukLsCilQ9c/n/orasenatdpltintegration02/b/ExaCSScripts/o/ORDS-APEX_ExaCS.zip</copy>
 ```
 
 - Unzip the file 
