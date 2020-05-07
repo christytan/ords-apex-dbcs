@@ -2,13 +2,13 @@
 
 In this lab we will install ORDS (Oracle REST Data Services) and Oracle APEX (Application Express) on Oracle Database Cloud Service using Terraform.
 
-Oracle REST Data Services(ORDS) is a tool offered by oracle through which we can develop and host Applications and REST Services. Oracle Application express is a low-code application development tool to build applications and REST Services right on top of an Oracle Database. In this lab, we will deploy ORDS to host an application developed using APEX.
+Oracle REST Data Services(ORDS) is a tool offered by oracle using which we can develop and host Applications and REST Services. Oracle Application express is low-code application development tool to build applications and REST Services right on top of Oracle Database. In this lab, we will deploy ORDS to host application developed using APEX.
 
-In production environments, we deploy ORDS on a server in a public network and configure it to interact with APEX installed on the database server deployed in a private network. However, in Dev/test environments, we can choose to deploy both ORDS and APEX on the same database server.
+In production environments, we deploy ORDS on a server in public network and configure it to interact with APEX installed on the database server deployed in a private network. However, in Dev/test environments, we can choose deploy both ORDS and APEX on the same database server.
 
-To automate the deployment process for ORDS and APEX, we can use tools like Terraform, Ansible, etc. In this exercise, we will see how we can automate it using Terraform. The Terraform script provided in this lab will install ORDS and APEX for you. You just have to configure a few parameters mentioned below. The Terraform script will provide you two options to deploy ORDS and APEX as mentioned below:
+To automate the deployment process for ORDS and APEX, we can use tools like Terraform, Ansible, etc. In this exercise, we will see how we can automate it using Terraform. The Terraform script provided in this lab will install ORDS and APEX for you. You just have to configure few parameters mentioned below. The Terraform script will provide you two options to deploy ORDS and APEX as mentioned below:
 
-1. Deploy ORDS on a separate compute and APEX on the Database Server.
+1. Deploy ORDS on a separate compute and APEX on the database server.
 2. Deploy ORDS and APEX on the Database Server.
 
 #### ORDS Architecture Options
@@ -40,13 +40,13 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Objectives
 
-- Learn how to set up ORDS and APEX on Oracle Database Cloud Service using Terraform.
+- Learn how setup ORDS and APEX on Oracle Database Cloud Service using Terraform.
 
 ## Required Artifacts
 
 - Access to your Oracle cloud account.
-- A pre-provisioned DB instance on Exadata. Refer to **Lab 3** on how to provision a DB instance on Exadata.
-- Access to a Developer Client on OCI for the database instance. Refer to **Lab 4** to know how to setup a Dev Client.
+- A pre-provisioned DB instance on Exadata. Refer **Lab 3** on how provision a DB instance on Exadata.
+- Access to a Dev. Client on OCI for the database instance. Refer **Lab 4** to know how to setup a Dev Client.
 - Have appropriate access to run Terraform on OCI.
 
 
@@ -54,11 +54,11 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### STEP 1: Install Terraform
 
-- Since our Exadata Cloud Service is sitting in a private network, we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer to **lab 4** in this workshop for more information.
+- Since our Exadata Cloud Service is sitting in a private network we need to deploy a Developer client in a public network so that we can access our Exadata Cloud Service database. Please refer **lab 4** in this workshop for more information.
 
-- Then we install Terraform and execute the terraform script from that Developer Client/bastion Host which has access to the Exadata Cloud Service database, so that Terraform can access it.
+- Then, we install Terraform and execute the terraform script from that Developer Client/bastion Host which has access to the Exadata Cloud Service database so that Terraform can access it.
 
-- Once the developer client is provisioned, Log in to the Developer Client using ssh.
+- Once the developer client is provisioned, Login to the Developer Client using ssh.
 
 ```
 <copy> ssh -i private_ssh_key opc@public_ip</copy>
@@ -83,7 +83,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Download the Terraform script using the below command.
 
 ```
-<copy>wget -O ORDS-APEX_ExaCS.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/AvptmXHHfN-nAgnfOFLl5efClTlzb9oljukLsCilQ9c/n/orasenatdpltintegration02/b/ExaCSScripts/o/ORDS-APEX_ExaCS.zip</copy>
+<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/ORDS-APEX_ExaCS.zip</copy>
 ```
 
 - Unzip the file 
@@ -254,7 +254,7 @@ TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 ![](./images/apex/Picture202.png " ")
 
 - The URL is as follows:
-http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
+"http://IP_address_of_ORDS_server:ORDS_Port/ords"
 
 - Enter the above URL in the browser and you will see APEX Login Page
 
