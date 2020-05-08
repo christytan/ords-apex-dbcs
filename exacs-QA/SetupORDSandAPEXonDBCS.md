@@ -13,26 +13,34 @@ To automate the deployment process for ORDS and APEX, we can use tools like Terr
 
 #### ORDS Architecture Options
 ```
-#### ARCHITECTURE - 1           |-------------Terraform Script Automation-----------------|
-####      +-+-+-+-+-+-+-+       |        +-+-+-+-+-+-+-+               +-+-+-+-+-+-+-+    |
-####      +             +       |        +             +               +             +    |
-####      + APPLICATION +       |        +             +               +    APEX     +    |
-####      + GENERATING  +-------|--------+    ORDS     +---------------+      +      +    |
-####      + JSON CONTENT+       |        +   SERVER    +               +   ORACLE    +    |
-####      +             +       |        +             +               +  DATABASE   +    |
-####      +-+-+-+-+-+-+-+       |        +-+-+-+-+-+-+-+               +-+-+-+-+-+-+-+    |
-####                            |---------------------------------------------------------|
+
+#### ARCHITECTURE - 1        |-------------Terraform Script Automation-----------------|
+####                         |     +-+-+-+-+-+-+-+-+-+-+         +-+-+-+-+-+-+-+-+-+-+ |
+####   +-+-+-+-+-+-+-+       |     |  +-+-+-+-+-+-+-+  |         |  +-+-+-+-+-+-+-+  | |
+####   +             +       |     |  +             +  |         |  +             +  | |
+####   +             +       |     |  +             +  |         |  +    APEX     +  | |
+####   + APPLICATION +-------|-----|--+    ORDS     +--|---------|--+      +      +  | |
+####   +             +       |     |  +   SERVER    +  |         |  +   ORACLE    +  | |
+####   +             +       |     |  +             +  |         |  +  DATABASE   +  | |
+####   +-+-+-+-+-+-+-+       |     |  +-+-+-+-+-+-+-+  |         |  +-+-+-+-+-+-+-+  | |
+####                         |     |   Public Subnet   |         |   Private Subnet  | |
+####                         |     +-+-+-+-+-+-+-+-+-+-+         +-+-+-+-+-+-+-+-+-+-+ |
+####                         |---------------------------------------------------------|
 
 
-#### ARCHITECTURE - 2           |-------------Terraform Script Automation-----------------|
-####      +-+-+-+-+-+-+-+       |                       +-+-+-+-+-+-+-+                   |
-####      +             +       |                       +             +                   |
-####      + APPLICATION +       |                       +ORDS and APEX+                   |
-####      + GENERATING  +-------|-----------------------+      +      +                   |
-####      + JSON CONTENT+       |                       +   ORACLE    +                   |
-####      +             +       |                       +  DATABASE   +                   |
-####      +-+-+-+-+-+-+-+       |                       +-+-+-+-+-+-+-+                   |
-####                            |---------------------------------------------------------|
+####                         |-----------------------------|
+#### ARCHITECTURE - 2        |                             |
+####                         |   +-+-+-+-+-+-+-+-+-+-+ |   |
+####   +-+-+-+-+-+-+-+       |   |   +-+-+-+-+-+-+-+   |   |
+####   +             +       |   |   +             +   |   |
+####   +             +       |   |   +ORDS and APEX+   |   |
+####   + APPLICATION +-------|---|   +      +      +   |   |
+####   +             +       |   |   +   ORACLE    +   |   |
+####   +             +       |   |   +  DATABASE   +   |   |
+####   +-+-+-+-+-+-+-+       |   |   +-+-+-+-+-+-+-+   |   |
+####                         |   |    Private Subnet   |   |
+####                         |   +-+-+-+-+-+-+-+-+-+-+ |   |
+####                         |-----------------------------|
 ```
 
 
@@ -78,12 +86,18 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>terraform -help</copy>
 ```
 
+- If you already have Terraform installed then you can verify and upgrade if you are using the latest version by executing the below command
+
+```
+<copy>sudo yum -y upgrade terraform-provider-oci</copy>
+```
+
 ### STEP 2: Download the Terraform Script
 
 - Download the Terraform script using the below command.
 
 ```
-<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/ORDS-APEX_ExaCS.zip</copy>
+<copy>wget -O ORDS-APEX_ExaCS.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/AvptmXHHfN-nAgnfOFLl5efClTlzb9oljukLsCilQ9c/n/orasenatdpltintegration02/b/ExaCSScripts/o/ORDS-APEX_ExaCS.zip</copy>
 ```
 
 - Unzip the file 
@@ -100,7 +114,13 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### STEP 3: Run the Terraform script
 
-- Create an ssh key pair or copy your existing key pair along with OCI API private key to the "keys" folder present in the same directory
+- Create an ssh key pair or copy your existing key pair(if you have one) along with OCI API private key to the "keys" folder present in the same directory.
+
+- **Note :**
+    1.  **(Optional) if you need to create a new ssh key pair visit this <a href=https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html>link</a>**
+
+    2.  **(Optional) if you need to setup a new oci api key for your Oracle Cloud Account, visit this <a href=https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionssetupapikey.htm>link</a>**
+
 
 ```
 <copy>ls keys/</copy>
@@ -111,18 +131,16 @@ $ ls keys/
 public_key.pub private_key oci_api_key.pem
 ```
 
-- Note :
-    1.  (Optional) if you need to create a new ssh key pair visit this <a href=https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html>link</a>
+- Open the env-vars script and fill in the values for the parameters. 
 
-    2.  (Optional) if you need to setup a new oci api key for your Oracle Cloud Account, visit this <a href=https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionssetupapikey.htm>link</a>
-
-- Open the env-vars.sh script and fill in the values for the parameters. You can find the database details from instance we created in Lab 3 or any existing exadata database instance on which you want to install ORDS and APEX.
+- **Note : You can find the database details from instance we created in Lab 3 or any existing exadata database instance on which you want to install ORDS and APEX.**
 
 ```
-<copy>vi env-vars.sh</copy>
+<copy>vi env-vars</copy>
 ```
 
 ```
+# Please make sure the ssh and api key file names here match with the ones you have just copied into the keys folder present in the terraform script folder
 TF_VAR_PathToYourSshPublicKey: "keys/"ssh key file name".pub"
 
 TF_VAR_PathToYourSshPrivateKey: "keys/"ssh key private file name""
@@ -137,13 +155,16 @@ TF_VAR_fingerprint: "Fingerprint of the API Key uploaded on the user account on 
 
 TF_VAR_compartment_ocid: "OCID of the compartment in which the Compute needs to be created."
 
+# This is the database sys user password
 TF_VAR_target_db_admin_pw: "DB Admin Password"
 
-TF_VAR_target_db_ip: "Private IP of the DBCS instance"
+TF_VAR_target_db_ip: "Private IP of the database instance"
 
-TF_VAR_target_db_ip_public: "Public IP of the DB Server"
+# if you dont have one, please use the private ip here
+TF_VAR_target_db_ip_public: "Public IP of the DB instance" 
 
-TF_VAR_target_db_srv_name: "Service Name of the DB Server"
+# This is the service name of the pdb of your database in the format :  <pdb_name>.<host domain name of ExaCS>
+TF_VAR_target_db_srv_name: "Service Name of the DB Instance"
 
 ORDS Installation Configuration
 
@@ -167,21 +188,26 @@ TF_VAR_InstanceOSVersion: "7.7" # OR any Oracle Linux 7.x version which is avail
 TF_VAR_URL_ORDS_file: "Object Storage URL for ords.war"
 
 TF_VAR_web_srv: "0" 
-    # 0 => Jetty and 1 for Tomcat , please note that Tomcat is available in this release of the script.
+    # 0 => Jetty and 1 for Tomcat , please note that Tomcat is not available in this release of the script.
 
+#This is the port where you wnat to host ORDS Service on the compute. Remember this as we are going to need this later on in the lab.
 TF_VAR_com_port: "Port for ORDS"
 
 TF_VAR_ComputeDisplayName: "ORDS Compute Instance Display Name"
 
 TF_VAR_InstanceName: "ORDS Compute Instance Name"
 
+# shape should be like : VMStandardx.x or VMDenseIOx.x
 TF_VAR_InstanceShape: "ORDS Compute Instance Shape"
 
+#The URL has been provided in the env-vars file
 TF_VAR_URL_APEX_file: "Object Storage URL for apex.zip"
 
 TF_VAR_APEX_install_mode: "0" 
     # => Full Environment mode, 1 => Runtime Environment mode
 
+# This is the OCID of the public subnet where you want to provision the Compute for ORDS.
+# if you selected 1 as the option for TF_VAR_ords_compute variable, then set this variable
 TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 ```
 
@@ -196,7 +222,7 @@ TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 - Source the env-vars.sh file and Initialize terraform
 
 ```
-<copy>source env-vars.sh</copy>
+<copy>source env-vars</copy>
 ```
 
 ```
@@ -254,7 +280,10 @@ TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 ![](./images/apex/Picture202.png " ")
 
 - The URL is as follows:
-"http://IP_address_of_ORDS_server:ORDS_Port/ords"
+
+```
+http://IP_address_of_ORDS_server:ORDS_Port/ords
+```
 
 - Enter the above URL in the browser and you will see APEX Login Page
 
@@ -262,14 +291,14 @@ TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 
     **Note : If the URL is unreachable then you might have to add a rule in the firewall of the server where ORDS is installed to allow incoming connections on the ORDS port.**
 
-## STEP 4: Creating the Schema on the DB instance
+### STEP 4: Creating the Schema on the DB instance
 
-### **STEP 4-1: Connect to Database instance**
+#### STEP 4-1: Connect to Database instance
 
 - Refer **Lab 4** to know how to connect to the database.
 
 
-### STEP 3: Creating Users and Tables for the users in database
+#### STEP 4-2: Creating Users and Tables for the users in database
 
 Now, since we have provisioned the database instance and connected to it. We will now create a user and create a table to load data into it.
 
