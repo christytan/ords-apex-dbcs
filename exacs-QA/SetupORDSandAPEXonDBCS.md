@@ -72,19 +72,79 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### STEP 3: RUN the Terraform script
 
+<<<<<<< Updated upstream
 - Open the env-vars.sh script and edit the Target DB details which will be the database instance we created in Lab 100 or your own existing database instance on which you want to install ORDS and APEX.
+=======
+```
+<copy>echo $PATH</copy>
+```
+
+- Verify the terraform installation using the below command.
+
+```
+<copy>terraform -help</copy>
+```
+
+- If you have already downloaded terraform prior to this lab, you can upgrade it using the below command.
+```
+<copy>sudo yum -y upgrade terraform-provider-oci</copy>
+```
+
+### STEP 2: Download the Terraform Script
+
+- Download the Terraform script using the below command.
+
+```
+<copy>wget https://github.com/oracle/learning-library/blob/master/data-management-library/exacs/scripts/Apex/ORDS-APEX_ExaCS.zip</copy>
+```
+
+- Unzip the file 
+
+```
+<copy>unzip ORDS-APEX_ExaCS.zip -d directory_path</copy>
+```
+
+- Change directory to ORDS-APEX_ExaCS
+
+```
+<copy>cd ORDS-APEX_ExaCS</copy>
+```
+>>>>>>> Stashed changes
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_PathToYourSshPublicKey**: "keys/<"ssh key file name">.pub"
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_PathToYourSshPrivateKey**: "keys/<"ssh key private file name">"
 
+<<<<<<< Updated upstream
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_PathToYourApiPrivateKey**: "keys/<"OCI API key private file name">.pem"
+=======
+```
+<copy>ls keys/</copy>
+```
+
+You should see the following:
+```
+$ ls keys/
+public_key.pub private_key oci_api_key.pem
+```
+>>>>>>> Stashed changes
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_tenancy_ocid**: "<Tenancy OCID obtained from OCI account>"
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_user_ocid**: "<User OCID obtained from OCI account>"
 
+<<<<<<< Updated upstream
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_fingerprint**: "<Fingerprint of the API Key uploaded on the user account on OCI>"
+=======
+- Open the env-vars.sh script and fill in the values for the parameters. You can find the database details from the instance we created in Lab 3 or any existing exadata database instance on which you want to install ORDS and APEX.
+
+```
+<copy>vi env-vars</copy>
+```
+
+```
+TF_VAR_PathToYourSshPublicKey: "keys/"ssh key file name".pub"
+>>>>>>> Stashed changes
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_compartment_ocid**: "OCID of the compartment in which the Compute needs to be created."
 
@@ -100,9 +160,17 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_ords_compute**: 
 
+<<<<<<< Updated upstream
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - set to 1, if ORDS needs to be installed on a separate Compute.
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - OR 
+=======
+TF_VAR_target_db_ip: "Private IP of the DBCS instance"
+-This can be found under the Nodes Resource
+
+TF_VAR_target_db_ip_public: "Public IP of the DB Server"
+-If there is no public IP available, use the private IP here
+>>>>>>> Stashed changes
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - set to 0, if ORDS needs to be installed on the DB server Itself.
 
@@ -135,7 +203,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - **TF_VAR_subnet_ocid**: "<Subnet OCID obtained from OCI>"
 
 
-- The env-vars.sh file looks like this after you have entered all the information.
+- The env-vars.sh file should look like this after you have entered all the information.
 
 ![](./images/apex/Picture200-1.png " ")
 
@@ -146,9 +214,17 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Source the env-vars.sh file and Initialize terraform
 
 ```
+<<<<<<< Updated upstream
 <copy>cd ORDS_APEX_Comp
 source env-vars.sh
 terraform init</copy>
+=======
+<copy>source env-vars</copy>
+```
+
+```
+<copy>terraform init</copy>
+>>>>>>> Stashed changes
 ```
 
 ![](./images/apex/Picture200-2-1.png " ")
@@ -210,7 +286,11 @@ http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
 
     **Note : If the URL is unreachable then you might have to add a rule in the firewall of the server where ORDS is installed to allow incoming connections on the ORDS port.**
 
+<<<<<<< Updated upstream
 ## Additional Steps
+=======
+### STEP 4: Creating the Schema on the DB instance
+>>>>>>> Stashed changes
 
 ## Creating the Schema on the DB instance
 
