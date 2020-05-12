@@ -108,7 +108,7 @@ the data discovery job.
 17. With your mouse still over **Identification Info**, click the **Expand** button to drill down.
 18. Notice that the **Identification Info** category is divided into two smaller categories (**Personal IDs and Public IDs**).
 19. To drill-up, position your mouse over an expanded sensitive category, and then click the **Collapse** button.
-20. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
+20. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard. 123
 
 ### Part 5: Mask sensitive data by using Data Masking
 
