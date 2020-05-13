@@ -53,7 +53,7 @@ The totals and data in your reports will most likely be different than the repor
   - In the **Select Columns** dialog box, select and deselect columns.
   - Click Apply.
 - In the report, identify the following activities. Try to determine which statements are expected and which might be related to a breach. Create filters to help you find the information. Click on the **+ Filter** button to add these filters.
-  - Logins made by the HCM1 user. To do this, create two filters: 1) **Event = LOGON**, and 2) **DB User = HCM1**.
+  - **Logins made by the HCM1 user**. To do this, create two filters: 1) **Event = LOGON**, and 2) **DB User = HCM1**.
   ![](./images/dbsec/datasafe/auditing/filter.png)
   - **DDL statements**. To do this, at the top of the report, click **DDLs**.
   ![](./images/dbsec/datasafe/auditing/ddl-filter.png)
@@ -112,7 +112,7 @@ All the fields on this screen are retrieved from the target database audit trail
 ### Part 3: Explore the Audit Summary report
 Find out how many client hosts have connected to your target database in the last month.
 - Click the **Reports tab**.
-- In the left pane, click **Summary Reports**.
+- In the left pane, click **Audit Summary** report under **Summary**.
 
 ![](./images/dbsec/datasafe/auditing/reports-audit-summary.png)
 
@@ -147,7 +147,7 @@ How many client hosts have connected to your database?
 
 ![](./images/dbsec/datasafe/auditing/login-activity.png)
 
-- Set a filter by selecting **Operation Status= FAILURE** (no quotes).
+- Set a filter by selecting **Operation Status= FAILURE**.
 - Click **Apply**.
 
 ![](./images/dbsec/datasafe/auditing/operation-status-failure.png)
@@ -230,7 +230,7 @@ A confirmation message states that the report is generated successfully.
 
 - Click the **Reports** tab.
 - In the left pane, click **Activity Auditing**, and then click **User/Entitlement Changes**.
-- Set a filter by selecting **DB USER Not In SYS, ADMIN** (no quotes).
+- Set a filter by selecting **DB USER Not In SYS ADMIN**.
 - Click **Apply**.
 
 ![](./images/dbsec/datasafe/auditing/db-user-filter.png)

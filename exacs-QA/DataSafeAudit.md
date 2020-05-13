@@ -143,7 +143,8 @@ You should be in the **Edit Policies** dialog box, where you left off.
 - Click the Audit Policies tab and double-check that the following policies are selected:
   - Critical Database Activity
   - Login Events
-  - Database Schema Changes (DDL) Admin Activity
+  - Database Schema Changes (DDL)
+  - Admin Activity
   - Oracle Predefined Policies (see below)
   - Center for Internet Security (CIS) Configuration
 
