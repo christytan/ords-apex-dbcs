@@ -1,7 +1,7 @@
 # Verify a Sensitive Data Model with Oracle Data Safe
 
 ## Introduction
-Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and verify a sensitive data model by using the Data Discovery wizard.
+Using Oracle Data Safe, verify a sensitive data model by using the verification option in the Library and by using the Data Discovery wizard.
 
 To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
@@ -22,19 +22,19 @@ In this lab, you learn how to do the following:
 7. In Oracle Data Safe, run the verification test again against your database, but this time use the Data Discovery wizard. Observe the verification findings. Do you need to do anything to your sensitive data model?
 8. If needed, manually update your sensitive data model from the Library so that it accurately reflects your target database.
 
-## Step-by-Step Instructions
+## Steps
 
-### Part 1: Connect to ExaCS DB using SQL Developer
+### Step 1: Connect to ExaCS DB using SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Part 2: In SQL Developer, add a column to the `EMPLOYEES` table in your database
+### Step 2: In SQL Developer, add a column to the `EMPLOYEES` table in your database
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
-<copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
+<copy>ALTER SESSION SET CONTAINER=YOUR_PDB_NAME</copy>
 ```
-- On the SQL Worksheet, run the following command to add an `AGE` column to the `EMPLOYEES` table. You can expand the EMPLOYEES table in the Navigator to the left to see the current columns.
+- On the SQL Worksheet, run the following command to add an `AGE` column to the `EMPLOYEES` table.
 
 ```
 <copy>ALTER TABLE HCM1.EMPLOYEES ADD AGE NUMBER;</copy>
@@ -47,7 +47,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 - Keep this tab open because you return to it in a later step.
 
-### Part 3: Sign in to the Oracle Data Safe Console in your region
+### Step 3: Sign in to the Oracle Data Safe Console in your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -62,7 +62,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 4: Verify your sensitive data model against your database by using the verification option on the Sensitive Data Models page
+### Step 4: Verify your sensitive data model against your database by using the verification option on the Sensitive Data Models page
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Data Models**.
 - Select the check box for your sensitive data model that you created in Discovery Lab 1 - Discover Sensitive Data with Oracle Data Safe (**<username> SDM1**).
@@ -85,7 +85,7 @@ The verification job is started.
 
 - Click **Continue**.
 
-### Part 5: Manually add the AGE column to your sensitive data model
+### Step 5: Manually add the AGE column to your sensitive data model
 
 - On the Sensitive Data Model: **<username> SDM1** page, click **Add**. The **Add Sensitive Columns** dialog box is displayed.
 
@@ -109,7 +109,7 @@ Your sensitive data model is updated to include the `AGE` column.
 - Click **Save and Continue**.
 - Click **Exit**.
 
-### Part 6: Drop the AGE column in your database
+### Step 6: Drop the AGE column in your database
 
 - Return to SQL Developer.
 - On the SQL Worksheet, run the following commands to drop the `HCM1.EMPLOYEES.AGE` column.
@@ -122,14 +122,17 @@ Your sensitive data model is updated to include the `AGE` column.
 ```
 <copy>EXEC DBMS_STATS.GATHER_SCHEMA_STATS('HCM1');</copy>
 ```
-- To verify that the `EMPLOYEES` table no longer has an `AGE` column, on the **Navigator** tab, select the `HCM1` schema from the first drop-down menu.
-- From the second drop-down menu, ensure that **Tables** is selected.
-- Expand the `EMPLOYEES` table.
-- Notice that the `AGE` column is gone.
+- To verify that the `EMPLOYEES` table no longer has an `AGE` column, run the following script:
+
+```
+<copy>SELECT AGE FROM HCM1.EMPLOYEES;</copy>
+```
+
+- Notice that the `AGE` column is gone and you receive an "Invalid Identifier" message when you run the command.
 - If the AGE column is still there, click the **Refresh** button to refresh the table.
 
 
-### Part 7: Verify your sensitive data model against the database again, but this time using the Data Discovery wizard
+### Step 7: Verify your sensitive data model against the database again, but this time using the Data Discovery wizard
 
 - Return to Oracle Data Safe.
 - Click the **Home** tab, and then click **Data Discovery**.
@@ -158,7 +161,7 @@ The Data Discovery wizard identifies the `AGE` column as missing from the databa
 ![](./images/dbsec/datasafe/discovery/missing.png " ")
 
 
-### Part 8: Manually update your sensitive data model from the Library
+### Step 8: Manually update your sensitive data model from the Library
 
 You can manually update your sensitive data model while continuing to work in the Data Discovery wizard. In which case, you simply deselect your sensitive column and save your sensitive data model. This part, however, shows you another way to do it from the Library.
 - Click **Exit** to exit the Data Discovery wizard.
@@ -168,7 +171,7 @@ You can manually update your sensitive data model while continuing to work in th
 
 ![](./images/dbsec/datasafe/discovery/age-search.png " ")
 - In the list of sensitive columns, deselect `HCM1.EMPLOYEES.AGE`.
--Your sensitive data model is now updated and accurate.
+- Your sensitive data model is now updated and accurate.
 - Click **Save** then **Exit**.
 
 ### All Done!

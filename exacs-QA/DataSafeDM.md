@@ -23,24 +23,30 @@ Follow these general steps:
 5. Continue in the Data Masking wizard to define a masking policy for your sensitive data model. Name it **<username> Mask1_HCM1**. Use all of the default masking formats automatically configured by Oracle Data Safe. Schedule the data masking job to run immediately. After the job runs, view and analyze the Data Masking report. Generate a PDF of the report and download it.
 6. Return to SQL Developer Web and query the `HCM1.EMPLOYEES` table in your ExaCS database. Verify that the sensitive data is now masked.
 
-## Step-By-Step Instructions
+## Steps
 
-### Part 1: Connect to your ExaCS database with SQL Developer
+### Step 1: Connect to your ExaCS database with SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Part 2: View sensitive data in your ExaCS database
+### Step 2: View sensitive data in your ExaCS database
 
-- On the **Navigator** tab in SQL Developer Web, select the HCM1 schema from the first dropdown menu. In the second drop-down menu, ensure that Tables is selected.
-- Drag the `EMPLOYEES` table to the worksheet.
-- When prompted to choose an insertion type, click Select, and then click Apply.
-- View the SQL query on the worksheet.
-- On the toolbar, click the Run Statement button (green circle with a white arrow) to execute the query.
+- In the SQL Developer worksheet, run the following command to connect to your PDB:
+```
+<copy>ALTER SESSION SET CONTAINER=<PDBNAME></copy>
+```
+
+- Run the following query to select the `EMPLOYEES` table:
+
+```
+<copy>SELECT * FROM HCM1.EMPLOYEES</copy>
+```
+
 - Review the query results. Data such as `employee_id`, `first_name`, `last_name`, `email`, `phone_number`, `hire_date`, `job_id`, `salary`, and `manager_id` are considered sensitive data and should be masked if shared for non-production use, such as development and analytics.
 - Keep this tab open so that you can return to it later in part 4 when you view the masked
 data.
 
-### Part 3: Sign in to the Oracle Data Safe Console for your region
+### Step 3: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -55,7 +61,7 @@ data.
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 4: Discover sensitive data by using Data Discovery
+### Step 4: Discover sensitive data by using Data Discovery
 
 - Access the **Data Discovery** wizard by clicking the **Data Discovery** tab.
 
@@ -113,7 +119,7 @@ the data discovery job.
 19. To drill-up, position your mouse over an expanded sensitive category, and then click the **Collapse** button.
 20. Click the **Close** button (**X**) to close the expanded chart. Continue to work in the wizard.
 
-### Part 5: Mask sensitive data by using Data Masking
+### Step 5: Mask sensitive data by using Data Masking
 
 - Click **Continue to mask the data**.
 
@@ -171,7 +177,7 @@ sensitive column, you can view the masking format used and the number of rows ma
 
 ![](./images/dbsec/datasafe/masking/masking-report-pdf.png " ")
 
-### Part 6: Verify the masked data in your ExaCS database
+### Step 6: Verify the masked data in your ExaCS database
 
 1. Return to SQL Developer. You should still have your query results from Part 2 in this lab.
 2. Take a moment to review the data.

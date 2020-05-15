@@ -1,7 +1,7 @@
 # Discover Sensitive Data with Oracle Data Safe
 
 ## Introduction
-Using Oracle Data Safe, discover sensitive data in a target database with the Data Discovery wizard and identify dictionary-based and non-dictionary referential relationships in a sensitive data model and modify, analyze results and reports.
+Using Oracle Data Safe, discover sensitive data in a target database with the Data Discovery wizard and identify dictionary-based and non-dictionary referential relationships, in a sensitive data model, to modify and analyze results and reports.
 
 To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
@@ -26,7 +26,9 @@ While you are working on the challenge, think about the following questions:
 - How many sensitive columns and sensitive types did you discover?
 - How many tables contain the discovered sensitive columns?
 
-### Part 1: Sign in to the Oracle Data Safe Console for your region
+## Steps
+
+### Step 1: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -41,7 +43,7 @@ While you are working on the challenge, think about the following questions:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 2: Use the Data Discovery wizard to discover sensitive data
+### Step 2: Use the Data Discovery wizard to discover sensitive data
 
 - To access the Data Discovery wizard, click the **Home** tab, and then click **Data Discovery**.
 
@@ -53,7 +55,7 @@ While you are working on the challenge, think about the following questions:
 
 ![](./images/dbsec/datasafe/discovery/target.png " ")
 
-  - Next, the **Select Sensitive Data Model** page is displayed. On this page, you can create a new sensitive data model, select an existing one from the Library, or import a file- based sensitive data model.
+  - Next, the **Select Sensitive Data Model** page is displayed. On this page, you can create a new sensitive data model, select an existing one from the Library, or import a file-based sensitive data model.
 
 ![](./images/dbsec/datasafe/discovery/sdm1.png " ")
 - Leave **Create** selected.
@@ -71,7 +73,7 @@ While you are working on the challenge, think about the following questions:
 
 ![](./images/dbsec/datasafe/discovery/sensitive-types-un.png " ")
 
-- Return to the top of the list and select the **Identification Information**, **Healthcare Information**, and **Employment Information** check boxes.
+- Return to the top of the list and select the **Select All** check box.
 - At the bottom of the page, select the **Non-Dictionary Relationship Discovery** check box.<br>
   Oracle Data Safe automatically discovers referential relationships defined in the data dictionary. The **Non-Dictionary Relationship Discovery** feature helps to identify application-level parent-child relationships that are not defined in the data dictionary. It helps discover application-level relationships so that data integrity is maintained during data masking.
 - When you are ready to start the data discovery job, click **Continue**.
@@ -81,7 +83,7 @@ While you are working on the challenge, think about the following questions:
 
 - If the job is successful, the **Detail** column states Data discovery job finished successfully, and you can click **Continue**. Otherwise, you need to click **Back** or **Exit** and investigate the issue.
 
-### Part 3: Review and fine tune your sensitive data model
+### Step 3: Review and fine tune your sensitive data model
 
 - On the **Non-Dictionary Referential Relationships** page, you are presented with a list of potential non-dictionary (application level) referential relationships that Data Discovery found by using column name patterns and column data patterns. Do the following:
   - To view all of the columns, move the **Expand All** slider to the right. Data Discovery found some potentially sensitive columns (non-dictionary referential relationships) in the `PU_PETE` schema.
@@ -98,7 +100,7 @@ While you are working on the challenge, think about the following questions:
   - Dictionary-based referential relationships
   - Non-dictionary referential relationships
 - Take a look at how the sensitive columns are organized. Initially, they are grouped by sensitive categories and sensitive types.
-- To list the sensitive columns by schema and table, select Schema View from the drop- down list. **Schema View** is useful for quickly finding a sensitive column in a table and for viewing the list of sensitive columns in a table. For example, in the `EMPLOYEES` table there are several sensitive columns listed.
+- To list the sensitive columns by schema and table, select **Schema View** from the drop-down list next to the **Expand All Slider**. **Schema View** is useful for quickly finding a sensitive column in a table and for viewing the list of sensitive columns in a table. For example, in the `EMPLOYEES` table there are several sensitive columns listed.
 - If needed, you can add and remove sensitive columns from your sensitive data model. Sensitive columns that have a check box are removable. To remove a sensitive column from your sensitive data model, you deselect its check box. You can use the **Add** button to add more sensitive columns.
 - Notice that some of the sensitive columns do not have a check box. These are dependent columns. They have a relationship with their parent column. For example, in the `EMPLOYEES` table, `JOB_ID` is listed. It has a relationship defined in the Oracle data dictionary to the `JOBS.JOB_ID` sensitive column. If you remove a sensitive column that has a referential relationship, both the sensitive column and referential relationship are removed from the sensitive data model. Therefore, if you deselect `JOBS.JOB_ID`, then `EMPLOYEES.JOB_ID` is removed too.
 - View the sample data for the `HCM1.SUPPLEMENTAL_DATA.LAST_INS_CLAIM` column.<br/>
@@ -107,12 +109,12 @@ The sensitive type is **Healthcare Provider** and the discovered sensitive colum
 > **Tip:**<br>
 To quickly locate a sensitive column, enter the name or part of the name in the search box.
 
-### Part 4: Modify your search for sensitive data and re-run the data discovery job
+### Step 4: Modify your search for sensitive data and re-run the data discovery job
 
 Suppose that you're missing some sensitive columns in your sensitive data model. While working in the Data Discovery wizard, you can backtrack to reconfigure and rerun the data discovery job. You can repeat the process as many times as you need until you feel that your sensitive data model is accurate. Try the following:
 
 - Click **Back** <br>
-Now you are on the **Select Sensitive Types for Sensitive Data Discovery** page. Here you can change your sensitive type selections and choose whether to include non- dictionary referential relationships in the search.
+Now you are on the **Select Sensitive Types for Sensitive Data Discovery** page. Here you can change your sensitive type selections and choose whether to include non-dictionary referential relationships in the search.
 - Select all of the sensitive categories.
 
 ![](./images/dbsec/datasafe/discovery/select-all.png " ")
@@ -130,9 +132,9 @@ Because you chose to not discover non-dictionary referential relationships, the 
 
 - To view the newly discovered sensitive columns, click **View newly discovered sensitive columns only**. Notice that Data Discovery found additional sensitive columns.
 
-### Part 5: View the Sensitive Data Discovery report and analyze the report data
+### Step 5: View the Sensitive Data Discovery report and analyze the report data
 
-- Click **Report**.<br>
+- Scroll down and click **Report** at the bottom right corner of the screen.<br>
 The report shows you a chart that compares sensitive categories. You can also view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns. The table at the bottom of the report displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts.
 
 ![](./images/dbsec/datasafe/discovery/report.png " ")
@@ -161,7 +163,7 @@ The report shows you a chart that compares sensitive categories. You can also vi
   - Scroll down, and under **Discovery Reports**, click **Data Discovery**.
   - Click your sensitive data model to open the report.
 
-### Part 6: View your sensitive data model in the Library
+### Step 6: View your sensitive data model in the Library
 - Click the **Library** tab.
 - Click **Sensitive Data Models**.<br>
 The Sensitive Data Models page is displayed, listing the sensitive data models to which you have access.
@@ -179,7 +181,7 @@ For each sensitive data model, you can view information about when your sensitiv
 > **Note:**<br>
 Keep your sensitive data model so that later you can use it for masking sensitive data in **Masking Lab 4 - Configure a Variety of Masking Formats with Oracle Data Safe**.
 
-### Part 7: Download your sensitive data model
+### Step 7: Download your sensitive data model
 - Select the check box for your sensitive data model.
 - Click **Download**.
 Your sensitive data model is downloaded to your browser.

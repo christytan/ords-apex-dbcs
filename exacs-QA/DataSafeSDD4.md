@@ -18,11 +18,11 @@ Follow these general steps:
 2. Review the predefined sensitive types in the Oracle Data Safe Library. Check if there is a sensitive type that discovers department IDs.
 3. Connect to your ExaCS database as the SYS user with SQL Developer.
 4. In SQL Developer, inspect the `HCM1.DEPARTMENTS.DEPARTMENT_ID` column. Inspect its type, size, and data. Analyzing the data helps you to define patterns for your sensitive type.
-5. In the Oracle Data Safe Console, create a sensitive type by using the **Create Like** option to model your sensitive type after **Employee ID Number**. Save your sensitive type as** <username> Custom Department ID Number** in a custom sensitive category named **<username> Sensitive Category**.
+5. In the Oracle Data Safe Console, create a sensitive type by using the **Create Like** option to model your sensitive type after **Employee ID Number**. Save your sensitive type as **<username> Custom Department ID Number** in a custom sensitive category named **<username> Sensitive Category**.
 
-## Step-by-Step Instructions
+## Steps
 
-### Part 1: Sign in to the Oracle Data Safe Console for your region
+### Step 1: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -37,7 +37,7 @@ Follow these general steps:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 2: Review the predefined sensitive types in the Oracle Data Safe Library
+### Step 2: Review the predefined sensitive types in the Oracle Data Safe Library
 
 - In the Oracle Data Safe Console, click the **Library** tab, and then click **Sensitive Types**. The **Sensitive Types** page is displayed. On this page you can view predefined sensitive types and manage your own sensitive types.
 
@@ -48,7 +48,7 @@ Follow these general steps:
 ![](./images/dbsec/datasafe/discovery/sensitive-types-page.png " ")
 
 - Move the **Hide Oracle Predefined** slider to the right.
-The list becomes empty because you haven't created any sensitive types yet.
+The list removes the Oracle defined sensitive types, showing only the ones that you have defined.
 
 ![](./images/dbsec/datasafe/discovery/sensitive-custom3.png " ")
 
@@ -69,16 +69,16 @@ The search finds **Department Name**, but nothing for department IDs.
 - Clear the search field, and then press **Enter** to restore the list.
 - Keep this page open because you return to it later in the lab.
 
-### Part 3: Connect to your ExaCS database as the SYS user with SQL Developer
+### Step 3: Connect to your ExaCS database as the SYS user with SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Part 4: In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
+### Step 4: In SQL Developer, analyze the HCM1.DEPARTMENTS.DEPARTMENT_ID column in your ExaCS database to help you figure out how to create a sensitive type for it
 
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
-<copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
+<copy>ALTER SESSION SET CONTAINER=YOUR_PDB_NAME;</copy>
 ```
 - Run the following script:
 
@@ -87,7 +87,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 - Notice that the department ID values are 10, 20, 30, up to 270.
 
-### Part 5: In the Oracle Data Safe Console, create a sensitive type and sensitive category
+### Step 5: In the Oracle Data Safe Console, create a sensitive type and sensitive category
 
 - Return to the **Sensitive Types** page in the Oracle Data Safe Console.
 - Click **Add**.<br>

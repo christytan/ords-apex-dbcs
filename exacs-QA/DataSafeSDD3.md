@@ -1,6 +1,6 @@
 # Update a Sensitive Data Model with Oracle Data Safe
 
-## Introduction 
+## Introduction
 Using Oracle Data Safe, perform an incremental update to a sensitive data model by using the Data Discovery wizard.
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
@@ -18,20 +18,19 @@ Follow these general steps:
 3. Sign in to the Oracle Data Safe Console in your region.
 4. In the Oracle Data Safe Console, update your sensitive data model against your target database by using the update option in the Data Discovery wizard. What does the update test find?
 
-## Step-by-Step Instructions
+## Steps
 
-### Part 1: Connect to your ExaCS database as the SYS user with SQL Developer
+### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
-### Part 2: In SQL Developer, add an `AGE` column to the `HCM1.EMPLOYEES` table in your ExaCS database
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+### Step 2: In SQL Developer, add an `AGE` column to the `HCM1.EMPLOYEES` table in your ExaCS database
 
 - In SQL Developer, run the following command to connect to PDB1 pluggable database:
 
 ```
-<copy>ALTER SESSION SET CONTAINER=PDB1;</copy>
+<copy>ALTER SESSION SET CONTAINER=YOUR_PDB_NAME;</copy>
 ```
-- Expand the `EMPLOYEES` table to view the current columns.
-On the SQL Worksheet, run the following commands to add an `AGE` column to the `EMPLOYEES` table.
+- On the SQL Worksheet, run the following commands to add an `AGE` column to the `EMPLOYEES` table.
 
 ```
 <copy>ALTER TABLE HCM1.EMPLOYEES ADD AGE NUMBER;</copy>
@@ -43,7 +42,7 @@ On the SQL Worksheet, run the following commands to add an `AGE` column to the `
 ```
 <copy>EXEC DBMS_STATS.GATHER_SCHEMA_STATS('HCM1');</copy>
 ```
-### Part 3: Sign in to the Oracle Data Safe Console in your region
+### Step 3: Sign in to the Oracle Data Safe Console in your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -58,7 +57,7 @@ On the SQL Worksheet, run the following commands to add an `AGE` column to the `
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 4: Update your sensitive data model against your database by using the update option in the Data Masking wizard
+### Step 4: Update your sensitive data model against your database by using the update option in the Data Masking wizard
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click Data Discovery. The Select Target for **Data Discovery** page is displayed.
 

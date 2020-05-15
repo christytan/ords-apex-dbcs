@@ -1,7 +1,7 @@
 # Assess Database Configurations with Oracle Data Safe
 
-## Introduction 
-Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues. 
+## Introduction
+Using Oracle Data Safe you can assess the security of a database by using the Security Assessment feature and fix issues.
 
 To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
@@ -17,15 +17,16 @@ Suppose that you are notified by the “Audit and Compliance” department that 
 - `APP_USER`
 - `DBA_DEBRA` (Company DBA)
 - `DBA_HARVEY` (Company Junior DBA)
+- `EVIL_RICH`
 - `SECURE_STEVE`
 
-## Step-by-Step Instructions
+## Steps
 
-### Part 1: Connect to your ExaCS database as the SYS user with SQL Developer
+### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Part 2: In the Oracle Data Safe Console, generate a Comprehensive Assessment report
+### Step 2: In the Oracle Data Safe Console, generate a Comprehensive Assessment report
 - Return to the Oracle Data Safe Console.
 - Click the **Home** tab and then **Security Assessment**.
 
@@ -57,7 +58,7 @@ This table compares the number of findings for each category and counts the numb
 
 ![](./images/dbsec/datasafe/assessment/summary.png " ")
 
-### Part 3: Review the Medium Risk, Low Risk, and Advisory findings
+### Step 3: Review the Medium Risk, Low Risk, and Advisory findings
 - At the top of the report, click **Medium Risk** to filter the report to show only the medium risk findings.
 - Deselect all other risk levels.
 - Scroll through the report to view the medium risk findings.
@@ -68,15 +69,15 @@ This table compares the number of findings for each category and counts the numb
 - Deselect all other risk levels.
 - Review the advisory findings.
 
-### Part 4: Review the Evaluate findings and fix some of them, if possible
+### Step 4: Review the Evaluate findings and fix some of them, if possible
 
 - At the top of the report, click **Evaluate** to filter the report to show only the Evaluate findings.
 
 ![](./images/dbsec/datasafe/assessment/evaluate.png " ")
 - Deselect all other risk levels.
 - Scroll through the report to view the findings.
-- Focus on **System Privilege Grants**:
-  - System privileges `(ALTER USER, CREATE USER, DROP USER)` can be used to create and modify other user accounts, including changing passwords. This ability can be abused to gain access to another user's account, which may have greater privileges. The Privilege Analysis feature may be helpful to determine whether or not a user or role have used account management privileges.
+- Focus on **System Privilege Grants** under Privileges and Roles:
+  - System privileges `(ALTER USER, CREATE USER, DROP USER)` can be used to create and modify other user accounts, including the ability to change passwords. This ability can be abused to gain access to another user's account, which may have greater privileges. The Privilege Analysis feature may be helpful to determine whether or not a user or role has used account management privileges.
   - Security Assessment found 59 grants of system privilege grants on your target database.
 
 ![](./images/dbsec/datasafe/assessment/system-grants.png " ")
@@ -107,7 +108,7 @@ This table compares the number of findings for each category and counts the numb
 - Unified Auditing is the recommended audit method and is available in Oracle Database 12.1 and later releases. Not using Unified Auditing or disabling unified auditing policies is a risk. Verify that unified audit policies are enabled on the database. Audit all sensitive operations, including privileged user activities. Also audit access to application data that bypasses the application.
 - How many unified audit policies are on your target database and how many of them are enabled?
 
-### Part 5: Review the Pass findings
+### Step 5: Review the Pass findings
 
 - At the top of the report, click **Advisory** to filter the report to show only the Advisory findings.
 
@@ -143,15 +144,15 @@ This table compares the number of findings for each category and counts the numb
 
   - ....and more
 
-### Part 6: Rerun Security Assessment and compare the results to the first assessment
+### Step 6: Rerun Security Assessment and compare the results to the first assessment
 
-1. In the Oracle Data Safe Console, click the **Home** tab, and then click **Security Assessment**.
-2. On the **Security Assessment** page, select the check box for your target database, and then click **Assess**.
-3. In the **Last Generated Report** column, click the **View Report** link. The **Comprehensive Assessment** report is displayed.
-4. View the totals for the risk levels.
+- In the Oracle Data Safe Console, click the **Home** tab, and then click **Security Assessment**.
+- On the **Security Assessment** page, select the check box for your target database, and then click **Assess**.
+- In the **Last Generated Report** column, click the **View Report** link. The **Comprehensive Assessment** report is displayed.
+- View the totals for the risk levels.
 If you fixed any of the previous risks, then the totals will be lower than in the first assessment.
-5. Check the **Account Management Privileges** entry in the Evaluate category. Notice that `EVIL_RICH` is no longer listed.
-6. To compare the results with the first assessment, do the following:
+- Check the **Account Management Privileges** entry in the Evaluate category. Notice that `EVIL_RICH` is no longer listed.
+- To compare the results with the first assessment, do the following:
  - Click the **Reports** tab.
  - Click **Security Assessment**.
  - Click **Comprehensive Assessments**.

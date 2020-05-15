@@ -1,6 +1,6 @@
 # Create a Masking Format in Oracle Data Safe
 
-## Introduction 
+## Introduction
 Using Data Safe, create a masking format and assign a default masking format to a user-defined sensitive type.
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
@@ -20,15 +20,15 @@ Follow these general steps:
 2. In SQL Developer, research the `DEPARTMENT_ID` column in your target database to help you figure out how to create a masking format for it.
 3. Sign in to the Oracle Data Safe Console for your region.
 4. In the Oracle Data Safe Console, create a masking format to mask the `HCM1.DEPARTMENT_ID` column in your target database.
-5. Select your masking format as the default masking format for the sensitive type that you created in [Discovery Lab 4 - Create a Sensitive Type and Sensitive Category with Oracle Data Safe](DataSafeSDD4.md) (<username> **Custom Department ID Number)**.
+5. Select your masking format as the default masking format for the sensitive type that you created in [Discovery Lab 4 - Create a Sensitive Type and Sensitive Category with Oracle Data Safe](?lab=lab-7-7-create-sensitive-type-sensitive) (<username> **Custom Department ID Number)**.
 
-## Step-by-Step Instructions
+## Steps
 
-### Part 1: Connect to your ExaCS database as the SYS user with SQL Developer
+### Step 1: Connect to your ExaCS database as the SYS user with SQL Developer
 
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Part 2: In SQL Developer Web, research the `DEPARTMENT_ID` column in your target database to help you figure out how to create a masking format for it
+### Step 2: In SQL Developer Web, research the `DEPARTMENT_ID` column in your target database to help you figure out how to create a masking format for it
 
 - Run the following command:
 
@@ -48,7 +48,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 - Drag the `DEPARTMENTS` table to the worksheet.
 - Notice that the `DEPARTMENT_ID` column has the data-type `NUMBER(4)`, which means it can take up to four digits (no decimals). It is also a primary key column.
 
-### Part 3: Sign in to the Oracle Data Safe Console for your region
+### Step 3: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -63,7 +63,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 4: In the Oracle Data Safe Console, create a masking format to mask department IDs
+### Step 4: In the Oracle Data Safe Console, create a masking format to mask department IDs
 
 - In the Oracle Data Safe Console, click the **Library** tab.
 - Click **Masking Formats**, and then click **Add**.

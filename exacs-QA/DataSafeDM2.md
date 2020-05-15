@@ -1,6 +1,6 @@
 # Explore Data Masking Results and Reports in Oracle Data Safe
 
-## Introduction 
+## Introduction
 Using Data Safe, view masking formats and masking policies in the Library and analyze data masking results and reports.
 
 To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
@@ -32,9 +32,9 @@ Follow these general steps:
   - How much time did the data discovery job take?
   - How much time did the data masking job take?
 
-## Step-by-Step Instructions
+## Steps
 
-### Part 1: Sign in to the Oracle Data Safe Console for your region
+### Step 1: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -49,7 +49,7 @@ Follow these general steps:
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 2: Explore masking formats in the Library
+### Step 2: Explore masking formats in the Library
 
 - In the Oracle Data Safe Console, click the **Library** tab.
 - Click **Masking Formats**.
@@ -65,11 +65,11 @@ Follow these general steps:
 - Notice that there is a description and three examples. The description says `Replaces values with random numbers between 0 and 110`.
 - Click **Close**.
 
-### Part 3: Explore masking policies in the Library
+### Step 3: Explore masking policies in the Library
 
 - Click the **Library** tab.
 - Click **Masking Policies**. Your masking policy that you created in [Masking Lab 1 - Discover and Mask Sensitive
-Data by Using Default Masking Formats in Oracle Data Safe](DataSafeDM.md) should be listed (**<username> Mask1_HCM1**). The dates when the policy was created and last updated are displayed.
+Data by Using Default Masking Formats in Oracle Data Safe](?lab=lab-12-1-discover-mask-sensitive-data-by) should be listed (**<username> Mask1_HCM1**). The dates when the policy was created and last updated are displayed.
 - Click your masking policy.
 
 ![](./images/dbsec/datasafe/masking/click-policy.png " ")
@@ -79,9 +79,9 @@ Data by Using Default Masking Formats in Oracle Data Safe](DataSafeDM.md) should
 - Notice that you can click **Add** to add additional sensitive columns.
 - Notice that you can upload pre/post masking scripts.
 - To return to the **Masking Policies** page in the Library, click the browser's **Back** button.
-  - If you click **Exit**, you are returned to the **Home** page.
+  - If you click **Exit** at the bottom, you are returned to the **Home** page.
 
-### Part 4: Download your masking policy
+### Step 4: Download your masking policy
 
 - Go to the **Library tab** and click on **Masking Policies**.
 
@@ -100,24 +100,24 @@ A confirmation message is displayed on your page.
 
 ![](./images/dbsec/datasafe/masking/download-policy2.png " ")
 
-4. View your list of downloads in your browser and open the masking policy XML file.
-5. Review the file, and then close it.
+- View your list of downloads in your browser and open the masking policy XML file.
+- Review the file, and then close it.
 
-### Part 5: Explore the Data Masking report
-1. Click the **Reports** tab.
-2. On the left, click **Data Masking** and then again **Data Masking**.
-3. Click your **Data Masking** report in the content pane to view it.
+### Step 5: Explore the Data Masking report
+- Click the **Reports** tab.
+- On the left, click **Data Masking** and then again **Data Masking**.
+- Click your **Data Masking** report in the content pane to view it.
 
-### Part 6: Explore the Jobs page
-1. Click the **Jobs** tab.
+### Step 6: Explore the Jobs page
+- Click the **Jobs** tab.
   - The **Current and Past Jobs** tab shows you all of the jobs that you ran and are in the process of running.
   - The **Scheduled Job** tab shows you all of the jobs that are scheduled.
-2. Examine the list of jobs on the **Current and Past Jobs** tab.
-3. Position the cursor over the **Start Time** column heading, and then click the arrow to sort the column in descending order. This action shows you your latest jobs.
-4. Find a recent data discovery job, and then view the **Elapsed Time** column. This column tells you how long the job took.
-5. Click the data discovery job's ID to view all of its details.
-6. Click the **X** button to close the dialog box.
-7. Click a data masking job's ID to view all of its details.
-8. Click the **X** button to close the dialog box.
+- Examine the list of jobs on the **Current and Past Jobs** tab.
+- Position the cursor over the **Start Time** column heading, and then click the arrow to sort the column in descending order. This action shows you your latest jobs.
+- Find a recent data discovery job, and then view the **Elapsed Time** column. This column tells you how long the job took.
+- Click the data discovery job's ID to view all of its details.
+- Click the **X** button to close the dialog box.
+- Click a data masking job's ID to view all of its details.
+- Click the **X** button to close the dialog box.
 
 ### All Done!

@@ -18,7 +18,7 @@ To complete this lab, you need to have the following:
 - Login credentials for the Oracle Data Safe Console
 - An Oracle Data Safe service enabled in a region of your tenancy
 - A registered target database in Oracle Data Safe with sample audit data and the password for the SYS user account. This lab refers to an ExaCS database.
-An audit trail is running on your target database and alert policies are enabled in Oracle Data Safe. If not, see [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](DataSafeAudit.md).
+An audit trail is running on your target database and alert policies are enabled in Oracle Data Safe. If not, see [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](?lab=lab-12-5-provision-audit-alert-policies).
 
 ## Challenge
 
@@ -34,7 +34,9 @@ Follow these general steps:
 7. In the Oracle Data Safe Console, examine the **All Activity** report to view the newly generated audit records.
 8. In SQL Developer, disable the recently created audit policy, and then verify if any alerts are generated in the Oracle Data Safe Console.
 
-### Part 1: In SQL Developer, create a query to view the list of enabled audit policies and their details
+## Steps
+
+### Step 1: In SQL Developer, create a query to view the list of enabled audit policies and their details
 - In SQL Developer Web, run the following query to view a list of enabled unified audit policies.
 
 ```
@@ -47,7 +49,7 @@ Follow these general steps:
 <copy>select * from audit_unified_policies order by policy_name asc;</copy>
 ```
 
-### Part 2: In SQL Developer, create a unified audit policy on your target database to audit SELECT, INSERT, UPDATE, and DELETE statements on the HCM1.EMP_EXTENDED table (which contains the sensitive column PAYMENTACCOUNTNO)
+### Step 2: In SQL Developer, create a unified audit policy on your target database to audit SELECT, INSERT, UPDATE, and DELETE statements on the HCM1.EMP_EXTENDED table (which contains the sensitive column PAYMENTACCOUNTNO)
 
 - Copy the following lines of code and paste them into the SQL Worksheet, and then click the **Run Script** button.
 
@@ -65,7 +67,7 @@ Follow these general steps:
 - How could you extend this unified audit policy to be more effective? What could you add or remove to the `WHEN` clause?
 - Keep this tab open because you return to it in a later step.
 
-### Part 3: In the Oracle Data Safe Console, enable your custom audit policy on your target database
+### Step 3: In the Oracle Data Safe Console, enable your custom audit policy on your target database
 
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **Activity Auditing**.
 
@@ -85,7 +87,7 @@ target database.
 
 ![](./images/dbsec/datasafe/auditing/edit-policies3.png " ")
 
-- Click the **Alert Policies** tab and verify that the alert policy called **Audit Policy Changes** is enabled. If it's not, enable it now. You enable this policy in [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](DataSafeAudit.md).
+- Click the **Alert Policies** tab and verify that the alert policy called **Audit Policy Changes** is enabled. If it's not, enable it now. You enable this policy in [Auditing Lab 1 - Provision Audit and Alert Policies and Configure an Audit Trail in Oracle Data Safe](?lab=lab-12-5-provision-audit-alert-policies).
 
 ![](./images/dbsec/datasafe/auditing/alert-policies2.png " ")
 
@@ -93,14 +95,14 @@ target database.
 - Wait until the provisioning is finished. The dialog box is closed.
 - Click **Exit**.
 
-### Part 4: In SQL Developer Web, execute some SQL statements against `HCM1.EMP_EXTENDED`
+### Step 4: In SQL Developer Web, execute some SQL statements against `HCM1.EMP_EXTENDED`
 1. Return to SQL Developer.
 2. Run the following SQL statement twice to generate some audit data. In Part 6, you view the audit records generated.
 
 ```
 <copy>select * from HCM1.EMP_EXTENDED;</copy>
 ```
-### Part 5: In the Oracle Data Safe Console, examine the All Activity report to view the newly generated audit records
+### Step 5: In the Oracle Data Safe Console, examine the All Activity report to view the newly generated audit records
 
 - Return to the Oracle Data Safe Console.
 - Click the **Reports** tab.
@@ -124,7 +126,7 @@ b. In the **Select Columns** dialog box, select **Object Owner**, and then click
   - Wait until the **Collection State** column reads **COLLECTING**, and then **IDLE**.
   - Repeat steps 2 through 9.
 
-### Part 6: In SQL Developer, disable the recently created audit policy and verify if any alerts are generated in Oracle Data Safe
+### Step 6: In SQL Developer, disable the recently created audit policy and verify if any alerts are generated in Oracle Data Safe
 - Return to the SQL Developer.
 - Run the following SQL statement:
 

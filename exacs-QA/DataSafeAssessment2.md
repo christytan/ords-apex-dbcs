@@ -1,7 +1,7 @@
 # Assess Users with Oracle Data Safe
 
 ## Introduction
-Using Oracle Data Safe assess user security in your target database by using the User Assessment feature and fix issues.
+Using Oracle Data Safe, assess user security in your target database by using the User Assessment feature and fix issues.
 
 To log issues and view the Lab Guide source, go to the [github oracle](https://github.com/oracle/learning-library/issues/new) repository.
 
@@ -11,11 +11,11 @@ In this lab, you learn how to:
 - Fix some issues pertaining to user security.
 
 ## Challenge
-Suppose that recent data breaches in your industry occurred due to stolen credentials of high privileged users. You are notified by “Audit and Compliance” to quickly report high risk users on your target database and show their recent activity. You want to know who the users are and what entitlements they have.
+Suppose that recent data breaches in your industry occurred due to stolen credentials of high-privileged users. You are notified by “Audit and Compliance” to quickly report high risk users on your target database and show their recent activity. You want to know who the users are and what entitlements they have.
 
-## Step-by-Step Instructions
+## Steps
 
-### Part 1: Sign in to the Oracle Data Safe Console for your region
+### Step 1: Sign in to the Oracle Data Safe Console for your region
 
 - From the navigation menu, click **Data Safe**
 
@@ -30,10 +30,10 @@ Suppose that recent data breaches in your industry occurred due to stolen creden
 
 ![](./images/dbsec/datasafe/login/sign-in.png " ")
 
-### Part 2: In SQL Developer connect to SYS user
-Please visit [Lab 4: Configuring a development system for use with your EXACS database](ConfigureDevClient.md) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
+### Step 2: In SQL Developer connect to SYS user
+Please visit [Lab 4: Configuring a development system for use with your EXACS database](?lab=lab-4-configure-development-system-for-use) for instructions to securely configure ExaCS to connect using Oracle SQL Developer, SQLXL and SQL*Plus.
 
-### Part 3: Run User Assessment on your target database
+### Step 3: Run User Assessment on your target database
 - In the Oracle Data Safe Console, click the **Home** tab, and then click **User Assessment**. The User Assessment page is displayed.
 
 ![](./images/dbsec/datasafe/assessment/user-assessment-nav.png " ")
@@ -48,19 +48,18 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 ![](./images/dbsec/datasafe/assessment/target2.png " ")
 
-### Part 4: Analyze the information in the User Assessment report
+### Step 4: Analyze the information in the User Assessment report
 - View the **User Risk** chart. This chart compares the number of critical, high, medium, and low risk users.
 - View the **User Roles** chart. This chart compares the number of users with the DBA, DV Admin, and Audit Admin roles.
 
 ![](./images/dbsec/datasafe/assessment/user-risk.png " ")
-- View the **Last Password Change** chart. This chart shows you the number of users who have changed their passwords in the last 30 days, the last 30-90 days, and 90 days ago or more.
 - Click the second small circle below the charts to view the third and fourth charts.
 - View the **Last Password Change** chart. This chart shows you the number of users who have changed their passwords in the last 30 days, the last 30-90 days, and 90 days ago or more.
 - View the **Last Login** chart. This chart shows you the number of users that logged in in the last 24 hours, in the last week, within the current month, within the current year, and a year ago or more.
 
 ![](./images/dbsec/datasafe/assessment/last-password.png " ")
 
-### Part 5: Search the results for Critical and High risk users
+### Step 5: Search the results for Critical and High risk users
 - Click the **+** sign to view the list of columns that you can display in the table. Add and remove columns as you wish, and then close the list.
 
 ![](./images/dbsec/datasafe/assessment/add-sign.png " ")
@@ -82,7 +81,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
   - Click outside the dialog box to close it.
   - Close the User Details dialog box.
 
-### Part 6: In SQL Developer, make changes to the user accounts
+### Step 6: In SQL Developer, make changes to the user accounts
 
 - In SQL Developer, run the following code to drop `SECURE_STEVE`:
 
@@ -94,11 +93,9 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 ```
 <copy>revoke audit_admin from DBA_DEBRA</copy>
 ```
-### Part 7: Rerun User Assessment on your target database
-1. Return to Oracle Data Safe.
-2. Click the **Home** tab, and then click **User Assessment**.
-3. Select the check box for your target database, and then click **Assess**.
-4. Click **View Report**.
-5. Look for changes in the **User Assessment** report. Notice that `DBA_DEBRA` no longer has the `AUDIT_ADMIN` role.
-
-
+### Step 7: Rerun User Assessment on your target database
+- Return to Oracle Data Safe.
+- Click the **Home** tab, and then click **User Assessment**.
+- Select the check box for your target database, and then click **Assess**.
+- Click **View Report**.
+- Look for changes in the **User Assessment** report. Notice that `DBA_DEBRA` no longer has the `AUDIT_ADMIN` role.
