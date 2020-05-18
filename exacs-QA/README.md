@@ -47,6 +47,8 @@ Lab 13 - 16 are additional labs which talks about connecting your Exadata Cloud 
 14. Automation with Terraform
 15. Build and deploy Python application stacks on Exadata Cloud Service
 16. Build APEX application on Exadata Cloud Service
+17. Install and configure Swingbench to simulate a transaction processing workload
+18. build a docker container running node.js connected to EXACS database
 
 
 # Workshop Overview
@@ -226,6 +228,26 @@ As an application developer, DBA or DevOps user,
 - Access OCI autonomous database console and get URL for apex web console
 - Create a VNC connection to developer client VM and access apex on your database
 - Setup additional apex developer users
+
+## Lab 17: - Introduction to Swingbench and Oracle database
+
+
+**Key Objectives**:
+
+As an application developer, DBA or DevOps user,
+
+- Install and configure Swingbench to simulate a transaction processing workload
+- Configure Exadata Cloud Service Database with Swingbench
+
+## Lab 18: - Docker Application with EXACS
+
+**Key Objectives**:
+
+As an application developer, DBA or DevOps user,
+
+- To build a docker container running node.js
+- Connect it to an Exadata Cloud Service running in the Oracle cloud
+- Deploy the docker container on Oracle Compute Instance
 
 
 
