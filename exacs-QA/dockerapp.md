@@ -2,7 +2,7 @@
 
 Containers allow us to package apps along with all their dependencies and provide a light-weight run time environment that provides isolation similar to a virtual machine, but without the added overhead of a full-fledged operating system.
 
-The topic of containers and microservices is a subject on its own but suffice to say that breaking up large,complex software into more manageable pieces that run isolated from each other has many advantages. It's easier to deploy, diagnose and provides better availability since failure of any microservice limits downtime to a portion of the application.
+The topic of containers and microservices is a subject on its own but suffice to say that breaking up large, complex software into more manageable pieces that run isolated from each other has many advantages. It's easier to deploy, diagnose and provides better availability since failure of any microservice limits downtime to a portion of the application.
 
 This lab walks you through the steps to connect a containerized node.js application to Oracle Exadata Cloud Service and deploy it in OCI Compute instance.
 
@@ -27,75 +27,74 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ### **STEP 1: Connect to your database and create nodeuser and run create_schema.sql**
 
-First we ssh into the ExaCS VM and create nodeuser.
 
-
-- SSH into your ExaCS VM
+- SSH into your Exadata Cloud Service Database VM
 
 ```
 <copy>ssh -i <private-key> oracle@PublicIP</copy>
 ```
-    when it's successful, you should see something similar to the below image.
-![](./images/ssh_into_exadata.png " ") 
-- Change source
+
+![](./images/dockeApp/ssh_into_exadata.png " ") 
+
+- Change source database from default to your database by executing the following command
 
 ```
-<copy>source '<dbname>.env'</copy>
+<copy>source dbname.env</copy>
 ```
-- Connect to your DB.
+
+- Connect to your Exadata Cloud Service Database
 
 ```
-<copy>sqlplus sys/<DBpassword>@pdbname as sysdba;</copy>
+<copy>sqlplus sys/dbpassword@pdbname as sysdba</copy>
 ```
- when it's successful, you should see something similar to the below image.
 
-![](./images/sqlplus_to_db.png " ") 
+![](./images/dockeApp/sqlplus_to_db.png " ") 
 
-- Create nodeuser.
+- Create a database schema called **NODEUSER**
 
 ```
-<copy>create user nodeuser identified by <DBpassword>;</copy>
+<copy>create user nodeuser identified by dbpassword;</copy>
 ```
-- Grant dba, connect and resource to nodeuser.
+
+- Grant dba, connect and resource to NODEUSER
 
 ```
 <copy>grant dba, connect, resource to nodeuser;</copy>
 ```
- when it's successful, you should see something similar to the below image.
- 
-![](./images/grant_permission_nodeuser.png " ")
-- Connect to nodeuser.
+
+![](./images/dockeApp/grant_permission_nodeuser.png " ")
+
+- Connect to NODEUSER schema as shown
 
 ```
-<copy>conn nodeuser/WElcome_123#@sbdb1;</copy>
+<copy>conn nodeuser/dbpassword@sbdb1;</copy>
 ```
- when it's successful, you should see something similar to the below image.
  
-![](./images/grant_permission_nodeuser.png " ") 
+![](./images/dockeApp/grant_permission_nodeuser.png " ") 
 
 **Now that nodeuser is created and logged in, copy the contents of create_schema.sql that we downloaded earlier and run it here.**
 
 ### **STEP 2: Configure dbconfig.js and Build docker image**
 
-Now ssh into the Oracle compute instance and run the below command to get the zip file containing the docker application.
+- Now ssh into the Oracle compute instance and run the below command to get the zip file containing the docker application
 
 ```
 <copy>wget -O docker.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/xs3Y4D_IHVCVIyPpAjq1Fr2woO-MMso-xNbmnbh3NGk/n/orasenatdpltintegration02/b/ExaCSScripts/o/nodeappDocker.zip </copy>
 ```
 
-Note: Application aOne is a sample marketplace application and requires schema and seed data to be deployed in the backend.
+Note: Application aOne is a sample marketplace application and requires schema and seed data to be deployed in the backend
 
 
-- unzip the docker.zip
+- Unzip the docker.zip
 
 ```
 <copy>unzip docker.zip</copy>
 ```
-when it's successful, you should see something similar to the below image.
- 
-![](./images/unzip.png " ") 
 
-- Edit dbconfig.js file in nodeappDocker folder with your credentials.
+![](./images/dockeApp/unzip.png " ") 
+
+- Edit dbconfig.js file in nodeappDocker folder with your Exadata Cloud Service Database credentials
+
 ```
 <copy>
 cd nodeappDocker/
@@ -105,73 +104,66 @@ vi dbconfig.js
 ```
 
 
-![](./images/dbconfig.png " ") 
+![](./images/dockeApp/dbconfig.png " ") 
 
-Now the docker image.
-- NOTE: To check if the docker is installed run the below command.
+- Now the we'll deploy docker image.
+
+NOTE: To check if the docker is installed run the below command
+
 ```
 <copy>docker -v</copy>
 ```
-- Now, run the below commands and restart the session.
+
+- Run the below commands and restart the session
+
 ```
 <copy>
 sudo usermod -aG docker $USER
 sudo usermod -aG root $USER
 </copy>
 ```
-With the dbconfig.js file edited with the appropriate ExaCS credentials, let us proceed with creating the image.
 
-- Build docker image. 
+With the dbconfig.js file edited with the appropriate ExaCS credentials, let us proceed with creating the image
+
+- Build docker image 
 ```
 <copy>docker build -t aone:1 .</copy>
 ```
 **NOTE: When running the docker build command make sure in the same directory as dockerfile, In this case /nodeappDocker**
 
-Once the docker image build is done, you can find the image by running the below command.
+Once the docker image build is done, you can find the image by running the below command
 ```
 <copy>docker images</copy>
 ```
-when it's successful, you should see something similar to the below image.
  
-![](./images/docker_images.png " ") 
+![](./images/dockeApp/docker_images.png " ") 
 
 ### **STEP 3: Run your docker image as container**
 
-- Run the aone image with the name nodeapp to deploy the node application as a container. 
+- Run the aone image with the name nodeapp to deploy the node application as a container
+
 ```
 <copy>docker run -d --rm --name nodeapp -p 3050:3050 aone:1</copy>
 ```
-when it's successful, you should see something similar to the below image.
- 
-![](./images/docker_run.png " ") 
+
+![](./images/dockeApp/docker_run.png " ") 
 
 **NOTE: When running the docker run command make sure port 3050 is open for the compute instance**
 
 - Run the below command to check the logs. 
+
 ```
 <copy>docker logs nodeapp</copy>
 ```
-when it's successful, you should see something similar to the below image.
  
-![](./images/docker_logs.png " ")
+![](./images/dockeApp/docker_logs.png " ")
 
-To check the app on the browser, you have bridged port 3050 on the container to your compute instance.
+- To check the app on the browser, you have bridged port 3050 on the container to your compute instance
 
-Open browser on your local machine and go to http://< public ip of your compute instance >:3050
+- Open browser on your local machine and go to http://public_ip_of_your_compute_instance:3050
 
-This is what you see if your app ran successfully.
+![](./images/dockeApp/nodeapp.png)
 
-![](./images/nodeapp.png)
+You just built and provisioned an entire application stack consisting of a microservice and an enterprise grade database. You can push your docker image to a public/private docker repository and it can be pushed to any container orchestration service either on-prem or with any cloud provider
 
-You just built and provisioned an entire application stack consisting of a microservice and an enterprise grade database. You can push your docker image to a public/private docker repository and it can be pushed to any container orchestration service either on-prem or with any cloud provider. 
-
-
--   You are now ready to move to the next lab.
-
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>
+Congratulations! You have successfully completed deploying containerized app on OCI and connected it to the Exadata Cloud Service Database
