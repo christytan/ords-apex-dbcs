@@ -34,7 +34,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>ssh -i <private-key> oracle@PublicIP</copy>
 ```
 
-![](./images/dockeApp/ssh_into_exadata.png " ") 
+![](./images/dockerApp/ssh_into_exadata.png " ") 
 
 - Change source database from default to your database by executing the following command
 
@@ -48,7 +48,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>sqlplus sys/dbpassword@pdbname as sysdba</copy>
 ```
 
-![](./images/dockeApp/sqlplus_to_db.png " ") 
+![](./images/dockerApp/sqlplus_to_db.png " ") 
 
 - Create a database schema called **NODEUSER**
 
@@ -62,7 +62,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>grant dba, connect, resource to nodeuser;</copy>
 ```
 
-![](./images/dockeApp/grant_permission_nodeuser.png " ")
+![](./images/dockerApp/grant_permission_nodeuser.png " ")
 
 - Connect to NODEUSER schema as shown
 
@@ -70,7 +70,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 <copy>conn nodeuser/dbpassword@sbdb1;</copy>
 ```
  
-![](./images/dockeApp/grant_permission_nodeuser.png " ") 
+![](./images/dockerApp/grant_permission_nodeuser.png " ") 
 
 **Now that nodeuser is created and logged in, copy the contents of create_schema.sql that we downloaded earlier and run it here.**
 
@@ -91,7 +91,7 @@ Note: Application aOne is a sample marketplace application and requires schema a
 <copy>unzip docker.zip</copy>
 ```
 
-![](./images/dockeApp/unzip.png " ") 
+![](./images/dockerApp/unzip.png " ") 
 
 - Edit dbconfig.js file in nodeappDocker folder with your Exadata Cloud Service Database credentials
 
@@ -104,7 +104,7 @@ vi dbconfig.js
 ```
 
 
-![](./images/dockeApp/dbconfig.png " ") 
+![](./images/dockerApp/dbconfig.png " ") 
 
 - Now the we'll deploy docker image.
 
@@ -136,7 +136,7 @@ Once the docker image build is done, you can find the image by running the below
 <copy>docker images</copy>
 ```
  
-![](./images/dockeApp/docker_images.png " ") 
+![](./images/dockerApp/docker_images.png " ") 
 
 ### **STEP 3: Run your docker image as container**
 
@@ -146,7 +146,7 @@ Once the docker image build is done, you can find the image by running the below
 <copy>docker run -d --rm --name nodeapp -p 3050:3050 aone:1</copy>
 ```
 
-![](./images/dockeApp/docker_run.png " ") 
+![](./images/dockerApp/docker_run.png " ") 
 
 **NOTE: When running the docker run command make sure port 3050 is open for the compute instance**
 
@@ -156,13 +156,13 @@ Once the docker image build is done, you can find the image by running the below
 <copy>docker logs nodeapp</copy>
 ```
  
-![](./images/dockeApp/docker_logs.png " ")
+![](./images/dockerApp/docker_logs.png " ")
 
 - To check the app on the browser, you have bridged port 3050 on the container to your compute instance
 
 - Open browser on your local machine and go to http://public_ip_of_your_compute_instance:3050
 
-![](./images/dockeApp/nodeapp.png)
+![](./images/dockerApp/nodeapp.png)
 
 You just built and provisioned an entire application stack consisting of a microservice and an enterprise grade database. You can push your docker image to a public/private docker repository and it can be pushed to any container orchestration service either on-prem or with any cloud provider
 
