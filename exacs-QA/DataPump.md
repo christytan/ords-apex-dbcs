@@ -168,7 +168,7 @@ impdp SYSTEM/password@usr_XX_1 DIRECTORY=DATA_PUMP_DIR DUMPFILE=user_XX.dmp CLUS
 
 - In the above command, replace
   * __password__ - Admin password for your database system user
-  * __usr_XX__ - The pluggable database that you created 
+  * __usr_XX_1__ - The pluggable database that you created 
   * __DIRECTORY__ - leave as shown above
   * __user_xx.dmp__ -  The dump file that was securely copied to the directory location
 
