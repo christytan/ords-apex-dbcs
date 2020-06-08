@@ -33,7 +33,7 @@ Please visit [Lab 4: Configuring a development system for use with your EXACS da
 
 - In the SQL Developer worksheet, run the following command to connect to your PDB:
 ```
-<copy>ALTER SESSION SET CONTAINER=<PDBNAME></copy>
+<copy>ALTER SESSION SET CONTAINER= <PDBNAME></copy>
 ```
 
 - Run the following query to select the `EMPLOYEES` table:

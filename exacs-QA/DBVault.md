@@ -22,7 +22,7 @@ As a database security admin,
 
 - An Oracle Cloud Infrastructure account
 
-- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 2](?lab=lab-2-provision-exadata-infrastructure)
+- A pre-provisioned instance of Oracle Developer Client image in an application subnet. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use)
 
 - A pre-provisioned ExaCS instance. Refer to [Lab 1](?lab=lab-1-preparing-private-data-center-o)
 
@@ -46,13 +46,18 @@ Before we log into the database, let us make some changes to `tnsnames.ora` file
 
 **Let's start by creating the HR schema and the appuser accounts**
 
-- Open Terminal and ssh into your bastion node.
+- Open Terminal and ssh into your bastion node (developer client created in lab 4).
 	```
 	<copy>ssh -i /path/to/private/key opc@public-ip-of-bastion-node</copy>
 	```
+	
 - Now, ssh into your database node from bastion instance.
 	```
 	<copy>ssh -i /path/to/private/key opc@private-ip-of-db-node</copy>
+	```
+- Change to `oracle` user.
+	```
+	<copy>sudo su - oracle</copy>
 	```
 - List all the files.
   ```
@@ -152,9 +157,6 @@ In this step, we will need to configure and enable database vault in both CDB an
   ```
   ```
   <copy>commit;</copy>
-  ```
-  ```
-  <copy>exit;</copy>
   ```
   ![](./images/dbsec/db_vault/create-dvusers.png " ")
   
@@ -318,7 +320,7 @@ In this step, we will need to configure and enable database vault in both CDB an
   <copy>alter pluggable database your-pdb-name close immediate;</copy>
   ```
   ```
-  <copy>alter pluggable database your-pdb-name open ;</copy>
+  <copy>alter pluggable database your-pdb-name open;</copy>
   ```
   ![](./images/dbsec/db_vault/alter-pdb.png " ")
 
