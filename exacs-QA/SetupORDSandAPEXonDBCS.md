@@ -269,7 +269,10 @@ TF_VAR_subnet_ocid: "Subnet OCID obtained from OCI"
 ![](./images/apex/Picture202.png " ")
 
 - The URL is as follows:
-http://\<IP address of ORDS server\>:\<ORDS Port\>/ords
+
+```
+http://<IP address of ORDS server>:<ORDS Port>/ords
+```
 
 - Enter the above URL in the browser and you will see APEX Login Page
 
