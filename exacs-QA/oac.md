@@ -172,7 +172,7 @@ Example, for mac users with a private key file named id_rsa in their home direct
 
     ![](./images/oac/RDC-installer9.png " ")
 
-15. Enable Data Gateway, enter OAC URL and click on Generate Key to generate json key.
+15. Enter OAC URL, Generate Key and Save. Once saved, Enable Data Gateway.
 
     #### Note: Copy the Generated key to a note pad. We will be using the key in Orace Analytics Cloud console.
 
