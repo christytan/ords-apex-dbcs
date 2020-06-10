@@ -31,24 +31,18 @@ First, we shh into the dev client and invoke the VNC server that comes pre-insta
 - SSH into your dev client compute instance.
 
     ```
-    <copy>
-    $ ssh -i /path_to/private-key opc@PublicIP
-    </copy>
+    <copy>ssh -i /path_to/private-key opc@PublicIP</copy>
     ```
 
 - Change the password on the VNC server.
     
     ```
-    <copy>
-    $ vncpasswd
-    </copy>
+    <copy>vncpasswd</copy>
     ```
 - Once you update the password, start your VNC server with the following command,
   
     ```
-    <copy>
-    $ vncserver -geometry 1280x1024
-    </copy>
+    <copy>vncserver -geometry 1280x1024</copy>
     ```
 - Your development system may now be ready for accepting VNC connections.
 
@@ -57,9 +51,7 @@ First, we shh into the dev client and invoke the VNC server that comes pre-insta
   - Open a terminal window and create an ssh tunnel using the following command,
     
     ```
-    <copy>
-    $ ssh -N -L 5901:127.0.0.1:5901 -i /path_to/priv-key-file opc@publicIP-of-your-devClient
-    </copy>
+    <copy>ssh -N -L 5901:127.0.0.1:5901 -i /path_to/priv-key-file opc@publicIP-of-your-devClient</copy>
      ```
 
 **Windows Users**
@@ -89,17 +81,13 @@ First, we shh into the dev client and invoke the VNC server that comes pre-insta
 #### Note: You will be secure copying the zip file from your local machine to Cloud Developer Image
 
     ```
-    <copy>
-         scp -i /path_to/keyfile /path_to/datagateway-linux.zip  opc@ipaddress-of-dev-client:/home/opc
-    </copy>
+    <copy>scp -i /path_to/keyfile /path_to/datagateway-linux.zip  opc@ipaddress-of-dev-client:/home/opc</copy>
     ```
 
 Example, for mac users with a private key file named id_rsa in their home directoy,
 
     ```
-    <copy>
-         scp -i ~/id_rsa datagateway-linux.zip  opc@129.162.23.12:/home/opc
-    </copy>
+    <copy>scp -i ~/id_rsa datagateway-linux.zip  opc@129.162.23.12:/home/opc</copy>
     ```
 
 3. In your VNC session, unzip the data gateway file.
