@@ -90,15 +90,15 @@ First, we shh into the dev client and invoke the VNC server that comes pre-insta
 
     ```
     <copy>
-        $ scp -i /path_to/keyfile /path_to/datagateway-linux.zip  opc@ipaddress-of-dev-client:/home/opc
+         scp -i /path_to/keyfile /path_to/datagateway-linux.zip  opc@ipaddress-of-dev-client:/home/opc
     </copy>
     ```
 
-    Example, for mac users with a private key file named id_rsa in their home directoy,
+Example, for mac users with a private key file named id_rsa in their home directoy,
 
     ```
     <copy>
-        $ scp -i ~/id_rsa datagateway-linux.zip  opc@129.162.23.12:/home/opc
+         scp -i ~/id_rsa datagateway-linux.zip  opc@129.162.23.12:/home/opc
     </copy>
     ```
 
@@ -239,10 +239,10 @@ First, we shh into the dev client and invoke the VNC server that comes pre-insta
     ![](./images/oac/filloutthesefields.png " ")
 
 ```
-Host: Host connection string can be found in tnsnases.ora
+Host: Host Name can be found in tnsnases.ora
 Port: 1521
 Service Name: Service name can be found in tnsnames.ora
-Username: system
+Username: sysdba
 Password: Database Admin password
 ```
 
@@ -251,7 +251,7 @@ Password: Database Admin password
     ![](./images/oac/connection.png " ")
 
 11. Here, you can see your ExaCS db connected to Oracle Analytics Cloud.
-    ![](./images/oac/finalscreen.png)
+    ![](./images/oac/finalscreen.png " ")
 
 
 For more information on Oracle Analytics Cloud please click [Here](https://www.oracle.com/business-analytics/analytics-cloud.html).
