@@ -79,7 +79,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Now ssh into the Oracle compute instance and run the below command to get the zip file containing the docker application
 
 ```
-<copy>wget -O docker.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/xs3Y4D_IHVCVIyPpAjq1Fr2woO-MMso-xNbmnbh3NGk/n/orasenatdpltintegration02/b/ExaCSScripts/o/nodeappDocker.zip </copy>
+<copy>wget -O docker.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/xs3Y4D_IHVCVIyPpAjq1Fr2woO-MMso-xNbmnbh3NGk/n/orasenatdpltintegration02/b/ExaCSScripts/o/nodeappDocker.zip</copy>
 ```
 
 Note: Application aOne is a sample marketplace application and requires schema and seed data to be deployed in the backend
@@ -106,7 +106,7 @@ vi dbconfig.js
 
 ![](./images/dockerApp/dbconfig.png " ") 
 
-- Now the we'll deploy docker image.
+- Now we'll deploy docker image.
 
 NOTE: To check if the docker is installed run the below command
 

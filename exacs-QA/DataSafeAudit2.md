@@ -166,7 +166,7 @@ How many client hosts have connected to your database?
   - Enter an optional description.
   - Select your resource group.
   - Click **Save As**.
-  - A confirmation message states "Successfully created the report."
+  - A confirmation message states "Successfully created the report.".
 
 ![](./images/dbsec/datasafe/auditing/save-confirm.png " ")
 
