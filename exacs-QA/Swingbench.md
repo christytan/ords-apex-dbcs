@@ -24,7 +24,7 @@ As a database user, a DBA, or an application developer,
 ### STEP 1: Connect to developer cloud client desktop over VNC
 
 
-First we shh into the dev client and invoke the VNC server that comes pre-installed.
+Test First we shh into the dev client and invoke the VNC server that comes pre-installed.
 
 
 - SSH into your dev client compute instance
