@@ -89,13 +89,13 @@ Connect to your developer client machine via VNC.
 Once connected, open a terminal window and download the latest version of swingbench using the curl command below,
 
 ````
-curl http://www.dominicgiles.com/swingbench/swingbenchlatest.zip -o swingbench.zip
+wget http://www.dominicgiles.com/swingbench/swingbenchlatest.zip
 ````
 
-- unzip swingbench.zip. It unzips contents in the swingbench folder
+- unzip swingbenchlatest.zip. It unzips contents in the swingbench folder
 
 ```
-unzip /home/opc/swingbench.zip
+unzip /home/opc/swingbenchlatest.zip
 ```
 
 If you are already running an older version of swingbench, you would need to update the jdbc drivers in swingbench/lib to 18c jdbc drivers for TAC to work. Oracle 18c jdbc drivers may be downloaded from,
