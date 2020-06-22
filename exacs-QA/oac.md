@@ -143,7 +143,7 @@ Example, for mac users with a private key file named id_rsa in their home direct
 
     ![](./images/oac/RDC-installer7.png " ")
 
-13. Configure Data Gateway with Oracle Analytics Cloud. Open web browser in your Cloud Developer Image and type in the below URL.
+13. Next we will configure Data Gateway with Oracle Analytics Cloud. Open web browser in your Cloud Developer Image and type in the below URL.
 
     ```
     http://localhost:8080/obiee/config.jsp
@@ -160,7 +160,7 @@ Example, for mac users with a private key file named id_rsa in their home direct
 
     ![](./images/oac/RDC-installer9.png " ")
 
-15. Enter OAC URL, Generate Key and Save. Once saved, Enable Data Gateway.
+15. Enter your OAC URL, click Generate Key and Save. Once saved, Enable Data Gateway.
 
     #### Note: Copy the Generated key to a note pad. We will be using the key in Orace Analytics Cloud console.
 
@@ -168,7 +168,31 @@ Example, for mac users with a private key file named id_rsa in their home direct
 
     ![](./images/oac/RDC-installer11.png " ")
 
-16. Click on Test and scroll down to bottom of the page to verify. You should see the below message.
+16. Now, on your local machine, open a browser and navigate to the homepage of the OAC instance you are attempting to connect to. In the top left, click on the hamburger menu to open the side menu
+
+     ![](./images/oac/OACHOME.png " ")
+
+17. In the side menu, click on Console.
+
+     ![](./images/oac/OACSIDEMENU.png " ")
+
+18. In the console, scroll to the bottom and click **Remote Data Connectivity**.
+
+     ![](./images/oac/RDGFROMMENU.png " ")
+
+19. Inside the Remote Data Connectivity pane, click on the **Add** button.
+
+     ![](./images/oac/CLICKADDRDG.png " ")
+
+20. Paste the generated key inside the Public Key box. Notice that all of the information will then populate in the  Name, ID, and Host page.
+
+     ![](./images/oac/PASTEPUBKEY.png " ")
+
+21. After entering the Public Key, click **Ok** and then **Add**. Then, see your connection added.
+
+     ![](./images/oac/SEECONNECTION.png " ")
+
+16. Now, navigate back to your VNC Viewer where you got the Public Key from. Click on Test and you should see a Successfully Authenticated message.
 
     ```
     Sucecessfully authenticated
@@ -189,31 +213,7 @@ Example, for mac users with a private key file named id_rsa in their home direct
 
 
 
-1. Open Oracle Analytics Cloud URL in you local machine and log in to the console
-
-    ![](./images/oac/oac.png " ")
-
-2. Click on Menu on the top left corner and click on Console
-
-    ![](./images/oac/console.png " ")
-
-3. Click on Remote Data Connectivity on Console page
-
-    ![](./images/oac/console-RDC.png " ")
-
-4. Click on Add in Remote Data Connectivity page
-
-    ![](./images/oac/console-RDC-Add.png " ")
-
-5. Paste the Copied key in Step 3 #15 in Public Key and click OK. 
-
-    #### Note Name, ID and Host will be auto populated once you paste the public key. 
-
-    ![](./images/oac/console-RDC-key.png " ")
-
-6. Click on Menu on top left corner and click on Home.
-
-    ![](./images/oac/oac-home.png " ")
+1. Now, in your Oracle Analytics Cloud URL in you local machine, log in to the console.
 
 7. Click on Create on the top right corner and click on Connection
 
@@ -227,7 +227,7 @@ Example, for mac users with a private key file named id_rsa in their home direct
     ![](./images/oac/filloutthesefields.png " ")
 
 ```
-Host: Host Name can be found in tnsnases.ora
+Host: Host Name can be found in tnsnames.ora
 Port: 1521
 Service Name: Service name can be found in tnsnames.ora
 Username: sysdba
