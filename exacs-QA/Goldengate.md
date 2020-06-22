@@ -29,11 +29,18 @@ Why Golden Gate?
 - The source database can be any Oracle database version 11.2.0.4 or higher with atleast one application schema that you wish to replicate to an ExaCS database in OCI. For the purpose of this lab, you may provision a 12.2.0.1 DBCS instance in your compartment in OCI and configure it as source. 
 
 
-- The ExaCS  database instance you provisioned in [Lab 4](./ProvisionADB.md) can be used as a target database in this lab. Since this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target ExaCS instance using sql*plus or sql developer client. Refer [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) to setup a jump server or setup VPN respectively. 
+- The ExaCS  database instance you provisioned in [Lab 4](./ProvisionADB.md) can be used as a target database in this lab. If this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target ExaCS instance using sql*plus or sql developer client. Refer [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) to setup a jump server or setup VPN respectively. 
 
-**Note: You cannot complete this lab without setting up access to your ExaCS instance. Therefore [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) are a pre-requisite to completing this lab as instructed.**
+    **Note: You cannot complete this lab without setting up access to your ExaCS instance. Therefore [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) are a pre-requisite to completing this lab as instructed.**
 
 - The Golden Gate software is going to be deployed on a linux server in a public network which has access to both the source database and the target database via the Goldengate marketplace image in OCI.
+
+- Let us understand the architecture of the setup we have here:
+    - We have a source database on a VM on OCI(DBCS) which will act as an on-premise database.
+    - We have a target database on an exadata cloud service VM on OCI.
+    - We have a Goldengate instance with access to both the source database and target database.
+
+    ![](./images/goldengate/gg_arch.png " ")
 
 
 ## Steps
