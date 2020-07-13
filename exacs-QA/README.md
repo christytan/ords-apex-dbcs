@@ -55,8 +55,6 @@ Watch the video below for an overview of Exadata Cloud Service workshop
 18. Build a docker container running node.js connected to EXACS database
 19. Connect Oracle Analytics Cloud to your Exadata database
 
-Watch the video below for an overview of Autonomous Database Dedicated
-
 
 # Workshop Overview
 
