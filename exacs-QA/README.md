@@ -52,6 +52,9 @@ Lab 13 - 19 are additional labs which talks about connecting your Exadata Cloud 
 18. Build a docker container running node.js connected to EXACS database
 19. Connect Oracle Analytics Cloud to your Exadata database
 
+Watch the video below for an overview of Autonomous Database Dedicated
+
+[![Watch the video]](https://videohub.oracle.com/media/ExaCS+Sales+Play+Introduction/1_tj6oiorp/170612181)
 
 # Workshop Overview
 
