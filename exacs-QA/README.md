@@ -54,7 +54,8 @@ Lab 13 - 19 are additional labs which talks about connecting your Exadata Cloud 
 
 Watch the video below for an overview of Autonomous Database Dedicated
 
-[![Watch the video]](https://videohub.oracle.com/media/ExaCS+Sales+Play+Introduction/1_tj6oiorp/170612181)
+[](videohub.oracle.com:https://videohub.oracle.com/media/ExaCS+Sales+Play+Introduction/1_tj6oiorp/170612181)
+
 
 # Workshop Overview
 
