@@ -1,5 +1,5 @@
 ## Introduction
-In this lab we will install and configure a workload generation tool called Swingbench, and demonstrate the high availability features of the service while simulating a planned maintenance operation.
+In this lab we will install and configure a workload generation tool called Swingbench, and demonstrate the high performance features of the service while simulating a planned maintenance operation.
 Swingbench is a free load generator (and benchmarks) designed to stress test an Oracle database. SwingBench consists of a load generator, a coordinator and a cluster overview. The software enables a load to be generated and the transactions/response times to be charted.
 
 Swingbench can be used to demonstrate and test technologies such as Real Application Clusters, Online table rebuilds, Standby databases, Online backup and recovery etc.
