@@ -180,7 +180,7 @@ Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/
  **Note: The following procedure must be performed on the first compute node in the Exadata DB system. To determine the first compute node, connect to any compute node as a grid user and execute the following command:**
  
 ```
-<copy>$ORACLE_HOME/bin/olsnodes --n</copy>
+<copy>$ORACLE_HOME/bin/olsnodes -n</copy>
 ```
 - SSH to the first compute node in the Exadata DB system.
 ```
@@ -248,18 +248,14 @@ bkup_cron_entry=yes</copy>
 - Use following command to install the backup configuration, configure the credentials, schedule the backup, and associate the configuration with a database name.
 
 ```
-<copy>./bkup -cfg bkup.cfg.hubexa1 -dbname=hubexa1</copy>
+<copy>/var/opt/oracle/ocde/assistants/bkup/bkup -cfg bkup.cfg.hubexa1 -dbname=hubexa1</copy>
 ```
 
 - The backup is scheduled via cron and can be viewed at /etc/crontab as shown below.
 
 ![](./images/backup&recovery/cron\_after\_api.png " ")
 
-- When the scheduled backup running or later point of time, you can check the backup status with following command.
 
-```
-<copy>cd/var/opt/oracle/bkup_api/bkup_api bkup_status --dbname=DB_NAME</copy>
-```
 
 Click [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Database/Tasks/exabackingupBKUPAPI.htm) for more details on managing Exadata DB Backups using bkup_api.
 
@@ -278,6 +274,12 @@ a)  To create a backup that follows the current retention policy, enter followin
 In this example, a backup following a current retention policy is created as shown below.
 
 ![](./images/backup&recovery/on_demand_bkp_api.png " ")
+
+- When the scheduled backup running or later point of time, you can check the backup status with following command.
+
+```
+<copy>/var/opt/oracle/bkup_api/bkup_api bkup_status --dbname=DB_NAME</copy>
+```
 
 b)  To create a long-term backup, enter following command:
 
