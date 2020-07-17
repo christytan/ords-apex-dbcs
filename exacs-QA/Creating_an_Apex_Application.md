@@ -168,11 +168,11 @@ sys_password=<Database SYS Password></copy>
 
 
 ```
-sudo pip3 install simplejson
+<copy>sudo pip3 install simplejson</copy>
 ```
 
 ```
-sudo pip3 install requests
+<copy>sudo pip3 install requests</copy>
 ```
 
 
@@ -204,8 +204,8 @@ sudo pip3 install requests
 ```
 http://ip_address:ORDS_Port/ords
 ```
-   
-![](./images/apex/Picture400-4.png " ")
+
+![](./images/apex/Picture300.png " ")
 
 - Click on the App Builder tab from the top menu and then click on Create tab and then click on New Application option.
 
@@ -250,7 +250,7 @@ http://ip_address:ORDS_Port/ords
 - Select APPSCHEMA user under the settings section and click Create Application
 
 ![](./images/apex/CreateApexApp-6.png " ")
-![](./images/apex/Create_application.png " ")
+![](./images/apex/create_application.png " ")
 
 - The application has been created under the apps builder tab.
 
