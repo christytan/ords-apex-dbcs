@@ -48,12 +48,12 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Access to your Oracle cloud account.
 - A pre-provisioned DB instance on Exadata. Refer to [Lab 3](?lab=lab-3-provision-databases-on-exadata-cloud) on how to provision a DB instance on Exadata.
 - Access to a Dev Client on OCI for the database instance. Refer to [Lab 4](?lab=lab-4-configure-development-system-for-use) to know how to setup a Dev Client.
-- Have appropriate IAM policies assigned to run Terraform on OCI. Please request your tenancy administrator to assign you
-SSH Key pair (OpenSSH) and API Sign-in Key.
-- Note :
-    1.  (Optional) if you need to create a new ssh key pair visit this <a href=https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html>link</a>
+- Have appropriate IAM policies assigned to run Terraform on OCI. Please request your tenancy administrator to assign you policies to allow access.
+- SSH Key pair (OpenSSH) and API Sign-in Key.
+    - Note :
+        1.  (Optional) if you need to create a new ssh key pair visit this <a href=https://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/compute-iaas/generating_ssh_key/generate_ssh_key.html>link</a>
 
-    2.  (Optional) if you need to setup a new oci api key for your Oracle Cloud Account, visit this <a href=https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionssetupapikey.htm>link</a>
+        2.  (Optional) if you need to setup a new oci api key for your Oracle Cloud Account, visit this <a href=https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionssetupapikey.htm>link</a>
 
 
 ## Steps

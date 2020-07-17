@@ -46,7 +46,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - Execute the below command to download the first Python Application. 
 
 ```
-<copy>wget -O jsonapp.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/YRsIM_FwyTnFwvjYHNVSGrq_-vZkZ_h7NVrzDXqi6vY/n/orasenatdpltintegration02/b/ExaCSScripts/o/jsonapp.zip</copy>
+<copy>wget -O jsonapp.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/7gl3t07MlT6J4ezUM__0UCGW2akWJAx_8iTjQONwQ0o/n/orasenatdpltintegration02/b/ExaCSScripts/o/jsonapp.zip</copy>
 ```
 
 ![](./images/apex/dataload.png " ")
