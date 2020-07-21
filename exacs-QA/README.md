@@ -268,3 +268,11 @@ As a LOB user
 ## Appendix
 
 **This covers some general help for Windows users and other occasional issues you may encounter while working with your Exadata Cloud Service.**
+
+## Acknowledgements
+
+**Author** - Tasbir Imam, Phani Turlapati, Abdul Rafae, Sravya Ganugapati, Sathis Muniyasamy, Albert Kwok, Padma Priya, Aubrey Patsika, Jacob Harless, Tejus Subrahmanya
+
+**Last Update** - July 21, 2020.
+
+**You are all set. Let us begin!**
