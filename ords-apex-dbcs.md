@@ -105,7 +105,7 @@ Enter ADMIN's password []
 Created instance administrator ADMIN.m
 ```
 
-- Create the APEX_LISTENER and APEX_REST_PUBLIC_USER users by running @apex_rest_config.sql 
+- Create the *APEX_LISTENER* and *APEX_REST_PUBLIC_USER* users by running *@apex_rest_config.sql*
 
 ```
 sql > @apex_rest_config.sql
@@ -114,7 +114,7 @@ Enter a password for the APEX_REST_PUBLIC_USER user              []
 ...set_appun.sql
 ...create APEX_LISTENER and APEX_REST_PUBLIC_USER users
 ```
-- Set password for the APEX_PUBLIC_USER and unlock the account.
+- Set password for the *APEX_PUBLIC_USER* and unlock the account.
 ```
 sql > alter profile DEFAULT limit PASSWORD_REUSE_TIME unlimited;
 sql > alter profile DEFAULT limit PASSWORD_LIFE_TIME  unlimited;
@@ -159,12 +159,14 @@ standalone.static.images=/opt/oracle/ords/images
 user.tablespace.default=APEX
 user.tablespace.temp=TEMP
 ```
-- parameters:\
-*db.hostname: hostname of database* \
-*db.port: 1521 is the default database cloud service port* \
-*db.servicename: pdb_name.databse_hostname, you can find database hostname in the OCI console* \
-*schema.tablespace.default:tablespace created for apex* \
-*user.tablespace.default: tablespace created for apex user*
+- parameters:
+```
+db.hostname: hostname of database
+db.port: 1521 is the default database cloud service port
+db.servicename: pdb_name.databse_hostname, you can find database hostname in the OCI console
+schema.tablespace.default:tablespace created for apex
+user.tablespace.default: tablespace created for apex user
+```
 
 - Copy apex image folder to ORDS directory
 ```
@@ -190,13 +192,14 @@ standalone.scheme.do.not.prompt=true
 standalone.static.context.path=/i
 standalone.static.path=/opt/oracle/ords/images
 ```
-- parameters: \
-*standalone.static.path: directory for apex images folder* \
-*standalone.doc.root: directory of doc_root folder in ORDS*  
+- parameters: 
+```
+standalone.static.path: directory for apex images folder
+standalone.doc.root: directory of doc_root folder in ORDS  
+```
 
 
-
-- Install ORDS. Type in **sys as sysdba** as the administrator username. Provide password for ORDS_PUBLIC_USER,     APEX_PUBLIC_USER, APEX_LISTENER, and APEX_REST_PUBLIC_USER.
+- Install ORDS. Type in **sys as sysdba** as the administrator username. Provide password for *ORDS_PUBLIC_USER*,     *APEX_PUBLIC_USER*, *APEX_LISTENER*, and *APEX_REST_PUBLIC_USER*.
 
 ```
 Enter the database password for ORDS_PUBLIC_USER:
