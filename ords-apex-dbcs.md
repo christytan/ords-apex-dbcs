@@ -105,16 +105,16 @@ Enter ADMIN's password []
 Created instance administrator ADMIN.m
 ```
 
-- Create the *APEX_LISTENER* and *APEX_REST_PUBLIC_USER* users by running *@apex_rest_config.sql*
+- Create the APEX\_LISTENER and APEX\_REST\_PUBLIC\_USER users by running @apex\_rest\_config.sql
 
 ```
 sql > @apex_rest_config.sql
 Enter a password for the APEX_LISTENER user              []
 Enter a password for the APEX_REST_PUBLIC_USER user              []
 ...set_appun.sql
-...create APEX_LISTENER and APEX_REST_PUBLIC_USER users
+...create APEX_LISTENER and APEX\_REST\_PUBLIC\_USER users
 ```
-- Set password for the *APEX_PUBLIC_USER* and unlock the account.
+- Set password for the APEX\_PUBLIC\_USER and unlock the account.
 ```
 sql > alter profile DEFAULT limit PASSWORD_REUSE_TIME unlimited;
 sql > alter profile DEFAULT limit PASSWORD_LIFE_TIME  unlimited;
@@ -199,7 +199,7 @@ standalone.doc.root: directory of doc_root folder in ORDS
 ```
 
 
-- Install ORDS. Type in **sys as sysdba** as the administrator username. Provide password for *ORDS_PUBLIC_USER*,     *APEX_PUBLIC_USER*, *APEX_LISTENER*, and *APEX_REST_PUBLIC_USER*.
+- Install ORDS. Type in **sys as sysdba** as the administrator username. Provide password for *ORDS_PUBLIC_USER*,     APEX\_PUBLIC\_USER, APEX\_LISTENER, and APEX\_REST\_PUBLIC\_USER.
 
 ```
 Enter the database password for ORDS_PUBLIC_USER:
