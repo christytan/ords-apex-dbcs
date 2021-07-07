@@ -1,4 +1,4 @@
-# Workshop Overview
+# Install APEX on DBCS and Deploy ORDS
 
 ## Introduction
 
