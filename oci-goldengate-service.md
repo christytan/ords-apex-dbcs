@@ -33,10 +33,6 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 - The source database can be any Oracle database version 19c or higher with at least one application schema that you wish to replicate to an database in OCI. For the purpose of this lab, you may provision a 19c DBCS instance in your compartment in OCI and configure it as source. 
 
 
-- The ExaCS  database instance you provisioned in [Lab 4](./ProvisionADB.md) can be used as a target database in this lab. If this database is in a private network with no direct access over the internet, you need to either VPN into this network or setup a developer client / bastion host via which you can connect to your target ExaCS instance using sql*plus or sql developer client. Refer [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) to setup a jump server or setup VPN respectively. 
-
-    **Note: You cannot complete this lab without setting up access to your ExaCS instance. Therefore [Lab 5](./ConfigureDevClient.md) or [Lab 6](./ConfigureVPN.md) are a pre-requisite to completing this lab as instructed.**
-
 - The Golden Gate cloud service is going to be deployed on OCI in a public network which has access to both the source database and the target database via the Goldengate instance in OCI.
 
 - Let us understand the architecture of the setup we have here:
@@ -44,7 +40,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
     - We have a target database on an database cloud service VM on OCI.
     - We have a Goldengate instance with access to both the source database and target database.
 
-    ![](./images/goldengate/gg_arch.png " ")
+   
 
 ## Steps
 ### **STEP 1: Provision a Goldengate Cloud Service from OCI**
