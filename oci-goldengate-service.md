@@ -44,10 +44,118 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Steps
 ### **STEP 1: Provision a Goldengate Cloud Service from OCI**
+1. Connect to your OCI tenancy and select **GoldenGate** from top left menu.
 
+![](./images/oci_gg_service/gg-provision-1.png " ")
+
+2. Click on **Create Deployment** to deploy the goldengate service.
+![](./images/oci_gg_service/gg-provision-2.png " ")
+
+3. Create Deployment and choose name, compartment, network, admin and admin password for the deployment.
+![](./images/oci_gg_service/gg-provision-3.png " ")
+![](./images/oci_gg_service/gg-provision-4.png " ")
+
+4. Click on **Launch Console** to access GoldenGate Service.
+![](./images/oci_gg_service/gg-provision-5.png " ")
+
+5. Login on GoldenGate service.
+![](./images/oci_gg_service/gg-login.png " ")
+![](./images/oci_gg_service/gg-console.png " ")
 
 
 ### **STEP 2: Configure the source database**
+It is assumed that you either have an Oracle 19c database configred as source or know how to provision a 19c DBCS instance on OCI
+
+[This Medium blog provides step by step directions to deploying a DBCS instance in OCI](https://medium.com/@fathi.ria/oracle-database-on-oci-cloud-ee144b86648c)
+
+The source database requires a Common (CDB) user that has DBA privileges over all PDBs in that database.
+
+Lets also assume that the schema we wish to replicate with GoldenGate is the 'VSTEST' in DBTEST1_PDB1. So for a freshly provisioned DBCS instance as source, we create the common user and application schema as follows
+
+1. Connect as sys to your source DB and execute the following SQL commands
+```
+sql > create user c##ggadmin identified by <password>;
+sql > GRANT CREATE SESSION, ALTER SESSION TO c##ggadmin;
+sql > grant CREATE cluster to c##ggadmin;
+sql > grant CREATE indextype to c##ggadmin;
+sql > grant CREATE operator to c##ggadmin;
+sql > grant CREATE procedure to c##ggadmin;
+sql > grant CREATE sequence to c##ggadmin;
+sql > grant CREATE table to c##ggadmin;
+sql > grant CREATE trigger to c##ggadmin;
+sql > GRANT CREATE TYPE TO c##ggadmin;
+sql > GRANT CREATE ANY TABLE TO c##ggadmin;
+sql > GRANT ALTER ANY TABLE TO c##ggadmin;
+sql > GRANT LOCK ANY TABLE TO c##ggadmin;
+sql > GRANT SELECT ANY TABLE TO c##ggadmin;
+sql > GRANT INSERT ANY TABLE TO c##ggadmin;
+sql > GRANT UPDATE ANY TABLE TO c##ggadmin;
+sql > GRANT DELETE ANY TABLE TO c##ggadmin;
+sql > GRANT RESOURCE TO c##ggadmin;
+sql > GRANT FLASHBACK ANY TABLE TO c##ggadmin;
+sql > grant UNLIMITED TABLESPACE TO c##ggadmin;
+sql > grant quota unlimited on users to c##ggadmin;
+```
+2. Grant user c##ggadmin GoldenGate admin privilege
+```
+sql > alter user c##ggadmin set container_data=all container=current;
+--------------------------------
+-- Must Have 
+--------------------------------
+sql > grant connect, resource to c##ggadmin container=ALL;
+sql > grant create session, alter session to c##ggadmin container=ALL;
+sql > grant dba to c##ggadmin container=ALL;
+
+-- Used to enable database logging, start/register extracts
+sql > grant alter system to c##ggadmin container=ALL;
+
+sql > grant select_catalog_role to c##ggadmin;
+sql > grant set container to c##ggadmin container = ALL;
+sql > grant select any dictionary to c##ggadmin container = ALL;
+
+PL/SQL >
+BEGIN
+ dbms_goldengate_auth.grant_admin_privilege
+ (
+ grantee => 'C##GGADMIN',
+ privilege_type => 'CAPTURE',
+ grant_select_privileges => TRUE,
+ do_grants => TRUE,
+ container => 'ALL'
+ );
+END;
+--------------------------------
+-- Must Have Conditional
+--------------------------------
+-- Used when you need to add trandata. 
+sql > grant alter any table to c##ggadmin container=ALL;
+
+```
+
+3. Set user c##ggadmin unlimited password and unlock user
+- Confirm user c##ggadmin password expiration date
+```
+sql > select username, account_status, EXPIRY_DATE from dba_users where username='C##GGADMIN';
+```
+- Use profile DEFAULT
+```
+sql > alter profile DEFAULT limit PASSWORD_REUSE_TIME unlimited;
+sql > alter profile DEFAULT limit PASSWORD_LIFE_TIME  unlimited;
+sql > alter user C##GGADMIN IDENTIFIED BY <password>;
+sql > alter user C##GGADMIN profile DEFAULT;
+
+```
+
+- Unlock user c##ggadmin 
+```
+sql > select username,account_status from dba_users where account_status like '%EXPIRED%'
+or account_status like '%LOCKED%';
+
+-- if c##ggadmin user is locked, unlock user
+
+sql > ALTER USER C##GGADMIN ACCOUNT UNLOCK;
+```
+4. Create a schema user **VSTEST** in PDB to replicate data. A sample 'DEMO' table is provided here. You may add one or more table of your choice to the VSTEST.
 
 ### **STEP 3: Configure the target database**
 
