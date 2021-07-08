@@ -157,7 +157,83 @@ sql > ALTER USER C##GGADMIN ACCOUNT UNLOCK;
 ```
 4. Create a schema user **VSTEST** in PDB to replicate data. A sample 'DEMO' table is provided here. You may add one or more table of your choice to the VSTEST.
 
+```
+sql > alter session set container=DBTEST_PDB1;
+sql > create user VSTEST identified by <password>;
+sql > grant create session to VSTEST;
+sql > grant alter session to VSTEST;
+sql > connect, resource, dba to VESTEST;
+
+sql >  CREATE TABLE "VSTEST"."DEMO" 
+   (	"INVOICE_ID" VARCHAR2(26 BYTE), 
+	"BRANCH" VARCHAR2(26 BYTE), 
+	"CITY" VARCHAR2(26 BYTE), 
+	"CUSTOMER_TYPE" VARCHAR2(26 BYTE), 
+	"GENDER" VARCHAR2(26 BYTE), 
+	"PRODUCT_LINE" VARCHAR2(26 BYTE), 
+	"UNIT_PRICE" NUMBER(38,2), 
+	"QUANTITY" NUMBER(38,0), 
+	"TAX" NUMBER(38,4), 
+	"TOTAL" NUMBER(38,4), 
+	"DATEE" DATE, 
+	"TIME" VARCHAR2(26 BYTE), 
+	"PAYMENT" VARCHAR2(26 BYTE), 
+	"COGS" NUMBER(38,2), 
+	"GROSS_MARGIN_PERCENTAGE" NUMBER(38,9), 
+	"GROSS_INCOME" NUMBER(38,4), 
+	"RATING" NUMBER(38,1)
+   )
+sql > alter user VSTEST quita unlimited on users;
+```
+The source database is all set. Next, lets setup the target database instance.
+
 ### **STEP 3: Configure the target database**
+1. Connect to the database instance created earlier as user **sys** as sysdba
+- Create a common user in database instance and grant necesary previliges.
+```
+sql > create user c##ggadmin identified by <password>;
+sql > grant connect, resource, dba to c##ggadmin;
+sql > alter database add supplemental log data;
+
+sql > alter user c##ggadmin set container_data=all container=current;
+--------------------------------
+-- Must Have 
+--------------------------------
+sql > grant connect, resource to c##ggadmin container=ALL;
+sql > grant create session, alter session to c##ggadmin container=ALL;
+sql > grant dba to c##ggadmin container=ALL;
+
+-- Used to enable database logging, start/register extracts
+sql > grant alter system to c##ggadmin container=ALL;
+
+sql > grant select_catalog_role to c##ggadmin;
+sql > grant set container to c##ggadmin container = ALL;
+sql > grant select any dictionary to c##ggadmin container = ALL;
+
+PL/SQL >
+BEGIN
+ dbms_goldengate_auth.grant_admin_privilege
+ (
+ grantee => 'C##GGADMIN',
+ privilege_type => 'CAPTURE',
+ grant_select_privileges => TRUE,
+ do_grants => TRUE,
+ container => 'ALL'
+ );
+END;
+--------------------------------
+-- Must Have Conditional
+--------------------------------
+-- Used when you need to add trandata. 
+sql > grant alter any table to c##ggadmin container=ALL;
+
+```
+
+- Create an 'VSTEST' user similar to source and create the same set of tables as source. Also we will create a goldengate admin user and grant necessary previliges to that user.
+
+```
+
+```
 
 ### **STEP 4: Configure Goldengate Cloud Service**
 
