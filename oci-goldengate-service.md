@@ -229,11 +229,126 @@ sql > grant alter any table to c##ggadmin container=ALL;
 
 ```
 
-- Create an 'VSTEST' user similar to source and create the same set of tables as source. Also we will create a goldengate admin user and grant necessary previliges to that user.
+2. Create an **VSTEST** user similar to source and create the same set of tables as source. Also we will create a goldengate admin user and grant necessary previliges to that user.
 
 ```
+sql > alter session set container=DBTEST_PDB1;
+sql > create user VSTEST identified by <password>;
+sql > grant create session to VSTEST;
+sql > grant alter session to VSTEST;
+sql > connect, resource, dba to VESTEST;
 
+sql >  CREATE TABLE "VSTEST"."DEMO" 
+   (	"INVOICE_ID" VARCHAR2(26 BYTE), 
+	"BRANCH" VARCHAR2(26 BYTE), 
+	"CITY" VARCHAR2(26 BYTE), 
+	"CUSTOMER_TYPE" VARCHAR2(26 BYTE), 
+	"GENDER" VARCHAR2(26 BYTE), 
+	"PRODUCT_LINE" VARCHAR2(26 BYTE), 
+	"UNIT_PRICE" NUMBER(38,2), 
+	"QUANTITY" NUMBER(38,0), 
+	"TAX" NUMBER(38,4), 
+	"TOTAL" NUMBER(38,4), 
+	"DATEE" DATE, 
+	"TIME" VARCHAR2(26 BYTE), 
+	"PAYMENT" VARCHAR2(26 BYTE), 
+	"COGS" NUMBER(38,2), 
+	"GROSS_MARGIN_PERCENTAGE" NUMBER(38,9), 
+	"GROSS_INCOME" NUMBER(38,4), 
+	"RATING" NUMBER(38,1)
+   )
+sql > alter user VSTEST quita unlimited on users;
 ```
+
+Now, your target Database is ready!
 
 ### **STEP 4: Configure Goldengate Cloud Service**
+
+#### **STEP 4.1: Register Database** ####
+
+1. On OCI console navigate to **Home**, **GoldenGate** from top left menu and **choose your compartment**
+
+2. Launch your GoldenGate instance and fill goldengate username and password.
+![](./images/oci_gg_service/gg-login.png " ")
+
+3. Once logged on GoldenGate Services console, You need to register source and target database then configure **Extracts**, **Replicats** and **Distribution Server**. 
+
+4. If your database is either OCI Database, Autonomous database or Exadata database on OCI, please return back to GoldenGate Deployment console, and **Registered Databases** on the top left panel. If your database is non-OCI database, please skip step 4 and 5.
+![](./images/oci_gg_service/gg-register-db.png " ")
+
+5. Click **Register database** to register source and target database.
+![](./images/oci_gg_service/gg-register-db-info.png " ")
+![](./images/oci_gg_service/gg-register-db-info-2.png " ")
+
+```
+Name: name of your database.
+Alias name: database Alias, will be used in the GoldenGate configuration.
+Description: discription of your registered database.
+Compartment: compartment where your database located.
+Select Database or Enter Database Information: you can either choose to manual fill in database information or system would automatically fill in.
+Database Type: Autonomous Database, DB System Database(Bare Metal, VM, Exadata) or VM Cluster Database (Exadata).
+Database in Compartment: choose the database in selected compartment.
+Database FQDN: database full qualified domain name.
+Database user name: your database user.
+Database user password: your database user password.
+Network Connectivity via Private Endpoint: checked for connectivity between deployment and database remains private.
+```
+6. If your database is non-OCI database, please register database within GoldenGate console. Navigate to **Configuration** on the top left menu.
+![](./images/oci_gg_service/gg-configuration-credentials.png " ")
+7. click **+** after Credentials.
+```
+Credential Domain: name for database credential domain
+Credential Alias: Alias name for database Credentials
+User ID: database user Identity. e.g. database\_username@//db\_domain\_name:1521/DB\_FQDN
+
+```
+8. You can verify connection by click icon from **Action**.
+![](./images/oci_gg_service/gg-test-connection.png " ")
+
+9. Add default credentials for GoldenGate. Do not need to test connection. It will fail with no TNS details.
+```
+Credential Domain: OracleGoldenGate
+Alias: oggadmin
+User ID: oggadmin
+```
+
+10. Add **Checkpoint table** for both source and target database.
+![](./images/oci_gg_service/gg-checkpoint.png " ")
+![](./images/oci_gg_service/gg-checkpoint-2.png " ")
+
+#### **STEP 4.2: Create Extracts** ####
+
+1. click **+** on **Extracts**.
+```
+Integrated Extract: Interacts directly with a database logmining server to receive data changes in the form of logical change records (LCR).
+Initial Load: data would be read over from source table to target table. Target table should be empty while performing initial load.
+```
+![](./images/oci_gg_service/gg-extract.png " ")
+
+2. Add Extract
+![](./images/oci_gg_service/gg-addextract.png " ")
+![](./images/oci_gg_service/gg-addextract-2.png " ")
+```
+Process Name: Extract name.
+Description: Description of current extract.
+Intent:Intent for data capture workflow.
+Begin: Starting time for data processing.
+Trail Name: Name of Extract trail name.
+Source Database Credential: database credential.
+```
+3. Edit Parameter File
+![](./images/oci_gg_service/gg-addextract-3.png " ")
+```
+EXTRACT extract_name
+USERIDALIAS Alias_name DOMAIN credentail_domain_name
+EXTTRAIL extract_trail_file_name
+SOURCECATALOG database_name;
+table schema.tablename;
+table schema.tablename2;
+table schema.tablename3;
+table schema.tablename4;
+```
+This one ensure that all changes are being captured while extract is being completed so that the primary replicat will start applying these changes.
+
+
 
