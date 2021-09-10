@@ -4,7 +4,7 @@
         "title": "Workshop README",
         "description": "Exadata Cloud Service self-guided hands-on Workshop overview",
         "publisheddate": "4/20/2020",
-        "filename": "README.md"
+        "filename": "ords-apex-dbcs.md"
       },
       {
         "title": "Lab 1: Install APEX on DBCS and Deploy ORDS",
